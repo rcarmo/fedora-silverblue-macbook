@@ -5,6 +5,8 @@ set -u
 export PATH=/usr/sbin:/usr/bin LC_ALL=C
 A=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
 P=$A/packaging
+RPMDIR=$P/rpms/0.1.20261101; [[ -d $RPMDIR ]] || RPMDIR=$A/rebuild-kit/rpms   # public repo ships RPMs only in the kit
+skip() { echo "  skip $* (not in this checkout)"; }
 KV=7.2.13-200.fc44.x86_64
 T=$(mktemp -d)
 trap 'rm -rf "$T"' EXIT
@@ -35,7 +37,7 @@ for pkg in macbook-t1-touchbar macbook-cs8409; do
   chk "diff -r '$new' '$T/tar-$pkg/$pkg-0.1.20261101'" "$pkg: local tarball == source dir"
   echo "       changed files vs 0.1.20261031: $(diff -rq "$old" "$new" | sed -E "s#$P/sources/##g; s#Files ([^ ]+) and [^ ]+ differ#\1#; s#Only in ([^:]+): #+\1/#" | tr '\n' ' ')"
   # SRPM embedded in the akmod RPM that rpm-ostree layered
-  mkdir -p "$T/akmod-$pkg" && (cd "$T/akmod-$pkg" && rpm2cpio "$P/rpms/0.1.20261101/akmod-$pkg-0.1.20261101-1.fc44.x86_64.rpm" | cpio -idm --quiet)
+  mkdir -p "$T/akmod-$pkg" && (cd "$T/akmod-$pkg" && rpm2cpio "$RPMDIR/akmod-$pkg-0.1.20261101-1.fc44.x86_64.rpm" | cpio -idm --quiet)
   srpm=$(ls "$T/akmod-$pkg"/usr/src/akmods/*.src.rpm)
   mkdir -p "$T/srpm-$pkg" && (cd "$T/srpm-$pkg" && rpm2cpio "$srpm" | cpio -idm --quiet)
   chk "[[ \$(basename '$srpm') == $pkg-kmod-0.1.20261101-1.fc44.src.rpm ]]" "$pkg: akmod embeds SRPM $(basename "$srpm")"
@@ -47,21 +49,25 @@ chk "cmp '$T/p1/apple-touchbar.c' '$P/sources/macbook-t1-touchbar-0.1.20261101/a
 cp -a $P/sources/macbook-cs8409-0.1.20261031 "$T/p2" && (cd "$T/p2/hda/codecs/cirrus" && patch -s -p4 < $P/patches/0002-cs8409-apple-probe-op-and-resume-reinit.patch)
 chk "cmp '$T/p2/hda/codecs/cirrus/cirrus_apple.h' '$P/sources/macbook-cs8409-0.1.20261101/hda/codecs/cirrus/cirrus_apple.h'" "patch 0002 reproduces cirrus_apple.h"
 chk "cmp '$A/touchbar/t1-socw/macbook_t1_socw.c' '$P/sources/macbook-t1-touchbar-0.1.20261101/macbook_t1_socw.c'" "touchbar/t1-socw/macbook_t1_socw.c == packaged copy"
-chk "(cd $P/rpms/0.1.20261101 && sha256sum -c --quiet SHA256SUMS)" "packaging/rpms/0.1.20261101 SHA256SUMS"
+[[ -f $P/rpms/0.1.20261101/SHA256SUMS ]] && chk "(cd $P/rpms/0.1.20261101 && sha256sum -c --quiet SHA256SUMS)" "packaging/rpms/0.1.20261101 SHA256SUMS" || skip "packaging/rpms"
 
 echo "== B. module code fingerprints (.text-.modinfo-.rodata): staged / akmods test / live-loaded / fallback"
 declare -A FP
 for m in macbook-t1-touchbar/apple-touchbar macbook-t1-touchbar/apple-ibridge macbook-t1-touchbar/macbook_t1_socw macbook-cs8409/snd-hda-codec-cs8409; do
   n=${m#*/}
   ostree cat "$STAGED" /usr/lib/modules/$KV/extra/$m.ko.xz > "$T/$n.staged.ko.xz" 2>/dev/null
-  s=$(fp "$T/$n.staged.ko.xz"); t=$(fp "$P/akmods-tests/0.1.20261101/x/lib/modules/$KV/extra/$m.ko.xz"); FP[$n]=$s
-  [[ $s != none && $s != unreadable && $s == "$t" ]] && ok "$n staged == akmods test ($s)" || bad "$n staged=$s test=$t"
+  s=$(fp "$T/$n.staged.ko.xz"); FP[$n]=$s; tf=$P/akmods-tests/0.1.20261101/x/lib/modules/$KV/extra/$m.ko.xz
+  [[ $s != none && $s != unreadable ]] || { bad "$n: cannot read module from deployment"; continue; }
+  if [[ -f $tf ]]; then t=$(fp "$tf"); [[ $s == "$t" ]] && ok "$n deployment == akmods test ($s)" || bad "$n deployment=$s test=$t"
+  else ok "$n readable in deployment ($s)"; fi
 done
 for f in /usr/local/lib/macbook-t1-socw/$KV/macbook_t1_socw.ko $A/touchbar/t1-socw/macbook_t1_socw.ko $A/sleep/phase1c/files/macbook_t1_socw.ko; do
+  [[ -f $f ]] || { skip "$f"; continue; }
   [[ $(fp "$f") == "${FP[macbook_t1_socw]}" ]] && ok "socw == staged: $f" || bad "socw differs: $f ($(fp "$f"))"
 done
-c=$(fp $A/audio/resume-fix-livetest/snd-hda-codec-cs8409.ko)
+if [[ -f $A/audio/resume-fix-livetest/snd-hda-codec-cs8409.ko ]]; then c=$(fp $A/audio/resume-fix-livetest/snd-hda-codec-cs8409.ko)
 [[ $c != unreadable && ${c%-*} == "${FP[snd-hda-codec-cs8409]%-*}" ]] && ok "audio/resume-fix-livetest (live-loaded) cs8409 code == staged (.text/.modinfo; rodata ${c##*-} vs ${FP[snd-hda-codec-cs8409]##*-})" || bad "audio/resume-fix-livetest cs8409 differs ($c vs ${FP[snd-hda-codec-cs8409]})"
+else skip "audio/resume-fix-livetest ko"; fi
 echo "  info live modules: $(for m in apple_touchbar apple_ibridge macbook_t1_socw snd_hda_codec_cs8409; do printf '%s:%s ' $m "$(grep -o '^parm.*' /dev/null; [[ -d /sys/module/$m ]] && echo loaded || echo absent)"; done)"
 for m in apple_touchbar apple_ibridge macbook_t1_socw snd_hda_codec_cs8409; do
   f=$(modinfo -n $m 2>/dev/null); n=$(basename "${f%.ko.xz}")
@@ -95,7 +101,7 @@ echo "== D. installed host files vs manifests"
 declare -A M=()
 while read -r f; do M[${f#$A/rebuild-kit/files}]=$f; done < <(find $A/rebuild-kit/files -type f | sort)
 chk "(cd $A/rebuild-kit && sha256sum -c --quiet SHA256SUMS)" "rebuild-kit SHA256SUMS"
-for r in $A/rebuild-kit/rpms/*.rpm; do cmp -s "$r" "$P/rpms/0.1.20261101/$(basename "$r")" && ok "kit rpm == packaging: $(basename "$r")" || bad "kit rpm differs: $r"; done
+for r in $A/rebuild-kit/rpms/*.rpm; do q=$P/rpms/0.1.20261101/$(basename "$r"); [[ -f $q ]] || { skip "$q"; continue; }; cmp -s "$r" "$q" && ok "kit rpm == packaging: $(basename "$r")" || bad "kit rpm differs: $r"; done
 if [[ -f /usr/local/lib/macbook-t1-socw/$KV/macbook_t1_socw.ko ]]; then
   [[ $(fp /usr/local/lib/macbook-t1-socw/$KV/macbook_t1_socw.ko) == "${FP[macbook_t1_socw]}" ]] && ok "optional /usr/local socw fallback == akmod build" || bad "socw fallback differs"
 fi
