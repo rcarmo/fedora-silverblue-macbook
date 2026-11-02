@@ -1,0 +1,188 @@
+2026-11-01T19:48:09,272443877+00:00
+s2idle [deep]
+BOOT_IMAGE=(hd0,gpt2)/ostree/fedora-6d77211effe18d6221e39d8f4d56e9d20888b49457887699cdc476af0ec823f3/vmlinuz-7.2.13-200.fc44.x86_64 ostree=/ostree/boot.1/fedora/6d77211effe18d6221e39d8f4d56e9d20888b49457887699cdc476af0ec823f3/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw firmware_class.path=/etc/firmware/macbook-wifi
+0000:00:14.0
+0000:2c:00.0
+0000:a2:00.0
+32
+usb1 0002 auto
+usb2 0003 auto
+usb3 0002 auto
+usb4 0003 on
+usb5 0002 auto
+usb6 0003 on
+wlp2s0:connected:<home>
+lo:connected (externally):lo
+p2p-dev-wlp2s0:disconnected:
+	Interface wlp2s0
+		ssid <home>
+		channel 6 (2437 MHz), width: 20 MHz, center1: 2437 MHz
+	Band 1:
+	Band 2:
+snd_hda_codec_cs8409   204800  1
+apple_mfi_fastcharge    16384  0
+applespi               65536  0
+brcmfmac_wcc           12288  0
+brcmfmac              561152  1 brcmfmac_wcc
+apple_ibridge          24576  0
+apple_touchbar         40960  0
+5
+0
+pm_wakeup_irq=
+Device	S-state	  Status   Sysfs node
+PEG0	  S3	*disabled
+RP01	  S3	*disabled  pci:0000:00:1c.0
+RP05	  S3	*disabled  pci:0000:00:1c.4
+XHC2	  S3	*enabled   pci:0000:2c:00.0
+RP09	  S3	*disabled  pci:0000:00:1d.0
+XHC3	  S3	*enabled   pci:0000:a2:00.0
+RP12	  S3	*disabled  pci:0000:00:1d.3
+ARPT	  S4	*enabled   pci:0000:02:00.0
+EC	  S4	*disabled  platform:PNP0C09:00
+HDEF	  S3	*disabled  pci:0000:00:1f.3
+SPIT	  S3	*enabled   spi:spi-APP000D:00
+BLTH	  S4	*disabled  serial:serial1-0
+XHC1	  S3	*enabled   pci:0000:00:14.0
+PNIC	  S4	*disabled
+WDOG	  S3	*disabled
+ADP1	  S4	*disabled  platform:ACPI0003:00
+LID0	  S4	*enabled   platform:PNP0C0D:00
+gpe00:        0         invalid      unmasked
+gpe01:        0         invalid      unmasked
+gpe02:        0         invalid      unmasked
+gpe03:        0         invalid      unmasked
+gpe04:        0         invalid      unmasked
+gpe05:        0         invalid      unmasked
+gpe06:        0         invalid      unmasked
+gpe07:     5768  EN     enabled      unmasked
+gpe08:        0         invalid      unmasked
+gpe09:        0         invalid      unmasked
+gpe0A:        0         invalid      unmasked
+gpe0B:        0         invalid      unmasked
+gpe0C:        0         invalid      unmasked
+gpe0D:        0         invalid      unmasked
+gpe0E:        0         invalid      unmasked
+gpe0F:        0         invalid      unmasked
+gpe10:        0         invalid      unmasked
+gpe11:        0         invalid      unmasked
+gpe12:        0         invalid      unmasked
+gpe13:        0     STS invalid      unmasked
+gpe14:        0  EN     enabled      unmasked
+gpe15:        0  EN     enabled      unmasked
+gpe16:        0         invalid      unmasked
+gpe17:     2163  EN     enabled      unmasked
+gpe18:        0         invalid      unmasked
+gpe19:        0         invalid      unmasked
+gpe1A:        0         invalid      unmasked
+gpe1B:        0         invalid      unmasked
+gpe1C:        0         invalid      unmasked
+gpe1D:        0         invalid      unmasked
+gpe1E:        0         invalid      unmasked
+gpe1F:        0         invalid      unmasked
+gpe20:        0         invalid      unmasked
+gpe21:        0         invalid      unmasked
+gpe22:        0         invalid      unmasked
+gpe23:        0         invalid      unmasked
+gpe24:        0         invalid      unmasked
+gpe25:        0         invalid      unmasked
+gpe26:        0         invalid      unmasked
+gpe27:        0         invalid      unmasked
+gpe28:        0         invalid      unmasked
+gpe29:        0         invalid      unmasked
+gpe2A:        0         invalid      unmasked
+gpe2B:        0         invalid      unmasked
+gpe2C:        0         invalid      unmasked
+gpe2D:        0         invalid      unmasked
+gpe2E:        0         invalid      unmasked
+gpe2F:        0         invalid      unmasked
+gpe30:        0         invalid      unmasked
+gpe31:        0     STS invalid      unmasked
+gpe32:        5  EN     enabled      unmasked
+gpe33:        5  EN     enabled      unmasked
+gpe34:        0         invalid      unmasked
+gpe35:        0         invalid      unmasked
+gpe36:        0         invalid      unmasked
+gpe37:        0         invalid      unmasked
+gpe38:        0         invalid      unmasked
+gpe39:        0         invalid      unmasked
+gpe3A:        0         invalid      unmasked
+gpe3B:        0         invalid      unmasked
+gpe3C:        0         invalid      unmasked
+gpe3D:        0         invalid      unmasked
+gpe3E:        0         invalid      unmasked
+gpe3F:        0         invalid      unmasked
+gpe40:        0         invalid      unmasked
+gpe41:        0         invalid      unmasked
+gpe42:        0         invalid      unmasked
+gpe43:        0         invalid      unmasked
+gpe44:        0         invalid      unmasked
+gpe45:        0         invalid      unmasked
+gpe46:        0         invalid      unmasked
+gpe47:        0         invalid      unmasked
+gpe48:        0         invalid      unmasked
+gpe49:        0         invalid      unmasked
+gpe4A:        0         invalid      unmasked
+gpe4B:        0         invalid      unmasked
+gpe4C:        0         invalid      unmasked
+gpe4D:        0         invalid      unmasked
+gpe4E:        0         invalid      unmasked
+gpe4F:        0         invalid      unmasked
+gpe50:        0         invalid      unmasked
+gpe51:        0         disabled     unmasked
+gpe52:        0     STS invalid      unmasked
+gpe53:        0         disabled     unmasked
+gpe54:        0     STS invalid      unmasked
+gpe55:        0         invalid      unmasked
+gpe56:        0         invalid      unmasked
+gpe57:        0         invalid      unmasked
+gpe58:        0         invalid      unmasked
+gpe59:        0         invalid      unmasked
+gpe5A:        0         invalid      unmasked
+gpe5B:        0         invalid      unmasked
+gpe5C:        0         invalid      unmasked
+gpe5D:        0         invalid      unmasked
+gpe5E:        0         invalid      unmasked
+gpe5F:        0         invalid      unmasked
+gpe60:        0         invalid      unmasked
+gpe61:        0         invalid      unmasked
+gpe62:        0         invalid      unmasked
+gpe63:        0         invalid      unmasked
+gpe64:        0         invalid      unmasked
+gpe65:        0         invalid      unmasked
+gpe66:        2  EN     enabled      unmasked
+gpe67:        0         enabled      unmasked
+gpe68:        0         invalid      unmasked
+gpe69:        0  EN     enabled      unmasked
+gpe6A:        0         invalid      unmasked
+gpe6B:        0         invalid      unmasked
+gpe6C:        0         invalid      unmasked
+gpe6D:        0  EN     enabled      unmasked
+gpe6E:        0         invalid      unmasked
+gpe6F:        3  EN     enabled      unmasked
+gpe70:        0         invalid      unmasked
+gpe71:        0         invalid      unmasked
+gpe72:        0         invalid      unmasked
+gpe73:        0         invalid      unmasked
+gpe74:        0         invalid      unmasked
+gpe75:        0         invalid      unmasked
+gpe76:        0         invalid      unmasked
+gpe77:        0         invalid      unmasked
+gpe78:        0         invalid      unmasked
+gpe79:        0         invalid      unmasked
+gpe7A:        0         invalid      unmasked
+gpe7B:        0         invalid      unmasked
+gpe7C:        0         invalid      unmasked
+gpe7D:        0         invalid      unmasked
+gpe7E:        0         invalid      unmasked
+gpe7F:        0         invalid      unmasked
+gpe_all:     7946
+sci:     7924
+sci_not:        1
+iBridge
+1
+suspended
+lrwxrwxrwx. 1 root root 0 Nov  1 19:34 /sys/bus/hid/devices/0003:05AC:8600.0006/driver -> ../../../../../../../bus/hid/drivers/apple-ibridge-hid
+lrwxrwxrwx. 1 root root 0 Nov  1 19:34 /sys/bus/hid/devices/0003:05AC:8600.0008/driver -> ../../../../../../../bus/hid/drivers/apple-ibridge-hid
+lrwxrwxrwx. 1 root root 0 Nov  1 19:34 /sys/bus/hid/devices/0003:1D6B:0301.0007/driver -> ../../../../../../../../bus/hid/drivers/apple-touchbar
+lrwxrwxrwx. 1 root root 0 Nov  1 19:34 /sys/bus/hid/devices/0003:1D6B:0301.000A/driver -> ../../../../../../../../bus/hid/drivers/apple-touchbar
+lrwxrwxrwx. 1 root root 0 Nov  1 19:34 /sys/bus/hid/devices/0003:1D6B:0302.0009/driver -> ../../../../../../../../bus/hid/drivers/hid-sensor-hub

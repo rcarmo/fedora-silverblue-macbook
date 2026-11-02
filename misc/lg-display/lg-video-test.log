@@ -1,0 +1,3 @@
+Testing configuration: [(0, 0, 1.6666666269302368, 0, True, [('eDP-1', '2560x1600@60.001', {})]), (1536, 0, 1.0, 0, False, [('DP-2', '1920x1080@60.000', {})])]
+1080p test active for 30 seconds; will restore original settings.
+Original configuration restored.

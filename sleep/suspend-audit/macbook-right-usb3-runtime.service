@@ -1,0 +1,16 @@
+[Unit]
+Description=Apply tested MacBook right-side USB3 runtime wake workaround
+After=systemd-udevd.service tuned.service
+ConditionPathExists=/sys/bus/pci/devices/0000:7c:00.0
+
+[Service]
+Type=oneshot
+ExecCondition=/usr/bin/grep -qx MacBookPro13,2 /sys/class/dmi/id/product_name
+# Replay ONLY matching USB3 root-hub events on the tested external branch.
+# Handles root hubs already enumerated by initramfs, without rebuilding it.
+ExecStart=/usr/bin/udevadm trigger --action=change --settle --subsystem-match=usb --attr-match=devpath=0 --attr-match=idVendor=1d6b --attr-match=idProduct=0003 --parent-match=/sys/bus/pci/devices/0000:7c:00.0
+TimeoutStartSec=30
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

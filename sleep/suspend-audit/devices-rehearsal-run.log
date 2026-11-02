@@ -1,0 +1,11 @@
+Running as unit: macbook-devices-rehearsal.service
+One devices rehearsal: battery 27.4016%; s2idle; delay 5s.
+Keep lid open. Do not interrupt/repeat. Allow up to 3 minutes for recovery.
+Suspend target returned: exit=0, elapsed=6.98s
+RESTORED: pm_test=none, pm_print_times=0
+Rehearsal ended, NOT proof of real sleep/wake. Return to the audit before another test.
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 7.624s
+             CPU time consumed: 389ms
+                   Memory peak: 11.1M (swap: 0B)

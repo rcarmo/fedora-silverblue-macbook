@@ -1,0 +1,2 @@
+AC 25%
+options: nolid=0 nohda=1 allow-dead-tb=0 lid0=enabled hda=unbound

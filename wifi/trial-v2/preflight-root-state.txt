@@ -1,0 +1,41 @@
+STATE 0 0o700
+ARMED macbook-wifi-recovery-v1-empty-baseline
+
+BASELINE [('43e45ec36e83466bf11fe72de61a2e844342182d820de150ddf99c880c38951f', True), ('f1365bcef08f98f305177529b4132dbef7c2a4d4ad1fc38de9b24fc85c306517', False), ('b8e75b708a972d784856f07d964202860088b1138ef9eadb01aa7d76c795104a', False)]
+FILES ['armed', 'baseline-deployments.json', 'trial-installed.sha256', 'lock', 'recovery-FkRr1CXb']
+BLS
+/boot/loader/entries/ostree-2.conf
+title Fedora Linux 44.20261031.0 (Silverblue) (ostree:3)
+version 2
+options ostree=/ostree/boot.0/fedora/49f4b4e2636850381b6c967c3439f88f42d6416d66ba148633c4abb9970a046b/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw
+linux /ostree/fedora-49f4b4e2636850381b6c967c3439f88f42d6416d66ba148633c4abb9970a046b/vmlinuz-7.2.13-200.fc44.x86_64
+initrd /ostree/fedora-49f4b4e2636850381b6c967c3439f88f42d6416d66ba148633c4abb9970a046b/initramfs-7.2.13-200.fc44.x86_64.img
+
+/boot/loader/entries/ostree-5.conf
+title Fedora Linux 44.20261031.0 (Silverblue) (ostree:0)
+version 5
+options ostree=/ostree/boot.0/fedora/bfebcee6ccaa2e9fb682ec6aeb30d11709d6268a5f19c00c59baa4d57340b56f/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw
+linux /ostree/fedora-bfebcee6ccaa2e9fb682ec6aeb30d11709d6268a5f19c00c59baa4d57340b56f/vmlinuz-7.2.13-200.fc44.x86_64
+initrd /ostree/fedora-bfebcee6ccaa2e9fb682ec6aeb30d11709d6268a5f19c00c59baa4d57340b56f/initramfs-7.2.13-200.fc44.x86_64.img
+
+/boot/loader/entries/ostree-4.conf
+title Fedora Linux 44.20261031.0 (Silverblue) (ostree:1)
+version 4
+options ostree=/ostree/boot.0/fedora/6c201f6853cac3680224bcb561f46744d1567e6e2fafb16c5ad4d063dc50373c/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw
+linux /ostree/fedora-6c201f6853cac3680224bcb561f46744d1567e6e2fafb16c5ad4d063dc50373c/vmlinuz-7.2.13-200.fc44.x86_64
+initrd /ostree/fedora-6c201f6853cac3680224bcb561f46744d1567e6e2fafb16c5ad4d063dc50373c/initramfs-7.2.13-200.fc44.x86_64.img
+
+/boot/loader/entries/ostree-3.conf
+title Fedora Linux 44.20261031.0 (Silverblue) (ostree:2)
+version 3
+options ostree=/ostree/boot.0/fedora/66919d634a47d21199e4fe697437da2a117812c49770727e610afae23e84564d/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw
+linux /ostree/fedora-66919d634a47d21199e4fe697437da2a117812c49770727e610afae23e84564d/vmlinuz-7.2.13-200.fc44.x86_64
+initrd /ostree/fedora-66919d634a47d21199e4fe697437da2a117812c49770727e610afae23e84564d/initramfs-7.2.13-200.fc44.x86_64.img
+
+/boot/loader/entries/ostree-1.conf
+title Fedora Linux 44.1.7 (Silverblue) (ostree:4)
+version 1
+options ostree=/ostree/boot.0/fedora/c4941fbacfc3518c3fe124d4b3e5ffa17d199ac5f8361e9223053b012bcbc0a9/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw
+linux /ostree/fedora-c4941fbacfc3518c3fe124d4b3e5ffa17d199ac5f8361e9223053b012bcbc0a9/vmlinuz-6.19.10-300.fc44.x86_64
+initrd /ostree/fedora-c4941fbacfc3518c3fe124d4b3e5ffa17d199ac5f8361e9223053b012bcbc0a9/initramfs-6.19.10-300.fc44.x86_64.img
+

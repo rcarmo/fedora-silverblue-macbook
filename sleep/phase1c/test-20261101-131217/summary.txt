@@ -1,0 +1,33 @@
+Nov 01 13:12:20.810711 fedora macbook-sleep[4349]: pre: mem_sleep: s2idle [deep]
+Nov 01 13:12:20.858617 fedora macbook-sleep[4370]: pre: NVMe 0000:01:00.0 d3cold_allowed=0
+Nov 01 13:12:21.595334 fedora macbook-sleep[4416]: pre: unbound Wi-Fi 0000:02:00.0
+Nov 01 13:12:21.935855 fedora thunderbolt-remove-rescan[4487]: pre/suspend: removed 0000:03:00.0 (under 0000:00:1c.4)
+Nov 01 13:12:22.148380 fedora thunderbolt-remove-rescan[4532]: pre/suspend: removed 0000:79:00.0 (under 0000:00:1d.0)
+Nov 01 13:12:22.231001 fedora thunderbolt-remove-rescan[4550]: pre/suspend: removed 2 upstream port(s), skipped 0; xhci=1 pci=18 links: 0000:00:1c.4=8.0 GT/s PCIe 0000:00:1d.0=8.0 GT/s PCIe
+Nov 01 13:12:22.359377 fedora thunderbolt-remove-rescan[4595]: pre/suspend: S3 wake: 0000:00:1c.0=disabled 0000:00:1c.4=disabled 0000:00:1d.0=disabled 0000:00:1d.3=disabled
+Nov 01 13:12:22.378370 fedora thunderbolt-remove-rescan[4602]: pre/suspend: settled in 11 ms
+Nov 01 13:12:22.404283 fedora macbook-sleep[4613]: pre: XHC1 wake was enabled, now disabled
+Nov 01 13:12:22.414828 fedora macbook-sleep[4615]: pre: acpi wake enabled: ARPT(S4) SPIT(S3) LID0(S4)
+Nov 01 13:12:22.435001 fedora kernel: macbook_t1_socw: loaded; nothing evaluated (socw param / auto_resume=0)
+Nov 01 13:12:22.440211 fedora macbook-sleep[4618]: pre: loaded macbook_t1_socw
+Nov 01 13:12:22.442476 fedora kernel: macbook_t1_socw: evaluating SOCW(0)
+Nov 01 13:12:22.495947 fedora kernel: macbook_t1_socw: SOCW(0) sent T1 sleep, result 0
+Nov 01 13:12:22.506307 fedora macbook-sleep[4621]: pre: SOCW(0) ok (ok=1 failed=0)
+Nov 01 13:12:22.513085 fedora macbook-sleep[4622]: pre: done
+Nov 01 13:12:22.579826 fedora kernel: PM: suspend entry (deep)
+Nov 01 13:14:16.889228 fedora kernel: ACPI: PM: Low-level resume complete
+Nov 01 13:14:16.889915 fedora kernel: Timekeeping suspended for 112.439 seconds
+Nov 01 13:14:16.890679 fedora kernel: ACPI: PM: Waking up from system sleep state S3
+Nov 01 13:14:16.936265 fedora kernel: PM: noirq resume of devices complete after 11.742 msecs
+Nov 01 13:14:17.187307 fedora macbook-sleep[4656]: post: SOCW(1) ok (ok=2 failed=0)
+Nov 01 13:14:17.225850 fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+Nov 01 13:14:17.227052 fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+Nov 01 13:14:17.270891 fedora kernel: PM: suspend exit
+Nov 01 13:14:17.270977 fedora kernel: macbook_t1_socw: evaluating SOCW(1)
+Nov 01 13:14:17.271146 fedora kernel: macbook_t1_socw: SOCW(1) sent T1 wake, result 0
+Nov 01 13:14:17.505175 fedora thunderbolt-remove-rescan[4692]: post/suspend: tree back after attempt 1 (~0 ms): xhci=3 pci=32 links: 0000:00:1c.4=8.0 GT/s PCIe 0000:00:1d.0=8.0 GT/s PCIe
+Nov 01 13:14:17.619210 fedora macbook-sleep[4693]: post: rebound Wi-Fi 0000:02:00.0
+Nov 01 13:14:17.663334 fedora macbook-sleep[4701]: post: XHC1 wake enabled; pm_wakeup_irq=
+Nov 01 13:14:17.933083 fedora kernel: brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43602/2 wl0: Nov 10 2015 06:38:10 version 7.35.177.61 (r598657) FWID 01-ea662a8c
+Nov 01 13:14:18.687063 fedora macbook-sleep[4773]: post: Touch Bar mode re-sent via /sys/bus/hid/drivers/apple-touchbar/0003:1D6B:0301.0007 (idle_timeout -2 -> 300)
+Nov 01 13:14:18.701205 fedora macbook-sleep[4774]: post: done

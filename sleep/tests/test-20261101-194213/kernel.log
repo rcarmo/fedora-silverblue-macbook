@@ -1,0 +1,1083 @@
+[  372.477337] fedora kernel: ieee80211 phy3: brcmf_inetaddr_changed: fail to get arp ip table err:-52
+[  374.246163] fedora kernel: xhci_hcd 0000:2c:00.0: remove, state 1
+[  374.247940] fedora kernel: usb usb4: USB disconnect, device number 1
+[  374.253326] fedora kernel: xhci_hcd 0000:2c:00.0: USB bus 4 deregistered
+[  374.255597] fedora kernel: xhci_hcd 0000:2c:00.0: remove, state 4
+[  374.257014] fedora kernel: usb usb3: USB disconnect, device number 1
+[  374.269043] fedora kernel: xhci_hcd 0000:2c:00.0: USB bus 3 deregistered
+[  374.307720] fedora kernel: pci_bus 0000:05: busn_res: [bus 05] is released
+[  374.310574] fedora kernel: pci_bus 0000:06: busn_res: [bus 06-2b] is released
+[  374.311908] fedora kernel: pci_bus 0000:2c: busn_res: [bus 2c-51] is released
+[  374.314255] fedora kernel: pci_bus 0000:52: busn_res: [bus 52-77] is released
+[  374.316034] fedora kernel: pci_bus 0000:04: busn_res: [bus 04-77] is released
+[  374.447245] fedora kernel: xhci_hcd 0000:a2:00.0: remove, state 1
+[  374.448592] fedora kernel: usb usb6: USB disconnect, device number 1
+[  374.451668] fedora kernel: xhci_hcd 0000:a2:00.0: USB bus 6 deregistered
+[  374.453361] fedora kernel: xhci_hcd 0000:a2:00.0: remove, state 4
+[  374.455196] fedora kernel: usb usb5: USB disconnect, device number 1
+[  374.466205] fedora kernel: xhci_hcd 0000:a2:00.0: USB bus 5 deregistered
+[  374.504219] fedora kernel: pci_bus 0000:7b: busn_res: [bus 7b] is released
+[  374.506932] fedora kernel: pci_bus 0000:7c: busn_res: [bus 7c-a1] is released
+[  374.510974] fedora kernel: pci_bus 0000:a2: busn_res: [bus a2-c7] is released
+[  374.512179] fedora kernel: pci_bus 0000:c8: busn_res: [bus c8-ed] is released
+[  374.512753] fedora kernel: pci_bus 0000:7a: busn_res: [bus 7a-ed] is released
+[  374.715035] fedora kernel: macbook_t1_socw: evaluating SOCW(0)
+[  374.764136] fedora kernel: macbook_t1_socw: SOCW(0) sent T1 sleep, result 0
+[  374.820701] fedora kernel: PM: suspend entry (deep)
+[  374.827066] fedora kernel: Filesystems sync: 0.013 seconds
+[  375.372935] fedora kernel: Freezing user space processes
+[  375.373187] fedora kernel: Freezing user space processes completed (elapsed 0.001 seconds)
+[  375.373398] fedora kernel: OOM killer disabled.
+[  375.373545] fedora kernel: Freezing remaining freezable tasks
+[  375.373700] fedora kernel: Freezing remaining freezable tasks completed (elapsed 0.001 seconds)
+[  375.373838] fedora kernel: printk: Suspending console(s) (use no_console_suspend to debug)
+[  375.377851] fedora kernel: GFP mask restricted
+[  375.378222] fedora kernel: input input15: PM: calling input_dev_suspend @ 7439, parent: card0
+[  375.382589] fedora kernel: input input15: PM: input_dev_suspend returned 0 after 1 usecs
+[  375.385637] fedora kernel: input input14: PM: calling input_dev_suspend @ 7439, parent: card0
+[  375.399673] fedora kernel: input input14: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.421264] fedora kernel: input input13: PM: calling input_dev_suspend @ 7439, parent: card0
+[  375.440479] fedora kernel: input input13: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.457826] fedora kernel: input input12: PM: calling input_dev_suspend @ 7439, parent: card0
+[  375.465848] fedora kernel: input input12: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.481861] fedora kernel: input input11: PM: calling input_dev_suspend @ 7439, parent: card0
+[  375.484360] fedora kernel: usb usb2: PM: calling usb_dev_suspend @ 4465, parent: 0000:00:14.0
+[  375.486298] fedora kernel: input input11: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.488222] fedora kernel: sound pcmC0D8p: PM: calling do_pcm_suspend [snd_pcm] @ 7439, parent: card0
+[  375.489696] fedora kernel: sound pcmC0D8p: PM: do_pcm_suspend [snd_pcm] returned 0 after 1 usecs
+[  375.491071] fedora kernel: sound pcmC0D7p: PM: calling do_pcm_suspend [snd_pcm] @ 7439, parent: card0
+[  375.492430] fedora kernel: sound pcmC0D7p: PM: do_pcm_suspend [snd_pcm] returned 0 after 0 usecs
+[  375.493861] fedora kernel: sound pcmC0D3p: PM: calling do_pcm_suspend [snd_pcm] @ 7439, parent: card0
+[  375.495254] fedora kernel: sound pcmC0D3p: PM: do_pcm_suspend [snd_pcm] returned 0 after 0 usecs
+[  375.496554] fedora kernel: sound pcmC0D0c: PM: calling do_pcm_suspend [snd_pcm] @ 7439, parent: card0
+[  375.497929] fedora kernel: sound pcmC0D0c: PM: do_pcm_suspend [snd_pcm] returned 0 after 0 usecs
+[  375.499284] fedora kernel: sound pcmC0D0p: PM: calling do_pcm_suspend [snd_pcm] @ 7439, parent: card0
+[  375.500608] fedora kernel: sound pcmC0D0p: PM: do_pcm_suspend [snd_pcm] returned 0 after 0 usecs
+[  375.501861] fedora kernel: intel_rapl_msr intel_rapl_msr.0: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.503467] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: calling pci_pm_suspend @ 90, parent: pci0000:00
+[  375.505174] fedora kernel: intel_rapl_msr intel_rapl_msr.0: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.506659] fedora kernel: intel_pmc_core intel_pmc_core.0: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.508187] fedora kernel: intel_pmc_core intel_pmc_core.0: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.509688] fedora kernel: platform coretemp.0: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.511099] fedora kernel: platform coretemp.0: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.512516] fedora kernel: platform iTCO_wdt: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1f.4
+[  375.514084] fedora kernel: platform iTCO_wdt: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.515567] fedora kernel: rfkill rfkill1: PM: calling rfkill_suspend [rfkill] @ 7439, parent: hci0
+[  375.517551] fedora kernel: i801_smbus 0000:00:1f.4: PM: calling pci_pm_suspend @ 78, parent: pci0000:00
+[  375.519135] fedora kernel: rfkill rfkill1: PM: rfkill_suspend [rfkill] returned 0 after 1 usecs
+[  375.520934] fedora kernel: applesmc applesmc.768: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.522387] fedora kernel: applesmc applesmc.768: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.523842] fedora kernel: input input10: PM: calling input_dev_suspend @ 7439, parent: pcspkr
+[  375.525442] fedora kernel: input input10: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.526988] fedora kernel: platform HID-SENSOR-ff120001.2.auto: PM: calling platform_pm_suspend @ 7439, parent: 0003:1D6B:0302.0009
+[  375.528846] fedora kernel: platform HID-SENSOR-ff120001.2.auto: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.530567] fedora kernel: hid_sensor_als HID-SENSOR-200041.1.auto: PM: calling platform_pm_suspend @ 7439, parent: 0003:1D6B:0302.0009
+[  375.532318] fedora kernel: hid_sensor_als HID-SENSOR-200041.1.auto: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.534022] fedora kernel: input input9: PM: calling input_dev_suspend @ 7439, parent: 0003:1D6B:0301.0007
+[  375.536066] fedora kernel: input input9: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.538238] fedora kernel: i801_smbus 0000:00:1f.4: PM: pci_pm_suspend returned 0 after 129 usecs
+[  375.539463] fedora kernel: backlight acpi_video0: PM: calling backlight_suspend @ 7439, parent: 0000:00:02.0
+[  375.540316] fedora kernel: backlight acpi_video0: PM: backlight_suspend returned 0 after 0 usecs
+[  375.541148] fedora kernel: mei_me 0000:00:16.0: PM: calling pci_pm_suspend @ 12, parent: pci0000:00
+[  375.542013] fedora kernel: input input8: PM: calling input_dev_suspend @ 7439, parent: acpi.video_bus.0
+[  375.542890] fedora kernel: input input8: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.543816] fedora kernel: input input7: PM: calling input_dev_suspend @ 7439, parent: spi-APP000D:00
+[  375.544912] fedora kernel: input input7: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.545964] fedora kernel: leds spi::kbd_backlight: PM: calling led_suspend @ 7439, parent: spi-APP000D:00
+[  375.546946] fedora kernel: leds spi::kbd_backlight: PM: led_suspend returned 0 after 0 usecs
+[  375.547909] fedora kernel: leds input6::capslock: PM: calling led_suspend @ 7439, parent: input6
+[  375.548880] fedora kernel: leds input6::capslock: PM: led_suspend returned 0 after 0 usecs
+[  375.549809] fedora kernel: usb 1-3: PM: calling usb_dev_suspend @ 14, parent: usb1
+[  375.550725] fedora kernel: input input6: PM: calling input_dev_suspend @ 7439, parent: spi-APP000D:00
+[  375.551825] fedora kernel: usb 1-3: PM: usb_dev_suspend returned 0 after 0 usecs
+[  375.552750] fedora kernel: input input6: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.553818] fedora kernel: applespi spi-APP000D:00: PM: calling acpi_subsys_suspend @ 7439, parent: spi2
+[  375.554659] fedora kernel: usb usb1: PM: calling usb_dev_suspend @ 91, parent: 0000:00:14.0
+[  375.555560] fedora kernel: applespi spi-APP000D:00: PM: acpi_subsys_suspend returned 0 after 8 usecs
+[  375.556476] fedora kernel: nvme 0000:01:00.0: PM: calling pci_pm_suspend @ 14, parent: 0000:00:1c.0
+[  375.557389] fedora kernel: alarmtimer alarmtimer.0.auto: PM: calling platform_pm_suspend @ 7439, parent: rtc0
+[  375.558301] fedora kernel: alarmtimer alarmtimer.0.auto: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.559190] fedora kernel: rtc rtc0: PM: calling rtc_suspend @ 7439, parent: PNP0B00:00
+[  375.559865] fedora kernel: rtc rtc0: PM: rtc_suspend returned 0 after 0 usecs
+[  375.560532] fedora kernel: intel_xhci_usb_sw intel_xhci_usb_sw: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:14.0
+[  375.561353] fedora kernel: intel_xhci_usb_sw intel_xhci_usb_sw: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.562143] fedora kernel: pxa2xx-spi pxa2xx-spi.3: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1e.3
+[  375.562930] fedora kernel: pxa2xx-spi pxa2xx-spi.3: PM: platform_pm_suspend returned 0 after 4 usecs
+[  375.563736] fedora kernel: idma64 idma64.3: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1e.3
+[  375.564504] fedora kernel: idma64 idma64.3: PM: platform_pm_suspend returned 0 after 2 usecs
+[  375.565271] fedora kernel: port dw-apb-uart.2:0.0: PM: calling pm_runtime_force_suspend @ 7439, parent: dw-apb-uart.2:0
+[  375.566080] fedora kernel: intel-lpss 0000:00:1e.3: PM: calling pci_pm_suspend @ 4461, parent: pci0000:00
+[  375.566891] fedora kernel: port dw-apb-uart.2:0.0: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.567668] fedora kernel: intel-lpss 0000:00:1e.3: PM: pci_pm_suspend returned 0 after 0 usecs
+[  375.568457] fedora kernel: dw-apb-uart dw-apb-uart.2: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1e.1
+[  375.569240] fedora kernel: dw-apb-uart dw-apb-uart.2: PM: platform_pm_suspend returned 0 after 1 usecs
+[  375.569979] fedora kernel: idma64 idma64.2: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1e.1
+[  375.570753] fedora kernel: idma64 idma64.2: PM: platform_pm_suspend returned 0 after 2 usecs
+[  375.571516] fedora kernel: hci_uart_bcm serial1-0: PM: calling acpi_subsys_suspend @ 7439, parent: serial1
+[  375.572430] fedora kernel: intel-lpss 0000:00:1e.1: PM: calling pci_pm_suspend @ 4471, parent: pci0000:00
+[  375.573265] fedora kernel: intel-lpss 0000:00:1e.1: PM: pci_pm_suspend returned 0 after 0 usecs
+[  375.574053] fedora kernel: mei_me 0000:00:16.0: PM: pci_pm_suspend returned 0 after 953 usecs
+[  375.574820] fedora kernel: usb usb1: PM: usb_dev_suspend returned 0 after 11052 usecs
+[  375.575682] fedora kernel: hci_uart_bcm serial1-0: PM: acpi_subsys_suspend returned 0 after 17646 usecs
+[  375.576556] fedora kernel: port dw-apb-uart.1:0.0: PM: calling pm_runtime_force_suspend @ 7439, parent: dw-apb-uart.1:0
+[  375.577346] fedora kernel: port dw-apb-uart.1:0.0: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.578093] fedora kernel: dw-apb-uart dw-apb-uart.1: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1e.0
+[  375.578855] fedora kernel: dw-apb-uart dw-apb-uart.1: PM: platform_pm_suspend returned 0 after 43 usecs
+[  375.579624] fedora kernel: idma64 idma64.1: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1e.0
+[  375.580417] fedora kernel: idma64 idma64.1: PM: platform_pm_suspend returned 0 after 2 usecs
+[  375.581170] fedora kernel: port dw-apb-uart.0:0.0: PM: calling pm_runtime_force_suspend @ 7439, parent: dw-apb-uart.0:0
+[  375.581932] fedora kernel: port dw-apb-uart.0:0.0: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.582693] fedora kernel: intel-lpss 0000:00:1e.0: PM: calling pci_pm_suspend @ 4464, parent: pci0000:00
+[  375.583492] fedora kernel: dw-apb-uart dw-apb-uart.0: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:19.0
+[  375.584254] fedora kernel: intel-lpss 0000:00:1e.0: PM: pci_pm_suspend returned 0 after 1 usecs
+[  375.585060] fedora kernel: dw-apb-uart dw-apb-uart.0: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.585801] fedora kernel: kgdboc kgdboc: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.586541] fedora kernel: intel-lpss 0000:00:19.0: PM: calling pci_pm_suspend @ 4464, parent: pci0000:00
+[  375.587367] fedora kernel: kgdboc kgdboc: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.588085] fedora kernel: intel-lpss 0000:00:19.0: PM: pci_pm_suspend returned 0 after 0 usecs
+[  375.588873] fedora kernel: port serial8250:0.31: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.589619] fedora kernel: port serial8250:0.31: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.590338] fedora kernel: port serial8250:0.30: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.591071] fedora kernel: port serial8250:0.30: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.591795] fedora kernel: port serial8250:0.29: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.592541] fedora kernel: port serial8250:0.29: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.593247] fedora kernel: port serial8250:0.28: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.593964] fedora kernel: port serial8250:0.28: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.594699] fedora kernel: port serial8250:0.27: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.595441] fedora kernel: port serial8250:0.27: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.596150] fedora kernel: port serial8250:0.26: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.596881] fedora kernel: port serial8250:0.26: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.597608] fedora kernel: port serial8250:0.25: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.598324] fedora kernel: port serial8250:0.25: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.599036] fedora kernel: port serial8250:0.24: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.599752] fedora kernel: port serial8250:0.24: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.600487] fedora kernel: port serial8250:0.23: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.601219] fedora kernel: port serial8250:0.23: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.601910] fedora kernel: port serial8250:0.22: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.602675] fedora kernel: port serial8250:0.22: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.603395] fedora kernel: port serial8250:0.21: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.604140] fedora kernel: port serial8250:0.21: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.604862] fedora kernel: port serial8250:0.20: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.605592] fedora kernel: port serial8250:0.20: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.606316] fedora kernel: port serial8250:0.19: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.607041] fedora kernel: port serial8250:0.19: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.607756] fedora kernel: port serial8250:0.18: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.608501] fedora kernel: port serial8250:0.18: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.609205] fedora kernel: port serial8250:0.17: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.609911] fedora kernel: port serial8250:0.17: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.610646] fedora kernel: port serial8250:0.16: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.611382] fedora kernel: port serial8250:0.16: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.612083] fedora kernel: port serial8250:0.15: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.612800] fedora kernel: port serial8250:0.15: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.613506] fedora kernel: port serial8250:0.14: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.614230] fedora kernel: port serial8250:0.14: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.614944] fedora kernel: port serial8250:0.13: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.615665] fedora kernel: port serial8250:0.13: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.616381] fedora kernel: port serial8250:0.12: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.617090] fedora kernel: port serial8250:0.12: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.617824] fedora kernel: port serial8250:0.11: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.618572] fedora kernel: port serial8250:0.11: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.619296] fedora kernel: port serial8250:0.10: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.619988] fedora kernel: port serial8250:0.10: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.620694] fedora kernel: port serial8250:0.9: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.621424] fedora kernel: port serial8250:0.9: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.622159] fedora kernel: port serial8250:0.8: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.622878] fedora kernel: port serial8250:0.8: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.623651] fedora kernel: port serial8250:0.7: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.624392] fedora kernel: port serial8250:0.7: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.625101] fedora kernel: port serial8250:0.3: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.625826] fedora kernel: port serial8250:0.3: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.626539] fedora kernel: port serial8250:0.2: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.627256] fedora kernel: port serial8250:0.2: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.627946] fedora kernel: port serial8250:0.1: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.628679] fedora kernel: port serial8250:0.1: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.629414] fedora kernel: port serial8250:0.0: PM: calling pm_runtime_force_suspend @ 7439, parent: serial8250:0
+[  375.630152] fedora kernel: port serial8250:0.0: PM: pm_runtime_force_suspend returned 0 after 0 usecs
+[  375.630888] fedora kernel: serial8250 serial8250: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.631631] fedora kernel: serial8250 serial8250: PM: platform_pm_suspend returned 0 after 1 usecs
+[  375.632363] fedora kernel: input input3: PM: calling input_dev_suspend @ 7439, parent: LNXPWRBN:00
+[  375.633213] fedora kernel: input input3: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.634038] fedora kernel: input input2: PM: calling input_dev_suspend @ 7439, parent: PNP0C0E:00
+[  375.634844] fedora kernel: input input2: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.635645] fedora kernel: input input1: PM: calling input_dev_suspend @ 7439, parent: PNP0C0C:00
+[  375.636484] fedora kernel: input input1: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.637288] fedora kernel: input input0: PM: calling input_dev_suspend @ 7439, parent: PNP0C0D:00
+[  375.638108] fedora kernel: input input0: PM: input_dev_suspend returned 0 after 0 usecs
+[  375.638907] fedora kernel: pcspkr pcspkr: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.639634] fedora kernel: pcspkr pcspkr: PM: platform_pm_suspend returned 0 after 11 usecs
+[  375.640341] fedora kernel: platform efivars.0: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.641041] fedora kernel: platform efivars.0: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.641737] fedora kernel: platform rtc-efi.0: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.642457] fedora kernel: platform rtc-efi.0: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.643150] fedora kernel: acpi-button LNXPWRBN:00: PM: calling acpi_subsys_suspend @ 7439, parent: platform
+[  375.643893] fedora kernel: acpi-button LNXPWRBN:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.644634] fedora kernel: acpi-button PNP0C0E:00: PM: calling acpi_subsys_suspend @ 7439, parent: platform
+[  375.645348] fedora kernel: acpi-button PNP0C0E:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.646064] fedora kernel: platform APP0002:00: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.646774] fedora kernel: platform APP0002:00: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.647453] fedora kernel: acpi-button PNP0C0C:00: PM: calling acpi_subsys_suspend @ 7439, parent: platform
+[  375.648183] fedora kernel: acpi-button PNP0C0C:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.648876] fedora kernel: acpi-button PNP0C0D:00: PM: calling acpi_subsys_suspend @ 7439, parent: platform
+[  375.649609] fedora kernel: acpi-button PNP0C0D:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.650317] fedora kernel: ac ACPI0003:00: PM: calling acpi_subsys_suspend @ 7439, parent: platform
+[  375.651072] fedora kernel: ac ACPI0003:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.651790] fedora kernel: apple-ibridge APP7777:00: PM: calling acpi_subsys_suspend @ 7439, parent: platform
+[  375.652542] fedora kernel: apple-ibridge APP7777:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.653259] fedora kernel: acpi-sbs ACPI0002:00: PM: calling acpi_subsys_suspend @ 7439, parent: ACPI0001:00
+[  375.654070] fedora kernel: acpi-sbs ACPI0002:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.654863] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: calling acpi_subsys_suspend @ 7439, parent: PNP0C09:00
+[  375.655655] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.656450] fedora kernel: acpi-ec PNP0C09:00: PM: calling acpi_subsys_suspend @ 7439, parent: 0000:00:1f.0
+[  375.657210] fedora kernel: acpi-ec PNP0C09:00: PM: acpi_subsys_suspend returned 0 after 0 usecs
+[  375.657939] fedora kernel: platform APP0001:00: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1f.0
+[  375.658700] fedora kernel: platform APP0001:00: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.659449] fedora kernel: rtc_cmos PNP0B00:00: PM: calling acpi_subsys_suspend @ 7439, parent: 0000:00:1f.0
+[  375.660207] fedora kernel: rtc_cmos PNP0B00:00: PM: acpi_subsys_suspend returned 0 after 235 usecs
+[  375.660941] fedora kernel: platform PNP0C04:00: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1f.0
+[  375.661711] fedora kernel: platform PNP0C04:00: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.662451] fedora kernel: platform INT0800:00: PM: calling platform_pm_suspend @ 7439, parent: 0000:00:1f.0
+[  375.663196] fedora kernel: platform INT0800:00: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.663926] fedora kernel: pci 0000:00:1f.0: PM: calling pci_pm_suspend @ 4464, parent: pci0000:00
+[  375.664717] fedora kernel: pci 0000:00:1f.0: PM: pci_pm_suspend returned 0 after 0 usecs
+[  375.665510] fedora kernel: platform acpi-cpufreq: PM: calling platform_pm_suspend @ 7439, parent: platform
+[  375.666241] fedora kernel: platform acpi-cpufreq: PM: platform_pm_suspend returned 0 after 0 usecs
+[  375.666937] fedora kernel: pci 0000:02:00.0: PM: calling pci_pm_suspend @ 4464, parent: 0000:00:1d.3
+[  375.667765] fedora kernel: pci 0000:02:00.0: PM: pci_pm_suspend returned 0 after 0 usecs
+[  375.668538] fedora kernel: pcieport 0000:00:1d.0: PM: calling pci_pm_suspend @ 4462, parent: pci0000:00
+[  375.669356] fedora kernel: skl_uncore 0000:00:00.0: PM: calling pci_pm_suspend @ 4464, parent: pci0000:00
+[  375.670172] fedora kernel: pcieport 0000:00:1d.3: PM: calling pci_pm_suspend @ 91, parent: pci0000:00
+[  375.670962] fedora kernel: skl_uncore 0000:00:00.0: PM: pci_pm_suspend returned 0 after 0 usecs
+[  375.671774] fedora kernel: pcieport 0000:00:1d.3: PM: pci_pm_suspend returned 0 after 1 usecs
+[  375.672586] fedora kernel: pcieport 0000:00:1c.4: PM: calling pci_pm_suspend @ 4463, parent: pci0000:00
+[  375.673404] fedora kernel: regulator regulator.0: PM: calling regulator_suspend @ 7439, parent: reg-dummy
+[  375.674148] fedora kernel: regulator regulator.0: PM: regulator_suspend returned 0 after 0 usecs
+[  375.674838] fedora kernel: pcieport 0000:00:1d.0: PM: pci_pm_suspend returned 0 after 601 usecs
+[  375.675628] fedora kernel: pcieport 0000:00:1c.4: PM: pci_pm_suspend returned 0 after 575 usecs
+[  375.676406] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: pci_pm_suspend returned 0 after 25551 usecs
+[  375.677181] fedora kernel: i915 0000:00:02.0: PM: calling pci_pm_suspend @ 948, parent: pci0000:00
+[  375.677969] fedora kernel: i915 0000:00:02.0: PM: pci_pm_suspend returned 0 after 466 usecs
+[  375.678772] fedora kernel: usb usb2: PM: usb_dev_suspend returned 0 after 32073 usecs
+[  375.679599] fedora kernel: xhci_hcd 0000:00:14.0: PM: calling pci_pm_suspend @ 47, parent: pci0000:00
+[  375.680403] fedora kernel: xhci_hcd 0000:00:14.0: PM: pci_pm_suspend returned 0 after 115 usecs
+[  375.681182] fedora kernel: nvme 0000:01:00.0: PM: pci_pm_suspend returned 0 after 35732 usecs
+[  375.681930] fedora kernel: pcieport 0000:00:1c.0: PM: calling pci_pm_suspend @ 4460, parent: pci0000:00
+[  375.682748] fedora kernel: pcieport 0000:00:1c.0: PM: pci_pm_suspend returned 0 after 6 usecs
+[  375.683553] fedora kernel: PM: suspend of devices complete after 37.218 msecs
+[  375.683633] fedora kernel: PM: start suspend of devices complete after 92.674 msecs
+[  375.683730] fedora kernel: PM: suspend devices took 0.093 seconds
+[  375.683799] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: calling pci_pm_suspend_late @ 78, parent: pci0000:00
+[  375.684626] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.685431] fedora kernel: intel_pmc_core intel_pmc_core.0: PM: calling pmc_core_suspend [intel_pmc_core] @ 7439, parent: platform
+[  375.686130] fedora kernel: intel_pmc_core intel_pmc_core.0: PM: pmc_core_suspend [intel_pmc_core] returned 0 after 2 usecs
+[  375.686839] fedora kernel: i801_smbus 0000:00:1f.4: PM: calling pci_pm_suspend_late @ 4471, parent: pci0000:00
+[  375.687642] fedora kernel: i801_smbus 0000:00:1f.4: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.688473] fedora kernel: mei_me 0000:00:16.0: PM: calling pci_pm_suspend_late @ 4471, parent: pci0000:00
+[  375.689285] fedora kernel: mei_me 0000:00:16.0: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.690107] fedora kernel: applespi spi-APP000D:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: spi2
+[  375.690955] fedora kernel: i915 0000:00:02.0: PM: calling pci_pm_suspend_late @ 12, parent: pci0000:00
+[  375.691792] fedora kernel: applespi spi-APP000D:00: PM: acpi_subsys_suspend_late returned 0 after 23 usecs
+[  375.692643] fedora kernel: nvme 0000:01:00.0: PM: calling pci_pm_suspend_late @ 14, parent: 0000:00:1c.0
+[  375.693476] fedora kernel: nvme 0000:01:00.0: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.694305] fedora kernel: xhci_hcd 0000:00:14.0: PM: calling pci_pm_suspend_late @ 91, parent: pci0000:00
+[  375.695086] fedora kernel: intel-lpss 0000:00:1e.3: PM: calling pci_pm_suspend_late @ 4464, parent: pci0000:00
+[  375.695818] fedora kernel: xhci_hcd 0000:00:14.0: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.696601] fedora kernel: hci_uart_bcm serial1-0: PM: calling acpi_subsys_suspend_late @ 7439, parent: serial1
+[  375.697378] fedora kernel: intel-lpss 0000:00:1e.1: PM: calling pci_pm_suspend_late @ 4461, parent: pci0000:00
+[  375.698107] fedora kernel: hci_uart_bcm serial1-0: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.698875] fedora kernel: intel-lpss 0000:00:1e.0: PM: calling pci_pm_suspend_late @ 4468, parent: pci0000:00
+[  375.699626] fedora kernel: intel-lpss 0000:00:1e.3: PM: pci_pm_suspend_late returned 0 after 129 usecs
+[  375.700339] fedora kernel: acpi-button LNXPWRBN:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: platform
+[  375.701013] fedora kernel: intel-lpss 0000:00:19.0: PM: calling pci_pm_suspend_late @ 4464, parent: pci0000:00
+[  375.701753] fedora kernel: acpi-button LNXPWRBN:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.702425] fedora kernel: acpi-button PNP0C0E:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: platform
+[  375.702996] fedora kernel: acpi-button PNP0C0E:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.703576] fedora kernel: intel-lpss 0000:00:1e.1: PM: pci_pm_suspend_late returned 0 after 141 usecs
+[  375.704205] fedora kernel: acpi-button PNP0C0C:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: platform
+[  375.704705] fedora kernel: acpi-button PNP0C0C:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.705219] fedora kernel: acpi-button PNP0C0D:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: platform
+[  375.705705] fedora kernel: intel-lpss 0000:00:1e.0: PM: pci_pm_suspend_late returned 0 after 142 usecs
+[  375.706284] fedora kernel: acpi-button PNP0C0D:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.706895] fedora kernel: ac ACPI0003:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: platform
+[  375.707567] fedora kernel: ac ACPI0003:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.708244] fedora kernel: apple-ibridge APP7777:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: platform
+[  375.708908] fedora kernel: apple-ibridge APP7777:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.709543] fedora kernel: acpi-sbs ACPI0002:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: ACPI0001:00
+[  375.710142] fedora kernel: intel-lpss 0000:00:19.0: PM: pci_pm_suspend_late returned 0 after 80 usecs
+[  375.710674] fedora kernel: acpi-sbs ACPI0002:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.711291] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: PNP0C09:00
+[  375.712057] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.712723] fedora kernel: acpi-ec PNP0C09:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: 0000:00:1f.0
+[  375.713332] fedora kernel: acpi-ec PNP0C09:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.713912] fedora kernel: rtc_cmos PNP0B00:00: PM: calling acpi_subsys_suspend_late @ 7439, parent: 0000:00:1f.0
+[  375.714596] fedora kernel: rtc_cmos PNP0B00:00: PM: acpi_subsys_suspend_late returned 0 after 0 usecs
+[  375.715251] fedora kernel: pci 0000:00:1f.0: PM: calling pci_pm_suspend_late @ 4464, parent: pci0000:00
+[  375.715869] fedora kernel: pci 0000:00:1f.0: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.716518] fedora kernel: pci 0000:02:00.0: PM: calling pci_pm_suspend_late @ 91, parent: 0000:00:1d.3
+[  375.717144] fedora kernel: pcieport 0000:00:1d.0: PM: calling pci_pm_suspend_late @ 78, parent: pci0000:00
+[  375.717781] fedora kernel: pci 0000:02:00.0: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.718411] fedora kernel: pcieport 0000:00:1d.0: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.719044] fedora kernel: skl_uncore 0000:00:00.0: PM: calling pci_pm_suspend_late @ 91, parent: pci0000:00
+[  375.719555] fedora kernel: skl_uncore 0000:00:00.0: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.720083] fedora kernel: pcieport 0000:00:1c.4: PM: calling pci_pm_suspend_late @ 948, parent: pci0000:00
+[  375.720598] fedora kernel: pcieport 0000:00:1c.0: PM: calling pci_pm_suspend_late @ 4463, parent: pci0000:00
+[  375.721174] fedora kernel: pcieport 0000:00:1c.4: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.721802] fedora kernel: pcieport 0000:00:1c.0: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.722464] fedora kernel: pcieport 0000:00:1d.3: PM: calling pci_pm_suspend_late @ 4464, parent: pci0000:00
+[  375.723115] fedora kernel: pcieport 0000:00:1d.3: PM: pci_pm_suspend_late returned 0 after 0 usecs
+[  375.723651] fedora kernel: i915 0000:00:02.0: PM: pci_pm_suspend_late returned 0 after 6556 usecs
+[  375.724214] fedora kernel: PM: late suspend of devices complete after 7.150 msecs
+[  375.724255] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: calling pci_pm_suspend_noirq @ 12, parent: pci0000:00
+[  375.724799] fedora kernel: i801_smbus 0000:00:1f.4: PM: calling pci_pm_suspend_noirq @ 948, parent: pci0000:00
+[  375.725386] fedora kernel: mei_me 0000:00:16.0: PM: calling pci_pm_suspend_noirq @ 4465, parent: pci0000:00
+[  375.726022] fedora kernel: i801_smbus 0000:00:1f.4: PM: pci_pm_suspend_noirq returned 0 after 69 usecs
+[  375.726755] fedora kernel: applespi spi-APP000D:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: spi2
+[  375.727554] fedora kernel: applespi spi-APP000D:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.728335] fedora kernel: nvme 0000:01:00.0: PM: calling pci_pm_suspend_noirq @ 78, parent: 0000:00:1c.0
+[  375.729121] fedora kernel: xhci_hcd 0000:00:14.0: PM: calling pci_pm_suspend_noirq @ 4471, parent: pci0000:00
+[  375.729896] fedora kernel: hci_uart_bcm serial1-0: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: serial1
+[  375.731173] fedora kernel: intel-lpss 0000:00:1e.1: PM: calling pci_pm_suspend_noirq @ 47, parent: pci0000:00
+[  375.732462] fedora kernel: hci_uart_bcm serial1-0: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.733868] fedora kernel: acpi-button LNXPWRBN:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: platform
+[  375.735134] fedora kernel: acpi-button LNXPWRBN:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.736302] fedora kernel: acpi-button PNP0C0E:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: platform
+[  375.737494] fedora kernel: acpi-button PNP0C0E:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.738701] fedora kernel: acpi-button PNP0C0C:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: platform
+[  375.739897] fedora kernel: acpi-button PNP0C0C:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.740612] fedora kernel: acpi-button PNP0C0D:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: platform
+[  375.741261] fedora kernel: acpi-button PNP0C0D:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.741912] fedora kernel: ac ACPI0003:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: platform
+[  375.742579] fedora kernel: ac ACPI0003:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.743259] fedora kernel: apple-ibridge APP7777:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: platform
+[  375.743918] fedora kernel: apple-ibridge APP7777:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.744589] fedora kernel: acpi-sbs ACPI0002:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: ACPI0001:00
+[  375.745381] fedora kernel: acpi-sbs ACPI0002:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.746111] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: PNP0C09:00
+[  375.746838] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.747582] fedora kernel: acpi-ec PNP0C09:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: 0000:00:1f.0
+[  375.748273] fedora kernel: ACPI: EC: interrupt blocked
+[  375.748354] fedora kernel: acpi-ec PNP0C09:00: PM: acpi_subsys_suspend_noirq returned 0 after 2 usecs
+[  375.749079] fedora kernel: rtc_cmos PNP0B00:00: PM: calling acpi_subsys_suspend_noirq @ 7439, parent: 0000:00:1f.0
+[  375.749761] fedora kernel: rtc_cmos PNP0B00:00: PM: acpi_subsys_suspend_noirq returned 0 after 0 usecs
+[  375.750463] fedora kernel: intel-lpss 0000:00:1e.0: PM: calling pci_pm_suspend_noirq @ 4460, parent: pci0000:00
+[  375.751218] fedora kernel: intel-lpss 0000:00:19.0: PM: calling pci_pm_suspend_noirq @ 4468, parent: pci0000:00
+[  375.751966] fedora kernel: pci 0000:00:1f.0: PM: calling pci_pm_suspend_noirq @ 4463, parent: pci0000:00
+[  375.752703] fedora kernel: intel-lpss 0000:00:1e.3: PM: calling pci_pm_suspend_noirq @ 90, parent: pci0000:00
+[  375.753442] fedora kernel: pcieport 0000:00:1d.0: PM: calling pci_pm_suspend_noirq @ 4461, parent: pci0000:00
+[  375.754187] fedora kernel: pci 0000:00:1f.0: PM: pci_pm_suspend_noirq returned 0 after 101 usecs
+[  375.754911] fedora kernel: pci 0000:02:00.0: PM: calling pci_pm_suspend_noirq @ 4463, parent: 0000:00:1d.3
+[  375.755644] fedora kernel: skl_uncore 0000:00:00.0: PM: calling pci_pm_suspend_noirq @ 4462, parent: pci0000:00
+[  375.756402] fedora kernel: pcieport 0000:00:1c.4: PM: calling pci_pm_suspend_noirq @ 14, parent: pci0000:00
+[  375.757147] fedora kernel: skl_uncore 0000:00:00.0: PM: pci_pm_suspend_noirq returned 0 after 76 usecs
+[  375.757852] fedora kernel: pci 0000:02:00.0: PM: pci_pm_suspend_noirq returned 0 after 168 usecs
+[  375.758583] fedora kernel: pcieport 0000:00:1d.3: PM: calling pci_pm_suspend_noirq @ 948, parent: pci0000:00
+[  375.759341] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: pci_pm_suspend_noirq returned 0 after 12142 usecs
+[  375.760105] fedora kernel: i915 0000:00:02.0: PM: calling pci_pm_suspend_noirq @ 4464, parent: pci0000:00
+[  375.760879] fedora kernel: mei_me 0000:00:16.0: PM: pci_pm_suspend_noirq returned 0 after 12115 usecs
+[  375.761639] fedora kernel: intel-lpss 0000:00:1e.1: PM: pci_pm_suspend_noirq returned 0 after 12321 usecs
+[  375.762390] fedora kernel: intel-lpss 0000:00:1e.3: PM: pci_pm_suspend_noirq returned 0 after 12307 usecs
+[  375.763124] fedora kernel: nvme 0000:01:00.0: PM: pci_pm_suspend_noirq returned 0 after 12733 usecs
+[  375.763865] fedora kernel: pcieport 0000:00:1c.0: PM: calling pci_pm_suspend_noirq @ 91, parent: pci0000:00
+[  375.764618] fedora kernel: intel-lpss 0000:00:19.0: PM: pci_pm_suspend_noirq returned 0 after 12513 usecs
+[  375.765373] fedora kernel: pcieport 0000:00:1c.0: PM: pci_pm_suspend_noirq returned 0 after 41 usecs
+[  375.766104] fedora kernel: intel-lpss 0000:00:1e.0: PM: pci_pm_suspend_noirq returned 0 after 12559 usecs
+[  375.766825] fedora kernel: pcieport 0000:00:1d.3: PM: pci_pm_suspend_noirq returned 0 after 13529 usecs
+[  375.767550] fedora kernel: pcieport 0000:00:1d.0: PM: pci_pm_suspend_noirq returned 0 after 13766 usecs
+[  375.768304] fedora kernel: pcieport 0000:00:1c.4: PM: pci_pm_suspend_noirq returned 0 after 13680 usecs
+[  375.769039] fedora kernel: xhci_hcd 0000:00:14.0: PM: pci_pm_suspend_noirq returned 0 after 23726 usecs
+[  375.769782] fedora kernel: i915 0000:00:02.0: PM: pci_pm_suspend_noirq returned 0 after 14772 usecs
+[  375.770556] fedora kernel: PM: noirq suspend of devices complete after 27.354 msecs
+[  375.770628] fedora kernel: ACPI: PM: Preparing to enter system sleep state S3
+[  375.770724] fedora kernel: ACPI: EC: event blocked
+[  375.770792] fedora kernel: ACPI: EC: EC stopped
+[  375.770840] fedora kernel: ACPI: PM: Saving platform NVS memory
+[  375.770908] fedora kernel: Disabling non-boot CPUs ...
+[  375.770973] fedora kernel: smpboot: CPU 3 is now offline
+[  375.771052] fedora kernel: smpboot: CPU 2 is now offline
+[  375.771118] fedora kernel: smpboot: CPU 1 is now offline
+[  375.771169] fedora kernel: Checking wakeup interrupts
+[  375.771248] fedora kernel: Calling kvm_suspend+0x0/0x30 [kvm]
+[  375.771306] fedora kernel: Calling intel_epb_save+0x0/0x30
+[  375.771373] fedora kernel: Calling mce_syscore_suspend+0x0/0x40
+[  375.771423] fedora kernel: Calling timekeeping_syscore_suspend+0x0/0x10
+[  375.771489] fedora kernel: Calling ioapic_suspend+0x0/0x10
+[  375.771537] fedora kernel: Calling i8259A_suspend+0x0/0x30
+[  375.771591] fedora kernel: Calling fw_suspend+0x0/0x20
+[  375.771634] fedora kernel: Calling acpi_save_bm_rld+0x0/0x30
+[  375.771681] fedora kernel: Calling lapic_suspend+0x0/0x20
+[  375.771749] fedora kernel: ACPI: PM: Low-level resume complete
+[  375.771812] fedora kernel: ACPI: EC: EC started
+[  375.771875] fedora kernel: ACPI: PM: Restoring platform NVS memory
+[  375.771940] fedora kernel: Calling init_counter_refs+0x0/0x40
+[  375.772016] fedora kernel: Calling lapic_resume+0x0/0x20
+[  375.772083] fedora kernel: Calling acpi_restore_bm_rld+0x0/0x70
+[  375.772144] fedora kernel: Calling irqrouter_resume+0x0/0x90
+[  375.772198] fedora kernel: Calling i8259A_resume+0x0/0x40
+[  375.772266] fedora kernel: Calling ioapic_resume+0x0/0x170
+[  375.772333] fedora kernel: Calling irq_pm_syscore_resume+0x0/0x20
+[  375.772395] fedora kernel: Calling timekeeping_syscore_resume+0x0/0x10
+[  375.772460] fedora kernel: Timekeeping suspended for 117.982 seconds
+[  375.772526] fedora kernel: Calling mce_syscore_resume+0x0/0x50
+[  375.772587] fedora kernel: Calling intel_epb_restore+0x0/0x70
+[  375.772643] fedora kernel: Calling microcode_bsp_syscore_resume+0x0/0x10
+[  375.772690] fedora kernel: Calling kvm_resume+0x0/0x40 [kvm]
+[  375.772757] fedora kernel: Enabling non-boot CPUs ...
+[  375.772824] fedora kernel: smpboot: Booting Node 0 Processor 1 APIC 0x2
+[  375.772874] fedora kernel: CPU1 is up
+[  375.772927] fedora kernel: smpboot: Booting Node 0 Processor 2 APIC 0x1
+[  375.773015] fedora kernel: CPU2 is up
+[  375.773064] fedora kernel: smpboot: Booting Node 0 Processor 3 APIC 0x3
+[  375.773132] fedora kernel: CPU3 is up
+[  375.773196] fedora kernel: ACPI: PM: Waking up from system sleep state S3
+[  375.773255] fedora kernel: skl_uncore 0000:00:00.0: PM: calling pci_pm_resume_noirq @ 4466, parent: pci0000:00
+[  375.774025] fedora kernel: i915 0000:00:02.0: PM: calling pci_pm_resume_noirq @ 4464, parent: pci0000:00
+[  375.774810] fedora kernel: xhci_hcd 0000:00:14.0: PM: calling pci_pm_resume_noirq @ 4471, parent: pci0000:00
+[  375.775573] fedora kernel: skl_uncore 0000:00:00.0: PM: pci_pm_resume_noirq returned 0 after 14 usecs
+[  375.776334] fedora kernel: mei_me 0000:00:16.0: PM: calling pci_pm_resume_noirq @ 4466, parent: pci0000:00
+[  375.777084] fedora kernel: intel-lpss 0000:00:19.0: PM: calling pci_pm_resume_noirq @ 14, parent: pci0000:00
+[  375.777810] fedora kernel: pcieport 0000:00:1c.0: PM: calling pci_pm_resume_noirq @ 4461, parent: pci0000:00
+[  375.778555] fedora kernel: pcieport 0000:00:1c.4: PM: calling pci_pm_resume_noirq @ 948, parent: pci0000:00
+[  375.779293] fedora kernel: pcieport 0000:00:1d.0: PM: calling pci_pm_resume_noirq @ 4460, parent: pci0000:00
+[  375.780031] fedora kernel: pcieport 0000:00:1d.3: PM: calling pci_pm_resume_noirq @ 4468, parent: pci0000:00
+[  375.780758] fedora kernel: intel-lpss 0000:00:1e.0: PM: calling pci_pm_resume_noirq @ 91, parent: pci0000:00
+[  375.781529] fedora kernel: intel-lpss 0000:00:1e.1: PM: calling pci_pm_resume_noirq @ 78, parent: pci0000:00
+[  375.782278] fedora kernel: intel-lpss 0000:00:1e.3: PM: calling pci_pm_resume_noirq @ 90, parent: pci0000:00
+[  375.783023] fedora kernel: mei_me 0000:00:16.0: PM: pci_pm_resume_noirq returned 0 after 118 usecs
+[  375.783761] fedora kernel: pci 0000:00:1f.0: PM: calling pci_pm_resume_noirq @ 4466, parent: pci0000:00
+[  375.784509] fedora kernel: i801_smbus 0000:00:1f.4: PM: calling pci_pm_resume_noirq @ 4465, parent: pci0000:00
+[  375.785260] fedora kernel: pci 0000:00:1f.0: PM: pci_pm_resume_noirq returned 0 after 262 usecs
+[  375.785982] fedora kernel: rtc_cmos PNP0B00:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: 0000:00:1f.0
+[  375.786674] fedora kernel: rtc_cmos PNP0B00:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.787401] fedora kernel: i801_smbus 0000:00:1f.4: PM: pci_pm_resume_noirq returned 0 after 276 usecs
+[  375.788143] fedora kernel: acpi-ec PNP0C09:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: 0000:00:1f.0
+[  375.788836] fedora kernel: ACPI: EC: interrupt unblocked
+[  375.788922] fedora kernel: pcieport 0000:00:1c.0: PM: pci_pm_resume_noirq returned 0 after 422 usecs
+[  375.789659] fedora kernel: acpi-ec PNP0C09:00: PM: acpi_subsys_resume_noirq returned 0 after 12 usecs
+[  375.790379] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: PNP0C09:00
+[  375.791109] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.791843] fedora kernel: nvme 0000:01:00.0: PM: calling pci_pm_resume_noirq @ 12, parent: 0000:00:1c.0
+[  375.792621] fedora kernel: acpi-sbs ACPI0002:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: ACPI0001:00
+[  375.793356] fedora kernel: acpi-sbs ACPI0002:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.794100] fedora kernel: apple-ibridge APP7777:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: platform
+[  375.794762] fedora kernel: apple-ibridge APP7777:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.795437] fedora kernel: ac ACPI0003:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: platform
+[  375.796133] fedora kernel: ac ACPI0003:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.796804] fedora kernel: acpi-button PNP0C0D:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: platform
+[  375.797469] fedora kernel: acpi-button PNP0C0D:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.798142] fedora kernel: acpi-button PNP0C0C:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: platform
+[  375.798795] fedora kernel: acpi-button PNP0C0C:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.799463] fedora kernel: acpi-button PNP0C0E:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: platform
+[  375.800121] fedora kernel: acpi-button PNP0C0E:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.800772] fedora kernel: acpi-button LNXPWRBN:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: platform
+[  375.801459] fedora kernel: acpi-button LNXPWRBN:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.802129] fedora kernel: nvme 0000:01:00.0: PM: pci_pm_resume_noirq returned 0 after 91 usecs
+[  375.802870] fedora kernel: pcieport 0000:00:1c.4: PM: pci_pm_resume_noirq returned 0 after 1351 usecs
+[  375.803639] fedora kernel: pcieport 0000:00:1d.0: PM: pci_pm_resume_noirq returned 0 after 1360 usecs
+[  375.804399] fedora kernel: pcieport 0000:00:1d.3: PM: pci_pm_resume_noirq returned 0 after 1354 usecs
+[  375.805141] fedora kernel: pci 0000:02:00.0: PM: calling pci_pm_resume_noirq @ 4463, parent: 0000:00:1d.3
+[  375.805858] fedora kernel: pci 0000:02:00.0: PM: pci_pm_resume_noirq returned 0 after 117 usecs
+[  375.806588] fedora kernel: xhci_hcd 0000:00:14.0: PM: pci_pm_resume_noirq returned 0 after 11551 usecs
+[  375.807357] fedora kernel: intel-lpss 0000:00:19.0: PM: pci_pm_resume_noirq returned 0 after 11688 usecs
+[  375.808087] fedora kernel: intel-lpss 0000:00:1e.0: PM: pci_pm_resume_noirq returned 0 after 11636 usecs
+[  375.808808] fedora kernel: intel-lpss 0000:00:1e.3: PM: pci_pm_resume_noirq returned 0 after 11653 usecs
+[  375.809555] fedora kernel: hci_uart_bcm serial1-0: PM: calling acpi_subsys_resume_noirq @ 7439, parent: serial1
+[  375.810363] fedora kernel: hci_uart_bcm serial1-0: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.811201] fedora kernel: i915 0000:00:02.0: PM: pci_pm_resume_noirq returned 0 after 11793 usecs
+[  375.811975] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: calling pci_pm_resume_noirq @ 47, parent: pci0000:00
+[  375.812731] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: pci_pm_resume_noirq returned 0 after 49 usecs
+[  375.813489] fedora kernel: intel-lpss 0000:00:1e.1: PM: pci_pm_resume_noirq returned 0 after 12327 usecs
+[  375.814246] fedora kernel: applespi spi-APP000D:00: PM: calling acpi_subsys_resume_noirq @ 7439, parent: spi2
+[  375.815028] fedora kernel: applespi spi-APP000D:00: PM: acpi_subsys_resume_noirq returned 0 after 0 usecs
+[  375.815787] fedora kernel: PM: noirq resume of devices complete after 12.742 msecs
+[  375.815870] fedora kernel: i915 0000:00:02.0: PM: calling pci_pm_resume_early @ 90, parent: pci0000:00
+[  375.816643] fedora kernel: skl_uncore 0000:00:00.0: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.817362] fedora kernel: skl_uncore 0000:00:00.0: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.818102] fedora kernel: xhci_hcd 0000:00:14.0: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.818866] fedora kernel: xhci_hcd 0000:00:14.0: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.819631] fedora kernel: mei_me 0000:00:16.0: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.820375] fedora kernel: mei_me 0000:00:16.0: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.821091] fedora kernel: intel-lpss 0000:00:19.0: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.821821] fedora kernel: intel-lpss 0000:00:19.0: PM: pci_pm_resume_early returned 0 after 3 usecs
+[  375.822568] fedora kernel: pcieport 0000:00:1c.0: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.823334] fedora kernel: pcieport 0000:00:1c.0: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.824084] fedora kernel: pcieport 0000:00:1c.4: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.824830] fedora kernel: pcieport 0000:00:1c.4: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.825583] fedora kernel: pcieport 0000:00:1d.0: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.826338] fedora kernel: pcieport 0000:00:1d.0: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.827082] fedora kernel: pcieport 0000:00:1d.3: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.827802] fedora kernel: pcieport 0000:00:1d.3: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.828551] fedora kernel: intel-lpss 0000:00:1e.0: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.829329] fedora kernel: intel-lpss 0000:00:1e.0: PM: pci_pm_resume_early returned 0 after 2 usecs
+[  375.830058] fedora kernel: intel-lpss 0000:00:1e.1: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.830775] fedora kernel: intel-lpss 0000:00:1e.1: PM: pci_pm_resume_early returned 0 after 2 usecs
+[  375.831522] fedora kernel: intel-lpss 0000:00:1e.3: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.832264] fedora kernel: intel-lpss 0000:00:1e.3: PM: pci_pm_resume_early returned 0 after 2 usecs
+[  375.832974] fedora kernel: pci 0000:00:1f.0: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.833728] fedora kernel: pci 0000:00:1f.0: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.834481] fedora kernel: i801_smbus 0000:00:1f.4: PM: calling pci_pm_resume_early @ 47, parent: pci0000:00
+[  375.835242] fedora kernel: rtc_cmos PNP0B00:00: PM: calling acpi_subsys_resume_early @ 7439, parent: 0000:00:1f.0
+[  375.835942] fedora kernel: i801_smbus 0000:00:1f.4: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.836680] fedora kernel: rtc_cmos PNP0B00:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.837380] fedora kernel: nvme 0000:01:00.0: PM: calling pci_pm_resume_early @ 47, parent: 0000:00:1c.0
+[  375.838151] fedora kernel: acpi-ec PNP0C09:00: PM: calling acpi_subsys_resume_early @ 7439, parent: 0000:00:1f.0
+[  375.838834] fedora kernel: nvme 0000:01:00.0: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.839592] fedora kernel: acpi-ec PNP0C09:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.840285] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: calling acpi_subsys_resume_early @ 7439, parent: PNP0C09:00
+[  375.841035] fedora kernel: pci 0000:02:00.0: PM: calling pci_pm_resume_early @ 47, parent: 0000:00:1d.3
+[  375.842378] fedora kernel: pci 0000:02:00.0: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.843716] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.845147] fedora kernel: acpi-sbs ACPI0002:00: PM: calling acpi_subsys_resume_early @ 7439, parent: ACPI0001:00
+[  375.846591] fedora kernel: acpi-sbs ACPI0002:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.848063] fedora kernel: apple-ibridge APP7777:00: PM: calling acpi_subsys_resume_early @ 7439, parent: platform
+[  375.849374] fedora kernel: apple-ibridge APP7777:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.850616] fedora kernel: ac ACPI0003:00: PM: calling acpi_subsys_resume_early @ 7439, parent: platform
+[  375.851862] fedora kernel: ac ACPI0003:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.853112] fedora kernel: acpi-button PNP0C0D:00: PM: calling acpi_subsys_resume_early @ 7439, parent: platform
+[  375.854365] fedora kernel: acpi-button PNP0C0D:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.855610] fedora kernel: acpi-button PNP0C0C:00: PM: calling acpi_subsys_resume_early @ 7439, parent: platform
+[  375.856905] fedora kernel: acpi-button PNP0C0C:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.858175] fedora kernel: acpi-button PNP0C0E:00: PM: calling acpi_subsys_resume_early @ 7439, parent: platform
+[  375.859295] fedora kernel: acpi-button PNP0C0E:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.860024] fedora kernel: acpi-button LNXPWRBN:00: PM: calling acpi_subsys_resume_early @ 7439, parent: platform
+[  375.860754] fedora kernel: acpi-button LNXPWRBN:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.861504] fedora kernel: hci_uart_bcm serial1-0: PM: calling acpi_subsys_resume_early @ 7439, parent: serial1
+[  375.862400] fedora kernel: hci_uart_bcm serial1-0: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.863264] fedora kernel: applespi spi-APP000D:00: PM: calling acpi_subsys_resume_early @ 7439, parent: spi2
+[  375.864124] fedora kernel: applespi spi-APP000D:00: PM: acpi_subsys_resume_early returned 0 after 0 usecs
+[  375.864928] fedora kernel: i915 0000:00:02.0: PM: pci_pm_resume_early returned 0 after 843 usecs
+[  375.865782] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: calling pci_pm_resume_early @ 78, parent: pci0000:00
+[  375.866597] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: pci_pm_resume_early returned 0 after 0 usecs
+[  375.867417] fedora kernel: intel_pmc_core intel_pmc_core.0: PM: calling pmc_core_resume [intel_pmc_core] @ 7439, parent: platform
+[  375.868092] fedora kernel: intel_pmc_core intel_pmc_core.0: PM: pmc_core_resume [intel_pmc_core] returned 0 after 0 usecs
+[  375.868656] fedora kernel: PM: early resume of devices complete after 1.187 msecs
+[  375.868718] fedora kernel: skl_uncore 0000:00:00.0: PM: calling pci_pm_resume @ 78, parent: pci0000:00
+[  375.869371] fedora kernel: i915 0000:00:02.0: PM: calling pci_pm_resume @ 90, parent: pci0000:00
+[  375.870020] fedora kernel: skl_uncore 0000:00:00.0: PM: pci_pm_resume returned 0 after 0 usecs
+[  375.870534] fedora kernel: xhci_hcd 0000:00:14.0: PM: calling pci_pm_resume @ 4464, parent: pci0000:00
+[  375.871060] fedora kernel: mei_me 0000:00:16.0: PM: calling pci_pm_resume @ 78, parent: pci0000:00
+[  375.871864] fedora kernel: regulator regulator.0: PM: calling regulator_resume @ 7439, parent: reg-dummy
+[  375.872571] fedora kernel: regulator regulator.0: PM: regulator_resume returned 0 after 1 usecs
+[  375.873143] fedora kernel: platform acpi-cpufreq: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.873732] fedora kernel: platform acpi-cpufreq: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.874454] fedora kernel: intel-lpss 0000:00:19.0: PM: calling pci_pm_resume @ 47, parent: pci0000:00
+[  375.875131] fedora kernel: xhci_hcd 0000:00:14.0: PM: pci_pm_resume returned 0 after 782 usecs
+[  375.875652] fedora kernel: intel-lpss 0000:00:19.0: PM: pci_pm_resume returned 0 after 1 usecs
+[  375.876191] fedora kernel: pcieport 0000:00:1c.4: PM: calling pci_pm_resume @ 47, parent: pci0000:00
+[  375.876713] fedora kernel: pcieport 0000:00:1c.0: PM: calling pci_pm_resume @ 4464, parent: pci0000:00
+[  375.877347] fedora kernel: pcieport 0000:00:1c.4: PM: pci_pm_resume returned 0 after 12 usecs
+[  375.877983] fedora kernel: pcieport 0000:00:1d.0: PM: calling pci_pm_resume @ 91, parent: pci0000:00
+[  375.878608] fedora kernel: pcieport 0000:00:1c.0: PM: pci_pm_resume returned 0 after 15 usecs
+[  375.879254] fedora kernel: pcieport 0000:00:1d.3: PM: calling pci_pm_resume @ 47, parent: pci0000:00
+[  375.879866] fedora kernel: pcieport 0000:00:1d.3: PM: pci_pm_resume returned 0 after 1 usecs
+[  375.880584] fedora kernel: intel-lpss 0000:00:1e.0: PM: calling pci_pm_resume @ 4464, parent: pci0000:00
+[  375.881231] fedora kernel: intel-lpss 0000:00:1e.0: PM: pci_pm_resume returned 0 after 0 usecs
+[  375.881875] fedora kernel: intel-lpss 0000:00:1e.1: PM: calling pci_pm_resume @ 47, parent: pci0000:00
+[  375.882508] fedora kernel: intel-lpss 0000:00:1e.1: PM: pci_pm_resume returned 0 after 0 usecs
+[  375.883097] fedora kernel: intel-lpss 0000:00:1e.3: PM: calling pci_pm_resume @ 4464, parent: pci0000:00
+[  375.883607] fedora kernel: intel-lpss 0000:00:1e.3: PM: pci_pm_resume returned 0 after 0 usecs
+[  375.884141] fedora kernel: pci 0000:00:1f.0: PM: calling pci_pm_resume @ 47, parent: pci0000:00
+[  375.884764] fedora kernel: pci 0000:00:1f.0: PM: pci_pm_resume returned 0 after 0 usecs
+[  375.885411] fedora kernel: pcieport 0000:00:1d.0: PM: pci_pm_resume returned 0 after 17 usecs
+[  375.886086] fedora kernel: i801_smbus 0000:00:1f.4: PM: calling pci_pm_resume @ 91, parent: pci0000:00
+[  375.886723] fedora kernel: nvme 0000:01:00.0: PM: calling pci_pm_resume @ 4468, parent: 0000:00:1c.0
+[  375.887385] fedora kernel: pci 0000:02:00.0: PM: calling pci_pm_resume @ 47, parent: 0000:00:1d.3
+[  375.888009] fedora kernel: i801_smbus 0000:00:1f.4: PM: pci_pm_resume returned 0 after 3 usecs
+[  375.888643] fedora kernel: pci 0000:02:00.0: PM: pci_pm_resume returned 0 after 0 usecs
+[  375.889227] fedora kernel: nvme 0000:01:00.0: PM: pci_pm_resume returned 0 after 2 usecs
+[  375.889754] fedora kernel: usb usb1: PM: calling usb_dev_resume @ 91, parent: 0000:00:14.0
+[  375.890311] fedora kernel: usb usb2: PM: calling usb_dev_resume @ 47, parent: 0000:00:14.0
+[  375.890822] fedora kernel: platform INT0800:00: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1f.0
+[  375.891334] fedora kernel: platform INT0800:00: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.891828] fedora kernel: platform PNP0C04:00: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1f.0
+[  375.892335] fedora kernel: platform PNP0C04:00: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.892818] fedora kernel: rtc_cmos PNP0B00:00: PM: calling acpi_subsys_resume @ 7439, parent: 0000:00:1f.0
+[  375.893315] fedora kernel: rtc_cmos PNP0B00:00: PM: acpi_subsys_resume returned 0 after 749 usecs
+[  375.893810] fedora kernel: platform APP0001:00: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1f.0
+[  375.894353] fedora kernel: platform APP0001:00: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.894850] fedora kernel: acpi-ec PNP0C09:00: PM: calling acpi_subsys_resume @ 7439, parent: 0000:00:1f.0
+[  375.895355] fedora kernel: ACPI: EC: event unblocked
+[  375.895386] fedora kernel: acpi-ec PNP0C09:00: PM: acpi_subsys_resume returned 0 after 187 usecs
+[  375.895876] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: calling acpi_subsys_resume @ 7439, parent: PNP0C09:00
+[  375.896407] fedora kernel: acpi-smbus-hc ACPI0001:00: PM: acpi_subsys_resume returned 0 after 0 usecs
+[  375.896932] fedora kernel: acpi-sbs ACPI0002:00: PM: calling acpi_subsys_resume @ 7439, parent: ACPI0001:00
+[  375.897479] fedora kernel: acpi-sbs ACPI0002:00: PM: acpi_subsys_resume returned 0 after 1 usecs
+[  375.898036] fedora kernel: apple-ibridge APP7777:00: PM: calling acpi_subsys_resume @ 7439, parent: platform
+[  375.898524] fedora kernel: apple-ibridge APP7777:00: PM: acpi_subsys_resume returned 0 after 0 usecs
+[  375.899039] fedora kernel: ac ACPI0003:00: PM: calling acpi_subsys_resume @ 7439, parent: platform
+[  375.899530] fedora kernel: ac ACPI0003:00: PM: acpi_subsys_resume returned 0 after 58 usecs
+[  375.899992] fedora kernel: acpi-button PNP0C0D:00: PM: calling acpi_subsys_resume @ 7439, parent: platform
+[  375.900457] fedora kernel: i915 0000:00:02.0: vgaarb: VGA decodes changed: olddecodes=io,decodes=io:owns=io+mem
+[  375.900984] fedora kernel: mei_me 0000:00:16.0: PM: pci_pm_resume returned 0 after 2411 usecs
+[  375.901538] fedora kernel: nvme nvme0: 1/0/0 default/read/poll queues
+[  375.901973] fedora kernel: acpi-button PNP0C0D:00: PM: acpi_subsys_resume returned 0 after 4893 usecs
+[  375.902476] fedora kernel: acpi-button PNP0C0C:00: PM: calling acpi_subsys_resume @ 7439, parent: platform
+[  375.902946] fedora kernel: acpi-button PNP0C0C:00: PM: acpi_subsys_resume returned 0 after 60 usecs
+[  375.903440] fedora kernel: platform APP0002:00: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.903910] fedora kernel: platform APP0002:00: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.904398] fedora kernel: acpi-button PNP0C0E:00: PM: calling acpi_subsys_resume @ 7439, parent: platform
+[  375.904871] fedora kernel: acpi-button PNP0C0E:00: PM: acpi_subsys_resume returned 0 after 0 usecs
+[  375.905364] fedora kernel: acpi-button LNXPWRBN:00: PM: calling acpi_subsys_resume @ 7439, parent: platform
+[  375.905832] fedora kernel: acpi-button LNXPWRBN:00: PM: acpi_subsys_resume returned 0 after 10 usecs
+[  375.906342] fedora kernel: platform rtc-efi.0: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.906812] fedora kernel: platform rtc-efi.0: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.907293] fedora kernel: platform efivars.0: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.907763] fedora kernel: platform efivars.0: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.908285] fedora kernel: pcspkr pcspkr: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.908766] fedora kernel: pcspkr pcspkr: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.909257] fedora kernel: input input0: PM: calling input_dev_resume @ 7439, parent: PNP0C0D:00
+[  375.909803] fedora kernel: input input0: PM: input_dev_resume returned 0 after 2 usecs
+[  375.910373] fedora kernel: input input1: PM: calling input_dev_resume @ 7439, parent: PNP0C0C:00
+[  375.910926] fedora kernel: input input1: PM: input_dev_resume returned 0 after 0 usecs
+[  375.911466] fedora kernel: input input2: PM: calling input_dev_resume @ 7439, parent: PNP0C0E:00
+[  375.912012] fedora kernel: input input2: PM: input_dev_resume returned 0 after 0 usecs
+[  375.912558] fedora kernel: input input3: PM: calling input_dev_resume @ 7439, parent: LNXPWRBN:00
+[  375.913127] fedora kernel: input input3: PM: input_dev_resume returned 0 after 0 usecs
+[  375.913655] fedora kernel: serial8250 serial8250: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.914163] fedora kernel: serial8250 serial8250: PM: platform_pm_resume returned 0 after 6 usecs
+[  375.914638] fedora kernel: port serial8250:0.0: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.915160] fedora kernel: port serial8250:0.0: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.915642] fedora kernel: port serial8250:0.1: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.916144] fedora kernel: port serial8250:0.1: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.916611] fedora kernel: port serial8250:0.2: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.917085] fedora kernel: port serial8250:0.2: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.917586] fedora kernel: port serial8250:0.3: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.918099] fedora kernel: port serial8250:0.3: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.918576] fedora kernel: port serial8250:0.7: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.919051] fedora kernel: port serial8250:0.7: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.919526] fedora kernel: port serial8250:0.8: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.920031] fedora kernel: port serial8250:0.8: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.920509] fedora kernel: port serial8250:0.9: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.920998] fedora kernel: port serial8250:0.9: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.921493] fedora kernel: port serial8250:0.10: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.921977] fedora kernel: port serial8250:0.10: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.922492] fedora kernel: port serial8250:0.11: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.922979] fedora kernel: port serial8250:0.11: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.923482] fedora kernel: port serial8250:0.12: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.923963] fedora kernel: port serial8250:0.12: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.924441] fedora kernel: port serial8250:0.13: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.924920] fedora kernel: port serial8250:0.13: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.925412] fedora kernel: port serial8250:0.14: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.925887] fedora kernel: port serial8250:0.14: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.926391] fedora kernel: port serial8250:0.15: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.926869] fedora kernel: port serial8250:0.15: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.927361] fedora kernel: port serial8250:0.16: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.927839] fedora kernel: port serial8250:0.16: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.928337] fedora kernel: port serial8250:0.17: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.928838] fedora kernel: port serial8250:0.17: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.929329] fedora kernel: port serial8250:0.18: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.929818] fedora kernel: port serial8250:0.18: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.930303] fedora kernel: port serial8250:0.19: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.930777] fedora kernel: port serial8250:0.19: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.931272] fedora kernel: port serial8250:0.20: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.931749] fedora kernel: port serial8250:0.20: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.932233] fedora kernel: port serial8250:0.21: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.932715] fedora kernel: port serial8250:0.21: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.933206] fedora kernel: port serial8250:0.22: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.933687] fedora kernel: port serial8250:0.22: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.934204] fedora kernel: port serial8250:0.23: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.934697] fedora kernel: port serial8250:0.23: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.935204] fedora kernel: port serial8250:0.24: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.935684] fedora kernel: port serial8250:0.24: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.936176] fedora kernel: port serial8250:0.25: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.936656] fedora kernel: port serial8250:0.25: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.937137] fedora kernel: port serial8250:0.26: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.937627] fedora kernel: port serial8250:0.26: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.938108] fedora kernel: port serial8250:0.27: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.938584] fedora kernel: port serial8250:0.27: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.939087] fedora kernel: port serial8250:0.28: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.939574] fedora kernel: port serial8250:0.28: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.940071] fedora kernel: port serial8250:0.29: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.940557] fedora kernel: port serial8250:0.29: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.941050] fedora kernel: port serial8250:0.30: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.941536] fedora kernel: port serial8250:0.30: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.942027] fedora kernel: port serial8250:0.31: PM: calling pm_runtime_force_resume @ 7439, parent: serial8250:0
+[  375.942528] fedora kernel: port serial8250:0.31: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.943011] fedora kernel: kgdboc kgdboc: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.943493] fedora kernel: kgdboc kgdboc: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.943962] fedora kernel: dw-apb-uart dw-apb-uart.0: PM: calling platform_pm_resume @ 7439, parent: 0000:00:19.0
+[  375.944468] fedora kernel: dw-apb-uart dw-apb-uart.0: PM: platform_pm_resume returned 0 after 4 usecs
+[  375.944964] fedora kernel: port dw-apb-uart.0:0.0: PM: calling pm_runtime_force_resume @ 7439, parent: dw-apb-uart.0:0
+[  375.945490] fedora kernel: port dw-apb-uart.0:0.0: PM: pm_runtime_force_resume returned 0 after 2 usecs
+[  375.945990] fedora kernel: idma64 idma64.1: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1e.0
+[  375.946505] fedora kernel: idma64 idma64.1: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.946982] fedora kernel: dw-apb-uart dw-apb-uart.1: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1e.0
+[  375.947489] fedora kernel: dw-apb-uart dw-apb-uart.1: PM: platform_pm_resume returned 0 after 204 usecs
+[  375.947976] fedora kernel: port dw-apb-uart.1:0.0: PM: calling pm_runtime_force_resume @ 7439, parent: dw-apb-uart.1:0
+[  375.948495] fedora kernel: port dw-apb-uart.1:0.0: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.949122] fedora kernel: hci_uart_bcm serial1-0: PM: calling acpi_subsys_resume @ 7439, parent: serial1
+[  375.950809] fedora kernel: i915 0000:00:02.0: PM: pci_pm_resume returned 0 after 10508 usecs
+[  375.952343] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: calling pci_pm_resume @ 4464, parent: pci0000:00
+[  375.953834] fedora kernel: usb usb2: PM: usb_dev_resume returned 0 after 21975 usecs
+[  375.955238] fedora kernel: snd_hda_intel 0000:00:1f.3: PM: pci_pm_resume returned 0 after 13024 usecs
+[  375.956592] fedora kernel: hci_uart_bcm serial1-0: PM: acpi_subsys_resume returned 0 after 15527 usecs
+[  375.958289] fedora kernel: idma64 idma64.2: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1e.1
+[  375.959678] fedora kernel: idma64 idma64.2: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.961125] fedora kernel: dw-apb-uart dw-apb-uart.2: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1e.1
+[  375.962588] fedora kernel: dw-apb-uart dw-apb-uart.2: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.963802] fedora kernel: port dw-apb-uart.2:0.0: PM: calling pm_runtime_force_resume @ 7439, parent: dw-apb-uart.2:0
+[  375.964367] fedora kernel: port dw-apb-uart.2:0.0: PM: pm_runtime_force_resume returned 0 after 0 usecs
+[  375.964862] fedora kernel: idma64 idma64.3: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1e.3
+[  375.965364] fedora kernel: idma64 idma64.3: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.965839] fedora kernel: pxa2xx-spi pxa2xx-spi.3: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1e.3
+[  375.966355] fedora kernel: pxa2xx-spi pxa2xx-spi.3: PM: platform_pm_resume returned 0 after 4 usecs
+[  375.966849] fedora kernel: intel_xhci_usb_sw intel_xhci_usb_sw: PM: calling platform_pm_resume @ 7439, parent: 0000:00:14.0
+[  375.967348] fedora kernel: intel_xhci_usb_sw intel_xhci_usb_sw: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.967842] fedora kernel: rtc rtc0: PM: calling rtc_resume @ 7439, parent: PNP0B00:00
+[  375.968281] fedora kernel: rtc rtc0: PM: rtc_resume returned 0 after 0 usecs
+[  375.968701] fedora kernel: alarmtimer alarmtimer.0.auto: PM: calling platform_pm_resume @ 7439, parent: rtc0
+[  375.969278] fedora kernel: alarmtimer alarmtimer.0.auto: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.969833] fedora kernel: applespi spi-APP000D:00: PM: calling acpi_subsys_resume @ 7439, parent: spi2
+[  375.970406] fedora kernel: applespi spi-APP000D:00: PM: acpi_subsys_resume returned 0 after 530 usecs
+[  375.970980] fedora kernel: input input6: PM: calling input_dev_resume @ 7439, parent: spi-APP000D:00
+[  375.971655] fedora kernel: input input6: PM: input_dev_resume returned 0 after 0 usecs
+[  375.972320] fedora kernel: leds input6::capslock: PM: calling led_resume @ 7439, parent: input6
+[  375.972924] fedora kernel: leds input6::capslock: PM: led_resume returned 0 after 0 usecs
+[  375.973527] fedora kernel: leds spi::kbd_backlight: PM: calling led_resume @ 7439, parent: spi-APP000D:00
+[  375.974141] fedora kernel: leds spi::kbd_backlight: PM: led_resume returned 0 after 0 usecs
+[  375.974723] fedora kernel: input input7: PM: calling input_dev_resume @ 7439, parent: spi-APP000D:00
+[  375.975385] fedora kernel: input input7: PM: input_dev_resume returned 0 after 0 usecs
+[  375.976054] fedora kernel: input input8: PM: calling input_dev_resume @ 7439, parent: acpi.video_bus.0
+[  375.976585] fedora kernel: input input8: PM: input_dev_resume returned 0 after 0 usecs
+[  375.977126] fedora kernel: backlight acpi_video0: PM: calling backlight_resume @ 7439, parent: 0000:00:02.0
+[  375.977655] fedora kernel: backlight acpi_video0: PM: backlight_resume returned 0 after 0 usecs
+[  375.978173] fedora kernel: applespi spi-APP000D:00: modeswitch done.
+[  375.978729] fedora kernel: usb usb1: PM: usb_dev_resume returned 0 after 103964 usecs
+[  375.979241] fedora kernel: usb 1-3: PM: calling usb_dev_resume @ 77, parent: usb1
+[  375.979750] fedora kernel: usb 1-3: reset high-speed USB device number 2 using xhci_hcd
+[  375.980295] fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+[  375.980895] fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+[  375.981461] fedora kernel: usb 1-3: PM: usb_dev_resume returned 0 after 263281 usecs
+[  375.981971] fedora kernel: input input9: PM: calling input_dev_resume @ 7439, parent: 0003:1D6B:0301.0007
+[  375.982760] fedora kernel: input input9: PM: input_dev_resume returned 0 after 0 usecs
+[  375.983541] fedora kernel: hid_sensor_als HID-SENSOR-200041.1.auto: PM: calling platform_pm_resume @ 7439, parent: 0003:1D6B:0302.0009
+[  375.984162] fedora kernel: hid_sensor_als HID-SENSOR-200041.1.auto: PM: platform_pm_resume returned 0 after 5 usecs
+[  375.984764] fedora kernel: platform HID-SENSOR-ff120001.2.auto: PM: calling platform_pm_resume @ 7439, parent: 0003:1D6B:0302.0009
+[  375.985385] fedora kernel: platform HID-SENSOR-ff120001.2.auto: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.985976] fedora kernel: input input10: PM: calling input_dev_resume @ 7439, parent: pcspkr
+[  375.986543] fedora kernel: input input10: PM: input_dev_resume returned 0 after 171 usecs
+[  375.987092] fedora kernel: applesmc applesmc.768: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.987568] fedora kernel: applesmc applesmc.768: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.988059] fedora kernel: rfkill rfkill1: PM: calling rfkill_resume [rfkill] @ 7439, parent: hci0
+[  375.988705] fedora kernel: rfkill rfkill1: PM: rfkill_resume [rfkill] returned 0 after 2 usecs
+[  375.989343] fedora kernel: platform iTCO_wdt: PM: calling platform_pm_resume @ 7439, parent: 0000:00:1f.4
+[  375.989834] fedora kernel: platform iTCO_wdt: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.990348] fedora kernel: platform coretemp.0: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.990803] fedora kernel: platform coretemp.0: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.991291] fedora kernel: intel_pmc_core intel_pmc_core.0: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.991777] fedora kernel: intel_pmc_core intel_pmc_core.0: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.992286] fedora kernel: intel_rapl_msr intel_rapl_msr.0: PM: calling platform_pm_resume @ 7439, parent: platform
+[  375.992767] fedora kernel: intel_rapl_msr intel_rapl_msr.0: PM: platform_pm_resume returned 0 after 0 usecs
+[  375.993263] fedora kernel: input input11: PM: calling input_dev_resume @ 7439, parent: card0
+[  375.993825] fedora kernel: input input11: PM: input_dev_resume returned 0 after 0 usecs
+[  375.994414] fedora kernel: input input12: PM: calling input_dev_resume @ 7439, parent: card0
+[  375.994964] fedora kernel: input input12: PM: input_dev_resume returned 0 after 0 usecs
+[  375.995554] fedora kernel: input input13: PM: calling input_dev_resume @ 7439, parent: card0
+[  375.996145] fedora kernel: input input13: PM: input_dev_resume returned 0 after 0 usecs
+[  375.996679] fedora kernel: input input14: PM: calling input_dev_resume @ 7439, parent: card0
+[  375.997246] fedora kernel: input input14: PM: input_dev_resume returned 0 after 0 usecs
+[  375.997774] fedora kernel: input input15: PM: calling input_dev_resume @ 7439, parent: card0
+[  375.998339] fedora kernel: input input15: PM: input_dev_resume returned 0 after 0 usecs
+[  375.998877] fedora kernel: PM: resume of devices complete after 368.924 msecs
+[  375.998936] fedora kernel: GFP mask restored
+[  375.998978] fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0: resume after system sleep: re-running Apple CS8409 boot setup
+[  375.999487] fedora kernel: PM: resume devices took 0.369 seconds
+[  375.999525] fedora kernel: OOM killer enabled.
+[  375.999560] fedora kernel: Restarting tasks: Starting
+[  375.999586] fedora kernel: Restarting tasks: Done
+[  375.999619] fedora kernel: efivarfs: resyncing variable state
+[  376.046019] fedora kernel: efivarfs: finished resyncing variable state
+[  376.046096] fedora kernel: random: crng reseeded on system resumption
+[  376.046187] fedora kernel: acpi LNXVIDEO:00: Restoring backlight state
+[  376.047117] fedora kernel: PM: suspend exit
+[  376.118129] fedora kernel: macbook_t1_socw: evaluating SOCW(1)
+[  376.205155] fedora kernel: macbook_t1_socw: SOCW(1) sent T1 wake, result 0
+[  376.231096] fedora kernel: pci 0000:03:00.0: [8086:1578] type 01 class 0x060400 PCIe Switch Upstream Port
+[  376.232428] fedora kernel: pci 0000:03:00.0: PCI bridge to [bus 00]
+[  376.233560] fedora kernel: pci 0000:03:00.0:   bridge window [io  0x0000-0x0fff]
+[  376.234641] fedora kernel: pci 0000:03:00.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.235651] fedora kernel: pci 0000:03:00.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.236664] fedora kernel: pci 0000:03:00.0: enabling Extended Tags
+[  376.237679] fedora kernel: pci 0000:03:00.0: supports D1 D2
+[  376.238675] fedora kernel: pci 0000:03:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.239613] fedora kernel: pci 0000:03:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.240700] fedora kernel: pci 0000:04:00.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[  376.241852] fedora kernel: pci 0000:04:00.0: PCI bridge to [bus 00]
+[  376.242887] fedora kernel: pci 0000:04:00.0:   bridge window [io  0x0000-0x0fff]
+[  376.243973] fedora kernel: pci 0000:04:00.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.245141] fedora kernel: pci 0000:04:00.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.246094] fedora kernel: pci 0000:04:00.0: enabling Extended Tags
+[  376.247218] fedora kernel: pci 0000:04:00.0: supports D1 D2
+[  376.248154] fedora kernel: pci 0000:04:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.249228] fedora kernel: pci 0000:04:01.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[  376.250976] fedora kernel: pci 0000:04:01.0: PCI bridge to [bus 00]
+[  376.255913] fedora kernel: pci 0000:04:01.0:   bridge window [io  0x0000-0x0fff]
+[  376.257376] fedora kernel: pci 0000:04:01.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.268084] fedora kernel: pci 0000:04:01.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.273060] fedora kernel: pci 0000:04:01.0: enabling Extended Tags
+[  376.274123] fedora kernel: pci 0000:04:01.0: supports D1 D2
+[  376.287321] fedora kernel: pci 0000:04:01.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.289255] fedora kernel: pci 0000:04:02.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[  376.299149] fedora kernel: pci 0000:04:02.0: PCI bridge to [bus 00]
+[  376.302197] fedora kernel: pci 0000:04:02.0:   bridge window [io  0x0000-0x0fff]
+[  376.306081] fedora kernel: pci 0000:04:02.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.307299] fedora kernel: pci 0000:04:02.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.308424] fedora kernel: pci 0000:04:02.0: enabling Extended Tags
+[  376.309838] fedora kernel: pci 0000:04:02.0: supports D1 D2
+[  376.310917] fedora kernel: pci 0000:04:02.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.312295] fedora kernel: pci 0000:04:04.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[  376.314973] fedora kernel: pci 0000:04:04.0: PCI bridge to [bus 00]
+[  376.317932] fedora kernel: pci 0000:04:04.0:   bridge window [io  0x0000-0x0fff]
+[  376.319159] fedora kernel: pci 0000:04:04.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.321032] fedora kernel: pci 0000:04:04.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.322318] fedora kernel: pci 0000:04:04.0: enabling Extended Tags
+[  376.323569] fedora kernel: pci 0000:04:04.0: supports D1 D2
+[  376.324794] fedora kernel: pci 0000:04:04.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.326118] fedora kernel: pci 0000:03:00.0: PCI bridge to [bus 04-78]
+[  376.327327] fedora kernel: pci 0000:04:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.328443] fedora kernel: pci 0000:04:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.329652] fedora kernel: pci 0000:04:02.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.330897] fedora kernel: pci 0000:04:04.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.332123] fedora kernel: pci 0000:05:00.0: [8086:15d2] type 00 class 0x088000 PCIe Endpoint
+[  376.333473] fedora kernel: pci 0000:05:00.0: BAR 0 [mem 0x00000000-0x0003ffff]
+[  376.335364] fedora kernel: pci 0000:05:00.0: BAR 1 [mem 0x00000000-0x00000fff]
+[  376.339739] fedora kernel: pci 0000:05:00.0: enabling Extended Tags
+[  376.340983] fedora kernel: pci 0000:05:00.0: supports D1 D2
+[  376.342439] fedora kernel: pci 0000:05:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.343473] fedora kernel: pci 0000:04:00.0: PCI bridge to [bus 05-78]
+[  376.345158] fedora kernel: pci_bus 0000:05: busn_res: [bus 05-78] end is updated to 05
+[  376.347106] fedora kernel: pci 0000:04:01.0: PCI bridge to [bus 06-78]
+[  376.350302] fedora kernel: pci_bus 0000:06: busn_res: [bus 06-78] end is updated to 2b
+[  376.351435] fedora kernel: pci 0000:2c:00.0: [8086:15d4] type 00 class 0x0c0330 PCIe Endpoint
+[  376.352765] fedora kernel: pci 0000:2c:00.0: BAR 0 [mem 0x00000000-0x0000ffff]
+[  376.354896] fedora kernel: pci 0000:2c:00.0: enabling Extended Tags
+[  376.361309] fedora kernel: pci 0000:2c:00.0: supports D1 D2
+[  376.363728] fedora kernel: pci 0000:2c:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.367409] fedora kernel: pci 0000:04:02.0: PCI bridge to [bus 2c-78]
+[  376.368869] fedora kernel: pci_bus 0000:2c: busn_res: [bus 2c-78] end is updated to 51
+[  376.369863] fedora kernel: pci 0000:04:04.0: PCI bridge to [bus 52-78]
+[  376.371217] fedora kernel: pci_bus 0000:52: busn_res: [bus 52-78] end is updated to 77
+[  376.375435] fedora kernel: pci_bus 0000:04: busn_res: [bus 04-78] end is updated to 77
+[  376.376959] fedora kernel: pci 0000:79:00.0: [8086:1578] type 01 class 0x060400 PCIe Switch Upstream Port
+[  376.380415] fedora kernel: pci 0000:79:00.0: PCI bridge to [bus 00]
+[  376.385128] fedora kernel: pci 0000:79:00.0:   bridge window [io  0x0000-0x0fff]
+[  376.387552] fedora kernel: pci 0000:79:00.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.389230] fedora kernel: pci 0000:79:00.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.390945] fedora kernel: pci 0000:79:00.0: enabling Extended Tags
+[  376.392108] fedora kernel: pci 0000:79:00.0: supports D1 D2
+[  376.393436] fedora kernel: pci 0000:79:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.395251] fedora kernel: pci 0000:79:00.0: 15.752 Gb/s available PCIe bandwidth, limited by 8.0 GT/s PCIe x2 link at 0000:00:1d.0 (capable of 31.504 Gb/s with 8.0 GT/s PCIe x4 link)
+[  376.396551] fedora kernel: pci 0000:79:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.397892] fedora kernel: pci 0000:7a:00.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[  376.399301] fedora kernel: pci 0000:7a:00.0: PCI bridge to [bus 00]
+[  376.400537] fedora kernel: pci 0000:7a:00.0:   bridge window [io  0x0000-0x0fff]
+[  376.401899] fedora kernel: pci 0000:7a:00.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.403254] fedora kernel: pci 0000:7a:00.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.404579] fedora kernel: pci 0000:7a:00.0: enabling Extended Tags
+[  376.405826] fedora kernel: pci 0000:7a:00.0: supports D1 D2
+[  376.407519] fedora kernel: pci 0000:7a:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.408676] fedora kernel: pci 0000:7a:01.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[  376.409833] fedora kernel: pci 0000:7a:01.0: PCI bridge to [bus 00]
+[  376.412247] fedora kernel: pci 0000:7a:01.0:   bridge window [io  0x0000-0x0fff]
+[  376.413337] fedora kernel: pci 0000:7a:01.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.414438] fedora kernel: pci 0000:7a:01.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.415698] fedora kernel: pci 0000:7a:01.0: enabling Extended Tags
+[  376.417030] fedora kernel: pci 0000:7a:01.0: supports D1 D2
+[  376.418318] fedora kernel: pci 0000:7a:01.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.419641] fedora kernel: pci 0000:7a:02.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[  376.420991] fedora kernel: pci 0000:7a:02.0: PCI bridge to [bus 00]
+[  376.422240] fedora kernel: pci 0000:7a:02.0:   bridge window [io  0x0000-0x0fff]
+[  376.423289] fedora kernel: pci 0000:7a:02.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.424557] fedora kernel: pci 0000:7a:02.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.425834] fedora kernel: pci 0000:7a:02.0: enabling Extended Tags
+[  376.427050] fedora kernel: pci 0000:7a:02.0: supports D1 D2
+[  376.428700] fedora kernel: pci 0000:7a:02.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.430090] fedora kernel: pci 0000:7a:04.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[  376.431373] fedora kernel: pci 0000:7a:04.0: PCI bridge to [bus 00]
+[  376.435047] fedora kernel: pci 0000:7a:04.0:   bridge window [io  0x0000-0x0fff]
+[  376.436716] fedora kernel: pci 0000:7a:04.0:   bridge window [mem 0x00000000-0x000fffff]
+[  376.439947] fedora kernel: pci 0000:7a:04.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[  376.459196] fedora kernel: pci 0000:7a:04.0: enabling Extended Tags
+[  376.470993] fedora kernel: pci 0000:7a:04.0: supports D1 D2
+[  376.472765] fedora kernel: pci 0000:7a:04.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.476272] fedora kernel: pci 0000:79:00.0: PCI bridge to [bus 7a-ee]
+[  376.484250] fedora kernel: pci 0000:7a:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.486678] fedora kernel: pci 0000:7a:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.491987] fedora kernel: pci 0000:7a:02.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.500485] fedora kernel: pci 0000:7a:04.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[  376.506925] fedora kernel: pci 0000:7b:00.0: [8086:15d2] type 00 class 0x088000 PCIe Endpoint
+[  376.509904] fedora kernel: pci 0000:7b:00.0: BAR 0 [mem 0x00000000-0x0003ffff]
+[  376.512346] fedora kernel: pci 0000:7b:00.0: BAR 1 [mem 0x00000000-0x00000fff]
+[  376.524941] fedora kernel: pci 0000:7b:00.0: enabling Extended Tags
+[  376.529462] fedora kernel: pci 0000:7b:00.0: supports D1 D2
+[  376.530362] fedora kernel: pci 0000:7b:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.533980] fedora kernel: pci 0000:7a:00.0: PCI bridge to [bus 7b-ee]
+[  376.535459] fedora kernel: pci_bus 0000:7b: busn_res: [bus 7b-ee] end is updated to 7b
+[  376.537148] fedora kernel: pci 0000:7a:01.0: PCI bridge to [bus 7c-ee]
+[  376.540700] fedora kernel: pci_bus 0000:7c: busn_res: [bus 7c-ee] end is updated to a1
+[  376.542034] fedora kernel: pci 0000:a2:00.0: [8086:15d4] type 00 class 0x0c0330 PCIe Endpoint
+[  376.544767] fedora kernel: pci 0000:a2:00.0: BAR 0 [mem 0x00000000-0x0000ffff]
+[  376.546059] fedora kernel: pci 0000:a2:00.0: enabling Extended Tags
+[  376.548410] fedora kernel: pci 0000:a2:00.0: supports D1 D2
+[  376.550634] fedora kernel: pci 0000:a2:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[  376.552357] fedora kernel: pci 0000:7a:02.0: PCI bridge to [bus a2-ee]
+[  376.553768] fedora kernel: pci_bus 0000:a2: busn_res: [bus a2-ee] end is updated to c7
+[  376.558097] fedora kernel: pci 0000:7a:04.0: PCI bridge to [bus c8-ee]
+[  376.563470] fedora kernel: pci_bus 0000:c8: busn_res: [bus c8-ee] end is updated to ed
+[  376.565065] fedora kernel: pci_bus 0000:7a: busn_res: [bus 7a-ee] end is updated to ed
+[  376.571443] fedora kernel: pci 0000:04:00.0: disabling bridge window [mem 0x00000000-0x000fffff 64bit pref] to [bus 05] (unused)
+[  376.574188] fedora kernel: pci 0000:04:01.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 06-2b] add_size 200000 add_align 100000
+[  376.575586] fedora kernel: pci 0000:04:01.0: bridge window [mem 0x00100000-0x000fffff] to [bus 06-2b] add_size 200000 add_align 100000
+[  376.576965] fedora kernel: pci 0000:04:02.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 2c-51] add_size 200000 add_align 100000
+[  376.578346] fedora kernel: pci 0000:04:02.0: bridge window [mem 0x00100000-0x001fffff] to [bus 2c-51] add_size 100000 add_align 100000
+[  376.579525] fedora kernel: pci 0000:04:04.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 52-77] add_size 200000 add_align 100000
+[  376.580751] fedora kernel: pci 0000:04:04.0: bridge window [mem 0x00100000-0x000fffff] to [bus 52-77] add_size 200000 add_align 100000
+[  376.582161] fedora kernel: pci 0000:03:00.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 04-77] add_size 600000 add_align 100000
+[  376.583325] fedora kernel: pci 0000:03:00.0: bridge window [mem 0x00100000-0x002fffff] to [bus 04-77] add_size 500000 add_align 100000
+[  376.584762] fedora kernel: pci 0000:7a:00.0: disabling bridge window [mem 0x00000000-0x000fffff 64bit pref] to [bus 7b] (unused)
+[  376.586158] fedora kernel: pci 0000:7a:01.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 7c-a1] add_size 200000 add_align 100000
+[  376.589426] fedora kernel: pci 0000:7a:01.0: bridge window [mem 0x00100000-0x000fffff] to [bus 7c-a1] add_size 200000 add_align 100000
+[  376.594405] fedora kernel: pci 0000:7a:02.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus a2-c7] add_size 200000 add_align 100000
+[  376.595499] fedora kernel: pci 0000:7a:02.0: bridge window [mem 0x00100000-0x001fffff] to [bus a2-c7] add_size 100000 add_align 100000
+[  376.600187] fedora kernel: pci 0000:7a:04.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus c8-ed] add_size 200000 add_align 100000
+[  376.605082] fedora kernel: pci 0000:7a:04.0: bridge window [mem 0x00100000-0x000fffff] to [bus c8-ed] add_size 200000 add_align 100000
+[  376.609039] fedora kernel: pci 0000:79:00.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 7a-ed] add_size 600000 add_align 100000
+[  376.611478] fedora kernel: pci 0000:79:00.0: bridge window [mem 0x00100000-0x002fffff] to [bus 7a-ed] add_size 500000 add_align 100000
+[  376.612769] fedora kernel: pci 0000:03:00.0: bridge window [mem 0x82700000-0x82dfffff]: assigned
+[  376.613967] fedora kernel: pci 0000:03:00.0: bridge window [mem 0xb0000000-0xb05fffff 64bit pref]: assigned
+[  376.614795] fedora kernel: pci 0000:03:00.0: bridge window [io  0x4000-0x7fff]: assigned
+[  376.618970] fedora kernel: pci 0000:04:00.0: bridge window [mem 0x82700000-0x827fffff]: assigned
+[  376.624781] fedora kernel: pci 0000:04:01.0: bridge window [mem 0x82800000-0x829fffff]: assigned
+[  376.629404] fedora kernel: pci 0000:04:01.0: bridge window [mem 0xb0000000-0xb01fffff 64bit pref]: assigned
+[  376.632115] fedora kernel: pci 0000:04:02.0: bridge window [mem 0x82a00000-0x82bfffff]: assigned
+[  376.634873] fedora kernel: pci 0000:04:02.0: bridge window [mem 0xb0200000-0xb03fffff 64bit pref]: assigned
+[  376.638589] fedora kernel: pci 0000:04:04.0: bridge window [mem 0x82c00000-0x82dfffff]: assigned
+[  376.643294] fedora kernel: pci 0000:04:04.0: bridge window [mem 0xb0400000-0xb05fffff 64bit pref]: assigned
+[  376.646110] fedora kernel: pci 0000:04:00.0: bridge window [io  0x4000-0x4fff]: assigned
+[  376.653454] fedora kernel: pci 0000:04:01.0: bridge window [io  0x5000-0x5fff]: assigned
+[  376.658058] fedora kernel: pci 0000:04:02.0: bridge window [io  0x6000-0x6fff]: assigned
+[  376.661942] fedora kernel: pci 0000:04:04.0: bridge window [io  0x7000-0x7fff]: assigned
+[  376.665092] fedora kernel: pci 0000:05:00.0: BAR 0 [mem 0x82700000-0x8273ffff]: assigned
+[  376.666561] fedora kernel: pci 0000:05:00.0: BAR 1 [mem 0x82740000-0x82740fff]: assigned
+[  376.667997] fedora kernel: pci 0000:04:00.0: PCI bridge to [bus 05]
+[  376.669541] fedora kernel: pci 0000:04:00.0:   bridge window [io  0x4000-0x4fff]
+[  376.671152] fedora kernel: pci 0000:04:00.0:   bridge window [mem 0x82700000-0x827fffff]
+[  376.672635] fedora kernel: pci 0000:04:01.0: PCI bridge to [bus 06-2b]
+[  376.674135] fedora kernel: pci 0000:04:01.0:   bridge window [io  0x5000-0x5fff]
+[  376.675571] fedora kernel: pci 0000:04:01.0:   bridge window [mem 0x82800000-0x829fffff]
+[  376.677126] fedora kernel: pci 0000:04:01.0:   bridge window [mem 0xb0000000-0xb01fffff 64bit pref]
+[  376.678505] fedora kernel: pci 0000:2c:00.0: BAR 0 [mem 0x82a00000-0x82a0ffff]: assigned
+[  376.679965] fedora kernel: pci 0000:04:02.0: PCI bridge to [bus 2c-51]
+[  376.681398] fedora kernel: pci 0000:04:02.0:   bridge window [io  0x6000-0x6fff]
+[  376.682919] fedora kernel: pci 0000:04:02.0:   bridge window [mem 0x82a00000-0x82bfffff]
+[  376.688134] fedora kernel: pci 0000:04:02.0:   bridge window [mem 0xb0200000-0xb03fffff 64bit pref]
+[  376.689554] fedora kernel: pci 0000:04:04.0: PCI bridge to [bus 52-77]
+[  376.695709] fedora kernel: pci 0000:04:04.0:   bridge window [io  0x7000-0x7fff]
+[  376.701790] fedora kernel: pci 0000:04:04.0:   bridge window [mem 0x82c00000-0x82dfffff]
+[  376.707553] fedora kernel: pci 0000:04:04.0:   bridge window [mem 0xb0400000-0xb05fffff 64bit pref]
+[  376.708901] fedora kernel: pci 0000:03:00.0: PCI bridge to [bus 04-77]
+[  376.710332] fedora kernel: pci 0000:03:00.0:   bridge window [io  0x4000-0x7fff]
+[  376.711676] fedora kernel: pci 0000:03:00.0:   bridge window [mem 0x82700000-0x82dfffff]
+[  376.713020] fedora kernel: pci 0000:03:00.0:   bridge window [mem 0xb0000000-0xb05fffff 64bit pref]
+[  376.714731] fedora kernel: pci 0000:79:00.0: bridge window [mem 0x90900000-0x90ffffff]: assigned
+[  376.716226] fedora kernel: pci 0000:79:00.0: bridge window [mem 0xbe000000-0xbe5fffff 64bit pref]: assigned
+[  376.717884] fedora kernel: pci 0000:79:00.0: bridge window [io  0x8000-0xbfff]: assigned
+[  376.719312] fedora kernel: pci 0000:7a:00.0: bridge window [mem 0x90900000-0x909fffff]: assigned
+[  376.720742] fedora kernel: pci 0000:7a:01.0: bridge window [mem 0x90a00000-0x90bfffff]: assigned
+[  376.722472] fedora kernel: pci 0000:7a:01.0: bridge window [mem 0xbe000000-0xbe1fffff 64bit pref]: assigned
+[  376.724891] fedora kernel: pci 0000:7a:02.0: bridge window [mem 0x90c00000-0x90dfffff]: assigned
+[  376.729410] fedora kernel: pci 0000:7a:02.0: bridge window [mem 0xbe200000-0xbe3fffff 64bit pref]: assigned
+[  376.731144] fedora kernel: pci 0000:7a:04.0: bridge window [mem 0x90e00000-0x90ffffff]: assigned
+[  376.733417] fedora kernel: pci 0000:7a:04.0: bridge window [mem 0xbe400000-0xbe5fffff 64bit pref]: assigned
+[  376.734946] fedora kernel: pci 0000:7a:00.0: bridge window [io  0x8000-0x8fff]: assigned
+[  376.736461] fedora kernel: pci 0000:7a:01.0: bridge window [io  0x9000-0x9fff]: assigned
+[  376.737905] fedora kernel: pci 0000:7a:02.0: bridge window [io  0xa000-0xafff]: assigned
+[  376.739353] fedora kernel: pci 0000:7a:04.0: bridge window [io  0xb000-0xbfff]: assigned
+[  376.740784] fedora kernel: pci 0000:7b:00.0: BAR 0 [mem 0x90900000-0x9093ffff]: assigned
+[  376.742270] fedora kernel: pci 0000:7b:00.0: BAR 1 [mem 0x90940000-0x90940fff]: assigned
+[  376.744325] fedora kernel: pci 0000:7a:00.0: PCI bridge to [bus 7b]
+[  376.745681] fedora kernel: pci 0000:7a:00.0:   bridge window [io  0x8000-0x8fff]
+[  376.747097] fedora kernel: pci 0000:7a:00.0:   bridge window [mem 0x90900000-0x909fffff]
+[  376.748444] fedora kernel: pci 0000:7a:01.0: PCI bridge to [bus 7c-a1]
+[  376.749785] fedora kernel: pci 0000:7a:01.0:   bridge window [io  0x9000-0x9fff]
+[  376.751536] fedora kernel: pci 0000:7a:01.0:   bridge window [mem 0x90a00000-0x90bfffff]
+[  376.753304] fedora kernel: pci 0000:7a:01.0:   bridge window [mem 0xbe000000-0xbe1fffff 64bit pref]
+[  376.755536] fedora kernel: pci 0000:a2:00.0: BAR 0 [mem 0x90c00000-0x90c0ffff]: assigned
+[  376.757543] fedora kernel: pci 0000:7a:02.0: PCI bridge to [bus a2-c7]
+[  376.758885] fedora kernel: pci 0000:7a:02.0:   bridge window [io  0xa000-0xafff]
+[  376.760311] fedora kernel: pci 0000:7a:02.0:   bridge window [mem 0x90c00000-0x90dfffff]
+[  376.761702] fedora kernel: pci 0000:7a:02.0:   bridge window [mem 0xbe200000-0xbe3fffff 64bit pref]
+[  376.763099] fedora kernel: pci 0000:7a:04.0: PCI bridge to [bus c8-ed]
+[  376.764472] fedora kernel: pci 0000:7a:04.0:   bridge window [io  0xb000-0xbfff]
+[  376.765977] fedora kernel: pci 0000:7a:04.0:   bridge window [mem 0x90e00000-0x90ffffff]
+[  376.767544] fedora kernel: pci 0000:7a:04.0:   bridge window [mem 0xbe400000-0xbe5fffff 64bit pref]
+[  376.768945] fedora kernel: pci 0000:79:00.0: PCI bridge to [bus 7a-ed]
+[  376.770457] fedora kernel: pci 0000:79:00.0:   bridge window [io  0x8000-0xbfff]
+[  376.772503] fedora kernel: pci 0000:79:00.0:   bridge window [mem 0x90900000-0x90ffffff]
+[  376.774150] fedora kernel: pci 0000:79:00.0:   bridge window [mem 0xbe000000-0xbe5fffff 64bit pref]
+[  376.775719] fedora kernel: pcieport 0000:03:00.0: enabling device (0000 -> 0003)
+[  376.777124] fedora kernel: pcieport 0000:04:00.0: enabling device (0000 -> 0003)
+[  376.778561] fedora kernel: pcieport 0000:04:01.0: enabling device (0000 -> 0003)
+[  376.779856] fedora kernel: pcieport 0000:04:01.0: pciehp: Slot #1 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[  376.781284] fedora kernel: pcieport 0000:04:02.0: enabling device (0000 -> 0003)
+[  376.783483] fedora kernel: pcieport 0000:04:02.0: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[  376.784911] fedora kernel: pcieport 0000:04:04.0: enabling device (0000 -> 0003)
+[  376.788072] fedora kernel: pcieport 0000:04:04.0: pciehp: Slot #4 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[  376.789806] fedora kernel: thunderbolt 0000:05:00.0: enabling device (0000 -> 0002)
+[  376.791212] fedora kernel: thunderbolt 0000:05:00.0: device links to tunneled native ports are missing!
+[  376.792530] fedora kernel: pci 0000:2c:00.0: enabling device (0000 -> 0002)
+[  376.793852] fedora kernel: xhci_hcd 0000:2c:00.0: xHCI Host Controller
+[  376.795135] fedora kernel: xhci_hcd 0000:2c:00.0: new USB bus registered, assigned bus number 3
+[  376.796363] fedora kernel: xhci_hcd 0000:2c:00.0: hcc params 0x200077c1 hci version 0x110 quirks 0x0000000200009810
+[  376.797612] fedora kernel: xhci_hcd 0000:2c:00.0: xHCI Host Controller
+[  376.798886] fedora kernel: xhci_hcd 0000:2c:00.0: new USB bus registered, assigned bus number 4
+[  376.800173] fedora kernel: xhci_hcd 0000:2c:00.0: Host supports USB 3.1 Enhanced SuperSpeed
+[  376.801434] fedora kernel: usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 7.02
+[  376.803081] fedora kernel: usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[  376.804430] fedora kernel: usb usb3: Product: xHCI Host Controller
+[  376.805681] fedora kernel: usb usb3: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[  376.806964] fedora kernel: usb usb3: SerialNumber: 0000:2c:00.0
+[  376.808320] fedora kernel: hub 3-0:1.0: USB hub found
+[  376.810090] fedora kernel: hub 3-0:1.0: 2 ports detected
+[  376.811454] fedora kernel: usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 7.02
+[  376.812926] fedora kernel: usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[  376.814289] fedora kernel: usb usb4: Product: xHCI Host Controller
+[  376.815600] fedora kernel: usb usb4: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[  376.816818] fedora kernel: usb usb4: SerialNumber: 0000:2c:00.0
+[  376.817996] fedora kernel: hub 4-0:1.0: USB hub found
+[  376.819331] fedora kernel: hub 4-0:1.0: 2 ports detected
+[  376.820600] fedora kernel: pcieport 0000:79:00.0: enabling device (0000 -> 0003)
+[  376.821710] fedora kernel: pcieport 0000:7a:00.0: enabling device (0000 -> 0003)
+[  376.822846] fedora kernel: pcieport 0000:7a:01.0: enabling device (0000 -> 0003)
+[  376.823954] fedora kernel: pcieport 0000:7a:01.0: pciehp: Slot #1 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[  376.825139] fedora kernel: pcieport 0000:7a:02.0: enabling device (0000 -> 0003)
+[  376.826401] fedora kernel: pcieport 0000:7a:02.0: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[  376.827671] fedora kernel: pcieport 0000:7a:04.0: enabling device (0000 -> 0003)
+[  376.828968] fedora kernel: pcieport 0000:7a:04.0: pciehp: Slot #4 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[  376.830236] fedora kernel: thunderbolt 0000:7b:00.0: enabling device (0000 -> 0002)
+[  376.831475] fedora kernel: thunderbolt 0000:7b:00.0: device links to tunneled native ports are missing!
+[  376.832743] fedora kernel: pci 0000:a2:00.0: enabling device (0000 -> 0002)
+[  376.834909] fedora kernel: xhci_hcd 0000:a2:00.0: xHCI Host Controller
+[  376.836272] fedora kernel: xhci_hcd 0000:a2:00.0: new USB bus registered, assigned bus number 5
+[  376.838228] fedora kernel: xhci_hcd 0000:a2:00.0: hcc params 0x200077c1 hci version 0x110 quirks 0x0000000200009810
+[  376.839968] fedora kernel: xhci_hcd 0000:a2:00.0: xHCI Host Controller
+[  376.841571] fedora kernel: xhci_hcd 0000:a2:00.0: new USB bus registered, assigned bus number 6
+[  376.843147] fedora kernel: xhci_hcd 0000:a2:00.0: Host supports USB 3.1 Enhanced SuperSpeed
+[  376.844544] fedora kernel: usb usb5: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 7.02
+[  376.846746] fedora kernel: usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[  376.848493] fedora kernel: usb usb5: Product: xHCI Host Controller
+[  376.849989] fedora kernel: usb usb5: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[  376.851800] fedora kernel: usb usb5: SerialNumber: 0000:a2:00.0
+[  376.853158] fedora kernel: hub 5-0:1.0: USB hub found
+[  376.855257] fedora kernel: hub 5-0:1.0: 2 ports detected
+[  376.857221] fedora kernel: usb usb6: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 7.02
+[  376.859061] fedora kernel: usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[  376.860719] fedora kernel: usb usb6: Product: xHCI Host Controller
+[  376.862074] fedora kernel: usb usb6: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[  376.863514] fedora kernel: usb usb6: SerialNumber: 0000:a2:00.0
+[  376.864876] fedora kernel: hub 6-0:1.0: USB hub found
+[  376.866712] fedora kernel: hub 6-0:1.0: 2 ports detected
+[  376.875080] fedora kernel: brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43602-pcie for chip BCM43602/2
+[  377.210096] fedora kernel: brcmfmac: brcmf_c_process_clm_blob: no clm_blob available (err=-2), device may have limited channels available
+[  377.210338] fedora kernel: brcmfmac: brcmf_c_process_txcap_blob: no txcap_blob available (err=-2)
+[  377.210436] fedora kernel: brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43602/2 wl0: Nov 10 2015 06:38:10 version 7.35.177.61 (r598657) FWID 01-ea662a8c
+[  377.351046] fedora kernel: brcmfmac 0000:02:00.0 wlp2s0: renamed from wlan0
+[  382.188227] fedora kernel: ieee80211 phy4: brcmf_inetaddr_changed: fail to get arp ip table err:-52

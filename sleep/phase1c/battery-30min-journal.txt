@@ -1,0 +1,35 @@
+Nov 01 13:21:08.403863 fedora systemd-logind[906]: Lid closed.
+Nov 01 13:21:09.692583 fedora gnome-shell[2710]: Cursor update failed: drmModeAtomicCommit: Invalid argument
+Nov 01 13:21:10.451508 fedora macbook-sleep[7623]: pre: mem_sleep: s2idle [deep]
+Nov 01 13:21:10.572975 fedora macbook-sleep[7644]: pre: NVMe 0000:01:00.0 d3cold_allowed=0
+Nov 01 13:21:11.365893 fedora macbook-sleep[7672]: pre: unbound Wi-Fi 0000:02:00.0
+Nov 01 13:21:12.457044 fedora macbook-sleep[7869]: pre: XHC1 wake was enabled, now disabled
+Nov 01 13:21:12.468148 fedora macbook-sleep[7871]: pre: acpi wake enabled: ARPT(S4) SPIT(S3) LID0(S4)
+Nov 01 13:21:12.524325 fedora kernel: macbook_t1_socw: SOCW(0) sent T1 sleep, result 0
+Nov 01 13:21:12.535035 fedora macbook-sleep[7875]: pre: SOCW(0) ok (ok=7 failed=0)
+Nov 01 13:21:12.539707 fedora macbook-sleep[7876]: pre: done
+Nov 01 13:21:12.612501 fedora kernel: PM: suspend entry (deep)
+Nov 01 13:45:23.393156 fedora systemd-logind[906]: Lid opened.
+Nov 01 13:45:23.420702 fedora kernel: ACPI: PM: Waking up from system sleep state S3
+Nov 01 13:45:23.445841 fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+Nov 01 13:45:23.458532 fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+Nov 01 13:45:23.947886 fedora kernel: PM: suspend exit
+Nov 01 13:45:23.953465 fedora gnome-shell[2710]: libinput error: event0  - Lid Switch: client bug: event processing lagging behind by 899ms, your system is too slow
+Nov 01 13:45:24.086809 fedora kernel: macbook_t1_socw: SOCW(1) sent T1 wake, result 0
+Nov 01 13:45:24.105257 fedora macbook-sleep[7900]: post: SOCW(1) ok (ok=8 failed=0)
+Nov 01 13:45:24.137599 fedora kernel: pci 0000:03:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.270929 fedora kernel: pci 0000:04:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.273303 fedora kernel: pci 0000:04:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.280486 fedora kernel: pci 0000:04:02.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.282761 fedora kernel: pci 0000:04:04.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.350766 fedora kernel: pci 0000:79:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.442959 fedora kernel: pci 0000:7a:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.444209 fedora kernel: pci 0000:7a:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.445542 fedora kernel: pci 0000:7a:02.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.446817 fedora kernel: pci 0000:7a:04.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Nov 01 13:45:24.536032 fedora thunderbolt-remove-rescan[7936]: post/suspend: tree back after attempt 1 (~0 ms): xhci=3 pci=32 links: 0000:00:1c.4=8.0 GT/s PCIe 0000:00:1d.0=8.0 GT/s PCIe
+Nov 01 13:45:24.652269 fedora macbook-sleep[7937]: post: rebound Wi-Fi 0000:02:00.0
+Nov 01 13:45:24.673490 fedora macbook-sleep[7945]: post: XHC1 wake enabled; pm_wakeup_irq=
+Nov 01 13:45:25.687701 fedora macbook-sleep[7971]: post: Touch Bar mode re-sent via /sys/bus/hid/drivers/apple-touchbar/0003:1D6B:0301.0007 (idle_timeout -2 -> 300)
+Nov 01 13:45:25.692443 fedora macbook-sleep[7972]: post: done
+Nov 01 13:45:30.264466 fedora gdm-password][7951]: gkr-pam: the password for the login keyring was invalid.

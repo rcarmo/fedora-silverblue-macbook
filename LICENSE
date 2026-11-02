@@ -1,0 +1,33 @@
+This repository mixes original work and third-party material.
+
+1. Original scripts, hooks, configuration files and documentation (everything not listed below):
+   MIT License
+
+   Copyright (c) 2026 the contributors of this repository
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+   associated documentation files (the "Software"), to deal in the Software without restriction,
+   including without limitation the rights to use, copy, modify, merge, publish, distribute,
+   sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in all copies or
+   substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+   NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+   NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
+   OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+2. Kernel driver sources and patches - GPL-2.0 (see the LICENSE / SPDX headers in each tree):
+   packaging/sources/, packaging/tarballs/, packaging/patches/, touchbar/t1-socw/,
+   build/inputs/ (Linux 7.2.13 sound/hda derived files), sleep/research-20261101/raw/simbilim/*.c,
+   and the binary RPMs in rebuild-kit/rpms/ (built from packaging/sources; corresponding source in
+   this repository and embedded as SRPMs in the akmod RPMs).
+   Upstreams: AJ-dev-i60/t1-touchbar (20d65c7), davidjo/snd_hda_macbookpro (89b22ff),
+   Linux 7.2.13, simbilim/omarchy-macbookpro13-3-t1, omarchy PR #11570.
+
+3. Broadcom BCM43602 NVRAM (rebuild-kit/files/etc/firmware/.../brcmfmac43602-pcie.txt, wifi/comment97/):
+   taken from Linux kernel bugzilla #193121 (attachment 290569 + comment 97 fix); board calibration
+   data, redistributed as published there.

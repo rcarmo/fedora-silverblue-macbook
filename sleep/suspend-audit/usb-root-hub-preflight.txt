@@ -1,0 +1,101 @@
+2026-11-01T10:34:45+00:00
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05ac:8600 Apple, Inc. iBridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/12p, 480M
+    |__ Port 003: Dev 002, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 003: Dev 002, If 1, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 003: Dev 002, If 2, Class=Human Interface Device, Driver=usbhid, 480M
+    |__ Port 003: Dev 002, If 3, Class=Human Interface Device, Driver=usbhid, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/6p, 5000M
+/:  Bus 003.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 480M
+/:  Bus 004.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 10000M
+/:  Bus 005.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 480M
+/:  Bus 006.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 10000M
+DEVICE          TYPE      STATE                   CONNECTION 
+wlp2s0          wifi      connected               7          
+lo              loopback  connected (externally)  lo         
+p2p-dev-wlp2s0  wifi-p2p  disconnected            --         
+composefs /
+/dev/nvme0n1p3[/root/ostree/deploy/fedora/deploy/39e497fbe6383c8b5c9dda53c1bdaab1e3e77291c81cef20ceace9017ab5c936.0/etc] /etc
+/dev/nvme0n1p3[/root] /sysroot
+/dev/nvme0n1p3[/root/ostree/deploy/fedora/var] /sysroot/ostree/deploy/fedora/var
+devtmpfs /dev
+tmpfs /dev/shm
+devpts /dev/pts
+sysfs /sys
+securityfs /sys/kernel/security
+cgroup2 /sys/fs/cgroup
+none /sys/fs/pstore
+efivarfs /sys/firmware/efi/efivars
+bpf /sys/fs/bpf
+configfs /sys/kernel/config
+proc /proc
+tmpfs /run
+selinuxfs /sys/fs/selinux
+systemd-1 /proc/sys/fs/binfmt_misc
+tracefs /sys/kernel/tracing
+fusectl /sys/fs/fuse/connections
+mqueue /dev/mqueue
+hugetlbfs /dev/hugepages
+debugfs /sys/kernel/debug
+none /run/credentials/systemd-journald.service
+none /run/credentials/systemd-resolved.service
+tmpfs /tmp
+/dev/nvme0n1p3[/var] /var
+/dev/nvme0n1p3[/home] /var/home
+/dev/nvme0n1p2 /boot
+/dev/nvme0n1p1 /boot/efi
+binfmt_misc /proc/sys/fs/binfmt_misc
+sunrpc /var/lib/nfs/rpc_pipefs
+tmpfs /run/user/1000
+gvfsd-fuse /run/user/1000/gvfs
+portal /run/user/1000/doc
+/sys/bus/usb/devices/usb6/power/control:auto
+/sys/bus/usb/devices/usb6/power/runtime_status:suspended
+/sys/bus/pci/devices/0000:7c:00.0/vendor:0x8086
+/sys/bus/pci/devices/0000:7c:00.0/device:0x15d4
+  native-path:          BAT0
+  vendor:               SMP
+  model:                bq20z451
+  power supply:         yes
+  updated:              Sun 01 Nov 2026 10:34:43 AM WET (2 seconds ago)
+  has history:          yes
+  has statistics:       yes
+  battery
+    present:             yes
+    rechargeable:        yes
+    state:               charging
+    warning-level:       none
+    energy:              17.057 Wh
+    energy-empty:        0 Wh
+    energy-full:         36.5737 Wh
+    energy-full-design:  49.3636 Wh
+    voltage-min-design:  11.44 V
+    energy-rate:         27.6162 W
+    voltage:             12.365 V
+    charge-cycles:       673
+    time to full:        42.4 minutes
+    percentage:          46.6375%
+    temperature:         36.2 degrees C
+    capacity:            74.0904%
+    technology:          lithium-ion
+    icon-name:          'battery-good-charging-symbolic'
+  History (charge):
+    1793529283	46.637	charging
+    1793529253	46.012	charging
+    1793529222	45.386	charging
+    1793529192	44.761	charging
+  History (rate):
+    1793529222	27.616	charging
+  History (voltage):
+    1793529283	12.365	charging
+    1793529253	12.357	charging
+    1793529222	12.351	charging
+    1793529192	12.377	charging
+
+inactive

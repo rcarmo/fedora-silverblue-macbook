@@ -1,0 +1,17 @@
+4a6b75b6313143ee1214c8ece7ba3e7583e4dee4e112c0d6794f1840d4d574ec  ./files/etc/dracut.conf.d/99-macbook-wifi-nvram.conf
+5075bebddfb7449cb6e64e77fe96745e927f145b371fbc6cf3d189b499851190  ./files/etc/firmware/macbook-wifi/brcm/brcmfmac43602-pcie.txt
+1c897b52f36e8f2e7682e5daeb99cf61cd2ae635aa058218949062ed6c52ba96  ./files/etc/modprobe.d/99-macbook-wifi-nvram.conf
+5da9a97e7aa70cdf383723e1c78eb2d658ac95d6efb85109c3001e8f61133e32  ./files/etc/systemd/sleep.conf.d/90-macbook-deep.conf
+f46e21c6f1bf6d58b60ddd91c835cef5c3beed4bdaf8200425b705f211398da3  ./files/etc/systemd/system/macbook-usbc-runtime.service
+bd6cb188b763fb3ac21af3c1e4f43bd8f519fb195c5784ee1dbf4b7c13bb7e8c  ./files/etc/systemd/system/systemd-suspend.service.d/50-macbook-s3.conf
+03428f8167e68cdc3ccebe50ed95c7199d960dace1149e2b0e6fad4076b1d1c1  ./files/etc/udev/rules.d/61-macbook-nvme-d3cold.rules
+8ebeaa8c9c9d454c3d40c0bad0780e1b878d47248bc0f08ae2c5ac689769b472  ./files/etc/udev/rules.d/99-macbook-usbc-runtime.rules
+59a0fa25abd61fb54eaa31908a355f768c28ec920633b7d6d76367b9a3287c11  ./files/etc/UPower/UPower.conf.d/90-macbook-critical-poweroff.conf
+215088e7e547ad2e325bf4f804c822a47d2b78435f04767a1fe51a1dc3d00775  ./files/usr/local/sbin/macbook-sleep-hook
+3e361ee287215451274d25cd03a1c97afb8634c5f1aa3bd9f1e2cbb1773744b1  ./files/usr/local/sbin/macbook-thunderbolt-remove-rescan
+7097fcb40253c467eb0de36f7e17812daec127b2de3d622fba257e43870ebe9c  ./install-files.sh
+03d0c8694ed323f626a2a38197c581dfd2551ca8cfe608934b7aaa3761b0eb71  ./README.md
+2501d10874b71e92825c0bd7296fb75d2368193f5cbd011d69d1b74cea7f1132  ./rpms/akmod-macbook-cs8409-0.1.20261101-1.fc44.x86_64.rpm
+aa5e41a84d673b90f7ea2bd0d10856329e7c0983bb8defb1ad0185f56790c9c6  ./rpms/akmod-macbook-t1-touchbar-0.1.20261101-1.fc44.x86_64.rpm
+a0b8154a152ce7a91d205336a9520c93e992ff32b782ae74f4d79d4e0a00b21c  ./rpms/macbook-cs8409-kmod-common-0.1.20261101-1.fc44.x86_64.rpm
+25ee5dcf45d739aa5cb39fc92d6ee5ec9a902847bf2f534ba8c558026a2f63ec  ./rpms/macbook-t1-touchbar-kmod-common-0.1.20261101-1.fc44.x86_64.rpm

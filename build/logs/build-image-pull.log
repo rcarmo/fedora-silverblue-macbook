@@ -1,0 +1,6 @@
+Trying to pull registry.fedoraproject.org/fedora:44...
+Getting image source signatures
+Copying blob sha256:3726a960c8e085cc2531c09e0e989273c0e7ea93b97e7552d27e5ba884e40316
+Copying config sha256:f75f2ff022df1c44f2a22157fd777a13cb4ca470689f705f025db30531da1ba0
+Writing manifest to image destination
+f75f2ff022df1c44f2a22157fd777a13cb4ca470689f705f025db30531da1ba0

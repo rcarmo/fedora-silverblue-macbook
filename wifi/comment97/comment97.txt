@@ -1,0 +1,60 @@
+https://bugzilla.kernel.org/show_bug.cgi?id=193121#c97
+Posted: 2026-07-18T20:59:28Z
+
+FIX (one NVRAM line, on top of attachment 290569 — keep boardflags3=0xC0000303
+and swctrlmap_5g unchanged):
+
+   swctrlmap_2g=0x02020202,0x01010101,0x02020202,0x00000000,0x000000ff
+
+With this, BOTH bands work simultaneously on my MacBookPro13,2 (BCM43602,
+Apple subsystem 106b:0157), at full auto TX power, stock in-tree brcmfmac,
+firmware 7.35.177.61. No txpower cap needed.
+
+WHY IT WORKS
+
+In the 290569 file family, swctrlmap_2g is a byte-for-byte copy of
+swctrlmap_5g. But bit 3 of the FEM control word steers a hardware BAND_SEL
+pin — 0 = 2.4 GHz, 1 = 5 GHz (per the fectrl_fem5517_c2 comment in a public
+43602 wl source drop, wlc_phy_ac.c). The 5 GHz map is built around 0x08,
+which IS bit 3.
+
+So with BFL3_FEMTBL_FROM_NVRAM (0x100) set, every 2.4 GHz transmission drove
+the front-end with the 5 GHz control lines, band-select included. Probe
+requests died in the FEM, the firmware's join-scan found "no networks", and
+association never started. RX was unaffected — which is why scans always saw
+the networks.
+
+This also explains why boardflags3 has acted as a band SELECTOR in this
+thread for years:
+   0x100 clear -> firmware built-in FEM table: correct for 2.4, wrong for 5
+   0x100 set   -> NVRAM maps: correct for 5 only, because the 2G map was
+                  never right
+The fix is to stop toggling boardflags3 and repair the 2G map instead.
+
+TWO DIAGNOSTIC NOTES
+
+1. "status: 16: Authentication rejected due to timeout" with a null or stale
+   BSSID is a driver artifact, not evidence. On any failed join,
+   brcmf_bss_connect_done() hardcodes WLAN_STATUS_AUTH_TIMEOUT and reports
+   profile->bssid from the last SUCCESSFUL association. The firmware's real
+   event is SET_SSID status 1 ("no network found").
+2. Handy discriminator: IBSS creation on a 2.4 GHz channel succeeds even when
+   STA join fails — bring-up and TX are fine, only the join-scan probes go
+   unanswered.
+
+RESULTS
+
+2.4 GHz: 27–40 Mbit/s real TCP (20 MHz, ~60%-utilized channel), 0–1% loss.
+5 GHz: unchanged — VHT80 3SS, ~330 Mbit/s TCP, 0% loss.
+Survives cold boot and s2idle suspend/resume. Kernel 7.1.3.
+
+CAVEATS
+
+One day of testing on one machine so far — I'm running it long-term and will
+report back if anything regresses. Other models (13,3 / 14,x) may need
+different line values if their FEM wiring differs, but the method should
+generalize.
+
+Credit: the diagnosis (driver source analysis, a BRCMDBG rebuild to read the
+firmware event stream, and the NVRAM iteration that found the value) was
+heavily contributed by Claude Fable 5, Anthropic's AI model.

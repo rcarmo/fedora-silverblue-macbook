@@ -1,0 +1,18 @@
+Receipt: /var/lib/macbook-sleep-phase1-csZYkCwn
+Removed '/etc/systemd/system/multi-user.target.wants/macbook-right-usb3-runtime.service'.
+Created symlink '/etc/systemd/system/multi-user.target.wants/macbook-usbc-runtime.service' → '/etc/systemd/system/macbook-usbc-runtime.service'.
+-rw-r--r--. 1 root root system_u:object_r:systemd_conf_t:s0        193 Nov  1 12:20 /etc/systemd/sleep.conf.d/90-macbook-deep.conf
+-rw-r--r--. 1 root root system_u:object_r:systemd_unit_file_t:s0   601 Nov  1 12:20 /etc/systemd/system/macbook-usbc-runtime.service
+-rw-r--r--. 1 root root system_u:object_r:systemd_unit_file_t:s0   187 Nov  1 12:20 /etc/systemd/system/systemd-suspend.service.d/50-macbook-s3.conf
+-rw-r--r--. 1 root root system_u:object_r:udev_rules_t:s0          255 Nov  1 12:20 /etc/udev/rules.d/61-macbook-nvme-d3cold.rules
+-rw-r--r--. 1 root root system_u:object_r:udev_rules_t:s0          561 Nov  1 12:20 /etc/udev/rules.d/99-macbook-usbc-runtime.rules
+-rwxr-xr-x. 1 root root system_u:object_r:bin_t:s0                2321 Nov  1 12:20 /usr/local/sbin/macbook-sleep-hook
+-rwxr-xr-x. 1 root root system_u:object_r:bin_t:s0               10704 Nov  1 12:20 /usr/local/sbin/macbook-thunderbolt-remove-rescan
+db5b21ecd906ea602908d2d4c4ef5e0600a4e1bfce08708967c0eee12bb9bfa2  /usr/local/sbin/macbook-sleep-hook
+3e361ee287215451274d25cd03a1c97afb8634c5f1aa3bd9f1e2cbb1773744b1  /usr/local/sbin/macbook-thunderbolt-remove-rescan
+bd6cb188b763fb3ac21af3c1e4f43bd8f519fb195c5784ee1dbf4b7c13bb7e8c  /etc/systemd/system/systemd-suspend.service.d/50-macbook-s3.conf
+5da9a97e7aa70cdf383723e1c78eb2d658ac95d6efb85109c3001e8f61133e32  /etc/systemd/sleep.conf.d/90-macbook-deep.conf
+03428f8167e68cdc3ccebe50ed95c7199d960dace1149e2b0e6fad4076b1d1c1  /etc/udev/rules.d/61-macbook-nvme-d3cold.rules
+8ebeaa8c9c9d454c3d40c0bad0780e1b878d47248bc0f08ae2c5ac689769b472  /etc/udev/rules.d/99-macbook-usbc-runtime.rules
+f46e21c6f1bf6d58b60ddd91c835cef5c3beed4bdaf8200425b705f211398da3  /etc/systemd/system/macbook-usbc-runtime.service
+INSTALLED. Karg firmware_class.path still to be applied separately; reboot required for it.

@@ -1,0 +1,110 @@
+2026-11-01T09:19:20+00:00
+7.2.13-200.fc44.x86_64
+/proc/sys/kernel/random/boot_id:<uuid>
+/sys/class/dmi/id/product_name:MacBookPro13,2
+
+NVMe
+/sys/bus/pci/drivers/nvme
+/sys/bus/pci/devices/0000:01:00.0/vendor:0x106b
+/sys/bus/pci/devices/0000:01:00.0/device:0x2003
+/sys/bus/pci/devices/0000:01:00.0/d3cold_allowed:0
+/sys/bus/pci/devices/0000:01:00.0/power/control:on
+/sys/bus/pci/devices/0000:01:00.0/power_state:D0
+
+Sleep configuration
+# /usr/lib/systemd/sleep.conf
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it under the
+#  terms of the GNU Lesser General Public License as published by the Free
+#  Software Foundation; either version 2.1 of the License, or (at your option)
+#  any later version.
+#
+# Entries in this file show the compile time defaults. Local configuration
+# should be created by either modifying this file (or a copy of it placed in
+# /etc/ if the original file is shipped in /usr/), or by creating "drop-ins" in
+# the /etc/systemd/sleep.conf.d/ directory. The latter is generally
+# recommended. Defaults can be restored by simply deleting the main
+# configuration file and all drop-ins located in /etc/.
+#
+# Use 'systemd-analyze cat-config systemd/sleep.conf' to display the full config.
+#
+# See systemd-sleep.conf(5) for details.
+
+[Sleep]
+#AllowSuspend=yes
+#AllowHibernation=yes
+#AllowSuspendThenHibernate=yes
+#AllowHybridSleep=yes
+#SuspendState=mem standby freeze
+#HibernateMode=platform shutdown
+#MemorySleepMode=
+#HibernateDelaySec=
+#HibernateOnACPower=yes
+#SuspendEstimationSec=60min
+
+# /etc/systemd/sleep.conf.d/90-macbook-s2idle.conf
+# MacBookPro13,2: deep suspend failed to wake on kernel 7.2.13.
+# Use s2idle for systemd-managed suspend; do not fall back to deep.
+# Applied as a reversible trial; successful resume still needs verification.
+[Sleep]
+SuspendState=mem
+MemorySleepMode=s2idle
+
+PM / drivers
+/sys/power/mem_sleep:s2idle [deep]
+/sys/power/pm_test:[none] core processors platform devices freezer
+/sys/power/pm_trace:0
+1
+/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-cs8409/snd-hda-codec-cs8409.ko.xz
+
+Power
+  native-path:          BAT0
+  vendor:               SMP
+  model:                bq20z451
+  power supply:         yes
+  updated:              Sun 01 Nov 2026 09:18:53 AM WET (27 seconds ago)
+  has history:          yes
+  has statistics:       yes
+  battery
+    present:             yes
+    rechargeable:        yes
+    state:               discharging
+    warning-level:       none
+    energy:              21.2441 Wh
+    energy-empty:        0 Wh
+    energy-full:         36.9054 Wh
+    energy-full-design:  49.3636 Wh
+    voltage-min-design:  11.44 V
+    energy-rate:         13.442 W
+    voltage:             11.182 V
+    charge-cycles:       673
+    time to empty:       1.6 hours
+    percentage:          57.5635%
+    temperature:         37.7 degrees C
+    capacity:            74.7625%
+    technology:          lithium-ion
+    icon-name:          'battery-good-symbolic'
+  History (charge):
+    1793524733	57.564	discharging
+    1793524702	57.471	discharging
+    1793524672	57.285	discharging
+  History (rate):
+    1793524733	13.442	discharging
+    1793524702	11.737	discharging
+    1793524672	13.396	discharging
+  History (voltage):
+    1793524733	11.182	discharging
+    1793524702	11.212	discharging
+    1793524672	11.174	discharging
+
+0
+
+Network and suspend history
+wlp2s0:wifi:connected
+lo:loopback:connected (externally)
+p2p-dev-wlp2s0:wifi-p2p:disconnected
+-- No entries --
+
+Runtime override paths
+ls: cannot access '/run/systemd/sleep.conf.d': No such file or directory

@@ -1,0 +1,3 @@
+# macbook-wifi-trial: NVRAM is supplied only in the generated initramfs.
+# Deliberately no alternative_fw_path: it would redirect required binary lookup.
+# Stock brcmfmac options, country policy and NetworkManager configuration retained.

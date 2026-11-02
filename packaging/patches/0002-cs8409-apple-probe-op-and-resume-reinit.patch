@@ -1,0 +1,108 @@
+--- macbook-cs8409-0.1.20261031/hda/codecs/cirrus/cirrus_apple.h	2026-10-31 22:30:32.000000000 +0000
++++ macbook-cs8409-0.1.20261101/hda/codecs/cirrus/cirrus_apple.h	2026-11-01 13:55:49.158464653 +0000
+@@ -1,6 +1,9 @@
+ //#include <linux/ctype.h>
+ #include <linux/timer.h>
+ #include <linux/bitops.h>
++#include <linux/suspend.h>
++#include <linux/mutex.h>
++#include <linux/atomic.h>
+ 
+ #include <linux/version.h>
+ 
+@@ -1445,9 +1448,66 @@
+ 	return 0;
+ }
+ 
++static int cs_8409_boot_setup(struct hda_codec *codec);
++
++/* Local fix 2026-11-01: S3 removes codec/amp power, but the Apple resume op
++ * only re-synced HDA registers, so the speakers stayed silent after sleep.
++ * A PM notifier marks "system sleep started"; the next codec resume (system
++ * resume, or the later runtime resume if the codec was runtime-suspended
++ * across sleep) re-runs the boot setup (codec reset + CS42L83/amp setup) once
++ * and forces the first-playback/capture init again. resume_reinit=0 restores
++ * the old behaviour. */
++static bool resume_reinit = true;
++module_param(resume_reinit, bool, 0644);
++MODULE_PARM_DESC(resume_reinit, "Re-run Apple CS8409 boot setup after system sleep (default on)");
++
++static atomic_t cs8409_apple_slept = ATOMIC_INIT(0);
++static int cs8409_apple_pm_refs;
++static DEFINE_MUTEX(cs8409_apple_pm_lock);
++
++static int cs8409_apple_pm_notify(struct notifier_block *nb, unsigned long action, void *data)
++{
++        if (action == PM_SUSPEND_PREPARE || action == PM_HIBERNATION_PREPARE)
++                atomic_set(&cs8409_apple_slept, 1);
++        return NOTIFY_DONE;
++}
++
++static struct notifier_block cs8409_apple_pm_nb = {
++        .notifier_call = cs8409_apple_pm_notify,
++};
++
++static void cs8409_apple_pm_get(void)
++{
++        mutex_lock(&cs8409_apple_pm_lock);
++        if (cs8409_apple_pm_refs++ == 0)
++                register_pm_notifier(&cs8409_apple_pm_nb);
++        mutex_unlock(&cs8409_apple_pm_lock);
++}
++
++static void cs8409_apple_pm_put(void)
++{
++        mutex_lock(&cs8409_apple_pm_lock);
++        if (cs8409_apple_pm_refs > 0 && --cs8409_apple_pm_refs == 0)
++                unregister_pm_notifier(&cs8409_apple_pm_nb);
++        mutex_unlock(&cs8409_apple_pm_lock);
++}
++
+ static int cs_8409_apple_resume(struct hda_codec *codec)
+ {
++        struct cs8409_apple_spec *spec = codec->spec;
++
+         myprintk("snd_hda_intel: cs_8409_apple_resume\n");
++        if (resume_reinit && atomic_xchg(&cs8409_apple_slept, 0)) {
++                codec_info(codec, "resume after system sleep: re-running Apple CS8409 boot setup\n");
++                spec->headset_phase = 0;
++                if (cs_8409_boot_setup(codec) < 0)
++                        codec_warn(codec, "boot setup after resume failed\n");
++                spec->headset_phase = 2;
++                spec->play_init = 0;
++                spec->capture_init = 0;
++                spec->play_init_count = 0;
++                spec->capture_init_count = 0;
++        }
+         // code copied from default resume ops
+         snd_hda_codec_init(codec);       
+ 	snd_hda_regmap_sync(codec);
+@@ -1751,6 +1811,8 @@
+ 
+ void cs_8409_apple_remove(struct hda_codec *codec)
+ {
++        cs8409_apple_pm_put();
++
+ #if 0
+         struct cs8409_spec *spec = codec->spec;
+ 
+@@ -1768,6 +1830,10 @@
+ // note this must come after any function definitions used
+ 
+ static const struct hda_codec_ops cs_8409_apple_ops = {
++	/* Local fix 2026-11-01: cs8409_apple() replaces driver->ops with this
++	 * table; without .probe every later probe (controller rebind, module
++	 * re-probe) WARNs in hda_codec_driver_probe and fails with -EINVAL. */
++	.probe = cs8409_probe,
+ 	.build_controls = cs_8409_apple_build_controls,
+ 	.build_pcms = cs_8409_apple_build_pcms,
+ 	.init = cs_8409_apple_init,
+@@ -3169,6 +3235,8 @@
+        getnstimeofday(&(spec->first_play_time));
+ #endif
+ 
++       cs8409_apple_pm_get();
++
+        myprintk("snd_hda_intel: Post Patching for CS8409 Apple\n");
+        //mycodec_info(codec, "Post Patching for CS8409 Apple\n");
+ 

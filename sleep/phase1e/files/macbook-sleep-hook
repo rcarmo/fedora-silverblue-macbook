@@ -1,0 +1,119 @@
+#!/bin/bash
+# MacBookPro13,2 S3 (deep) helper. Run by systemd-suspend.service drop-in:
+#   ExecStartPre=... pre   /   ExecStopPost=... post
+# pre : force mem_sleep=deep; NVMe (Apple S3X 106b:2003) d3cold_allowed=0
+#       (ABORTS the suspend if that fails - known no-wake otherwise);
+#       unbind BCM43602 Wi-Fi from brcmfmac (firmware hangs across S3);
+#       Thunderbolt upstream-port removal (omarchy PR #11570 hook, unchanged);
+#       [1b] disable S3 wake from XHC1 (00:14.0, hosts the T1/iBridge on usb 1-3;
+#       suspected instant-wake source) - keyboard SPIT and LID0 stay enabled.
+#       [1c] LAST: tell the T1 the host sleeps: ASOC.SOCW(0) via macbook_t1_socw
+#       ([1d] modprobe from akmod package; fallback insmod /usr/local/lib/macbook-t1-socw/$(uname -r)/).
+#       [1e] lid OPEN at suspend: disable LID0 S3 wake (its GPE 0x6F/GPD2 line, shared with
+#       EC/ADP1/BLTH, asserts right after S3 entry -> 3 s "instant wake"); lid-closed suspends unchanged.
+# post: [1c] FIRST: ASOC.SOCW(1) (T1 keeps the Touch Bar dark after S3 without it);
+#       Thunderbolt rescan; rebind Wi-Fi (NVRAM via firmware_class.path karg);
+#       [1b] restore XHC1 wake to what it was;
+#       [1c] re-send Touch Bar mode (driver cache is stale after reset-resume):
+#       idle_timeout -2 then back to its saved value.
+# SOCW is skipped (logged) if the module is missing/unloadable; never blocks sleep.
+# Journal tag: macbook-sleep. Every path except the NVMe guard exits 0.
+set -u
+TAG=macbook-sleep
+TB=/usr/local/sbin/macbook-thunderbolt-remove-rescan
+STATE=/run/macbook-sleep
+DRV=/sys/bus/pci/drivers/brcmfmac
+XHC1=/sys/bus/pci/devices/0000:00:14.0
+SOCW_KO=/usr/local/lib/macbook-t1-socw/$(uname -r)/macbook_t1_socw.ko
+SOCW_P=/sys/module/macbook_t1_socw/parameters
+log() { logger -t "$TAG" -- "$*"; }
+socw() {  # $1 = 0|1
+  if [[ ! -d $SOCW_P ]]; then
+    if modprobe macbook_t1_socw 2>/dev/null; then log "$2: loaded macbook_t1_socw (modprobe)"
+    elif [[ -f $SOCW_KO ]] && insmod "$SOCW_KO" 2>/dev/null; then log "$2: loaded macbook_t1_socw ($SOCW_KO)"
+    else log "$2: WARNING macbook_t1_socw not loadable (modprobe or $SOCW_KO) - SOCW($1) skipped"; return 0; fi
+  fi
+  if echo "$1" > "$SOCW_P/socw" 2>/dev/null; then log "$2: SOCW($1) ok (ok=$(cat $SOCW_P/calls_ok) failed=$(cat $SOCW_P/calls_failed))"
+  else log "$2: WARNING SOCW($1) failed"; fi
+}
+touchbar_refresh() {
+  local f v n=0
+  for f in /sys/bus/hid/drivers/apple-touchbar/*/idle_timeout; do
+    [[ -w $f ]] || continue
+    v=$(cat "$f"); [[ $v =~ ^-?[0-9]+$ ]] || continue
+    [[ $v == -2 ]] && continue   # user chose "off"; leave it
+    echo -2 > "$f" 2>/dev/null; sleep 1; echo "$v" > "$f" 2>/dev/null
+    log "post: Touch Bar mode re-sent via ${f%/idle_timeout} (idle_timeout -2 -> $v)"; n=$((n + 1))
+  done
+  (( n )) || log "post: WARNING no apple-touchbar idle_timeout found"
+}
+[[ $(cat /sys/class/dmi/id/product_name 2>/dev/null) == MacBookPro13,2 ]] || exit 0
+
+case "${1:-}" in
+pre)
+  mkdir -p "$STATE"; rm -f "$STATE/wifi"
+  grep -qw deep /sys/power/mem_sleep && echo deep > /sys/power/mem_sleep
+  log "pre: mem_sleep: $(cat /sys/power/mem_sleep)"
+  ok=0
+  for d in /sys/bus/pci/devices/*; do
+    [[ $(cat "$d/vendor") == 0x106b && $(cat "$d/device") == 0x2003 ]] || continue
+    echo 0 > "$d/d3cold_allowed" 2>/dev/null
+    [[ $(cat "$d/d3cold_allowed") == 0 ]] && ok=1
+    log "pre: NVMe ${d##*/} d3cold_allowed=$(cat "$d/d3cold_allowed")"
+  done
+  if (( ! ok )); then
+    log "pre: ERROR Apple NVMe d3cold_allowed not 0 - refusing to suspend (would not wake)"
+    exit 1
+  fi
+  for d in "$DRV"/0000:*; do
+    [[ -e $d ]] || continue
+    a=${d##*/}
+    [[ $(cat "$d/vendor") == 0x14e4 && $(cat "$d/device") == 0x43ba ]] || continue
+    echo "$a" >> "$STATE/wifi"   # record first, so post rebinds even on partial failure
+    if echo "$a" > "$DRV/unbind" 2>/dev/null; then log "pre: unbound Wi-Fi $a"
+    else log "pre: WARNING could not unbind Wi-Fi $a"; fi
+  done
+  "$TB" pre suspend
+  rm -f "$STATE/xhc1-wake"
+  if [[ $(cat "$XHC1/vendor" 2>/dev/null)/$(cat "$XHC1/class" 2>/dev/null) == 0x8086/0x0c0330 && -w $XHC1/power/wakeup ]]; then
+    cat "$XHC1/power/wakeup" > "$STATE/xhc1-wake"
+    echo disabled > "$XHC1/power/wakeup" 2>/dev/null
+  fi
+  log "pre: XHC1 wake was $(cat "$STATE/xhc1-wake" 2>/dev/null || echo n/a), now $(cat "$XHC1/power/wakeup" 2>/dev/null)"
+  rm -f "$STATE/lid0-wake"
+  if grep -q open /proc/acpi/button/lid/LID0/state 2>/dev/null && grep -q '^LID0.*\*enabled' /proc/acpi/wakeup; then
+    echo LID0 > /proc/acpi/wakeup   # toggles enabled -> disabled
+    grep -q '^LID0.*\*disabled' /proc/acpi/wakeup && echo enabled > "$STATE/lid0-wake"
+    log "pre: lid open - LID0 wake now $(awk '$1=="LID0"{print $3}' /proc/acpi/wakeup) (wake with keyboard/power button)"
+  fi
+  log "pre: acpi wake enabled: $(awk '$3 ~ /enabled/ {printf "%s(%s) ", $1, $2}' /proc/acpi/wakeup)"
+  grep -q '\[deep\]' /sys/power/mem_sleep && socw 0 pre
+  log "pre: done"
+  ;;
+post)
+  socw 1 post
+  "$TB" post suspend
+  if [[ -f $STATE/wifi ]]; then
+    while read -r a; do
+      [[ -n $a && ! -e /sys/bus/pci/devices/$a/driver ]] || continue
+      if echo "$a" > "$DRV/bind" 2>/dev/null; then log "post: rebound Wi-Fi $a"
+      else log "post: WARNING could not rebind Wi-Fi $a"; fi
+    done < "$STATE/wifi"
+    rm -f "$STATE/wifi"
+  fi
+  if [[ -f $STATE/xhc1-wake ]]; then
+    echo "$(cat "$STATE/xhc1-wake")" > "$XHC1/power/wakeup" 2>/dev/null
+    rm -f "$STATE/xhc1-wake"
+  fi
+  if [[ -f $STATE/lid0-wake ]]; then
+    grep -q '^LID0.*\*disabled' /proc/acpi/wakeup && echo LID0 > /proc/acpi/wakeup
+    rm -f "$STATE/lid0-wake"
+    log "post: LID0 wake restored: $(awk '$1=="LID0"{print $3}' /proc/acpi/wakeup)"
+  fi
+  log "post: XHC1 wake $(cat "$XHC1/power/wakeup" 2>/dev/null); pm_wakeup_irq=$(cat /sys/power/pm_wakeup_irq 2>/dev/null)"
+  touchbar_refresh
+  log "post: done"
+  ;;
+*) echo "usage: $0 pre|post" >&2; exit 2 ;;
+esac
+exit 0

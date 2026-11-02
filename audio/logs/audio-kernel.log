@@ -1,0 +1,11 @@
+Oct 31 22:08:08 fedora kernel: snd_hda_intel 0000:00:1f.3: bound 0000:00:02.0 (ops intel_audio_component_bind_ops [i915])
+Oct 31 22:08:08 fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0: autoconfig for CS8409: line_outs=2 (0x24/0x25/0x0/0x0/0x0) type:speaker
+Oct 31 22:08:08 fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+Oct 31 22:08:08 fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:    hp_outs=1 (0x2c/0x0/0x0/0x0/0x0)
+Oct 31 22:08:08 fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:    mono: mono_out=0x0
+Oct 31 22:08:08 fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:    inputs:
+Oct 31 22:08:08 fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:      Internal Mic=0x44
+Oct 31 22:08:08 fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:      Mic=0x3c
+Oct 31 22:08:08 fedora kernel: input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input10
+Oct 31 22:08:08 fedora kernel: input: HDA Intel PCH HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input11
+Oct 31 22:08:08 fedora kernel: input: HDA Intel PCH HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input12

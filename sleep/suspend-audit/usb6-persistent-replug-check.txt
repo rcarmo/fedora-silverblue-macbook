@@ -1,0 +1,41 @@
+2026-11-01T10:43:39+00:00
+
+USB
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05ac:8600 Apple, Inc. iBridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 004: ID 0bda:8153 Realtek Semiconductor Corp. RTL8153 Gigabit Ethernet Adapter
+
+Target PM
+/sys/bus/usb/devices/usb6/power/control:on
+/sys/bus/usb/devices/usb6/power/runtime_status:active
+/sys/bus/pci/devices/0000:7c:00.0/power/control:auto
+/sys/bus/pci/devices/0000:7c:00.0/power/runtime_status:active
+
+Network
+DEVICE          TYPE      STATE                   CONNECTION 
+wlp2s0          wifi      connected               7          
+lo              loopback  connected (externally)  lo         
+p2p-dev-wlp2s0  wifi-p2p  disconnected            --         
+enp124s0u2      ethernet  unavailable             --         
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> 
+wlp2s0           UP             XX:XX:XX:XX:XX:XX <BROADCAST,MULTICAST,UP,LOWER_UP> 
+enp124s0u2       DOWN           XX:XX:XX:XX:XX:XX <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+
+Recent kernel
+Nov 01 10:43:06 fedora kernel: r8152-cfgselector 6-2: USB disconnect, device number 3
+Nov 01 10:43:06 fedora kernel: xhci_hcd 0000:7c:00.0: WARN Set TR Deq Ptr cmd failed due to incorrect slot or ep state.
+Nov 01 10:43:06 fedora kernel: r8152 6-2:1.0 enp124s0u2: Stop submitting intr, status -108
+Nov 01 10:43:24 fedora kernel: usb 6-2: new SuperSpeed USB device number 4 using xhci_hcd
+Nov 01 10:43:24 fedora kernel: usb 6-2: New USB device found, idVendor=0bda, idProduct=8153, bcdDevice=31.00
+Nov 01 10:43:24 fedora kernel: usb 6-2: Int endpoint with wBytesPerInterval of 8 in config 2 interface 0 altsetting 0 ep 0x83: setting to 16
+Nov 01 10:43:24 fedora kernel: usb 6-2: New USB device strings: Mfr=1, Product=2, SerialNumber=6
+Nov 01 10:43:24 fedora kernel: usb 6-2: Product: USB 10/100/1000 LAN
+Nov 01 10:43:24 fedora kernel: usb 6-2: Manufacturer: Realtek
+Nov 01 10:43:24 fedora kernel: usb 6-2: SerialNumber: 001000001
+Nov 01 10:43:24 fedora kernel: r8152-cfgselector 6-2: reset SuperSpeed USB device number 4 using xhci_hcd
+Nov 01 10:43:24 fedora kernel: r8152 6-2:1.0 enp124s0u2: renamed from eth0

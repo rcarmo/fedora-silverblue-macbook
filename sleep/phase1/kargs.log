@@ -1,0 +1,13 @@
+Checking out tree f1365bc...done
+Resolving dependencies...done
+Checking out packages...done
+Running systemd-sysusers...done
+Running pre scripts...done
+Running post scripts...done
+Running posttrans scripts...done
+Writing rpmdb...done
+Generating initramfs...done
+Writing OSTree commit...done
+Staging deployment...done
+Freed: 341.8 MB (pkgcache branches: 0)
+Changes queued for next boot. Run "systemctl reboot" to start a reboot

@@ -1,0 +1,2 @@
+AC 38%
+options: nowake=SPIT nolid=0 nohda=0 allow-dead-tb=1 lid0=enabled hda=bound

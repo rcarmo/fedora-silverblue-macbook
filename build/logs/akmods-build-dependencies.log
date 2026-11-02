@@ -1,0 +1,339 @@
+Updating and loading repositories:
+Repositories loaded.
+Package                     Arch   Version           Repository      Size
+Installing:
+ akmods                     noarch 0:0.6.2-14.fc44   updates     65.9 KiB
+ kmodtool                   noarch 0:1.2.1-1.fc44    updates     27.5 KiB
+Installing dependencies:
+ cryptsetup-libs            x86_64 0:2.8.8-1.fc44    updates      3.0 MiB
+ dbus-broker                x86_64 0:37-8.fc44       fedora     394.9 KiB
+ dbus-common                noarch 1:1.16.2-1.fc44   fedora      11.2 KiB
+ device-mapper              x86_64 0:1.02.212-2.fc44 fedora     346.8 KiB
+ device-mapper-libs         x86_64 0:1.02.212-2.fc44 fedora     430.1 KiB
+ dracut                     x86_64 0:108-8.fc44      updates      1.6 MiB
+ emacs-filesystem           x86_64 1:30.2-2.fc44     fedora       0.0   B
+ expat                      x86_64 0:2.9.0-1.fc44    updates    349.6 KiB
+ fakeroot                   x86_64 0:1.37.1-4.fc44   fedora     154.5 KiB
+ fakeroot-libs              x86_64 0:1.37.1-4.fc44   fedora     124.4 KiB
+ fuse3-libs                 x86_64 0:3.18.3-1.fc44   updates    297.8 KiB
+ gettext-envsubst           x86_64 0:0.26-5.fc44     updates     87.5 KiB
+ gettext-libs               x86_64 0:0.26-5.fc44     updates      2.4 MiB
+ gettext-runtime            x86_64 0:0.26-5.fc44     updates    738.3 KiB
+ grub2-common               noarch 1:2.12-66.fc44    updates      6.2 MiB
+ grub2-tools                x86_64 1:2.12-66.fc44    updates      7.8 MiB
+ grub2-tools-minimal        x86_64 1:2.12-66.fc44    updates      4.1 MiB
+ grubby                     x86_64 0:8.40-88.fc44    fedora      45.9 KiB
+ kbd                        x86_64 0:2.9.0-4.fc44    updates      1.4 MiB
+ kbd-legacy                 noarch 0:2.9.0-4.fc44    updates    559.6 KiB
+ kbd-misc                   noarch 0:2.9.0-4.fc44    updates      2.4 MiB
+ kmod-libs                  x86_64 0:34.2-4.fc44     fedora     139.0 KiB
+ libkcapi                   x86_64 0:1.5.0-7.fc44    fedora      98.7 KiB
+ libkcapi-hasher            x86_64 0:1.5.0-7.fc44    fedora      37.4 KiB
+ libkcapi-hmaccalc          x86_64 0:1.5.0-7.fc44    fedora     175.0   B
+ libseccomp                 x86_64 0:2.6.1-2.fc44    updates    222.2 KiB
+ libtextstyle               x86_64 0:0.26-5.fc44     updates    382.0 KiB
+ mpdecimal                  x86_64 0:4.0.1-3.fc44    fedora     217.1 KiB
+ openssl                    x86_64 1:3.5.9-1.fc44    updates      1.9 MiB
+ os-prober                  x86_64 0:1.81-11.fc44    fedora     110.7 KiB
+ procps-ng                  x86_64 0:4.0.6-1.fc44    fedora       1.1 MiB
+ python-pip-wheel           noarch 0:26.0.1-3.fc44   updates      1.2 MiB
+ python3                    x86_64 0:3.14.8-1.fc44   updates     28.7 KiB
+ python3-argcomplete        noarch 0:3.6.3-4.fc44    fedora     325.2 KiB
+ python3-charset-normalizer noarch 0:3.4.4-2.fc44    fedora     356.2 KiB
+ python3-idna               noarch 0:3.18-1.fc44     updates    522.3 KiB
+ python3-libs               x86_64 0:3.14.8-1.fc44   updates     44.1 MiB
+ python3-progressbar2       noarch 0:4.5.0-6.fc44    fedora     609.9 KiB
+ python3-pysocks            noarch 0:1.7.1-32.fc44   fedora     102.0 KiB
+ python3-requests           noarch 0:2.33.1-1.fc44   updates    477.3 KiB
+ python3-rpm                x86_64 0:6.0.2-1.fc44    updates    179.2 KiB
+ python3-rpmautospec-core   noarch 0:0.1.5-10.fc44   fedora      11.3 KiB
+ python3-six                noarch 0:1.17.0-8.fc44   fedora     118.0 KiB
+ python3-typing-extensions  noarch 0:4.16.0-4.fc44   updates    552.0 KiB
+ python3-urllib3            noarch 0:2.8.0-3.fc44    updates      1.2 MiB
+ python3-utils              noarch 0:3.9.1-3.fc44    fedora     243.2 KiB
+ rpmdevtools                noarch 0:9.6-14.fc44     fedora     203.4 KiB
+ systemd                    x86_64 0:259.10-1.fc44   updates     12.9 MiB
+ systemd-rpm-macros         noarch 0:259.10-1.fc44   updates      8.5 KiB
+ systemd-shared             x86_64 0:259.10-1.fc44   updates      5.5 MiB
+ systemd-udev               x86_64 0:259.10-1.fc44   updates     13.1 MiB
+ time                       x86_64 0:1.9-28.fc44     fedora      82.4 KiB
+ tpm2-tss-fapi              x86_64 0:4.1.3-9.fc44    fedora     909.9 KiB
+ xkeyboard-config           noarch 0:2.47-1.fc44     fedora       6.4 MiB
+Installing weak dependencies:
+ dbus                       x86_64 1:1.16.2-1.fc44   fedora       0.0   B
+ kpartx                     x86_64 0:0.13.1-1.fc44   fedora      87.5 KiB
+ libbpf                     x86_64 2:1.6.3-2.fc44    updates    442.7 KiB
+ libxkbcommon               x86_64 0:1.13.1-2.fc44   fedora     432.2 KiB
+ memstrack                  x86_64 0:0.2.5-8.fc44    fedora     119.8 KiB
+ python-unversioned-command noarch 0:3.14.8-1.fc44   updates     23.0   B
+ python3-rpmautospec        noarch 0:0.8.4-1.fc44    fedora     466.6 KiB
+ python3-urllib3+socks      noarch 0:2.8.0-3.fc44    updates      0.0   B
+ qrencode-libs              x86_64 0:4.1.1-12.fc44   fedora     164.7 KiB
+ systemd-networkd           x86_64 0:259.10-1.fc44   updates      2.3 MiB
+ systemd-pam                x86_64 0:259.10-1.fc44   updates      1.2 MiB
+ systemd-resolved           x86_64 0:259.10-1.fc44   updates    655.3 KiB
+ tpm2-tools                 x86_64 0:5.7-5.fc44      fedora       1.5 MiB
+
+Transaction Summary:
+ Installing:        69 packages
+
+Total size of inbound packages is 38 MiB. Need to download 38 MiB.
+After this operation, 133 MiB extra will be used (install 133 MiB, remove 0 B).
+[ 1/69] time-0:1.9-28.fc44.x86_64       100% | 148.4 KiB/s |  46.8 KiB |  00m00s
+[ 2/69] rpmdevtools-0:9.6-14.fc44.noarc 100% | 257.1 KiB/s |  94.4 KiB |  00m00s
+[ 3/69] emacs-filesystem-1:30.2-2.fc44. 100% | 141.1 KiB/s |   8.0 KiB |  00m00s
+[ 4/69] akmods-0:0.6.2-14.fc44.noarch   100% |  85.5 KiB/s |  38.7 KiB |  00m00s
+[ 5/69] python3-argcomplete-0:3.6.3-4.f 100% | 983.9 KiB/s |  98.4 KiB |  00m00s
+[ 6/69] fakeroot-0:1.37.1-4.fc44.x86_64 100% | 526.9 KiB/s | 100.1 KiB |  00m00s
+[ 7/69] python3-six-0:1.17.0-8.fc44.noa 100% | 267.6 KiB/s |  42.0 KiB |  00m00s
+[ 8/69] python3-progressbar2-0:4.5.0-6. 100% | 709.6 KiB/s | 153.3 KiB |  00m00s
+[ 9/69] python3-utils-0:3.9.1-3.fc44.no 100% | 694.7 KiB/s |  81.3 KiB |  00m00s
+[10/69] kmodtool-0:1.2.1-1.fc44.noarch  100% | 161.3 KiB/s |  15.8 KiB |  00m00s
+[11/69] openssl-1:3.5.9-1.fc44.x86_64   100% |   1.2 MiB/s |   1.2 MiB |  00m01s
+[12/69] systemd-0:259.10-1.fc44.x86_64  100% | 928.2 KiB/s |   4.3 MiB |  00m05s
+[13/69] python3-0:3.14.8-1.fc44.x86_64  100% |   7.9 KiB/s |  29.4 KiB |  00m04s
+[14/69] mpdecimal-0:4.0.1-3.fc44.x86_64 100% | 221.8 KiB/s |  99.1 KiB |  00m00s
+[15/69] systemd-shared-0:259.10-1.fc44. 100% | 354.9 KiB/s |   2.0 MiB |  00m06s
+[16/69] expat-0:2.9.0-1.fc44.x86_64     100% |  22.8 KiB/s | 136.0 KiB |  00m06s
+[17/69] python3-requests-0:2.33.1-1.fc4 100% |  30.3 KiB/s | 160.6 KiB |  00m05s
+[18/69] python3-charset-normalizer-0:3. 100% | 403.1 KiB/s | 117.3 KiB |  00m00s
+[19/69] python3-libs-0:3.14.8-1.fc44.x8 100% |   1.2 MiB/s |  10.2 MiB |  00m08s
+[20/69] python3-rpm-0:6.0.2-1.fc44.x86_ 100% |  33.5 KiB/s |  69.0 KiB |  00m02s
+[21/69] python3-typing-extensions-0:4.1 100% |  64.0 KiB/s | 114.1 KiB |  00m02s
+[22/69] device-mapper-libs-0:1.02.212-2 100% | 477.3 KiB/s | 186.6 KiB |  00m00s
+[23/69] fakeroot-libs-0:1.37.1-4.fc44.x 100% |  87.4 KiB/s |  39.0 KiB |  00m00s
+[24/69] device-mapper-0:1.02.212-2.fc44 100% | 399.8 KiB/s | 141.1 KiB |  00m00s
+[25/69] cryptsetup-libs-0:2.8.8-1.fc44. 100% | 745.6 KiB/s | 629.3 KiB |  00m01s
+[26/69] libseccomp-0:2.6.1-2.fc44.x86_6 100% | 183.1 KiB/s |  76.0 KiB |  00m00s
+[27/69] python3-idna-0:3.18-1.fc44.noar 100% | 794.9 KiB/s | 104.1 KiB |  00m00s
+[28/69] grubby-0:8.40-88.fc44.x86_64    100% | 198.7 KiB/s |  25.4 KiB |  00m00s
+[29/69] python3-urllib3-0:2.8.0-3.fc44. 100% | 964.8 KiB/s | 310.7 KiB |  00m00s
+[30/69] os-prober-0:1.81-11.fc44.x86_64 100% | 379.9 KiB/s |  50.1 KiB |  00m00s
+[31/69] python-pip-wheel-0:26.0.1-3.fc4 100% |   1.0 MiB/s |   1.1 MiB |  00m01s
+[32/69] grub2-tools-1:2.12-66.fc44.x86_ 100% |   1.0 MiB/s |   1.8 MiB |  00m02s
+[33/69] kmod-libs-0:34.2-4.fc44.x86_64  100% | 488.9 KiB/s |  70.4 KiB |  00m00s
+[34/69] grub2-common-1:2.12-66.fc44.noa 100% | 492.5 KiB/s |   1.0 MiB |  00m02s
+[35/69] systemd-udev-0:259.10-1.fc44.x8 100% | 832.5 KiB/s |   2.7 MiB |  00m03s
+[36/69] grub2-tools-minimal-1:2.12-66.f 100% | 247.4 KiB/s | 691.6 KiB |  00m03s
+[37/69] kbd-0:2.9.0-4.fc44.x86_64       100% | 127.8 KiB/s | 389.0 KiB |  00m03s
+[38/69] kbd-legacy-0:2.9.0-4.fc44.noarc 100% | 461.7 KiB/s | 581.3 KiB |  00m01s
+[39/69] kbd-misc-0:2.9.0-4.fc44.noarch  100% | 931.1 KiB/s |   1.7 MiB |  00m02s
+[40/69] fuse3-libs-0:3.18.3-1.fc44.x86_ 100% |  84.6 KiB/s | 102.2 KiB |  00m01s
+[41/69] gettext-runtime-0:0.26-5.fc44.x 100% | 133.4 KiB/s | 174.3 KiB |  00m01s
+[42/69] gettext-envsubst-0:0.26-5.fc44. 100% | 191.3 KiB/s |  45.3 KiB |  00m00s
+[43/69] gettext-libs-0:0.26-5.fc44.x86_ 100% |   1.0 MiB/s | 789.3 KiB |  00m01s
+[44/69] libtextstyle-0:0.26-5.fc44.x86_ 100% | 227.3 KiB/s | 140.7 KiB |  00m01s
+[45/69] libkcapi-hmaccalc-0:1.5.0-7.fc4 100% | 123.6 KiB/s |   8.9 KiB |  00m00s
+[46/69] libkcapi-hasher-0:1.5.0-7.fc44. 100% | 248.5 KiB/s |  26.1 KiB |  00m00s
+[47/69] libkcapi-0:1.5.0-7.fc44.x86_64  100% | 180.9 KiB/s |  47.4 KiB |  00m00s
+[48/69] dracut-0:108-8.fc44.x86_64      100% | 436.0 KiB/s | 632.3 KiB |  00m01s
+[49/69] systemd-rpm-macros-0:259.10-1.f 100% |  27.8 KiB/s |  16.0 KiB |  00m01s
+[50/69] procps-ng-0:4.0.6-1.fc44.x86_64 100% | 526.2 KiB/s | 398.9 KiB |  00m01s
+[51/69] python3-rpmautospec-0:0.8.4-1.f 100% | 703.7 KiB/s | 187.2 KiB |  00m00s
+[52/69] libxkbcommon-0:1.13.1-2.fc44.x8 100% | 417.5 KiB/s | 185.8 KiB |  00m00s
+[53/69] python3-rpmautospec-core-0:0.1. 100% |  32.1 KiB/s |  15.4 KiB |  00m00s
+[54/69] libbpf-2:1.6.3-2.fc44.x86_64    100% | 464.5 KiB/s | 199.3 KiB |  00m00s
+[55/69] xkeyboard-config-0:2.47-1.fc44. 100% | 877.7 KiB/s |   1.0 MiB |  00m01s
+[56/69] qrencode-libs-0:4.1.1-12.fc44.x 100% |  66.9 KiB/s |  64.1 KiB |  00m01s
+[57/69] dbus-1:1.16.2-1.fc44.x86_64     100% |  14.4 KiB/s |   7.5 KiB |  00m01s
+[58/69] dbus-broker-0:37-8.fc44.x86_64  100% | 618.7 KiB/s | 178.8 KiB |  00m00s
+[59/69] dbus-common-1:1.16.2-1.fc44.noa 100% |  38.8 KiB/s |  14.2 KiB |  00m00s
+[60/69] systemd-networkd-0:259.10-1.fc4 100% |   1.1 MiB/s | 798.4 KiB |  00m01s
+[61/69] systemd-resolved-0:259.10-1.fc4 100% | 384.1 KiB/s | 286.5 KiB |  00m01s
+[62/69] systemd-pam-0:259.10-1.fc44.x86 100% | 416.3 KiB/s | 440.4 KiB |  00m01s
+[63/69] python-unversioned-command-0:3. 100% |  16.7 KiB/s |  11.6 KiB |  00m01s
+[64/69] python3-urllib3+socks-0:2.8.0-3 100% |  25.1 KiB/s |  10.1 KiB |  00m00s
+[65/69] python3-pysocks-0:1.7.1-32.fc44 100% | 252.5 KiB/s |  39.9 KiB |  00m00s
+[66/69] kpartx-0:0.13.1-1.fc44.x86_64   100% | 296.9 KiB/s |  48.7 KiB |  00m00s
+[67/69] memstrack-0:0.2.5-8.fc44.x86_64 100% | 295.5 KiB/s |  49.9 KiB |  00m00s
+[68/69] tpm2-tools-0:5.7-5.fc44.x86_64  100% | 989.5 KiB/s | 823.2 KiB |  00m01s
+[69/69] tpm2-tss-fapi-0:4.1.3-9.fc44.x8 100% | 382.6 KiB/s | 352.8 KiB |  00m01s
+--------------------------------------------------------------------------------
+[69/69] Total                           100% |   1.3 MiB/s |  37.5 MiB |  00m28s
+Running transaction
+[ 1/71] Verify package files            100% |  82.0   B/s |  69.0   B |  00m01s
+[ 2/71] Prepare transaction             100% | 199.0   B/s |  69.0   B |  00m00s
+[ 3/71] Installing systemd-shared-0:259 100% |  67.3 MiB/s |   5.5 MiB |  00m00s
+[ 4/71] Installing kmod-libs-0:34.2-4.f 100% |  11.4 MiB/s | 140.1 KiB |  00m00s
+[ 5/71] Installing grub2-common-1:2.12- 100% | 199.1 MiB/s |   6.2 MiB |  00m00s
+[ 6/71] Installing expat-0:2.9.0-1.fc44 100% |   5.2 MiB/s | 351.7 KiB |  00m00s
+[ 7/71] Installing tpm2-tss-fapi-0:4.1. 100% |   6.6 MiB/s | 910.9 KiB |  00m00s
+>>> Running sysusers scriptlet: dbus-common-1:1.16.2-1.fc44.noarch
+>>> Finished sysusers scriptlet: dbus-common-1:1.16.2-1.fc44.noarch
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'dbus' with GID 81.
+>>> Creating user 'dbus' (System Message Bus) with UID 81 and GID 81.
+>>> 
+[ 8/71] Installing dbus-common-1:1.16.2 100% | 141.2 KiB/s |  13.6 KiB |  00m00s
+>>> Running sysusers scriptlet: dbus-broker-0:37-8.fc44.x86_64
+>>> Finished sysusers scriptlet: dbus-broker-0:37-8.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> 
+[ 9/71] Installing dbus-broker-0:37-8.f 100% |   2.3 MiB/s | 397.5 KiB |  00m00s
+[10/71] Installing libbpf-2:1.6.3-2.fc4 100% |  11.7 MiB/s | 443.5 KiB |  00m00s
+[11/71] Installing xkeyboard-config-0:2 100% |  23.8 MiB/s |   6.5 MiB |  00m00s
+[12/71] Installing procps-ng-0:4.0.6-1. 100% |   5.1 MiB/s |   1.1 MiB |  00m00s
+[13/71] Installing libtextstyle-0:0.26- 100% |   5.6 MiB/s | 382.8 KiB |  00m00s
+[14/71] Installing gettext-libs-0:0.26- 100% |  36.4 MiB/s |   2.4 MiB |  00m00s
+[15/71] Installing gettext-envsubst-0:0 100% |   1.4 MiB/s |  88.9 KiB |  00m00s
+[16/71] Installing gettext-runtime-0:0. 100% |  11.6 MiB/s | 748.8 KiB |  00m00s
+[17/71] Installing fuse3-libs-0:3.18.3- 100% |  14.6 MiB/s | 298.9 KiB |  00m00s
+[18/71] Installing kbd-misc-0:2.9.0-4.f 100% |  10.7 MiB/s |   2.5 MiB |  00m00s
+[19/71] Installing kbd-legacy-0:2.9.0-4 100% |   5.1 MiB/s | 610.1 KiB |  00m00s
+[20/71] Installing kbd-0:2.9.0-4.fc44.x 100% |  16.0 MiB/s |   1.5 MiB |  00m00s
+[21/71] Installing python-pip-wheel-0:2 100% |  72.0 MiB/s |   1.2 MiB |  00m00s
+[22/71] Installing libseccomp-0:2.6.1-2 100% | 941.3 KiB/s | 224.0 KiB |  00m00s
+>>> Running sysusers scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Finished sysusers scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'empower' with GID 999.
+>>> 
+>>> Running sysusers scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Finished sysusers scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'systemd-journal' with GID 190.
+>>> 
+>>> Running sysusers scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Finished sysusers scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'systemd-oom' with GID 998.
+>>> Creating user 'systemd-oom' (systemd Userspace OOM Killer) with UID 998 and GID 998.
+>>> 
+[23/71] Installing systemd-0:259.10-1.f 100% |  10.9 MiB/s |  13.1 MiB |  00m01s
+>>> Running %post scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Finished %post scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> 
+[24/71] Installing device-mapper-0:1.02 100% |   4.6 MiB/s | 350.3 KiB |  00m00s
+[25/71] Installing device-mapper-libs-0 100% |  19.1 MiB/s | 431.3 KiB |  00m00s
+[26/71] Installing cryptsetup-libs-0:2. 100% |  66.2 MiB/s |   3.0 MiB |  00m00s
+[27/71] Installing grub2-tools-minimal- 100% |  30.9 MiB/s |   4.1 MiB |  00m00s
+[28/71] Installing libkcapi-0:1.5.0-7.f 100% |   5.8 MiB/s | 101.0 KiB |  00m00s
+[29/71] Installing libkcapi-hasher-0:1. 100% | 556.6 KiB/s |  40.6 KiB |  00m00s
+[30/71] Installing libkcapi-hmaccalc-0: 100% |  14.1 KiB/s |   1.1 KiB |  00m00s
+[31/71] Installing grubby-0:8.40-88.fc4 100% | 124.3 KiB/s |  47.0 KiB |  00m00s
+>>> Running sysusers scriptlet: systemd-udev-0:259.10-1.fc44.x86_64
+>>> Finished sysusers scriptlet: systemd-udev-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'systemd-coredump' with GID 997.
+>>> Creating user 'systemd-coredump' (systemd Core Dumper) with UID 997 and GID 997.
+>>> 
+>>> Running sysusers scriptlet: systemd-udev-0:259.10-1.fc44.x86_64
+>>> Finished sysusers scriptlet: systemd-udev-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'systemd-timesync' with GID 996.
+>>> Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 996 and GID 996.
+>>> 
+[32/71] Installing systemd-udev-0:259.1 100% |   6.1 MiB/s |  13.2 MiB |  00m02s
+>>> Running %post scriptlet: systemd-udev-0:259.10-1.fc44.x86_64
+>>> Finished %post scriptlet: systemd-udev-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to preset unit: Unit systemd-tmpfiles-clear.service does not exist
+>>> Created symlink '/etc/systemd/system/multi-user.target.wants/remote-cryptsetup.target' → '/usr/lib/systemd/system/remote-cryptsetup.target'.
+>>> Created symlink '/etc/systemd/system/multi-user.target.wants/remote-veritysetup.target' → '/usr/lib/systemd/system/remote-veritysetup.target'.
+>>> Created symlink '/etc/systemd/system/systemd-homed.service.wants/systemd-homed-activate.service' → '/usr/lib/systemd/system/systemd-homed-activate.service'.
+>>> Created symlink '/etc/systemd/system/dbus-org.freedesktop.home1.service' → '/usr/lib/systemd/system/systemd-homed.service'.
+>>> Created symlink '/etc/systemd/system/multi-user.target.wants/systemd-homed.service' → '/usr/lib/systemd/system/systemd-homed.service'.
+>>> Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-network-generator.service' → '/usr/lib/systemd/system/systemd-network-generator.service'.
+>>> Created symlink '/etc/systemd/system/dbus-org.freedesktop.oom1.service' → '/usr/lib/systemd/system/systemd-oomd.service'.
+>>> Created symlink '/etc/systemd/system/multi-user.target.wants/systemd-oomd.service' → '/usr/lib/systemd/system/systemd-oomd.service'.
+>>> Created symlink '/etc/systemd/system/sockets.target.wants/systemd-oomd.socket' → '/usr/lib/systemd/system/systemd-oomd.socket'.
+>>> Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-pstore.service' → '/usr/lib/systemd/system/systemd-pstore.service'.
+>>> 
+[33/71] Installing os-prober-0:1.81-11. 100% |   1.2 MiB/s | 117.3 KiB |  00m00s
+[34/71] Installing dracut-0:108-8.fc44. 100% |   4.6 MiB/s |   1.6 MiB |  00m00s
+[35/71] Installing grub2-tools-1:2.12-6 100% |  27.7 MiB/s |   7.8 MiB |  00m00s
+>>> Running %post scriptlet: grub2-tools-1:2.12-66.fc44.x86_64
+>>> Finished %post scriptlet: grub2-tools-1:2.12-66.fc44.x86_64
+>>> Scriptlet output:
+>>> Created symlink '/etc/systemd/user/timers.target.wants/grub-boot-success.timer' → '/usr/lib/systemd/user/grub-boot-success.timer'.
+>>> 
+[36/71] Installing fakeroot-libs-0:1.37 100% |   6.1 MiB/s | 125.7 KiB |  00m00s
+[37/71] Installing fakeroot-0:1.37.1-4. 100% |   1.4 MiB/s | 159.1 KiB |  00m00s
+[38/71] Installing mpdecimal-0:4.0.1-3. 100% |   4.6 MiB/s | 218.6 KiB |  00m00s
+[39/71] Installing python3-libs-0:3.14. 100% |  28.9 MiB/s |  44.5 MiB |  00m02s
+[40/71] Installing python3-0:3.14.8-1.f 100% | 608.4 KiB/s |  30.4 KiB |  00m00s
+[41/71] Installing python3-idna-0:3.18- 100% |   6.2 MiB/s | 530.2 KiB |  00m00s
+[42/71] Installing python3-urllib3-0:2. 100% |  14.9 MiB/s |   1.2 MiB |  00m00s
+[43/71] Installing python3-argcomplete- 100% |   3.3 MiB/s | 339.0 KiB |  00m00s
+[44/71] Installing python3-six-0:1.17.0 100% |   5.9 MiB/s | 120.3 KiB |  00m00s
+[45/71] Installing python3-charset-norm 100% |   4.8 MiB/s | 366.4 KiB |  00m00s
+[46/71] Installing python3-requests-0:2 100% |  15.4 MiB/s | 489.5 KiB |  00m00s
+[47/71] Installing python3-rpm-0:6.0.2- 100% |  11.2 MiB/s | 183.0 KiB |  00m00s
+[48/71] Installing python3-typing-exten 100% |  27.1 MiB/s | 554.3 KiB |  00m00s
+[49/71] Installing python3-utils-0:3.9. 100% |   8.0 MiB/s | 253.8 KiB |  00m00s
+[50/71] Installing python3-progressbar2 100% |   5.7 MiB/s | 623.1 KiB |  00m00s
+[51/71] Installing python3-rpmautospec- 100% | 754.9 KiB/s |  14.3 KiB |  00m00s
+[52/71] Installing python3-pysocks-0:1. 100% |   5.7 MiB/s | 104.7 KiB |  00m00s
+[53/71] Installing openssl-1:3.5.9-1.fc 100% |  22.2 MiB/s |   1.9 MiB |  00m00s
+[54/71] Installing kmodtool-0:1.2.1-1.f 100% | 554.6 KiB/s |  28.3 KiB |  00m00s
+[55/71] Installing emacs-filesystem-1:3 100% |  79.3 KiB/s | 812.0   B |  00m00s
+[56/71] Installing rpmdevtools-0:9.6-14 100% |   2.5 MiB/s | 213.3 KiB |  00m00s
+[57/71] Installing time-0:1.9-28.fc44.x 100% | 140.3 KiB/s |  84.2 KiB |  00m01s
+>>> Running sysusers scriptlet: akmods-0:0.6.2-14.fc44.noarch
+>>> Finished sysusers scriptlet: akmods-0:0.6.2-14.fc44.noarch
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'akmods' with GID 995.
+>>> Creating user 'akmods' (User is used by akmods to build akmod packages) with UID 995 and GID 995.
+>>> 
+[58/71] Installing akmods-0:0.6.2-14.fc 100% | 349.6 KiB/s |  69.9 KiB |  00m00s
+>>> Running %post scriptlet: akmods-0:0.6.2-14.fc44.noarch
+>>> Finished %post scriptlet: akmods-0:0.6.2-14.fc44.noarch
+>>> Scriptlet output:
+>>> Created symlink '/etc/systemd/system/multi-user.target.wants/akmods.service' → '/usr/lib/systemd/system/akmods.service'.
+>>> 
+[59/71] Installing python3-urllib3+sock 100% |  10.1 KiB/s | 124.0   B |  00m00s
+[60/71] Installing python3-rpmautospec- 100% |   5.8 MiB/s | 500.8 KiB |  00m00s
+[61/71] Installing python-unversioned-c 100% |   7.0 KiB/s | 424.0   B |  00m00s
+[62/71] Installing kpartx-0:0.13.1-1.fc 100% | 257.0 KiB/s |  89.4 KiB |  00m00s
+>>> Running sysusers scriptlet: systemd-networkd-0:259.10-1.fc44.x86_64
+>>> Finished sysusers scriptlet: systemd-networkd-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'systemd-network' with GID 192.
+>>> Creating user 'systemd-network' (systemd Network Management) with UID 192 and GID 192.
+>>> 
+[63/71] Installing systemd-networkd-0:2 100% |   6.9 MiB/s |   2.3 MiB |  00m00s
+>>> Running sysusers scriptlet: systemd-resolved-0:259.10-1.fc44.x86_64
+>>> Finished sysusers scriptlet: systemd-resolved-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> Creating group 'systemd-resolve' with GID 193.
+>>> Creating user 'systemd-resolve' (systemd Resolver) with UID 193 and GID 193.
+>>> 
+[64/71] Installing systemd-resolved-0:2 100% |   3.7 MiB/s | 659.7 KiB |  00m00s
+>>> Running %post scriptlet: systemd-resolved-0:259.10-1.fc44.x86_64
+>>> Finished %post scriptlet: systemd-resolved-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Created symlink '/etc/systemd/system/dbus-org.freedesktop.resolve1.service' → '/usr/lib/systemd/system/systemd-resolved.service'.
+>>> Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-resolved.service' → '/usr/lib/systemd/system/systemd-resolved.service'.
+>>> Created symlink '/etc/systemd/system/sockets.target.wants/systemd-resolved-varlink.socket' → '/usr/lib/systemd/system/systemd-resolved-varlink.socket'.
+>>> Created symlink '/etc/systemd/system/sockets.target.wants/systemd-resolved-monitor.socket' → '/usr/lib/systemd/system/systemd-resolved-monitor.socket'.
+>>> 
+[65/71] Installing systemd-pam-0:259.10 100% |  33.0 MiB/s |   1.2 MiB |  00m00s
+[66/71] Installing libxkbcommon-0:1.13. 100% |  17.7 MiB/s | 433.9 KiB |  00m00s
+[67/71] Installing dbus-1:1.16.2-1.fc44 100% |  12.1 KiB/s | 124.0   B |  00m00s
+[68/71] Installing tpm2-tools-0:5.7-5.f 100% |  13.5 MiB/s |   1.6 MiB |  00m00s
+[69/71] Installing memstrack-0:0.2.5-8. 100% |   1.8 MiB/s | 121.1 KiB |  00m00s
+[70/71] Installing qrencode-libs-0:4.1. 100% |   8.1 MiB/s | 166.5 KiB |  00m00s
+[71/71] Installing systemd-rpm-macros-0 100% |   2.5 KiB/s |   8.9 KiB |  00m04s
+>>> Running %posttrans scriptlet: grub2-common-1:2.12-66.fc44.noarch
+>>> Finished %posttrans scriptlet: grub2-common-1:2.12-66.fc44.noarch
+>>> Scriptlet output:
+>>> /usr/bin/grub2-probe: error: failed to get canonical path of `overlay'.
+>>> 
+>>> Running %triggerin scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Finished %triggerin scriptlet: systemd-0:259.10-1.fc44.x86_64
+>>> Scriptlet output:
+>>> Failed to connect to audit log, ignoring: Invalid argument
+>>> 
+Complete!

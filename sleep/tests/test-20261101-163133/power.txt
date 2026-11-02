@@ -1,0 +1,2 @@
+battery 71%
+options: nolid=1 allow-dead-tb=1 lid0=disabled

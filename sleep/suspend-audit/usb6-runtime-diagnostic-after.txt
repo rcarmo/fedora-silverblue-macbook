@@ -1,0 +1,53 @@
+2026-11-01T10:36:00+00:00
+
+Restored flags/policy
+/sys/bus/usb/devices/usb3/power/control:auto
+/sys/bus/usb/devices/usb3/power/runtime_status:suspended
+/sys/bus/usb/devices/usb4/power/control:auto
+/sys/bus/usb/devices/usb4/power/runtime_status:suspended
+/sys/bus/usb/devices/usb5/power/control:auto
+/sys/bus/usb/devices/usb5/power/runtime_status:suspended
+/sys/bus/usb/devices/usb6/power/control:auto
+/sys/bus/usb/devices/usb6/power/runtime_status:active
+/sys/bus/pci/devices/0000:06:00.0/power/control:auto
+/sys/bus/pci/devices/0000:06:00.0/power/runtime_status:suspended
+/sys/bus/pci/devices/0000:7c:00.0/power/control:auto
+/sys/bus/pci/devices/0000:7c:00.0/power/runtime_status:active
+/sys/power/pm_test:[none] core processors platform devices freezer
+/sys/power/pm_print_times:0
+/sys/module/apple_ibridge/parameters/skip_acpi_power:1
+
+Adapter
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05ac:8600 Apple, Inc. iBridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 003: ID 0bda:8153 Realtek Semiconductor Corp. RTL8153 Gigabit Ethernet Adapter
+DEVICE          TYPE      STATE                   CONNECTION 
+wlp2s0          wifi      connected               7          
+lo              loopback  connected (externally)  lo         
+p2p-dev-wlp2s0  wifi-p2p  disconnected            --         
+enp124s0u2      ethernet  unavailable             --         
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> 
+wlp2s0           UP             XX:XX:XX:XX:XX:XX <BROADCAST,MULTICAST,UP,LOWER_UP> 
+enp124s0u2       DOWN           XX:XX:XX:XX:XX:XX <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+/sys/class/net/enp124s0u2/carrier:0
+/sys/class/net/enp124s0u2/operstate:down
+/sys/bus/usb/drivers/r8152
+
+Inhibitors
+WHO                    UID  USER PID  COMM           WHAT                                                     WHY                                       MODE
+ModemManager           0    root 947  ModemManager   sleep                                                    ModemManager needs to reset devices       delay
+NetworkManager         0    root 837  NetworkManager sleep                                                    NetworkManager needs to turn off networks delay
+UPower                 0    root 852  upowerd        sleep                                                    Pause device polling                      delay
+net.reactivated.Fprint 0    root 5619 fprintd        sleep                                                    Suspend fingerprint readers               delay
+GNOME Shell            1000 me   2619 gnome-shell    sleep                                                    GNOME needs to lock the screen            delay
+GNOME Shell            1000 me   2619 gnome-shell    sleep                                                    GNOME needs to save screen time data      delay
+me                     1000 me   2753 gsd-media-keys handle-power-key:handle-suspend-key:handle-hibernate-key GNOME handling keypresses                 block
+me                     1000 me   2753 gsd-media-keys sleep                                                    GNOME handling keypresses                 delay
+me                     1000 me   2756 gsd-power      sleep                                                    GNOME needs to lock the screen            delay
+
+9 inhibitors listed.

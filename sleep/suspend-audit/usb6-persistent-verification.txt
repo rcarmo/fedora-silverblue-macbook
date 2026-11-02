@@ -1,0 +1,63 @@
+2026-11-01T10:39:45+00:00
+
+Installed file hashes
+96a25429a5879959a6e70f92a21b70eb6c448de11ed4631060bb299a3d5f708a  /etc/udev/rules.d/99-macbook-right-usb3-runtime.rules
+3e0806921421a637348714228ab991c9394c8bd7d336a1c89657f56816b8952e  /etc/systemd/system/macbook-right-usb3-runtime.service
+
+File attributes
+-rw-r--r--. 1 root root unconfined_u:object_r:systemd_unit_file_t:s0 715 Nov  1 10:39 /etc/systemd/system/macbook-right-usb3-runtime.service
+-rw-r--r--. 1 root root unconfined_u:object_r:udev_rules_t:s0        595 Nov  1 10:39 /etc/udev/rules.d/99-macbook-right-usb3-runtime.rules
+
+Service
+enabled
+● macbook-right-usb3-runtime.service - Apply tested MacBook right-side USB3 runtime wake workaround
+     Loaded: loaded (/etc/systemd/system/macbook-right-usb3-runtime.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf
+     Active: active (exited) since Sun 2026-11-01 10:39:33 WET; 12s ago
+ Invocation: ccb0460b3e814ad6a1853947cc32bb96
+    Process: 6556 ExecCondition=/usr/bin/grep -qx MacBookPro13,2 /sys/class/dmi/id/product_name (code=exited, status=0/SUCCESS)
+    Process: 6557 ExecStart=/usr/bin/udevadm trigger --action=change --settle --subsystem-match=usb --attr-match=devpath=0 --attr-match=idVendor=1d6b --attr-match=idProduct=0003 --parent-match=/sys/bus/pci/devices/0000:7c:00.0 (code=exited, status=0/SUCCESS)
+   Main PID: 6557 (code=exited, status=0/SUCCESS)
+   Mem peak: 2.7M
+        CPU: 63ms
+
+Nov 01 10:39:33 fedora systemd[1]: Starting macbook-right-usb3-runtime.service - Apply tested MacBook right-side USB3 runtime wake workaround...
+Nov 01 10:39:33 fedora systemd[1]: Finished macbook-right-usb3-runtime.service - Apply tested MacBook right-side USB3 runtime wake workaround.
+
+Rule target dry run
+/sys/devices/pci0000:00/0000:00:1d.0/0000:79:00.0/0000:7a:02.0/0000:7c:00.0/usb6
+
+Policy
+/sys/bus/usb/devices/usb1/power/control:auto
+/sys/bus/usb/devices/usb1/power/runtime_status:suspended
+/sys/bus/usb/devices/usb2/power/control:auto
+/sys/bus/usb/devices/usb2/power/runtime_status:suspended
+/sys/bus/usb/devices/usb3/power/control:auto
+/sys/bus/usb/devices/usb3/power/runtime_status:suspended
+/sys/bus/usb/devices/usb4/power/control:auto
+/sys/bus/usb/devices/usb4/power/runtime_status:suspended
+/sys/bus/usb/devices/usb5/power/control:auto
+/sys/bus/usb/devices/usb5/power/runtime_status:suspended
+/sys/bus/usb/devices/usb6/power/control:on
+/sys/bus/usb/devices/usb6/power/runtime_status:active
+/sys/bus/pci/devices/0000:06:00.0/power/control:auto
+/sys/bus/pci/devices/0000:7c:00.0/power/control:auto
+/sys/power/pm_test:[none] core processors platform devices freezer
+/sys/power/pm_print_times:0
+/sys/module/apple_ibridge/parameters/skip_acpi_power:1
+
+Devices
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05ac:8600 Apple, Inc. iBridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 003: ID 0bda:8153 Realtek Semiconductor Corp. RTL8153 Gigabit Ethernet Adapter
+DEVICE          TYPE      STATE                   CONNECTION 
+wlp2s0          wifi      connected               7          
+lo              loopback  connected (externally)  lo         
+p2p-dev-wlp2s0  wifi-p2p  disconnected            --         
+enp124s0u2      ethernet  unavailable             --         

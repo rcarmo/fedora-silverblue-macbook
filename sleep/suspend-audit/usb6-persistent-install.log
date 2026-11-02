@@ -1,0 +1,11 @@
+
+1 udev rules files have been checked.
+  Success: 1
+  Fail:    0
+
+1 udev rules files have been checked.
+  Success: 1
+  Fail:    0
+Created symlink '/etc/systemd/system/multi-user.target.wants/macbook-right-usb3-runtime.service' → '/etc/systemd/system/macbook-right-usb3-runtime.service'.
+INSTALLED + ENABLED: only tested right-side USB3 root-hub workaround
+Root receipt: /var/lib/macbook-usb-runtime-qsr7b_8g

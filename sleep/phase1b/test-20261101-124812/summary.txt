@@ -1,0 +1,24 @@
+Nov 01 12:48:14.451433 fedora macbook-sleep[4412]: pre: mem_sleep: s2idle [deep]
+Nov 01 12:48:14.554512 fedora macbook-sleep[4433]: pre: NVMe 0000:01:00.0 d3cold_allowed=0
+Nov 01 12:48:15.308747 fedora macbook-sleep[4480]: pre: unbound Wi-Fi 0000:02:00.0
+Nov 01 12:48:15.909316 fedora thunderbolt-remove-rescan[4553]: pre/suspend: removed 0000:03:00.0 (under 0000:00:1c.4)
+Nov 01 12:48:16.299235 fedora thunderbolt-remove-rescan[4596]: pre/suspend: removed 0000:79:00.0 (under 0000:00:1d.0)
+Nov 01 12:48:16.373482 fedora thunderbolt-remove-rescan[4614]: pre/suspend: removed 2 upstream port(s), skipped 0; xhci=1 pci=18 links: 0000:00:1c.4=8.0 GT/s PCIe 0000:00:1d.0=8.0 GT/s PCIe
+Nov 01 12:48:16.462085 fedora thunderbolt-remove-rescan[4659]: pre/suspend: S3 wake: 0000:00:1c.0=disabled 0000:00:1c.4=disabled 0000:00:1d.0=disabled 0000:00:1d.3=disabled
+Nov 01 12:48:16.475750 fedora thunderbolt-remove-rescan[4666]: pre/suspend: settled in 7 ms
+Nov 01 12:48:16.496979 fedora macbook-sleep[4677]: pre: XHC1 wake was enabled, now disabled
+Nov 01 12:48:16.505914 fedora macbook-sleep[4679]: pre: acpi wake enabled: ARPT(S4) SPIT(S3) LID0(S4)
+Nov 01 12:48:16.509664 fedora macbook-sleep[4680]: pre: done
+Nov 01 12:48:16.567512 fedora kernel: PM: suspend entry (deep)
+Nov 01 12:50:14.751740 fedora kernel: ACPI: PM: Low-level resume complete
+Nov 01 12:50:14.752294 fedora kernel: Timekeeping suspended for 117.283 seconds
+Nov 01 12:50:14.752956 fedora kernel: ACPI: PM: Waking up from system sleep state S3
+Nov 01 12:50:14.795431 fedora kernel: PM: noirq resume of devices complete after 12.746 msecs
+Nov 01 12:50:15.050161 fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+Nov 01 12:50:15.053575 fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+Nov 01 12:50:15.347911 fedora kernel: PM: suspend exit
+Nov 01 12:50:16.107869 fedora thunderbolt-remove-rescan[4780]: post/suspend: tree back after attempt 1 (~0 ms): xhci=3 pci=32 links: 0000:00:1c.4=8.0 GT/s PCIe 0000:00:1d.0=8.0 GT/s PCIe
+Nov 01 12:50:16.283293 fedora macbook-sleep[4781]: post: rebound Wi-Fi 0000:02:00.0
+Nov 01 12:50:16.449263 fedora macbook-sleep[4792]: post: XHC1 wake enabled; pm_wakeup_irq=
+Nov 01 12:50:16.485513 fedora macbook-sleep[4794]: post: done
+Nov 01 12:50:16.964223 fedora kernel: brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43602/2 wl0: Nov 10 2015 06:38:10 version 7.35.177.61 (r598657) FWID 01-ea662a8c

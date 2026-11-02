@@ -1,0 +1,1334 @@
+[    1.534376] fedora kernel: Linux version 7.2.13-200.fc44.x86_64 (mockbuild@7cb9127ee90d42ed90604ff9cae8c1ba) (gcc (GCC) 16.2.1 20260819 (Red Hat 16.2.1-2), GNU ld version 2.46.1-1.fc44) #1 SMP PREEMPT_DYNAMIC Mon Oct 26 18:54:52 UTC 2026
+[    1.534480] fedora kernel: Command line: BOOT_IMAGE=(hd0,gpt2)/ostree/fedora-da648bd545e694a9077299752206d8bfc0454d958d103e035793919be836e785/vmlinuz-7.2.13-200.fc44.x86_64 ostree=/ostree/boot.1/fedora/da648bd545e694a9077299752206d8bfc0454d958d103e035793919be836e785/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw
+[    1.534511] fedora kernel: BIOS-provided physical RAM map:
+[    1.534527] fedora kernel: BIOS-e820: [mem 0x0000000000000000-0x0000000000057fff]  System RAM
+[    1.534543] fedora kernel: BIOS-e820: [mem 0x0000000000058000-0x0000000000058fff]  device reserved
+[    1.534559] fedora kernel: BIOS-e820: [mem 0x0000000000059000-0x000000000009dfff]  System RAM
+[    1.534579] fedora kernel: BIOS-e820: [mem 0x000000000009e000-0x00000000000fffff]  device reserved
+[    1.534601] fedora kernel: BIOS-e820: [mem 0x0000000000100000-0x0000000071dfcfff]  System RAM
+[    1.534625] fedora kernel: BIOS-e820: [mem 0x0000000071dfd000-0x000000007214efff]  device reserved
+[    1.534645] fedora kernel: BIOS-e820: [mem 0x000000007214f000-0x0000000072e43fff]  System RAM
+[    1.534665] fedora kernel: BIOS-e820: [mem 0x0000000072e44000-0x0000000072e44fff]  ACPI NVS
+[    1.534686] fedora kernel: BIOS-e820: [mem 0x0000000072e45000-0x0000000072e6efff]  device reserved
+[    1.534700] fedora kernel: BIOS-e820: [mem 0x0000000072e6f000-0x000000007307dfff]  System RAM
+[    1.534721] fedora kernel: BIOS-e820: [mem 0x000000007307e000-0x000000007307efff]  device reserved
+[    1.534748] fedora kernel: BIOS-e820: [mem 0x000000007307f000-0x0000000078c7efff]  System RAM
+[    1.534770] fedora kernel: BIOS-e820: [mem 0x0000000078c7f000-0x0000000078f4efff]  device reserved
+[    1.534786] fedora kernel: BIOS-e820: [mem 0x0000000078f4f000-0x0000000078f9efff]  ACPI NVS
+[    1.534807] fedora kernel: BIOS-e820: [mem 0x0000000078f9f000-0x0000000078ffefff]  ACPI data
+[    1.534835] fedora kernel: BIOS-e820: [mem 0x0000000078fff000-0x0000000078ffffff]  System RAM
+[    1.534859] fedora kernel: BIOS-e820: [mem 0x0000000079000000-0x000000007fffffff]  device reserved
+[    1.534883] fedora kernel: BIOS-e820: [gap 0x0000000080000000-0x00000000e00f9fff]
+[    1.534907] fedora kernel: BIOS-e820: [mem 0x00000000e00fa000-0x00000000e00fafff]  device reserved
+[    1.534930] fedora kernel: BIOS-e820: [gap 0x00000000e00fb000-0x00000000e00fcfff]
+[    1.534954] fedora kernel: BIOS-e820: [mem 0x00000000e00fd000-0x00000000e00fdfff]  device reserved
+[    1.534977] fedora kernel: BIOS-e820: [gap 0x00000000e00fe000-0x00000000fdffffff]
+[    1.535007] fedora kernel: BIOS-e820: [mem 0x00000000fe000000-0x00000000fe010fff]  device reserved
+[    1.535031] fedora kernel: BIOS-e820: [gap 0x00000000fe011000-0x00000000ff938fff]
+[    1.535052] fedora kernel: BIOS-e820: [mem 0x00000000ff939000-0x00000000ff968fff]  device reserved
+[    1.535075] fedora kernel: BIOS-e820: [gap 0x00000000ff969000-0x00000000ffffffff]
+[    1.535100] fedora kernel: BIOS-e820: [mem 0x0000000100000000-0x000000047effffff]  System RAM
+[    1.535123] fedora kernel: NX (Execute Disable) protection: active
+[    1.535146] fedora kernel: APIC: Static calls initialized
+[    1.535167] fedora kernel: efi: EFI v2.4 by Apple
+[    1.535187] fedora kernel: efi: Apple Mac detected, using EFI v1.10 runtime services only
+[    1.535213] fedora kernel: efi: ACPI=0x78ffe000 ACPI 2.0=0x78ffe014 SMBIOS=0x78f1f000 SMBIOS 3.0=0x78f1d000 MOKvar=0x78d98000 
+[    1.535237] fedora kernel: efi: Not removing mem44: MMIO range=[0xe00fa000-0xe00fafff] (4KB) from e820 map
+[    1.535260] fedora kernel: efi: Not removing mem45: MMIO range=[0xe00fd000-0xe00fdfff] (4KB) from e820 map
+[    1.535284] fedora kernel: efi: Not removing mem46: MMIO range=[0xfe000000-0xfe010fff] (68KB) from e820 map
+[    1.535307] fedora kernel: efi: Not removing mem47: MMIO range=[0xff939000-0xff968fff] (192KB) from e820 map
+[    1.535333] fedora kernel: secureboot: Secure boot disabled
+[    1.535365] fedora kernel: DMI: SMBIOS 3.0.0 present.
+[    1.535390] fedora kernel: DMI: Apple Inc. MacBookPro13,2/Mac-66E35819EE2D0D05, BIOS 529.120.1.0.0 03/14/2024
+[    1.535414] fedora kernel: DMI: Memory slots populated: 2/2
+[    1.535437] fedora kernel: tsc: Detected 2900.000 MHz processor
+[    1.535461] fedora kernel: tsc: Detected 2899.886 MHz TSC
+[    1.535484] fedora kernel: e820: update [mem 0x00000000-0x00000fff] System RAM ==> device reserved
+[    1.535520] fedora kernel: e820: remove [mem 0x000a0000-0x000fffff] System RAM
+[    1.535549] fedora kernel: last_pfn = 0x47f000 max_arch_pfn = 0x400000000
+[    1.535577] fedora kernel: MTRR map: 4 entries (2 fixed + 2 variable; max 22), built from 10 variable MTRRs
+[    1.535609] fedora kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    1.535638] fedora kernel: last_pfn = 0x79000 max_arch_pfn = 0x400000000
+[    1.535669] fedora kernel: Using GB pages for direct mapping
+[    1.535697] fedora kernel: secureboot: Secure boot disabled
+[    1.535725] fedora kernel: RAMDISK: [mem 0x519ad000-0x6077ffff]
+[    1.535753] fedora kernel: ACPI: Early table checksum verification disabled
+[    1.535781] fedora kernel: ACPI: RSDP 0x0000000078FFE014 000024 (v02 APPLE )
+[    1.535809] fedora kernel: ACPI: XSDT 0x0000000078FFD0E8 0000BC (v01 APPLE  Apple00  00000000      01000013)
+[    1.535838] fedora kernel: ACPI: FACP 0x0000000078FF8000 0000F4 (v05 APPLE  Apple00  00000000 Loki 0000005F)
+[    1.535871] fedora kernel: ACPI: DSDT 0x0000000078FEB000 0085AC (v02 APPLE  MacBookP 00130002 INTL 20140424)
+[    1.535900] fedora kernel: ACPI: FACS 0x0000000078F9B000 000040
+[    1.535929] fedora kernel: ACPI: UEFI 0x0000000078F9D000 000042 (v01 INTEL  EDK2     00000002      01000013)
+[    1.535957] fedora kernel: ACPI: ECDT 0x0000000078FFA000 000053 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    1.535988] fedora kernel: ACPI: HPET 0x0000000078FF7000 000038 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    1.536022] fedora kernel: ACPI: APIC 0x0000000078FF6000 0000BC (v02 APPLE  Apple00  00000001 Loki 0000005F)
+[    1.536054] fedora kernel: ACPI: MCFG 0x0000000078FF5000 00003C (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    1.536088] fedora kernel: ACPI: SBST 0x0000000078FF4000 000030 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    1.536114] fedora kernel: ACPI: SSDT 0x0000000078FEA000 000024 (v01 APPLE  SmcDppt  00001000 INTL 20140424)
+[    1.536150] fedora kernel: ACPI: SSDT 0x0000000078FE5000 000031 (v01 APPLE  SsdtS3   00001000 INTL 20140424)
+[    1.536182] fedora kernel: ACPI: SSDT 0x0000000078FE4000 000111 (v01 APPLE  SataAhci 00001000 INTL 20140424)
+[    1.536213] fedora kernel: ACPI: SSDT 0x0000000078FE3000 0000B8 (v01 APPLE  Sdxc     00001000 INTL 20140424)
+[    1.536235] fedora kernel: ACPI: SSDT 0x0000000078FDA000 008BA2 (v02 APPLE  TbtOnPCH 00001000 INTL 20140424)
+[    1.536267] fedora kernel: ACPI: SSDT 0x0000000078FD6000 000B2A (v02 APPLE  Xhci     00001000 INTL 20140424)
+[    1.536295] fedora kernel: ACPI: SSDT 0x0000000078FD5000 000696 (v02 PmRef  Cpu0Ist  00003000 INTL 20140424)
+[    1.536336] fedora kernel: ACPI: SSDT 0x0000000078FD4000 0005AA (v02 PmRef  ApIst    00003000 INTL 20140424)
+[    1.536376] fedora kernel: ACPI: SSDT 0x0000000078FD3000 000295 (v02 PmRef  Cpu0Cst  00003001 INTL 20140424)
+[    1.536403] fedora kernel: ACPI: SSDT 0x0000000078FD2000 000119 (v02 PmRef  ApCst    00003000 INTL 20140424)
+[    1.536437] fedora kernel: ACPI: SSDT 0x0000000078FD1000 000EEF (v02 CpuRef CpuSsdt  00003000 INTL 20140424)
+[    1.536466] fedora kernel: ACPI: DMAR 0x0000000078FD0000 000118 (v01 APPLE  SKL      00000001 INTL 00000001)
+[    1.536494] fedora kernel: ACPI: Reserving FACP table memory at [mem 0x78ff8000-0x78ff80f3]
+[    1.536522] fedora kernel: ACPI: Reserving DSDT table memory at [mem 0x78feb000-0x78ff35ab]
+[    1.536554] fedora kernel: ACPI: Reserving FACS table memory at [mem 0x78f9b000-0x78f9b03f]
+[    1.536579] fedora kernel: ACPI: Reserving UEFI table memory at [mem 0x78f9d000-0x78f9d041]
+[    1.536608] fedora kernel: ACPI: Reserving ECDT table memory at [mem 0x78ffa000-0x78ffa052]
+[    1.536639] fedora kernel: ACPI: Reserving HPET table memory at [mem 0x78ff7000-0x78ff7037]
+[    1.536666] fedora kernel: ACPI: Reserving APIC table memory at [mem 0x78ff6000-0x78ff60bb]
+[    1.536687] fedora kernel: ACPI: Reserving MCFG table memory at [mem 0x78ff5000-0x78ff503b]
+[    1.536715] fedora kernel: ACPI: Reserving SBST table memory at [mem 0x78ff4000-0x78ff402f]
+[    1.536757] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fea000-0x78fea023]
+[    1.536790] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fe5000-0x78fe5030]
+[    1.536817] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fe4000-0x78fe4110]
+[    1.536847] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fe3000-0x78fe30b7]
+[    1.536868] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fda000-0x78fe2ba1]
+[    1.536900] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fd6000-0x78fd6b29]
+[    1.536928] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fd5000-0x78fd5695]
+[    1.536956] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fd4000-0x78fd45a9]
+[    1.536977] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fd3000-0x78fd3294]
+[    1.536994] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fd2000-0x78fd2118]
+[    1.537028] fedora kernel: ACPI: Reserving SSDT table memory at [mem 0x78fd1000-0x78fd1eee]
+[    1.537046] fedora kernel: ACPI: Reserving DMAR table memory at [mem 0x78fd0000-0x78fd0117]
+[    1.537066] fedora kernel: ACPI: DMI detected to setup _OSI("Darwin"): Apple hardware
+[    1.537093] fedora kernel: No NUMA configuration found
+[    1.537118] fedora kernel: Faking a node at [mem 0x0000000000000000-0x000000047effffff]
+[    1.537145] fedora kernel: NODE_DATA(0) allocated [mem 0x47efd4f80-0x47effffff]
+[    1.537170] fedora kernel: Reserving Intel graphics memory at [mem 0x7a000000-0x7fffffff]
+[    1.537190] fedora kernel: ACPI: PM-Timer IO Port: 0x1808
+[    1.537207] fedora kernel: ACPI: LAPIC_NMI (acpi_id[0x01] high edge lint[0x1])
+[    1.537229] fedora kernel: ACPI: LAPIC_NMI (acpi_id[0x02] high edge lint[0x1])
+[    1.537249] fedora kernel: ACPI: LAPIC_NMI (acpi_id[0x03] high edge lint[0x1])
+[    1.537268] fedora kernel: ACPI: LAPIC_NMI (acpi_id[0x04] high edge lint[0x1])
+[    1.537285] fedora kernel: ACPI: LAPIC_NMI (acpi_id[0x05] high edge lint[0x1])
+[    1.537298] fedora kernel: ACPI: LAPIC_NMI (acpi_id[0x06] high edge lint[0x1])
+[    1.537327] fedora kernel: ACPI: LAPIC_NMI (acpi_id[0x07] high edge lint[0x1])
+[    1.537345] fedora kernel: ACPI: LAPIC_NMI (acpi_id[0x08] high edge lint[0x1])
+[    1.537365] fedora kernel: IOAPIC[0]: apic_id 2, version 32, address 0xfec00000, GSI 0-23
+[    1.537390] fedora kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    1.537412] fedora kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    1.537445] fedora kernel: ACPI: Using ACPI (MADT) for SMP configuration information
+[    1.537471] fedora kernel: ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    1.537510] fedora kernel: TSC deadline timer available
+[    1.537535] fedora kernel: CPU topo: Max. logical packages:   1
+[    1.537557] fedora kernel: CPU topo: Max. logical nodes:      1
+[    1.537581] fedora kernel: CPU topo: Num. nodes per package:  1
+[    1.537608] fedora kernel: CPU topo: Max. logical dies:       1
+[    1.537630] fedora kernel: CPU topo: Max. dies per package:   1
+[    1.537650] fedora kernel: CPU topo: Max. threads per core:   2
+[    1.537673] fedora kernel: CPU topo: Num. cores per package:     2
+[    1.537690] fedora kernel: CPU topo: Num. threads per package:   4
+[    1.537706] fedora kernel: CPU topo: Allowing 4 present CPUs plus 0 hotplug CPUs
+[    1.537728] fedora kernel: PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    1.537762] fedora kernel: PM: hibernation: Registered nosave memory: [mem 0x00058000-0x00058fff]
+[    1.537784] fedora kernel: PM: hibernation: Registered nosave memory: [mem 0x0009e000-0x000fffff]
+[    1.537809] fedora kernel: PM: hibernation: Registered nosave memory: [mem 0x71dfd000-0x7214efff]
+[    1.537828] fedora kernel: PM: hibernation: Registered nosave memory: [mem 0x72e44000-0x72e6efff]
+[    1.537855] fedora kernel: PM: hibernation: Registered nosave memory: [mem 0x7307e000-0x7307efff]
+[    1.537876] fedora kernel: PM: hibernation: Registered nosave memory: [mem 0x78c7f000-0x78ffefff]
+[    1.537896] fedora kernel: PM: hibernation: Registered nosave memory: [mem 0x79000000-0xffffffff]
+[    1.537917] fedora kernel: [gap 0x80000000-0xe00f9fff] available for PCI devices
+[    1.537941] fedora kernel: Booting paravirtualized kernel on bare hardware
+[    1.537957] fedora kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    1.537983] fedora kernel: Zone ranges:
+[    1.538025] fedora kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    1.538045] fedora kernel:   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    1.538061] fedora kernel:   Normal   [mem 0x0000000100000000-0x000000047effffff]
+[    1.538086] fedora kernel:   Device   empty
+[    1.538112] fedora kernel: Movable zone start for each node
+[    1.538136] fedora kernel: Early memory node ranges
+[    1.538154] fedora kernel:   node   0: [mem 0x0000000000001000-0x0000000000057fff]
+[    1.538173] fedora kernel:   node   0: [mem 0x0000000000059000-0x000000000009dfff]
+[    1.538190] fedora kernel:   node   0: [mem 0x0000000000100000-0x0000000071dfcfff]
+[    1.538204] fedora kernel:   node   0: [mem 0x000000007214f000-0x0000000072e43fff]
+[    1.538218] fedora kernel:   node   0: [mem 0x0000000072e6f000-0x000000007307dfff]
+[    1.538231] fedora kernel:   node   0: [mem 0x000000007307f000-0x0000000078c7efff]
+[    1.538244] fedora kernel:   node   0: [mem 0x0000000078fff000-0x0000000078ffffff]
+[    1.538268] fedora kernel:   node   0: [mem 0x0000000100000000-0x000000047effffff]
+[    1.538293] fedora kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000047effffff]
+[    1.538320] fedora kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+[    1.538345] fedora kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+[    1.538367] fedora kernel: On node 0, zone DMA: 98 pages in unavailable ranges
+[    1.538389] fedora kernel: On node 0, zone DMA32: 850 pages in unavailable ranges
+[    1.538417] fedora kernel: On node 0, zone DMA32: 43 pages in unavailable ranges
+[    1.538453] fedora kernel: On node 0, zone DMA32: 1 pages in unavailable ranges
+[    1.538491] fedora kernel: On node 0, zone DMA32: 896 pages in unavailable ranges
+[    1.538522] fedora kernel: On node 0, zone Normal: 28672 pages in unavailable ranges
+[    1.538551] fedora kernel: On node 0, zone Normal: 4096 pages in unavailable ranges
+[    1.538581] fedora kernel: setup_percpu: NR_CPUS:8192 nr_cpumask_bits:4 nr_cpu_ids:4 nr_node_ids:1
+[    1.538608] fedora kernel: percpu: Embedded 85 pages/cpu s225280 r8192 d114688 u524288
+[    1.538631] fedora kernel: pcpu-alloc: s225280 r8192 d114688 u524288 alloc=1*2097152
+[    1.538653] fedora kernel: pcpu-alloc: [0] 0 1 2 3 
+[    1.538676] fedora kernel: Kernel command line: BOOT_IMAGE=(hd0,gpt2)/ostree/fedora-da648bd545e694a9077299752206d8bfc0454d958d103e035793919be836e785/vmlinuz-7.2.13-200.fc44.x86_64 ostree=/ostree/boot.1/fedora/da648bd545e694a9077299752206d8bfc0454d958d103e035793919be836e785/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw
+[    1.538706] fedora kernel: Unknown kernel command line parameters "rhgb ostree=/ostree/boot.1/fedora/da648bd545e694a9077299752206d8bfc0454d958d103e035793919be836e785/0", will be passed to user space.
+[    1.538728] fedora kernel: random: crng init done
+[    1.538758] fedora kernel: printk: log buffer data + meta data: 262144 + 1114112 = 1376256 bytes
+[    1.538792] fedora kernel: Dentry cache hash table entries: 2097152 (order: 12, 16777216 bytes, linear)
+[    1.538818] fedora kernel: Inode-cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+[    1.538839] fedora kernel: software IO TLB: area num 4.
+[    1.538860] fedora kernel: Fallback order for Node 0: 0 
+[    1.538889] fedora kernel: Built 1 zonelists, mobility grouping on.  Total pages: 4159646
+[    1.538914] fedora kernel: Policy zone: Normal
+[    1.538940] fedora kernel: mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    1.538965] fedora kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    1.539011] fedora kernel: Kernel/User page tables isolation: enabled
+[    1.539036] fedora kernel: ftrace: allocating 64805 entries in 256 pages
+[    1.539063] fedora kernel: ftrace: allocated 256 pages with 1 groups
+[    1.539083] fedora kernel: Dynamic Preempt: lazy
+[    1.539105] fedora kernel: rcu: Preemptible hierarchical RCU implementation.
+[    1.539128] fedora kernel: rcu:         RCU event tracing is enabled.
+[    1.539151] fedora kernel: rcu:         RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=4.
+[    1.539173] fedora kernel:         Trampoline variant of Tasks RCU enabled.
+[    1.539196] fedora kernel:         Rude variant of Tasks RCU enabled.
+[    1.539229] fedora kernel:         Tracing variant of Tasks RCU enabled.
+[    1.539255] fedora kernel: rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    1.539287] fedora kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    1.539313] fedora kernel: RCU Tasks: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+[    1.539342] fedora kernel: RCU Tasks Rude: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+[    1.539365] fedora kernel: NR_IRQS: 524544, nr_irqs: 456, preallocated irqs: 16
+[    1.539390] fedora kernel: rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    1.539413] fedora kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    1.539439] fedora kernel: kfence: initialized - using 2097152 bytes for 255 objects at 0x(____ptrval____)-0x(____ptrval____)
+[    1.539461] fedora kernel: Console: colour dummy device 80x25
+[    1.539489] fedora kernel: printk: legacy console [tty0] enabled
+[    1.539511] fedora kernel: ACPI: Core revision 20260408
+[    1.539533] fedora kernel: hpet: HPET dysfunctional in PC10. Force disabled.
+[    1.539555] fedora kernel: APIC: Switch to symmetric I/O mode setup
+[    1.539581] fedora kernel: DMAR: Host address width 39
+[    1.539604] fedora kernel: DMAR: DRHD base: 0x000000fed90000 flags: 0x0
+[    1.539630] fedora kernel: DMAR: dmar0: reg_base_addr fed90000 ver 1:0 cap 1c0000c40660462 ecap 7e3ff0505e
+[    1.539657] fedora kernel: DMAR: DRHD base: 0x000000fed91000 flags: 0x1
+[    1.539683] fedora kernel: DMAR: dmar1: reg_base_addr fed91000 ver 1:0 cap d2008c40660462 ecap f050da
+[    1.539715] fedora kernel: DMAR: RMRR base: 0x00000079800000 end: 0x0000007fffffff
+[    1.539738] fedora kernel: DMAR: ANDD device: 8 name: \_SB.PCI0.SPI1
+[    1.539761] fedora kernel: DMAR: ANDD device: 9 name: \_SB.PCI0.UA00
+[    1.539783] fedora kernel: DMAR: ANDD device: a name: \_SB.PCI0.UA01
+[    1.539806] fedora kernel: DMAR: ANDD device: b name: \_SB.PCI0.UA02
+[    1.539831] fedora kernel: DMAR-IR: IOAPIC id 2 under DRHD base  0xfed91000 IOMMU 1
+[    1.539853] fedora kernel: DMAR-IR: HPET id 0 under DRHD base 0xfed91000
+[    1.539879] fedora kernel: DMAR-IR: Queued invalidation will be enabled to support x2apic and Intr-remapping.
+[    1.539904] fedora kernel: DMAR-IR: Enabled IRQ remapping in x2apic mode
+[    1.539931] fedora kernel: x2apic enabled
+[    1.539957] fedora kernel: APIC: Switched APIC routing to: cluster x2apic
+[    1.539983] fedora kernel: clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x29ccd767b87, max_idle_ns: 440795223720 ns
+[    1.540010] fedora kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 5799.77 BogoMIPS (lpj=2899886)
+[    1.540033] fedora kernel: x86/cpu: SGX disabled or unsupported by BIOS.
+[    1.540057] fedora kernel: CPU0: Thermal monitoring enabled (TM1)
+[    1.540079] fedora kernel: Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[    1.540109] fedora kernel: Last level dTLB entries: 4KB 64, 2MB 32, 4MB 32, 1GB 4
+[    1.540140] fedora kernel: process: using mwait in idle threads
+[    1.540168] fedora kernel: mitigations: Enabled attack vectors: user_kernel, user_user, guest_host, guest_guest, SMT mitigations: auto
+[    1.540191] fedora kernel: Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl
+[    1.540212] fedora kernel: SRBDS: Mitigation: Microcode
+[    1.540233] fedora kernel: Spectre V2 : Mitigation: IBRS
+[    1.540259] fedora kernel: RETBleed: Mitigation: IBRS
+[    1.540285] fedora kernel: Spectre V2 : User space: Mitigation: STIBP via prctl
+[    1.540310] fedora kernel: MDS: Mitigation: Clear CPU buffers
+[    1.540332] fedora kernel: MMIO Stale Data: Mitigation: Clear CPU buffers
+[    1.540357] fedora kernel: VMSCAPE: Mitigation: IBPB before exit to userspace
+[    1.540383] fedora kernel: Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    1.540414] fedora kernel: Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+[    1.540437] fedora kernel: Spectre V2 : Enabling IBPB for BPF
+[    1.540464] fedora kernel: Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    1.540486] fedora kernel: GDS: Vulnerable: No microcode
+[    1.540507] fedora kernel: x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    1.540529] fedora kernel: x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    1.540555] fedora kernel: x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    1.540581] fedora kernel: x86/fpu: Supporting XSAVE feature 0x008: 'MPX bounds registers'
+[    1.540604] fedora kernel: x86/fpu: Supporting XSAVE feature 0x010: 'MPX CSR'
+[    1.540626] fedora kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    1.540644] fedora kernel: x86/fpu: xstate_offset[3]:  832, xstate_sizes[3]:   64
+[    1.540662] fedora kernel: x86/fpu: xstate_offset[4]:  896, xstate_sizes[4]:   64
+[    1.540683] fedora kernel: x86/fpu: Enabled xstate features 0x1f, context size is 960 bytes, using 'compacted' format.
+[    1.540705] fedora kernel: pid_max: default: 32768 minimum: 301
+[    1.540723] fedora kernel: Yama: becoming mindful.
+[    1.540738] fedora kernel: SELinux:  Initializing.
+[    1.540761] fedora kernel: LSM support for eBPF active
+[    1.540777] fedora kernel: landlock: Up and running.
+[    1.540794] fedora kernel: Mount-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    1.540815] fedora kernel: Mountpoint-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    1.540833] fedora kernel: VFS: Finished mounting rootfs on nullfs
+[    1.540851] fedora kernel: smpboot: CPU0: Intel(R) Core(TM) i5-6267U CPU @ 2.90GHz (family: 0x6, model: 0x4e, stepping: 0x3)
+[    1.540865] fedora kernel: Performance Events: PEBS fmt3+, Skylake events, 32-deep LBR, full-width counters, Intel PMU driver.
+[    1.540890] fedora kernel: ... version:                   4
+[    1.540904] fedora kernel: ... bit width:                 48
+[    1.540922] fedora kernel: ... generic counters:          4
+[    1.540943] fedora kernel: ... generic bitmap:            000000000000000f
+[    1.540965] fedora kernel: ... fixed-purpose counters:    3
+[    1.540990] fedora kernel: ... fixed-purpose bitmap:      0000000000000007
+[    1.541018] fedora kernel: ... value mask:                0000ffffffffffff
+[    1.541039] fedora kernel: ... max period:                00007fffffffffff
+[    1.541051] fedora kernel: ... global_ctrl mask:          000000070000000f
+[    1.541058] fedora kernel: signal: max sigframe size: 2032
+[    1.541066] fedora kernel: Estimated ratio of average max frequency by base frequency (times 1024): 1024
+[    1.541078] fedora kernel: rcu: Hierarchical SRCU implementation.
+[    1.541086] fedora kernel: rcu:         Max phase no-delay instances is 400.
+[    1.541096] fedora kernel: Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[    1.541104] fedora kernel: NMI watchdog: Enabled. Permanently consumes one hw-PMU counter.
+[    1.541112] fedora kernel: smp: Bringing up secondary CPUs ...
+[    1.541120] fedora kernel: smpboot: x86: Booting SMP configuration:
+[    1.541131] fedora kernel: .... node  #0, CPUs:      #1 #2 #3
+[    1.541139] fedora kernel: MDS CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/mds.html for more details.
+[    1.541148] fedora kernel: MMIO Stale Data CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/processor_mmio_stale_data.html for more details.
+[    1.541159] fedora kernel: VMSCAPE: SMT on, STIBP is required for full protection. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/vmscape.html for more details.
+[    1.541166] fedora kernel: smp: Brought up 1 node, 4 CPUs
+[    1.541173] fedora kernel: smpboot: Total of 4 processors activated (23199.08 BogoMIPS)
+[    1.541181] fedora kernel: Memory: 15809548K/16638584K available (24463K kernel code, 4815K rwdata, 18660K rodata, 5324K init, 4212K bss, 813228K reserved, 0K cma-reserved)
+[    1.541192] fedora kernel: devtmpfs: initialized
+[    1.541200] fedora kernel: x86/mm: Memory block size: 128MB
+[    1.541208] fedora kernel: ACPI: PM: Registering ACPI NVS region [mem 0x72e44000-0x72e44fff] (4096 bytes)
+[    1.541219] fedora kernel: ACPI: PM: Registering ACPI NVS region [mem 0x78f4f000-0x78f9efff] (327680 bytes)
+[    1.541227] fedora kernel: posixtimers hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    1.541234] fedora kernel: futex hash table entries: 1024 (65536 bytes on 1 NUMA nodes, total 64 KiB, linear).
+[    1.541242] fedora kernel: xor: automatically using best checksumming function   avx       
+[    1.541251] fedora kernel: PM: RTC time: 10:15:10, date: 2026-11-01
+[    1.541259] fedora kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    1.541267] fedora kernel: DMA: preallocated 2048 KiB GFP_KERNEL pool for atomic allocations
+[    1.541275] fedora kernel: DMA: preallocated 2048 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    1.541283] fedora kernel: DMA: preallocated 2048 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    1.541291] fedora kernel: audit: initializing netlink subsys (disabled)
+[    1.541299] fedora kernel: audit: type=2000 audit(1793528110.006:1): state=initialized audit_enabled=0 res=1
+[    1.541308] fedora kernel: thermal_sys: Registered thermal governor 'fair_share'
+[    1.541316] fedora kernel: thermal_sys: Registered thermal governor 'bang_bang'
+[    1.541326] fedora kernel: thermal_sys: Registered thermal governor 'step_wise'
+[    1.541334] fedora kernel: thermal_sys: Registered thermal governor 'user_space'
+[    1.541342] fedora kernel: cpuidle: using governor menu
+[    1.541351] fedora kernel: Freeing SMP alternatives memory: 60K
+[    1.541359] fedora kernel: efi: Freeing EFI boot services memory: 146452K
+[    1.541367] fedora kernel: ACPI FADT declares the system doesn't support PCIe ASPM, so disable it
+[    1.541378] fedora kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    1.541386] fedora kernel: PCI: ECAM [mem 0xe0000000-0xefffffff] (base 0xe0000000) for domain 0000 [bus 00-ff]
+[    1.541394] fedora kernel: PCI: Using configuration type 1 for base access
+[    1.541404] fedora kernel: virt/tdx: TDX not supported by the host platform
+[    1.541413] fedora kernel: kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    1.541421] fedora kernel: HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    1.541428] fedora kernel: HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+[    1.541436] fedora kernel: HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    1.541443] fedora kernel: HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    1.541451] fedora kernel: raid6: using avx2x2 recovery algorithm
+[    1.541461] fedora kernel: raid6: skipped pq benchmark and selected avx2x4
+[    1.541469] fedora kernel: ACPI: Disabled all _OSI OS vendors
+[    1.541477] fedora kernel: ACPI: Added _OSI(Module Device)
+[    1.541488] fedora kernel: ACPI: Added _OSI(Processor Device)
+[    1.541496] fedora kernel: ACPI: Added _OSI(Processor Aggregator Device)
+[    1.541507] fedora kernel: ACPI: Added _OSI(Darwin)
+[    1.541515] fedora kernel: ACPI: 12 ACPI AML tables successfully acquired and loaded
+[    1.541523] fedora kernel: ACPI: EC: EC started
+[    1.541530] fedora kernel: ACPI: EC: interrupt blocked
+[    1.541539] fedora kernel: ACPI: EC: EC_CMD/EC_SC=0x66, EC_DATA=0x62
+[    1.541547] fedora kernel: ACPI: EC: Boot ECDT EC used to handle transactions
+[    1.541555] fedora kernel: ACPI: BIOS _OSI(Darwin) query honored via DMI
+[    1.541566] fedora kernel: ACPI: [Firmware Bug]: BIOS _OSI(Linux) query ignored
+[    1.541574] fedora kernel: ACPI: \_SB_: platform _OSC: OS support mask [006e7eff]
+[    1.541582] fedora kernel: ACPI: Dynamic OEM Table Load:
+[    1.541593] fedora kernel: ACPI Error: AE_ALREADY_EXISTS, SSDT 0xFFFF8D9541465400 Table is already loaded (20260408/tbdata-548)
+[    1.541602] fedora kernel: ACPI Error: Aborting method \_PR.CPU0.GCAP due to previous error (AE_ALREADY_EXISTS) (20260408/psparse-543)
+[    1.541611] fedora kernel: ACPI Error: Aborting method \_PR.CPU0._OSC due to previous error (AE_ALREADY_EXISTS) (20260408/psparse-543)
+[    1.541619] fedora kernel: ACPI: Marking method _OSC as Serialized because of AE_ALREADY_EXISTS error
+[    1.541627] fedora kernel: ACPI: Dynamic OEM Table Load:
+[    1.541638] fedora kernel: ACPI Error: AE_ALREADY_EXISTS, SSDT 0xFFFF8D9541583000 Table is already loaded (20260408/tbdata-548)
+[    1.541651] fedora kernel: ACPI Error: Aborting method \_PR.CPU0.GCAP due to previous error (AE_ALREADY_EXISTS) (20260408/psparse-543)
+[    1.541659] fedora kernel: ACPI Error: Aborting method \_PR.CPU0._PDC due to previous error (AE_ALREADY_EXISTS) (20260408/psparse-543)
+[    1.541667] fedora kernel: ACPI: Marking method _PDC as Serialized because of AE_ALREADY_EXISTS error
+[    1.541675] fedora kernel: ACPI: Dynamic OEM Table Load:
+[    1.541683] fedora kernel: ACPI Error: AE_ALREADY_EXISTS, SSDT 0xFFFF8D9541583000 Table is already loaded (20260408/tbdata-548)
+[    1.541691] fedora kernel: ACPI Error: Aborting method \_PR.CPU1.APPT due to previous error (AE_ALREADY_EXISTS) (20260408/psparse-543)
+[    1.541699] fedora kernel: ACPI Error: Aborting method \_PR.CPU1.GCAP due to previous error (AE_ALREADY_EXISTS) (20260408/psparse-543)
+[    1.541707] fedora kernel: ACPI Error: Aborting method \_PR.CPU1._PDC due to previous error (AE_ALREADY_EXISTS) (20260408/psparse-543)
+[    1.541718] fedora kernel: ACPI: Marking method _PDC as Serialized because of AE_ALREADY_EXISTS error
+[    1.541726] fedora kernel: ACPI BIOS Error (bug): Could not resolve symbol [\_SB.OSCP], AE_NOT_FOUND (20260408/psargs-365)
+[    1.541735] fedora kernel: ACPI Error: Aborting method \_PR.CPU2.GCAP due to previous error (AE_NOT_FOUND) (20260408/psparse-543)
+[    1.541743] fedora kernel: ACPI Error: Aborting method \_PR.CPU2._PDC due to previous error (AE_NOT_FOUND) (20260408/psparse-543)
+[    1.541754] fedora kernel: ACPI BIOS Error (bug): Could not resolve symbol [\_SB.OSCP], AE_NOT_FOUND (20260408/psargs-365)
+[    1.541762] fedora kernel: ACPI Error: Aborting method \_PR.CPU3.GCAP due to previous error (AE_NOT_FOUND) (20260408/psparse-543)
+[    1.541771] fedora kernel: ACPI Error: Aborting method \_PR.CPU3._PDC due to previous error (AE_NOT_FOUND) (20260408/psparse-543)
+[    1.541782] fedora kernel: ACPI: Interpreter enabled
+[    1.541802] fedora kernel: ACPI: PM: (supports S0 S3 S4 S5)
+[    1.541812] fedora kernel: ACPI: Using IOAPIC for interrupt routing
+[    1.541820] fedora kernel: PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    1.541828] fedora kernel: PCI: Ignoring E820 reservations for host bridge windows
+[    1.541836] fedora kernel: ACPI: Enabled 12 GPEs in block 00 to 7F
+[    1.541846] fedora kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    1.542205] fedora kernel: acpi PNP0A08:00: _OSC: OS assumes control of [PCIeHotplug SHPCHotplug AER PCIeCapability LTR DPC]
+[    1.542246] fedora kernel: PCI host bridge to bus 0000:00
+[    1.542623] fedora kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    1.542959] fedora kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    1.543300] fedora kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000fffff window]
+[    1.543649] fedora kernel: pci_bus 0000:00: root bus resource [mem 0x80000000-0xfeafffff window]
+[    1.543973] fedora kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.544359] fedora kernel: pci 0000:00:00.0: [8086:1904] type 00 class 0x060000 conventional PCI endpoint
+[    1.544737] fedora kernel: pci 0000:00:02.0: [8086:1927] type 00 class 0x030000 PCIe Root Complex Integrated Endpoint
+[    1.545101] fedora kernel: pci 0000:00:02.0: BAR 0 [mem 0x81000000-0x81ffffff 64bit]
+[    1.545461] fedora kernel: pci 0000:00:02.0: BAR 2 [mem 0xa0000000-0xafffffff 64bit pref]
+[    1.545770] fedora kernel: pci 0000:00:02.0: BAR 4 [io  0x3000-0x303f]
+[    1.546083] fedora kernel: pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    1.546382] fedora kernel: pci 0000:00:14.0: [8086:9d2f] type 00 class 0x0c0330 conventional PCI endpoint
+[    1.546605] fedora kernel: pci 0000:00:14.0: BAR 0 [mem 0x82600000-0x8260ffff 64bit]
+[    1.546822] fedora kernel: pci 0000:00:14.0: PME# supported from D3hot D3cold
+[    1.547063] fedora kernel: pci 0000:00:16.0: [8086:9d3a] type 00 class 0x078000 conventional PCI endpoint
+[    1.547296] fedora kernel: pci 0000:00:16.0: BAR 0 [mem 0x82629000-0x82629fff 64bit]
+[    1.547513] fedora kernel: pci 0000:00:16.0: PME# supported from D3hot
+[    1.547752] fedora kernel: pci 0000:00:19.0: [8086:9d66] type 00 class 0x118000 conventional PCI endpoint
+[    1.547969] fedora kernel: pci 0000:00:19.0: BAR 0 [mem 0x8262a000-0x8262afff 64bit]
+[    1.548215] fedora kernel: pci 0000:00:1c.0: [8086:9d10] type 01 class 0x060400 PCIe Root Port
+[    1.548439] fedora kernel: pci 0000:00:1c.0: PCI bridge to [bus 01]
+[    1.548655] fedora kernel: pci 0000:00:1c.0:   bridge window [mem 0x82500000-0x825fffff]
+[    1.548870] fedora kernel: pci 0000:00:1c.0: PME# supported from D0 D3hot D3cold
+[    1.549181] fedora kernel: pci 0000:00:1c.4: [8086:9d14] type 01 class 0x060400 PCIe Root Port
+[    1.549540] fedora kernel: pci 0000:00:1c.4: PCI bridge to [bus 03-78]
+[    1.549916] fedora kernel: pci 0000:00:1c.4:   bridge window [io  0x4000-0x7fff]
+[    1.550282] fedora kernel: pci 0000:00:1c.4:   bridge window [mem 0x82700000-0x908fffff]
+[    1.550636] fedora kernel: pci 0000:00:1c.4:   bridge window [mem 0xb0000000-0xbdffffff 64bit pref]
+[    1.550984] fedora kernel: pci 0000:00:1c.4: PME# supported from D0 D3hot D3cold
+[    1.551355] fedora kernel: pci 0000:00:1d.0: [8086:9d18] type 01 class 0x060400 PCIe Root Port
+[    1.551674] fedora kernel: pci 0000:00:1d.0: PCI bridge to [bus 79-ee]
+[    1.552011] fedora kernel: pci 0000:00:1d.0:   bridge window [io  0x8000-0xbfff]
+[    1.552317] fedora kernel: pci 0000:00:1d.0:   bridge window [mem 0x90900000-0x9eafffff]
+[    1.552620] fedora kernel: pci 0000:00:1d.0:   bridge window [mem 0xbe000000-0xcbffffff 64bit pref]
+[    1.552964] fedora kernel: pci 0000:00:1d.0: PME# supported from D0 D3hot D3cold
+[    1.553339] fedora kernel: pci 0000:00:1d.3: [8086:9d1b] type 01 class 0x060400 PCIe Root Port
+[    1.553693] fedora kernel: pci 0000:00:1d.3: PCI bridge to [bus 02]
+[    1.554082] fedora kernel: pci 0000:00:1d.3:   bridge window [mem 0x82000000-0x824fffff]
+[    1.554477] fedora kernel: pci 0000:00:1d.3: PME# supported from D0 D3hot D3cold
+[    1.554864] fedora kernel: pci 0000:00:1e.0: [8086:9d27] type 00 class 0x118000 conventional PCI endpoint
+[    1.555225] fedora kernel: pci 0000:00:1e.0: BAR 0 [mem 0x8262b000-0x8262bfff 64bit]
+[    1.555589] fedora kernel: pci 0000:00:1e.1: [8086:9d28] type 00 class 0x118000 conventional PCI endpoint
+[    1.555934] fedora kernel: pci 0000:00:1e.1: BAR 0 [mem 0x8262c000-0x8262cfff 64bit]
+[    1.556306] fedora kernel: pci 0000:00:1e.3: [8086:9d2a] type 00 class 0x118000 conventional PCI endpoint
+[    1.556634] fedora kernel: pci 0000:00:1e.3: BAR 0 [mem 0x8262d000-0x8262dfff 64bit]
+[    1.556981] fedora kernel: pci 0000:00:1f.0: [8086:9d48] type 00 class 0x060100 conventional PCI endpoint
+[    1.557416] fedora kernel: pci 0000:00:1f.2: [8086:9d21] type 00 class 0x058000 conventional PCI endpoint
+[    1.557793] fedora kernel: pci 0000:00:1f.2: BAR 0 [mem 0x82624000-0x82627fff]
+[    1.558169] fedora kernel: pci 0000:00:1f.3: [8086:9d70] type 00 class 0x040300 conventional PCI endpoint
+[    1.558523] fedora kernel: pci 0000:00:1f.3: BAR 0 [mem 0x82620000-0x82623fff 64bit]
+[    1.558970] fedora kernel: pci 0000:00:1f.3: BAR 4 [mem 0x00000000-0x0000ffff 64bit]
+[    1.559381] fedora kernel: pci 0000:00:1f.3: PME# supported from D3hot D3cold
+[    1.559683] fedora kernel: pci 0000:00:1f.4: [8086:9d23] type 00 class 0x0c0500 conventional PCI endpoint
+[    1.559956] fedora kernel: pci 0000:00:1f.4: BAR 0 [mem 0x8262e000-0x8262e0ff 64bit]
+[    1.560290] fedora kernel: pci 0000:00:1f.4: BAR 4 [io  0x3040-0x305f]
+[    1.560602] fedora kernel: pci 0000:01:00.0: [106b:2003] type 00 class 0x018002 PCIe Endpoint
+[    1.560886] fedora kernel: pci 0000:01:00.0: BAR 0 [mem 0x82500000-0x82503fff 64bit]
+[    1.561145] fedora kernel: pci 0000:00:1c.0: PCI bridge to [bus 01]
+[    1.561386] fedora kernel: pci 0000:03:00.0: [8086:1578] type 01 class 0x060400 PCIe Switch Upstream Port
+[    1.561613] fedora kernel: pci 0000:03:00.0: PCI bridge to [bus 04-78]
+[    1.561838] fedora kernel: pci 0000:03:00.0:   bridge window [io  0x4000-0x7fff]
+[    1.562069] fedora kernel: pci 0000:03:00.0:   bridge window [mem 0x82700000-0x908fffff]
+[    1.562296] fedora kernel: pci 0000:03:00.0:   bridge window [mem 0xb0000000-0xbdffffff 64bit pref]
+[    1.562527] fedora kernel: pci 0000:03:00.0: enabling Extended Tags
+[    1.562752] fedora kernel: pci 0000:03:00.0: supports D1 D2
+[    1.562978] fedora kernel: pci 0000:03:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.563210] fedora kernel: pci 0000:00:1c.4: PCI bridge to [bus 03-78]
+[    1.563470] fedora kernel: pci 0000:04:00.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[    1.563707] fedora kernel: pci 0000:04:00.0: PCI bridge to [bus 05]
+[    1.563943] fedora kernel: pci 0000:04:00.0:   bridge window [mem 0x82800000-0x828fffff]
+[    1.564202] fedora kernel: pci 0000:04:00.0: enabling Extended Tags
+[    1.564445] fedora kernel: pci 0000:04:00.0: supports D1 D2
+[    1.564681] fedora kernel: pci 0000:04:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.564924] fedora kernel: pci 0000:04:01.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[    1.565204] fedora kernel: pci 0000:04:01.0: PCI bridge to [bus 07-3f]
+[    1.565443] fedora kernel: pci 0000:04:01.0:   bridge window [io  0x4000-0x5fff]
+[    1.565678] fedora kernel: pci 0000:04:01.0:   bridge window [mem 0x82900000-0x898fffff]
+[    1.565913] fedora kernel: pci 0000:04:01.0:   bridge window [mem 0xb0000000-0xb6ffffff 64bit pref]
+[    1.566225] fedora kernel: pci 0000:04:01.0: enabling Extended Tags
+[    1.566464] fedora kernel: pci 0000:04:01.0: supports D1 D2
+[    1.566708] fedora kernel: pci 0000:04:01.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.566960] fedora kernel: pci 0000:04:02.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[    1.567227] fedora kernel: pci 0000:04:02.0: PCI bridge to [bus 06]
+[    1.567463] fedora kernel: pci 0000:04:02.0:   bridge window [mem 0x82700000-0x827fffff]
+[    1.567703] fedora kernel: pci 0000:04:02.0: enabling Extended Tags
+[    1.567938] fedora kernel: pci 0000:04:02.0: supports D1 D2
+[    1.568191] fedora kernel: pci 0000:04:02.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.568440] fedora kernel: pci 0000:04:04.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[    1.568677] fedora kernel: pci 0000:04:04.0: PCI bridge to [bus 40-78]
+[    1.568917] fedora kernel: pci 0000:04:04.0:   bridge window [io  0x6000-0x7fff]
+[    1.569167] fedora kernel: pci 0000:04:04.0:   bridge window [mem 0x89900000-0x908fffff]
+[    1.569410] fedora kernel: pci 0000:04:04.0:   bridge window [mem 0xb7000000-0xbdffffff 64bit pref]
+[    1.569646] fedora kernel: pci 0000:04:04.0: enabling Extended Tags
+[    1.569881] fedora kernel: pci 0000:04:04.0: supports D1 D2
+[    1.570130] fedora kernel: pci 0000:04:04.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.570355] fedora kernel: pci 0000:03:00.0: PCI bridge to [bus 04-78]
+[    1.570608] fedora kernel: pci 0000:05:00.0: [8086:15d2] type 00 class 0x088000 PCIe Endpoint
+[    1.570853] fedora kernel: pci 0000:05:00.0: BAR 0 [mem 0x82800000-0x8283ffff]
+[    1.571108] fedora kernel: pci 0000:05:00.0: BAR 1 [mem 0x82840000-0x82840fff]
+[    1.571352] fedora kernel: pci 0000:05:00.0: enabling Extended Tags
+[    1.571595] fedora kernel: pci 0000:05:00.0: supports D1 D2
+[    1.571835] fedora kernel: pci 0000:05:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.572130] fedora kernel: pci 0000:04:00.0: PCI bridge to [bus 05]
+[    1.572372] fedora kernel: pci 0000:04:01.0: PCI bridge to [bus 07-3f]
+[    1.572627] fedora kernel: pci 0000:06:00.0: [8086:15d4] type 00 class 0x0c0330 PCIe Endpoint
+[    1.572874] fedora kernel: pci 0000:06:00.0: BAR 0 [mem 0x00000000-0x0000ffff]
+[    1.573152] fedora kernel: pci 0000:06:00.0: enabling Extended Tags
+[    1.573402] fedora kernel: pci 0000:06:00.0: supports D1 D2
+[    1.573646] fedora kernel: pci 0000:06:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.573882] fedora kernel: pci 0000:04:02.0: PCI bridge to [bus 06]
+[    1.574133] fedora kernel: pci 0000:04:04.0: PCI bridge to [bus 40-78]
+[    1.574369] fedora kernel: pci 0000:79:00.0: [8086:1578] type 01 class 0x060400 PCIe Switch Upstream Port
+[    1.574596] fedora kernel: pci 0000:79:00.0: PCI bridge to [bus 7a-ee]
+[    1.574822] fedora kernel: pci 0000:79:00.0:   bridge window [io  0x8000-0xbfff]
+[    1.575057] fedora kernel: pci 0000:79:00.0:   bridge window [mem 0x90900000-0x9eafffff]
+[    1.575284] fedora kernel: pci 0000:79:00.0:   bridge window [mem 0xbe000000-0xcbffffff 64bit pref]
+[    1.575508] fedora kernel: pci 0000:79:00.0: enabling Extended Tags
+[    1.575733] fedora kernel: pci 0000:79:00.0: supports D1 D2
+[    1.575964] fedora kernel: pci 0000:79:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.576199] fedora kernel: pci 0000:79:00.0: 15.752 Gb/s available PCIe bandwidth, limited by 8.0 GT/s PCIe x2 link at 0000:00:1d.0 (capable of 31.504 Gb/s with 8.0 GT/s PCIe x4 link)
+[    1.576415] fedora kernel: pci 0000:00:1d.0: PCI bridge to [bus 79-ee]
+[    1.576665] fedora kernel: pci 0000:7a:00.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[    1.576899] fedora kernel: pci 0000:7a:00.0: PCI bridge to [bus 7b]
+[    1.577152] fedora kernel: pci 0000:7a:00.0:   bridge window [mem 0x90a00000-0x90afffff]
+[    1.577394] fedora kernel: pci 0000:7a:00.0: enabling Extended Tags
+[    1.577628] fedora kernel: pci 0000:7a:00.0: supports D1 D2
+[    1.577863] fedora kernel: pci 0000:7a:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.578151] fedora kernel: pci 0000:7a:01.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[    1.578391] fedora kernel: pci 0000:7a:01.0: PCI bridge to [bus 7d-b5]
+[    1.578624] fedora kernel: pci 0000:7a:01.0:   bridge window [io  0x8000-0x9fff]
+[    1.578859] fedora kernel: pci 0000:7a:01.0:   bridge window [mem 0x90b00000-0x97afffff]
+[    1.579112] fedora kernel: pci 0000:7a:01.0:   bridge window [mem 0xbe000000-0xc4ffffff 64bit pref]
+[    1.579352] fedora kernel: pci 0000:7a:01.0: enabling Extended Tags
+[    1.579592] fedora kernel: pci 0000:7a:01.0: supports D1 D2
+[    1.579827] fedora kernel: pci 0000:7a:01.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.580081] fedora kernel: pci 0000:7a:02.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[    1.580318] fedora kernel: pci 0000:7a:02.0: PCI bridge to [bus 7c]
+[    1.580553] fedora kernel: pci 0000:7a:02.0:   bridge window [mem 0x90900000-0x909fffff]
+[    1.580793] fedora kernel: pci 0000:7a:02.0: enabling Extended Tags
+[    1.581046] fedora kernel: pci 0000:7a:02.0: supports D1 D2
+[    1.581283] fedora kernel: pci 0000:7a:02.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.581526] fedora kernel: pci 0000:7a:04.0: [8086:15d3] type 01 class 0x060400 PCIe Switch Downstream Port
+[    1.581762] fedora kernel: pci 0000:7a:04.0: PCI bridge to [bus b6-ee]
+[    1.582008] fedora kernel: pci 0000:7a:04.0:   bridge window [io  0xa000-0xbfff]
+[    1.582247] fedora kernel: pci 0000:7a:04.0:   bridge window [mem 0x97b00000-0x9eafffff]
+[    1.582483] fedora kernel: pci 0000:7a:04.0:   bridge window [mem 0xc5000000-0xcbffffff 64bit pref]
+[    1.582719] fedora kernel: pci 0000:7a:04.0: enabling Extended Tags
+[    1.582960] fedora kernel: pci 0000:7a:04.0: supports D1 D2
+[    1.583218] fedora kernel: pci 0000:7a:04.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.583444] fedora kernel: pci 0000:79:00.0: PCI bridge to [bus 7a-ee]
+[    1.583696] fedora kernel: pci 0000:7b:00.0: [8086:15d2] type 00 class 0x088000 PCIe Endpoint
+[    1.583941] fedora kernel: pci 0000:7b:00.0: BAR 0 [mem 0x90a00000-0x90a3ffff]
+[    1.584199] fedora kernel: pci 0000:7b:00.0: BAR 1 [mem 0x90a40000-0x90a40fff]
+[    1.584441] fedora kernel: pci 0000:7b:00.0: enabling Extended Tags
+[    1.584686] fedora kernel: pci 0000:7b:00.0: supports D1 D2
+[    1.584933] fedora kernel: pci 0000:7b:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.585290] fedora kernel: pci 0000:7a:00.0: PCI bridge to [bus 7b]
+[    1.585576] fedora kernel: pci 0000:7a:01.0: PCI bridge to [bus 7d-b5]
+[    1.585836] fedora kernel: pci 0000:7c:00.0: [8086:15d4] type 00 class 0x0c0330 PCIe Endpoint
+[    1.586095] fedora kernel: pci 0000:7c:00.0: BAR 0 [mem 0x00000000-0x0000ffff]
+[    1.586344] fedora kernel: pci 0000:7c:00.0: enabling Extended Tags
+[    1.586591] fedora kernel: pci 0000:7c:00.0: supports D1 D2
+[    1.586836] fedora kernel: pci 0000:7c:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.587107] fedora kernel: pci 0000:7a:02.0: PCI bridge to [bus 7c]
+[    1.587345] fedora kernel: pci 0000:7a:04.0: PCI bridge to [bus b6-ee]
+[    1.587579] fedora kernel: pci 0000:02:00.0: [14e4:43ba] type 00 class 0x028000 PCIe Endpoint
+[    1.587813] fedora kernel: pci 0000:02:00.0: BAR 0 [mem 0x82400000-0x82407fff 64bit]
+[    1.588049] fedora kernel: pci 0000:02:00.0: BAR 2 [mem 0x82000000-0x823fffff 64bit]
+[    1.588275] fedora kernel: pci 0000:02:00.0: supports D1 D2
+[    1.588500] fedora kernel: pci 0000:02:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.588715] fedora kernel: pci 0000:00:1d.3: PCI bridge to [bus 02]
+[    1.588727] fedora kernel: ACPI: PCI: Interrupt link LNKA configured for IRQ 0
+[    1.588739] fedora kernel: ACPI: PCI: Interrupt link LNKB configured for IRQ 0
+[    1.588748] fedora kernel: ACPI: PCI: Interrupt link LNKC configured for IRQ 0
+[    1.588758] fedora kernel: ACPI: PCI: Interrupt link LNKD configured for IRQ 0
+[    1.588767] fedora kernel: ACPI: PCI: Interrupt link LNKE configured for IRQ 0
+[    1.588775] fedora kernel: ACPI: PCI: Interrupt link LNKF configured for IRQ 0
+[    1.588783] fedora kernel: ACPI: PCI: Interrupt link LNKG configured for IRQ 0
+[    1.588791] fedora kernel: ACPI: PCI: Interrupt link LNKH configured for IRQ 0
+[    1.588799] fedora kernel: ACPI: EC: interrupt unblocked
+[    1.588813] fedora kernel: ACPI: EC: event unblocked
+[    1.588822] fedora kernel: ACPI: EC: EC_CMD/EC_SC=0x66, EC_DATA=0x62
+[    1.588830] fedora kernel: ACPI: EC: GPE=0x7
+[    1.588839] fedora kernel: ACPI: \_SB_.PCI0.LPCB.EC__: Boot ECDT EC initialization complete
+[    1.588847] fedora kernel: ACPI: \_SB_.PCI0.LPCB.EC__: EC: Used to handle transactions and events
+[    1.588856] fedora kernel: iommu: Default domain type: Translated
+[    1.588864] fedora kernel: iommu: DMA domain TLB invalidation policy: lazy mode
+[    1.588871] fedora kernel: SCSI subsystem initialized
+[    1.588879] fedora kernel: libata version 3.00 loaded.
+[    1.588887] fedora kernel: ACPI: bus type USB registered
+[    1.588895] fedora kernel: usbcore: registered new interface driver usbfs
+[    1.588903] fedora kernel: usbcore: registered new interface driver hub
+[    1.588912] fedora kernel: usbcore: registered new device driver usb
+[    1.588920] fedora kernel: pps_core: LinuxPPS API ver. 1 registered
+[    1.588927] fedora kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.588935] fedora kernel: PTP clock support registered
+[    1.588942] fedora kernel: EDAC MC: Ver: 3.0.0
+[    1.588949] fedora kernel: efivars: Registered efivars operations
+[    1.588957] fedora kernel: NetLabel: Initializing
+[    1.588965] fedora kernel: NetLabel:  domain hash size = 128
+[    1.588973] fedora kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    1.588981] fedora kernel: NetLabel:  unlabeled traffic allowed by default
+[    1.588989] fedora kernel: mctp: management component transport protocol core
+[    1.589006] fedora kernel: NET: Registered PF_MCTP protocol family
+[    1.589017] fedora kernel: PCI: Using ACPI for IRQ routing
+[    1.589040] fedora kernel: PCI: pci_cache_line_size set to 64 bytes
+[    1.589063] fedora kernel: e820: register RAM buffer resource [mem 0x00058000-0x0005ffff]
+[    1.589085] fedora kernel: e820: register RAM buffer resource [mem 0x0009e000-0x0009ffff]
+[    1.589106] fedora kernel: e820: register RAM buffer resource [mem 0x71dfd000-0x73ffffff]
+[    1.589127] fedora kernel: e820: register RAM buffer resource [mem 0x72e44000-0x73ffffff]
+[    1.589148] fedora kernel: e820: register RAM buffer resource [mem 0x7307e000-0x73ffffff]
+[    1.589170] fedora kernel: e820: register RAM buffer resource [mem 0x78c7f000-0x7bffffff]
+[    1.589198] fedora kernel: e820: register RAM buffer resource [mem 0x79000000-0x7bffffff]
+[    1.589220] fedora kernel: e820: register RAM buffer resource [mem 0x47f000000-0x47fffffff]
+[    1.589533] fedora kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    1.589755] fedora kernel: pci 0000:00:02.0: vgaarb: bridge control possible
+[    1.589970] fedora kernel: pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    1.589982] fedora kernel: vgaarb: loaded
+[    1.589990] fedora kernel: clocksource: Switched to clocksource tsc-early
+[    1.589998] fedora kernel: VFS: Disk quotas dquot_6.6.0
+[    1.590016] fedora kernel: VFS: Dquot-cache hash table entries: 512 (4096 bytes)
+[    1.590277] fedora kernel: acpi PNP0C02:00: Skipped [io  0x002e-0x002f]
+[    1.590525] fedora kernel: acpi PNP0C02:00: Skipped [io  0x004e-0x004f]
+[    1.590763] fedora kernel: acpi PNP0C02:00: Skipped [io  0x0061]
+[    1.591007] fedora kernel: acpi PNP0C02:00: Skipped [io  0x0063]
+[    1.591254] fedora kernel: acpi PNP0C02:00: Skipped [io  0x0065]
+[    1.591490] fedora kernel: acpi PNP0C02:00: Skipped [io  0x0067]
+[    1.591725] fedora kernel: acpi PNP0C02:00: Skipped [io  0x0080]
+[    1.591961] fedora kernel: acpi PNP0C02:00: Skipped [io  0x0092]
+[    1.592212] fedora kernel: acpi PNP0C02:00: Skipped [io  0x00b2-0x00b3]
+[    1.592450] fedora kernel: acpi PNP0C02:00: Reserved [io  0xffff]
+[    1.592686] fedora kernel: acpi PNP0C02:00: Reserved [io  0x1800-0x18fe]
+[    1.592921] fedora kernel: acpi PNP0C02:00: Reserved [io  0x0800-0x087f]
+[    1.593167] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfed10000-0xfed17fff]
+[    1.593395] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfed18000-0xfed18fff]
+[    1.593621] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfed19000-0xfed19fff]
+[    1.593847] fedora kernel: acpi PNP0C02:01: Could not reserve [mem 0xe0000000-0xefffffff]
+[    1.594093] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfed20000-0xfed3ffff]
+[    1.594322] fedora kernel: acpi PNP0C02:01: Could not reserve [mem 0xfed90000-0xfed93fff]
+[    1.594548] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfed45000-0xfed8ffff]
+[    1.594773] fedora kernel: acpi PNP0C02:01: Could not reserve [mem 0xff000000-0xffffffff]
+[    1.594998] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfee00000-0xfeefffff]
+[    1.595241] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfd000000-0xfdffffff]
+[    1.595467] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe000000-0xfe00ffff]
+[    1.595702] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe010000-0xfe010fff]
+[    1.595933] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe020000-0xfe035fff]
+[    1.596165] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe036000-0xfe03bfff]
+[    1.596391] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe03c000-0xfe03cfff]
+[    1.596617] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe03d000-0xfe0bffff]
+[    1.596848] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe0c0000-0xfe0fffff]
+[    1.597085] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe100000-0xfe1fffff]
+[    1.597311] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe200000-0xfe3fffff]
+[    1.597538] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe400000-0xfe40ffff]
+[    1.597769] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe410000-0xfe5fffff]
+[    1.597994] fedora kernel: acpi PNP0C02:01: Reserved [mem 0xfe600000-0xfe7fffff]
+[    1.598227] fedora kernel: acpi PNP0C01:00: Could not reserve [mem 0x20000000-0x201fffff]
+[    1.598446] fedora kernel: acpi PNP0C01:00: Could not reserve [mem 0x40000000-0x401fffff]
+[    1.598458] fedora kernel: pnp: PnP ACPI init
+[    1.598467] fedora kernel: pnp: PnP ACPI: found 0 devices
+[    1.598678] fedora kernel: pci 0000:00:02.0: assigning 10 device properties
+[    1.598929] fedora kernel: pci 0000:05:00.0: assigning 8 device properties
+[    1.599180] fedora kernel: pci 0000:7b:00.0: assigning 8 device properties
+[    1.599399] fedora kernel: pci 0000:00:1f.3: assigning 4 device properties
+[    1.599412] fedora kernel: clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    1.599422] fedora kernel: NET: Registered PF_INET protocol family
+[    1.599432] fedora kernel: IP idents hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    1.599440] fedora kernel: tcp_listen_portaddr_hash hash table entries: 8192 (order: 5, 131072 bytes, linear)
+[    1.599448] fedora kernel: Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.599456] fedora kernel: TCP established hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    1.599464] fedora kernel: TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+[    1.599475] fedora kernel: TCP: Hash tables configured (established 131072 bind 65536)
+[    1.599483] fedora kernel: MPTCP token hash table entries: 16384 (order: 7, 393216 bytes, linear)
+[    1.599492] fedora kernel: UDP hash table entries: 8192 (order: 7, 524288 bytes, linear)
+[    1.599500] fedora kernel: NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.599508] fedora kernel: NET: Registered PF_XDP protocol family
+[    1.599742] fedora kernel: pci 0000:04:02.0: bridge window [io  0x1000-0x0fff] to [bus 06] add_size 1000
+[    1.599981] fedora kernel: pci 0000:04:02.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 06] add_size 200000 add_align 100000
+[    1.600223] fedora kernel: pci 0000:7a:02.0: bridge window [io  0x1000-0x0fff] to [bus 7c] add_size 1000
+[    1.600462] fedora kernel: pci 0000:7a:02.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 7c] add_size 200000 add_align 100000
+[    1.600679] fedora kernel: pci 0000:00:1f.3: BAR 4 [mem 0x80000000-0x8000ffff 64bit]: assigned
+[    1.600897] fedora kernel: pci 0000:00:1c.0: PCI bridge to [bus 01]
+[    1.601125] fedora kernel: pci 0000:00:1c.0:   bridge window [mem 0x82500000-0x825fffff]
+[    1.601360] fedora kernel: pci 0000:04:02.0: bridge window [mem size 0x00200000 64bit pref]: can't assign; no space
+[    1.601715] fedora kernel: pci 0000:04:02.0: bridge window [mem size 0x00200000 64bit pref]: failed to assign
+[    1.602124] fedora kernel: pci 0000:04:02.0: bridge window [io  size 0x1000]: can't assign; no space
+[    1.602458] fedora kernel: pci 0000:04:02.0: bridge window [io  size 0x1000]: failed to assign
+[    1.602835] fedora kernel: pci 0000:04:02.0: bridge window [mem size 0x00200000 64bit pref]: can't assign; no space
+[    1.603272] fedora kernel: pci 0000:04:02.0: bridge window [mem size 0x00200000 64bit pref]: failed to assign
+[    1.603620] fedora kernel: pci 0000:04:02.0: bridge window [io  size 0x1000]: can't assign; no space
+[    1.603870] fedora kernel: pci 0000:04:02.0: bridge window [io  size 0x1000]: failed to assign
+[    1.604139] fedora kernel: pci 0000:04:00.0: PCI bridge to [bus 05]
+[    1.604390] fedora kernel: pci 0000:04:00.0:   bridge window [mem 0x82800000-0x828fffff]
+[    1.604632] fedora kernel: pci 0000:04:01.0: PCI bridge to [bus 07-3f]
+[    1.604871] fedora kernel: pci 0000:04:01.0:   bridge window [io  0x4000-0x5fff]
+[    1.605118] fedora kernel: pci 0000:04:01.0:   bridge window [mem 0x82900000-0x898fffff]
+[    1.605355] fedora kernel: pci 0000:04:01.0:   bridge window [mem 0xb0000000-0xb6ffffff 64bit pref]
+[    1.605609] fedora kernel: pci 0000:06:00.0: BAR 0 [mem 0x82700000-0x8270ffff]: assigned
+[    1.605863] fedora kernel: pci 0000:04:02.0: PCI bridge to [bus 06]
+[    1.606130] fedora kernel: pci 0000:04:02.0:   bridge window [mem 0x82700000-0x827fffff]
+[    1.606373] fedora kernel: pci 0000:04:04.0: PCI bridge to [bus 40-78]
+[    1.606593] fedora kernel: pci 0000:04:04.0:   bridge window [io  0x6000-0x7fff]
+[    1.606813] fedora kernel: pci 0000:04:04.0:   bridge window [mem 0x89900000-0x908fffff]
+[    1.607076] fedora kernel: pci 0000:04:04.0:   bridge window [mem 0xb7000000-0xbdffffff 64bit pref]
+[    1.607308] fedora kernel: pci 0000:03:00.0: PCI bridge to [bus 04-78]
+[    1.607522] fedora kernel: pci 0000:03:00.0:   bridge window [io  0x4000-0x7fff]
+[    1.607733] fedora kernel: pci 0000:03:00.0:   bridge window [mem 0x82700000-0x908fffff]
+[    1.607945] fedora kernel: pci 0000:03:00.0:   bridge window [mem 0xb0000000-0xbdffffff 64bit pref]
+[    1.608228] fedora kernel: pci 0000:00:1c.4: PCI bridge to [bus 03-78]
+[    1.608435] fedora kernel: pci 0000:00:1c.4:   bridge window [io  0x4000-0x7fff]
+[    1.608636] fedora kernel: pci 0000:00:1c.4:   bridge window [mem 0x82700000-0x908fffff]
+[    1.608837] fedora kernel: pci 0000:00:1c.4:   bridge window [mem 0xb0000000-0xbdffffff 64bit pref]
+[    1.609110] fedora kernel: pci 0000:7a:02.0: bridge window [mem size 0x00200000 64bit pref]: can't assign; no space
+[    1.609349] fedora kernel: pci 0000:7a:02.0: bridge window [mem size 0x00200000 64bit pref]: failed to assign
+[    1.609576] fedora kernel: pci 0000:7a:02.0: bridge window [io  size 0x1000]: can't assign; no space
+[    1.609795] fedora kernel: pci 0000:7a:02.0: bridge window [io  size 0x1000]: failed to assign
+[    1.610058] fedora kernel: pci 0000:7a:02.0: bridge window [mem size 0x00200000 64bit pref]: can't assign; no space
+[    1.610306] fedora kernel: pci 0000:7a:02.0: bridge window [mem size 0x00200000 64bit pref]: failed to assign
+[    1.610530] fedora kernel: pci 0000:7a:02.0: bridge window [io  size 0x1000]: can't assign; no space
+[    1.610750] fedora kernel: pci 0000:7a:02.0: bridge window [io  size 0x1000]: failed to assign
+[    1.610971] fedora kernel: pci 0000:7a:00.0: PCI bridge to [bus 7b]
+[    1.611374] fedora kernel: pci 0000:7a:00.0:   bridge window [mem 0x90a00000-0x90afffff]
+[    1.611620] fedora kernel: pci 0000:7a:01.0: PCI bridge to [bus 7d-b5]
+[    1.611841] fedora kernel: pci 0000:7a:01.0:   bridge window [io  0x8000-0x9fff]
+[    1.612112] fedora kernel: pci 0000:7a:01.0:   bridge window [mem 0x90b00000-0x97afffff]
+[    1.612349] fedora kernel: pci 0000:7a:01.0:   bridge window [mem 0xbe000000-0xc4ffffff 64bit pref]
+[    1.612579] fedora kernel: pci 0000:7c:00.0: BAR 0 [mem 0x90900000-0x9090ffff]: assigned
+[    1.612804] fedora kernel: pci 0000:7a:02.0: PCI bridge to [bus 7c]
+[    1.613051] fedora kernel: pci 0000:7a:02.0:   bridge window [mem 0x90900000-0x909fffff]
+[    1.613310] fedora kernel: pci 0000:7a:04.0: PCI bridge to [bus b6-ee]
+[    1.613546] fedora kernel: pci 0000:7a:04.0:   bridge window [io  0xa000-0xbfff]
+[    1.613786] fedora kernel: pci 0000:7a:04.0:   bridge window [mem 0x97b00000-0x9eafffff]
+[    1.614029] fedora kernel: pci 0000:7a:04.0:   bridge window [mem 0xc5000000-0xcbffffff 64bit pref]
+[    1.614262] fedora kernel: pci 0000:79:00.0: PCI bridge to [bus 7a-ee]
+[    1.614489] fedora kernel: pci 0000:79:00.0:   bridge window [io  0x8000-0xbfff]
+[    1.614755] fedora kernel: pci 0000:79:00.0:   bridge window [mem 0x90900000-0x9eafffff]
+[    1.614982] fedora kernel: pci 0000:79:00.0:   bridge window [mem 0xbe000000-0xcbffffff 64bit pref]
+[    1.615211] fedora kernel: pci 0000:00:1d.0: PCI bridge to [bus 79-ee]
+[    1.615440] fedora kernel: pci 0000:00:1d.0:   bridge window [io  0x8000-0xbfff]
+[    1.615655] fedora kernel: pci 0000:00:1d.0:   bridge window [mem 0x90900000-0x9eafffff]
+[    1.615870] fedora kernel: pci 0000:00:1d.0:   bridge window [mem 0xbe000000-0xcbffffff 64bit pref]
+[    1.616104] fedora kernel: pci 0000:00:1d.3: PCI bridge to [bus 02]
+[    1.616321] fedora kernel: pci 0000:00:1d.3:   bridge window [mem 0x82000000-0x824fffff]
+[    1.616531] fedora kernel: pci_bus 0000:00: Some PCI device resources are unassigned, try booting with pci=realloc
+[    1.616735] fedora kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    1.616936] fedora kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    1.617172] fedora kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000fffff window]
+[    1.617382] fedora kernel: pci_bus 0000:00: resource 7 [mem 0x80000000-0xfeafffff window]
+[    1.617617] fedora kernel: pci_bus 0000:01: resource 1 [mem 0x82500000-0x825fffff]
+[    1.617841] fedora kernel: pci_bus 0000:03: resource 0 [io  0x4000-0x7fff]
+[    1.618078] fedora kernel: pci_bus 0000:03: resource 1 [mem 0x82700000-0x908fffff]
+[    1.618292] fedora kernel: pci_bus 0000:03: resource 2 [mem 0xb0000000-0xbdffffff 64bit pref]
+[    1.618531] fedora kernel: pci_bus 0000:04: resource 0 [io  0x4000-0x7fff]
+[    1.618761] fedora kernel: pci_bus 0000:04: resource 1 [mem 0x82700000-0x908fffff]
+[    1.618990] fedora kernel: pci_bus 0000:04: resource 2 [mem 0xb0000000-0xbdffffff 64bit pref]
+[    1.619266] fedora kernel: pci_bus 0000:05: resource 1 [mem 0x82800000-0x828fffff]
+[    1.619510] fedora kernel: pci_bus 0000:07: resource 0 [io  0x4000-0x5fff]
+[    1.619742] fedora kernel: pci_bus 0000:07: resource 1 [mem 0x82900000-0x898fffff]
+[    1.619974] fedora kernel: pci_bus 0000:07: resource 2 [mem 0xb0000000-0xb6ffffff 64bit pref]
+[    1.620245] fedora kernel: pci_bus 0000:06: resource 0 [io  size 0x1000]
+[    1.620478] fedora kernel: pci_bus 0000:06: resource 1 [mem 0x82700000-0x827fffff]
+[    1.620716] fedora kernel: pci_bus 0000:06: resource 2 [mem size 0x00200000 64bit pref]
+[    1.620959] fedora kernel: pci_bus 0000:40: resource 0 [io  0x6000-0x7fff]
+[    1.621208] fedora kernel: pci_bus 0000:40: resource 1 [mem 0x89900000-0x908fffff]
+[    1.621441] fedora kernel: pci_bus 0000:40: resource 2 [mem 0xb7000000-0xbdffffff 64bit pref]
+[    1.621665] fedora kernel: pci_bus 0000:79: resource 0 [io  0x8000-0xbfff]
+[    1.621879] fedora kernel: pci_bus 0000:79: resource 1 [mem 0x90900000-0x9eafffff]
+[    1.622105] fedora kernel: pci_bus 0000:79: resource 2 [mem 0xbe000000-0xcbffffff 64bit pref]
+[    1.622349] fedora kernel: pci_bus 0000:7a: resource 0 [io  0x8000-0xbfff]
+[    1.622571] fedora kernel: pci_bus 0000:7a: resource 1 [mem 0x90900000-0x9eafffff]
+[    1.622795] fedora kernel: pci_bus 0000:7a: resource 2 [mem 0xbe000000-0xcbffffff 64bit pref]
+[    1.623051] fedora kernel: pci_bus 0000:7b: resource 1 [mem 0x90a00000-0x90afffff]
+[    1.623298] fedora kernel: pci_bus 0000:7d: resource 0 [io  0x8000-0x9fff]
+[    1.623530] fedora kernel: pci_bus 0000:7d: resource 1 [mem 0x90b00000-0x97afffff]
+[    1.623764] fedora kernel: pci_bus 0000:7d: resource 2 [mem 0xbe000000-0xc4ffffff 64bit pref]
+[    1.624020] fedora kernel: pci_bus 0000:7c: resource 0 [io  size 0x1000]
+[    1.624258] fedora kernel: pci_bus 0000:7c: resource 1 [mem 0x90900000-0x909fffff]
+[    1.624490] fedora kernel: pci_bus 0000:7c: resource 2 [mem size 0x00200000 64bit pref]
+[    1.624738] fedora kernel: pci_bus 0000:b6: resource 0 [io  0xa000-0xbfff]
+[    1.624977] fedora kernel: pci_bus 0000:b6: resource 1 [mem 0x97b00000-0x9eafffff]
+[    1.625250] fedora kernel: pci_bus 0000:b6: resource 2 [mem 0xc5000000-0xcbffffff 64bit pref]
+[    1.625602] fedora kernel: pci_bus 0000:02: resource 1 [mem 0x82000000-0x824fffff]
+[    1.626072] fedora kernel: pci 0000:06:00.0: enabling device (0000 -> 0002)
+[    1.626466] fedora kernel: pci 0000:7c:00.0: enabling device (0000 -> 0002)
+[    1.626493] fedora kernel: PCI: CLS 256 bytes, default 64
+[    1.626643] fedora kernel: pci 0000:00:1f.1: [8086:9d20] type 00 class 0x058000 conventional PCI endpoint
+[    1.626789] fedora kernel: pci 0000:00:1f.1: BAR 0 [mem 0xfd000000-0xfdffffff 64bit]
+[    1.626814] fedora kernel: DMAR: ACPI device "device:8f" under DMAR at fed91000 as 00:1e.3
+[    1.626830] fedora kernel: DMAR: Failed to find handle for ACPI object \_SB.PCI0.UA00
+[    1.626849] fedora kernel: DMAR: Failed to find handle for ACPI object \_SB.PCI0.UA01
+[    1.626862] fedora kernel: DMAR: Failed to find handle for ACPI object \_SB.PCI0.UA02
+[    1.626876] fedora kernel: PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    1.626895] fedora kernel: software IO TLB: mapped [mem 0x000000006b0c6000-0x000000006f0c6000] (64MB)
+[    1.626914] fedora kernel: Trying to unpack rootfs image as initramfs...
+[    1.626933] fedora kernel: Initialise system trusted keyrings
+[    1.626951] fedora kernel: Key type blacklist registered
+[    1.626971] fedora kernel: workingset: timestamp_bits=36 (anon: 31) max_order=22 bucket_order=0 (anon: 0)
+[    1.626993] fedora kernel: integrity: Platform Keyring initialized
+[    1.627058] fedora kernel: integrity: Machine keyring initialized
+[    1.627081] fedora kernel: cryptd: max_cpu_qlen set to 1000
+[    1.627098] fedora kernel: NET: Registered PF_ALG protocol family
+[    1.627114] fedora kernel: Key type asymmetric registered
+[    1.627131] fedora kernel: Asymmetric key parser 'x509' registered
+[    1.627151] fedora kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+[    1.627171] fedora kernel: io scheduler mq-deadline registered
+[    1.627191] fedora kernel: io scheduler kyber registered
+[    1.627213] fedora kernel: io scheduler bfq registered
+[    1.627228] fedora kernel: atomic64_test: passed for x86-64 platform with CX8 and with SSE
+[    1.627520] fedora kernel: pcieport 0000:04:01.0: pciehp: Slot #1 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    1.627772] fedora kernel: pcieport 0000:04:02.0: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    1.628035] fedora kernel: pcieport 0000:04:04.0: pciehp: Slot #4 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    1.628295] fedora kernel: pcieport 0000:7a:01.0: pciehp: Slot #1 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    1.628540] fedora kernel: pcieport 0000:7a:02.0: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    1.628787] fedora kernel: pcieport 0000:7a:04.0: pciehp: Slot #4 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    1.628801] fedora kernel: ACPI: AC: AC Adapter [ADP1] (off-line)
+[    1.628810] fedora kernel: input: Lid Switch as /devices/platform/PNP0C0D:00/input/input0
+[    1.628818] fedora kernel: ACPI: button: Lid Switch [LID0]
+[    1.628826] fedora kernel: input: Power Button as /devices/platform/PNP0C0C:00/input/input1
+[    1.628834] fedora kernel: ACPI: button: Power Button [PWRB]
+[    1.628842] fedora kernel: input: Sleep Button as /devices/platform/PNP0C0E:00/input/input2
+[    1.628854] fedora kernel: ACPI: button: Sleep Button [SLPB]
+[    1.628862] fedora kernel: input: Power Button as /devices/platform/LNXPWRBN:00/input/input3
+[    1.628870] fedora kernel: ACPI: button: Power Button [PWRF]
+[    1.628878] fedora kernel: Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    1.628886] fedora kernel: Non-volatile memory driver v1.3
+[    1.628894] fedora kernel: ACPI: bus type drm_connector registered
+[    1.629128] fedora kernel: intel-lpss 0000:00:19.0: enabling device (0000 -> 0002)
+[    1.629141] fedora kernel: dw-apb-uart.0: ttyS4 at MMIO 0x8262a000 (irq = 21, base_baud = 115200) is a 16550A
+[    1.629419] fedora kernel: serial serial0: tty port ttyS4 registered
+[    1.629642] fedora kernel: intel-lpss 0000:00:1e.0: enabling device (0000 -> 0002)
+[    1.629654] fedora kernel: dw-apb-uart.1: ttyS5 at MMIO 0x8262b000 (irq = 20, base_baud = 3000000) is a 16550A
+[    1.629895] fedora kernel: serial serial1: tty port ttyS5 registered
+[    1.630157] fedora kernel: intel-lpss 0000:00:1e.1: enabling device (0000 -> 0002)
+[    1.630186] fedora kernel: dw-apb-uart.2: ttyS6 at MMIO 0x8262c000 (irq = 21, base_baud = 115200) is a 16550A
+[    1.630425] fedora kernel: serial serial2: tty port ttyS6 registered
+[    1.630633] fedora kernel: intel-lpss 0000:00:1e.3: enabling device (0000 -> 0002)
+[    1.630648] fedora kernel: CAN device driver interface
+[    1.630851] fedora kernel: xhci_hcd 0000:00:14.0: xHCI Host Controller
+[    1.631102] fedora kernel: xhci_hcd 0000:00:14.0: new USB bus registered, assigned bus number 1
+[    1.631323] fedora kernel: xhci_hcd 0000:00:14.0: hcc params 0x200077c1 hci version 0x100 quirks 0x0000000081109810
+[    1.631529] fedora kernel: xhci_hcd 0000:00:14.0: xHCI Host Controller
+[    1.631731] fedora kernel: xhci_hcd 0000:00:14.0: new USB bus registered, assigned bus number 2
+[    1.631935] fedora kernel: xhci_hcd 0000:00:14.0: Host supports USB 3.0 SuperSpeed
+[    1.632233] fedora kernel: usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 7.02
+[    1.632415] fedora kernel: usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.632580] fedora kernel: usb usb1: Product: xHCI Host Controller
+[    1.632743] fedora kernel: usb usb1: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[    1.632908] fedora kernel: usb usb1: SerialNumber: 0000:00:14.0
+[    1.633202] fedora kernel: hub 1-0:1.0: USB hub found
+[    1.633430] fedora kernel: hub 1-0:1.0: 12 ports detected
+[    1.633656] fedora kernel: usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 7.02
+[    1.633827] fedora kernel: usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.633993] fedora kernel: usb usb2: Product: xHCI Host Controller
+[    1.634218] fedora kernel: usb usb2: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[    1.634390] fedora kernel: usb usb2: SerialNumber: 0000:00:14.0
+[    1.634640] fedora kernel: hub 2-0:1.0: USB hub found
+[    1.634879] fedora kernel: hub 2-0:1.0: 6 ports detected
+[    1.635173] fedora kernel: xhci_hcd 0000:06:00.0: xHCI Host Controller
+[    1.635428] fedora kernel: xhci_hcd 0000:06:00.0: new USB bus registered, assigned bus number 3
+[    1.635729] fedora kernel: xhci_hcd 0000:06:00.0: hcc params 0x200077c1 hci version 0x110 quirks 0x0000000200009810
+[    1.635981] fedora kernel: xhci_hcd 0000:06:00.0: xHCI Host Controller
+[    1.636248] fedora kernel: xhci_hcd 0000:06:00.0: new USB bus registered, assigned bus number 4
+[    1.636497] fedora kernel: xhci_hcd 0000:06:00.0: Host supports USB 3.1 Enhanced SuperSpeed
+[    1.636773] fedora kernel: usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 7.02
+[    1.636983] fedora kernel: usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.637208] fedora kernel: usb usb3: Product: xHCI Host Controller
+[    1.637412] fedora kernel: usb usb3: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[    1.637615] fedora kernel: usb usb3: SerialNumber: 0000:06:00.0
+[    1.637903] fedora kernel: hub 3-0:1.0: USB hub found
+[    1.638188] fedora kernel: hub 3-0:1.0: 2 ports detected
+[    1.638464] fedora kernel: usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 7.02
+[    1.638678] fedora kernel: usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.638887] fedora kernel: usb usb4: Product: xHCI Host Controller
+[    1.639113] fedora kernel: usb usb4: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[    1.639318] fedora kernel: usb usb4: SerialNumber: 0000:06:00.0
+[    1.639601] fedora kernel: hub 4-0:1.0: USB hub found
+[    1.639869] fedora kernel: hub 4-0:1.0: 2 ports detected
+[    1.640231] fedora kernel: xhci_hcd 0000:7c:00.0: xHCI Host Controller
+[    1.640608] fedora kernel: xhci_hcd 0000:7c:00.0: new USB bus registered, assigned bus number 5
+[    1.640980] fedora kernel: xhci_hcd 0000:7c:00.0: hcc params 0x200077c1 hci version 0x110 quirks 0x0000000200009810
+[    1.641381] fedora kernel: xhci_hcd 0000:7c:00.0: xHCI Host Controller
+[    1.641760] fedora kernel: xhci_hcd 0000:7c:00.0: new USB bus registered, assigned bus number 6
+[    1.642142] fedora kernel: xhci_hcd 0000:7c:00.0: Host supports USB 3.1 Enhanced SuperSpeed
+[    1.642567] fedora kernel: usb usb5: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 7.02
+[    1.642862] fedora kernel: usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.643109] fedora kernel: usb usb5: Product: xHCI Host Controller
+[    1.643319] fedora kernel: usb usb5: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[    1.643531] fedora kernel: usb usb5: SerialNumber: 0000:7c:00.0
+[    1.643814] fedora kernel: hub 5-0:1.0: USB hub found
+[    1.644099] fedora kernel: hub 5-0:1.0: 2 ports detected
+[    1.644376] fedora kernel: usb usb6: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 7.02
+[    1.644585] fedora kernel: usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.644789] fedora kernel: usb usb6: Product: xHCI Host Controller
+[    1.644992] fedora kernel: usb usb6: Manufacturer: Linux 7.2.13-200.fc44.x86_64 xhci-hcd
+[    1.645211] fedora kernel: usb usb6: SerialNumber: 0000:7c:00.0
+[    1.645491] fedora kernel: hub 6-0:1.0: USB hub found
+[    1.645760] fedora kernel: hub 6-0:1.0: 2 ports detected
+[    1.645773] fedora kernel: usbcore: registered new interface driver usbserial_generic
+[    1.645781] fedora kernel: usbserial: USB Serial support registered for generic
+[    1.645790] fedora kernel: i8042: PNP: No PS/2 controller found.
+[    1.645798] fedora kernel: mousedev: PS/2 mouse device common for all mice
+[    1.646051] fedora kernel: rtc_cmos PNP0B00:00: RTC can wake from S4
+[    1.646274] fedora kernel: rtc_cmos PNP0B00:00: registered as rtc0
+[    1.646490] fedora kernel: rtc_cmos PNP0B00:00: setting system clock to 2026-11-01T10:15:11 UTC (1793528111)
+[    1.646707] fedora kernel: rtc_cmos PNP0B00:00: alarms up to one month, y3k, 242 bytes nvram
+[    1.646719] fedora kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    1.646727] fedora kernel: device-mapper: uevent: version 1.0.3
+[    1.646736] fedora kernel: device-mapper: ioctl: 4.50.0-ioctl (2025-04-28) initialised: dm-devel@lists.linux.dev
+[    1.646744] fedora kernel: intel_pstate: Intel P-state driver initializing
+[    1.646756] fedora kernel: intel_pstate: HWP enabled
+[    1.646984] fedora kernel: simple-framebuffer simple-framebuffer.0: [drm] Registered 1 planes with drm panic
+[    1.646997] fedora kernel: [drm] Initialized simpledrm 1.0.0 for simple-framebuffer.0 on minor 0
+[    1.647020] fedora kernel: fbcon: Deferring console take-over
+[    1.647243] fedora kernel: simple-framebuffer simple-framebuffer.0: [drm] fb0: simpledrmdrmfb frame buffer device
+[    1.647256] fedora kernel: hid: raw HID events driver (C) Jiri Kosina
+[    1.647264] fedora kernel: usbcore: registered new interface driver usbhid
+[    1.647272] fedora kernel: usbhid: USB HID core driver
+[    1.647285] fedora kernel: drop_monitor: Initializing network drop monitor service
+[    1.647293] fedora kernel: Initializing XFRM netlink socket
+[    1.647301] fedora kernel: NET: Registered PF_INET6 protocol family
+[    1.647309] fedora kernel: Segment Routing with IPv6
+[    1.647316] fedora kernel: RPL Segment Routing with IPv6
+[    1.647324] fedora kernel: In-situ OAM (IOAM) with IPv6
+[    1.647332] fedora kernel: mip6: Mobile IPv6
+[    1.647340] fedora kernel: NET: Registered PF_PACKET protocol family
+[    1.647348] fedora kernel: can: controller area network core
+[    1.647359] fedora kernel: NET: Registered PF_CAN protocol family
+[    1.647367] fedora kernel: ENERGY_PERF_BIAS: Set to 'normal', was 'performance'
+[    1.647375] fedora kernel: microcode: Current revision: 0x000000f0
+[    1.647383] fedora kernel: IPI shorthand broadcast: enabled
+[    1.647391] fedora kernel: sched_clock: Marking stable (394001037, 2289597)->(447000784, -50710150)
+[    1.647399] fedora kernel: registered taskstats version 1
+[    1.647408] fedora kernel: Loading compiled-in X.509 certificates
+[    1.647417] fedora kernel: Loaded X.509 cert 'Fedora kernel signing key: e1ac0f57d549ffd44886b5f5e133e5e0a521efa9'
+[    1.647425] fedora kernel: Freeing initrd memory: 243532K
+[    1.647436] fedora kernel: Loaded X.509 cert 'Fedora IMA CA: a8a00c31663f853f9c6ff2564872e378af026b28'
+[    1.647443] fedora kernel: Demotion targets for Node 0: null
+[    1.647452] fedora kernel: page_owner is disabled
+[    1.647460] fedora kernel: Key type .fscrypt registered
+[    1.647468] fedora kernel: Key type fscrypt-provisioning registered
+[    1.647476] fedora kernel: Btrfs loaded, zoned=yes, fsverity=yes
+[    1.647484] fedora kernel: Key type big_key registered
+[    1.647492] fedora kernel: Key type encrypted registered
+[    1.647500] fedora kernel: ima: No TPM chip found, activating TPM-bypass!
+[    1.647510] fedora kernel: Loading compiled-in module X.509 certificates
+[    1.647518] fedora kernel: Loaded X.509 cert 'Fedora kernel signing key: e1ac0f57d549ffd44886b5f5e133e5e0a521efa9'
+[    1.647526] fedora kernel: ima: Allocated hash algorithm: sha256
+[    1.647534] fedora kernel: ima: No architecture policies found
+[    1.647542] fedora kernel: evm: Initialising EVM extended attributes:
+[    1.647550] fedora kernel: evm: security.selinux
+[    1.647558] fedora kernel: evm: security.SMACK64 (disabled)
+[    1.647565] fedora kernel: evm: security.SMACK64EXEC (disabled)
+[    1.647573] fedora kernel: evm: security.SMACK64TRANSMUTE (disabled)
+[    1.647584] fedora kernel: evm: security.SMACK64MMAP (disabled)
+[    1.647592] fedora kernel: evm: security.apparmor (disabled)
+[    1.647599] fedora kernel: evm: security.ima
+[    1.647607] fedora kernel: evm: security.capability
+[    1.647615] fedora kernel: evm: HMAC attrs: 0x1
+[    1.647623] fedora kernel: alg: No test for 842 (842-scomp)
+[    1.647631] fedora kernel: alg: No test for mldsa87 (mldsa87-lib)
+[    1.647639] fedora kernel: alg: No test for mldsa65 (mldsa65-lib)
+[    1.647647] fedora kernel: alg: No test for mldsa44 (mldsa44-lib)
+[    1.647657] fedora kernel: PM:   Magic number: 2:883:273
+[    1.647665] fedora kernel: usb usb1-port1: hash matches
+[    1.647841] fedora kernel: tty tty10: hash matches
+[    1.648111] fedora kernel: net lo: hash matches
+[    1.648432] fedora kernel: acpi device:7b: hash matches
+[    1.648446] fedora kernel: RAS: Correctable Errors collector initialized.
+[    1.648454] fedora kernel: clk: Disabling unused clocks
+[    1.648466] fedora kernel: PM: genpd: Disabling unused power domains
+[    1.648474] fedora kernel: Freeing unused decrypted memory: 2028K
+[    1.648483] fedora kernel: Freeing unused kernel image (initmem) memory: 5324K
+[    1.648491] fedora kernel: Write protecting the kernel read-only data: 45056k
+[    1.648498] fedora kernel: Freeing unused kernel image (text/rodata gap) memory: 112K
+[    1.648506] fedora kernel: Freeing unused kernel image (rodata/data gap) memory: 1820K
+[    1.648514] fedora kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    1.648523] fedora kernel: x86/mm: Checking user space page tables
+[    1.648530] fedora kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    1.648541] fedora kernel: Run /init as init process
+[    1.648549] fedora kernel:   with arguments:
+[    1.648561] fedora kernel:     /init
+[    1.648568] fedora kernel:     rhgb
+[    1.648576] fedora kernel:   with environment:
+[    1.648585] fedora kernel:     HOME=/
+[    1.648592] fedora kernel:     TERM=linux
+[    1.648600] fedora kernel:     ostree=/ostree/boot.1/fedora/da648bd545e694a9077299752206d8bfc0454d958d103e035793919be836e785/0
+[    1.648867] fedora kernel: usb 1-3: new high-speed USB device number 2 using xhci_hcd
+[    1.649137] fedora kernel: usb 1-3: New USB device found, idVendor=05ac, idProduct=8600, bcdDevice= 1.01
+[    1.649328] fedora kernel: usb 1-3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    1.649512] fedora kernel: usb 1-3: Product: iBridge
+[    1.649695] fedora kernel: usb 1-3: Manufacturer: Apple Inc.
+[    1.649708] fedora kernel: input: Apple Inc. iBridge as /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2/0003:05AC:8600.0001/input/input4
+[    1.649989] fedora kernel: hid-generic 0003:05AC:8600.0001: input,hidraw0: USB HID v1.01 Keyboard [Apple Inc. iBridge] on usb-0000:00:14.0-3/input2
+[    1.650282] fedora kernel: hid-generic 0003:05AC:8600.0002: hiddev96,hidraw1: USB HID v1.01 Device [Apple Inc. iBridge] on usb-0000:00:14.0-3/input3
+[    1.650298] fedora systemd[1]: Successfully made /usr/ read-only.
+[    1.650310] fedora systemd[1]: systemd 259.10-1.fc44 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA +IPE +SMACK +SECCOMP -GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF +XKBCOMMON +UTMP +SYSVINIT +LIBARCHIVE)
+[    1.650320] fedora systemd[1]: Detected architecture x86-64.
+[    1.650328] fedora systemd[1]: Running in initrd.
+[    1.650337] fedora systemd[1]: Initializing machine ID from random generator.
+[    1.650346] fedora systemd[1]: No hostname configured, using default hostname.
+[    1.650359] fedora systemd[1]: Hostname set to <fedora>.
+[    1.650368] fedora kernel: tsc: Refined TSC clocksource calibration: 2903.999 MHz
+[    1.650377] fedora kernel: clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x29dc050a48e, max_idle_ns: 440795325698 ns
+[    1.650385] fedora kernel: clocksource: Switched to clocksource tsc
+[    1.650393] fedora systemd[1]: bpf-restrict-fs: LSM BPF program attached
+[    1.650402] fedora systemd[1]: /usr/lib/systemd/system/systemd-udevd.service:56: System call bpf cannot be resolved as libseccomp is not available, ignoring: Operation not supported
+[    1.650411] fedora systemd[1]: Queued start job for default target initrd.target.
+[    1.650421] fedora systemd[1]: Expecting device dev-disk-by\x2duuid-c87aaa50\x2d5c5f\x2d4235\x2d8558\x2db32d6bc1621d.device - /dev/disk/by-uuid/<uuid>...
+[    1.650433] fedora systemd[1]: Reached target initrd-usr-fs.target - Initrd /usr File System.
+[    1.650441] fedora systemd[1]: Reached target slices.target - Slice Units.
+[    1.650450] fedora systemd[1]: Reached target swap.target - Swaps.
+[    1.650459] fedora systemd[1]: Reached target timers.target - Timer Units.
+[    1.650468] fedora systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[    1.650477] fedora systemd[1]: Listening on systemd-journald.socket - Journal Sockets.
+[    1.650485] fedora systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[    1.650494] fedora systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[    1.650505] fedora systemd[1]: Reached target sockets.target - Socket Units.
+[    1.650514] fedora systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+[    1.650523] fedora systemd[1]: memstrack.service - Memstrack Anylazing Service skipped, no trigger condition checks were met.
+[    1.650532] fedora systemd[1]: Starting systemd-journald.service - Journal Service...
+[    1.650543] fedora systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+[    1.650552] fedora systemd[1]: systemd-pcrphase-initrd.service - TPM PCR Barrier (initrd) skipped, unmet condition check ConditionSecurity=measured-uki
+[    1.650560] fedora systemd[1]: Starting systemd-vconsole-setup.service - Virtual Console Setup...
+[    1.650569] fedora systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+[    1.650580] fedora systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+[    1.650618] fedora systemd-journald[193]: Collecting audit messages is disabled.
+[    1.650640] fedora kernel: apple_touchbar: loading out-of-tree module taints kernel.
+[    1.650649] fedora kernel: apple_touchbar: module verification failed: signature and/or required key missing - tainting kernel
+[    1.650660] fedora kernel: i2c_dev: i2c /dev entries driver
+[    1.650669] fedora systemd[1]: Finished systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+[    1.650902] fedora kernel: apple-ibridge APP7777:00: skip_acpi_power: NOT running ASOC.SOCW(1) power-on
+[    1.650916] fedora systemd[1]: Starting systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev...
+[    1.650925] fedora systemd[1]: Finished systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+[    1.650934] fedora systemd[1]: Reached target local-fs-pre.target - Preparation for Local File Systems.
+[    1.650943] fedora systemd[1]: Reached target local-fs.target - Local File Systems.
+[    1.650951] fedora kernel: fuse: init (API version 7.45)
+[    1.651251] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0001: : USB HID v1.01 Keyboard [Apple Inc. iBridge] on usb-0000:00:14.0-3/input2
+[    1.651266] fedora kernel: input: iBridge Virtual HID 0003:05AC:8600.0001/1d6b:0301 as /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2/0003:05AC:8600.0001/0003:1D6B:0301.0003/input/input5
+[    1.651542] fedora kernel: apple-touchbar 0003:1D6B:0301.0003: input: USB HID v0.00 Keyboard [iBridge Virtual HID 0003:05AC:8600.0001/1d6b:0301] on 
+[    1.651556] fedora systemd[1]: Finished systemd-vconsole-setup.service - Virtual Console Setup.
+[    1.651566] fedora systemd[1]: Starting dracut-cmdline-ask.service - dracut ask for additional cmdline parameters...
+[    1.651575] fedora systemd[1]: Finished dracut-cmdline-ask.service - dracut ask for additional cmdline parameters.
+[    1.651583] fedora systemd[1]: Starting dracut-cmdline.service - dracut cmdline hook...
+[    1.651848] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0002: : USB HID v1.01 Device [Apple Inc. iBridge] on usb-0000:00:14.0-3/input3
+[    1.652137] fedora kernel: hid-generic 0003:1D6B:0302.0004: hidraw0: USB HID v0.00 Device [iBridge Virtual HID 0003:05AC:8600.0002/1d6b:0302] on 
+[    1.652396] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0002: Unknown collection encountered with usage 200316
+[    1.652653] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0002: Unknown collection encountered with usage 200309
+[    1.652911] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0002: Unknown collection encountered with usage 200319
+[    1.653178] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0002: Unknown collection encountered with usage 200201
+[    1.653433] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0002: Unknown collection encountered with usage 200202
+[    1.653722] fedora kernel: apple-touchbar 0003:1D6B:0301.0005: : USB HID v0.00 Device [iBridge Virtual HID 0003:05AC:8600.0002/1d6b:0301] on 
+[    1.654520] fedora systemd[1]: Started systemd-journald.service - Journal Service.
+[    1.873051] fedora kernel: cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    1.873108] fedora kernel: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    1.874014] fedora kernel: Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+[    1.930092] fedora kernel: usbcore: registered new interface driver brcmfmac
+[    2.037029] fedora kernel: brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43602-pcie for chip BCM43602/2
+[    2.137549] fedora kernel: hid-sensor-hub 0003:1D6B:0302.0004: hidraw0: USB HID v0.00 Device [iBridge Virtual HID 0003:05AC:8600.0002/1d6b:0302] on 
+[    2.333019] fedora kernel: brcmfmac: brcmf_c_process_clm_blob: no clm_blob available (err=-2), device may have limited channels available
+[    2.333087] fedora kernel: brcmfmac: brcmf_c_process_txcap_blob: no txcap_blob available (err=-2)
+[    2.334043] fedora kernel: brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43602/2 wl0: Nov 10 2015 06:38:10 version 7.35.177.61 (r598657) FWID 01-ea662a8c
+[    2.788039] fedora kernel: Key type psk registered
+[    2.889527] fedora kernel: nvme nvme0: pci function 0000:01:00.0
+[    2.904027] fedora kernel: ACPI: bus type thunderbolt registered
+[    2.948028] fedora kernel: nvme nvme0: passthrough uses implicit buffer lengths
+[    2.990035] fedora kernel: nvme nvme0: 1/0/0 default/read/poll queues
+[    3.002216] fedora kernel: thunderbolt 0000:05:00.0: device links to tunneled native ports are missing!
+[    3.011013] fedora kernel: thunderbolt 0000:7b:00.0: device links to tunneled native ports are missing!
+[    3.018022] fedora kernel:  nvme0n1: p1 p2 p3
+[    3.049026] fedora kernel: pxa2xx-spi pxa2xx-spi.3: no DMA channels available, using PIO
+[    3.051122] fedora kernel: input: Apple SPI Keyboard as /devices/pci0000:00/0000:00:1e.3/pxa2xx-spi.3/spi_master/spi2/spi-APP000D:00/input/input6
+[    3.076480] fedora kernel: input: Apple SPI Touchpad as /devices/pci0000:00/0000:00:1e.3/pxa2xx-spi.3/spi_master/spi2/spi-APP000D:00/input/input7
+[    3.078041] fedora kernel: applespi spi-APP000D:00: modeswitch done.
+[    4.109063] fedora kernel: i915 0000:00:02.0: [drm] Found skylake/ult (device ID 1927) integrated display version 9.00 stepping I1
+[    4.109515] fedora kernel: i915 0000:00:02.0: [drm] Found 64MB of eDRAM
+[    4.124018] fedora kernel: i915 0000:00:02.0: vgaarb: deactivate vga console
+[    4.129017] fedora kernel: i915 0000:00:02.0: [drm] Finished loading DMC firmware i915/skl_dmc_ver1_27.bin (v1.27)
+[    4.133059] fedora kernel: i915 0000:00:02.0: vgaarb: VGA decodes changed: olddecodes=io+mem,decodes=io:owns=io+mem
+[    4.151037] fedora kernel: i915 0000:00:02.0: [drm] Skipping intel_backlight registration
+[    4.152046] fedora kernel: i915 0000:00:02.0: [drm] Registered 3 planes with drm panic
+[    4.160014] fedora kernel: [drm] Initialized i915 1.6.0 for 0000:00:02.0 on minor 1
+[    4.161168] fedora kernel: ACPI: video: Video Device [IGPU] (multi-head: yes  rom: no  post: no)
+[    4.161213] fedora kernel: input: Video Bus as /devices/pci0000:00/acpi.video_bus.0/input/input8
+[    4.161241] fedora kernel: acpi device:02: registered as cooling_device7
+[    4.312496] fedora kernel: fbcon: i915drmfb (fb0) is primary device
+[    4.312569] fedora kernel: fbcon: Deferring console take-over
+[    4.312592] fedora kernel: i915 0000:00:02.0: [drm] fb0: i915drmfb frame buffer device
+[    4.424039] fedora kernel: BTRFS: device label fedora_fedora devid 1 transid 804 /dev/nvme0n1p3 (259:3) scanned by mount (495)
+[    4.424100] fedora kernel: BTRFS info (device nvme0n1p3): first mount of filesystem <uuid>
+[    4.424134] fedora kernel: BTRFS info (device nvme0n1p3): using crc32c checksum algorithm
+[    4.428012] fedora kernel: BTRFS info (device nvme0n1p3): enabling ssd optimizations
+[    4.428042] fedora kernel: BTRFS info (device nvme0n1p3): turning on async discard
+[    4.428054] fedora kernel: BTRFS info (device nvme0n1p3): enabling free space tree
+[    4.467020] fedora kernel: erofs (device 0:39): mounted with root inode @ nid 36.
+[    8.246087] fedora systemd-journald[193]: Received SIGTERM from PID 1 (systemd).
+[    8.246203] fedora kernel: audit: type=1404 audit(1793528117.807:2): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295 enabled=1 old-enabled=1 lsm=selinux res=1
+[    8.246253] fedora kernel: SELinux:  Permission firmware_load in class system not defined in policy.
+[    8.246282] fedora kernel: SELinux:  Permission kexec_image_load in class system not defined in policy.
+[    8.246312] fedora kernel: SELinux:  Permission kexec_initramfs_load in class system not defined in policy.
+[    8.246342] fedora kernel: SELinux:  Permission policy_load in class system not defined in policy.
+[    8.246374] fedora kernel: SELinux:  Permission x509_certificate_load in class system not defined in policy.
+[    8.246403] fedora kernel: SELinux:  Permission map_create_as in class bpf not defined in policy.
+[    8.246432] fedora kernel: SELinux:  Permission prog_load_as in class bpf not defined in policy.
+[    8.246460] fedora kernel: SELinux:  Permission allowed in class io_uring not defined in policy.
+[    8.246489] fedora kernel: SELinux:  Class memfd_file not defined in policy.
+[    8.246514] fedora kernel: SELinux: the above unknown classes and permissions will be allowed
+[    8.246541] fedora kernel: SELinux:  policy capability network_peer_controls=1
+[    8.246568] fedora kernel: SELinux:  policy capability open_perms=1
+[    8.246603] fedora kernel: SELinux:  policy capability extended_socket_class=1
+[    8.246639] fedora kernel: SELinux:  policy capability always_check_network=0
+[    8.246672] fedora kernel: SELinux:  policy capability cgroup_seclabel=1
+[    8.246707] fedora kernel: SELinux:  policy capability nnp_nosuid_transition=1
+[    8.246738] fedora kernel: SELinux:  policy capability genfs_seclabel_symlinks=1
+[    8.246763] fedora kernel: SELinux:  policy capability ioctl_skip_cloexec=0
+[    8.246789] fedora kernel: SELinux:  policy capability userspace_initial_context=0
+[    8.246813] fedora kernel: SELinux:  policy capability netlink_xperm=0
+[    8.246837] fedora kernel: SELinux:  policy capability netif_wildcard=0
+[    8.246862] fedora kernel: SELinux:  policy capability genfs_seclabel_wildcard=0
+[    8.246886] fedora kernel: SELinux:  policy capability functionfs_seclabel=0
+[    8.246920] fedora kernel: SELinux:  policy capability memfd_class=0
+[    8.246958] fedora kernel: SELinux:  policy capability bpf_token_perms=0
+[    8.246986] fedora kernel: audit: type=1403 audit(1793528117.870:3): auid=4294967295 ses=4294967295 lsm=selinux res=1
+[    8.247085] fedora systemd[1]: Successfully loaded SELinux policy in 63.562ms.
+[    8.247134] fedora systemd[1]: Relabeled /dev/, /dev/shm/, /run/ in 15.087ms.
+[    8.247155] fedora systemd[1]: systemd 259.10-1.fc44 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA +IPE +SMACK +SECCOMP -GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF +XKBCOMMON +UTMP +SYSVINIT +LIBARCHIVE)
+[    8.247175] fedora systemd[1]: Detected architecture x86-64.
+[    8.247194] fedora systemd[1]: bpf-restrict-fs: LSM BPF program attached
+[    8.247214] fedora kernel: zram: Added device: zram0
+[    8.247233] fedora systemd[1]: initrd-switch-root.service: Deactivated successfully.
+[    8.247250] fedora systemd[1]: Stopped initrd-switch-root.service - Switch Root.
+[    8.247270] fedora systemd[1]: systemd-journald.service: Scheduled restart job, restart counter is at 1.
+[    8.247287] fedora systemd[1]: Created slice system-akmods\x2dkeygen.slice - Slice /system/akmods-keygen.
+[    8.247305] fedora systemd[1]: Created slice system-getty.slice - Slice /system/getty.
+[    8.247322] fedora systemd[1]: Created slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+[    8.247355] fedora systemd[1]: Created slice system-systemd\x2dzram\x2dsetup.slice - Slice /system/systemd-zram-setup.
+[    8.247394] fedora systemd[1]: Created slice user.slice - User and Session Slice.
+[    8.247430] fedora systemd[1]: systemd-ask-password-console.path - Dispatch Password Requests to Console Directory Watch skipped, unmet condition check ConditionPathExists=!/run/plymouth/pid
+[    8.247464] fedora systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[    8.247496] fedora systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+[    8.247535] fedora systemd[1]: Expecting device dev-disk-by\x2duuid-5F66\x2d17ED.device - /dev/disk/by-uuid/5F66-17ED...
+[    8.247569] fedora systemd[1]: Expecting device dev-disk-by\x2duuid-6cd70116\x2dd713\x2d49d3\x2d9c4c\x2df70af17acf74.device - /dev/disk/by-uuid/<uuid>...
+[    8.247603] fedora systemd[1]: Expecting device dev-disk-by\x2duuid-c87aaa50\x2d5c5f\x2d4235\x2d8558\x2db32d6bc1621d.device - /dev/disk/by-uuid/<uuid>...
+[    8.247639] fedora systemd[1]: Expecting device dev-zram0.device - /dev/zram0...
+[    8.247671] fedora systemd[1]: Reached target getty.target - Login Prompts.
+[    8.247700] fedora systemd[1]: Reached target imports.target - Image Downloads.
+[    8.247728] fedora systemd[1]: Stopped target initrd-switch-root.target - Switch Root.
+[    8.247761] fedora systemd[1]: Stopped target initrd-fs.target - Initrd File Systems.
+[    8.247796] fedora systemd[1]: Stopped target initrd-root-fs.target - Initrd Root File System.
+[    8.247830] fedora systemd[1]: Reached target integritysetup.target - Local Integrity Protected Volumes.
+[    8.247858] fedora systemd[1]: Reached target slices.target - Slice Units.
+[    8.247887] fedora systemd[1]: Reached target veritysetup.target - Local Verity Protected Volumes.
+[    8.247909] fedora systemd[1]: Listening on dm-event.socket - Device-mapper event daemon FIFOs.
+[    8.247936] fedora systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+[    8.247961] fedora systemd[1]: Listening on systemd-ask-password.socket - Query the User Interactively for a Password.
+[    8.247985] fedora systemd[1]: Listening on systemd-coredump.socket - Process Core Dump Socket.
+[    8.248028] fedora systemd[1]: Listening on systemd-creds.socket - Credential Encryption/Decryption.
+[    8.248083] fedora systemd[1]: Listening on systemd-factory-reset.socket - Factory Reset Management.
+[    8.248121] fedora systemd[1]: Listening on systemd-journald-audit.socket - Journal Audit Socket.
+[    8.248167] fedora systemd[1]: Listening on systemd-mountfsd.socket - DDI File System Mounter Socket.
+[    8.248202] fedora systemd[1]: Listening on systemd-mute-console.socket - Console Output Muting Service Socket.
+[    8.248222] fedora systemd[1]: Listening on systemd-nsresourced.socket - Namespace Resource Manager Socket.
+[    8.248237] fedora systemd[1]: Listening on systemd-oomd.socket - Userspace Out-Of-Memory (OOM) Killer Socket.
+[    8.248250] fedora systemd[1]: systemd-pcrextend.socket - TPM PCR Measurements skipped, unmet condition check ConditionSecurity=measured-uki
+[    8.248268] fedora systemd[1]: systemd-pcrlock.socket - Make TPM PCR Policy skipped, unmet condition check ConditionSecurity=measured-uki
+[    8.248285] fedora systemd[1]: Listening on systemd-repart.socket - Disk Repartitioning Service Socket.
+[    8.248300] fedora systemd[1]: Listening on systemd-resolved-monitor.socket - Resolve Monitor Varlink Socket.
+[    8.248314] fedora systemd[1]: Listening on systemd-resolved-varlink.socket - Resolve Service Varlink Socket.
+[    8.248331] fedora systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[    8.248344] fedora systemd[1]: Listening on systemd-udevd-varlink.socket - udev Varlink Socket.
+[    8.248360] fedora systemd[1]: Listening on systemd-userdbd.socket - User Database Manager Socket.
+[    8.248372] fedora systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+[    8.248389] fedora systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+[    8.248408] fedora systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[    8.248423] fedora systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[    8.248434] fedora systemd[1]: auth-rpcgss-module.service - Kernel Module supporting RPCSEC_GSS skipped, unmet condition check ConditionPathExists=/etc/krb5.keytab
+[    8.248449] fedora systemd[1]: fips-crypto-policy-overlay.service - Bind-mount FIPS crypto-policy in FIPS mode skipped, unmet condition check ConditionKernelCommandLine=fips=1
+[    8.248464] fedora systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+[    8.248476] fedora systemd[1]: Starting lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+[    8.248490] fedora systemd[1]: modprobe@configfs.service - Load Kernel Module configfs skipped, unmet condition check ConditionKernelModuleLoaded=!configfs
+[    8.248505] fedora systemd[1]: modprobe@drm.service - Load Kernel Module drm skipped, unmet condition check ConditionKernelModuleLoaded=!drm
+[    8.248521] fedora systemd[1]: modprobe@efi_pstore.service - Load Kernel Module efi_pstore skipped, unmet condition check ConditionKernelModuleLoaded=!efi_pstore
+[    8.248536] fedora systemd[1]: modprobe@fuse.service - Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+[    8.248553] fedora systemd[1]: Mounting sys-fs-fuse-connections.mount - FUSE Control File System...
+[    8.248568] fedora systemd[1]: ostree-prepare-root.service: Deactivated successfully.
+[    8.248580] fedora systemd[1]: Stopped ostree-prepare-root.service - OSTree Prepare OS/.
+[    8.248595] fedora systemd[1]: plymouth-switch-root.service: Deactivated successfully.
+[    8.248609] fedora systemd[1]: Stopped plymouth-switch-root.service - Plymouth switch root service.
+[    8.248622] fedora systemd[1]: systemd-boot-clear-sysfail.service - Clear SysFail Entry If The Boot Is Successful skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/LoaderEntrySysFail-<uuid>
+[    8.248668] fedora systemd[1]: systemd-fsck-root.service: Deactivated successfully.
+[    8.248702] fedora systemd[1]: Stopped systemd-fsck-root.service - File System Check on Root Device.
+[    8.248737] fedora systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-<uuid>
+[    8.248770] fedora systemd[1]: Starting systemd-journald.service - Journal Service...
+[    8.248797] fedora systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+[    8.248828] fedora systemd[1]: Starting systemd-network-generator.service - Generate Network Units from Kernel Command Line...
+[    8.248859] fedora systemd[1]: systemd-pcrmachine.service - TPM PCR Machine ID Measurement skipped, unmet condition check ConditionSecurity=measured-uki
+[    8.248898] fedora systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+[    8.248931] fedora systemd[1]: systemd-tpm2-setup-early.service - Early TPM SRK Setup skipped, unmet condition check ConditionSecurity=measured-uki
+[    8.248963] fedora systemd[1]: systemd-pcrnvdone.service - TPM PCR NvPCR Initialization Separator skipped, unmet condition check ConditionPathExists=/etc/initrd-release
+[    8.248992] fedora systemd[1]: Reached target cryptsetup.target - Local Encrypted Volumes.
+[    8.249037] fedora systemd[1]: Starting systemd-udev-load-credentials.service - Load udev Rules from Credentials...
+[    8.249070] fedora systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+[    8.249103] fedora systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+[    8.249131] fedora systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[    8.249160] fedora systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[    8.249194] fedora systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+[    8.249227] fedora systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+[    8.249260] fedora systemd[1]: Mounted sys-fs-fuse-connections.mount - FUSE Control File System.
+[    8.249296] fedora systemd[1]: Finished systemd-network-generator.service - Generate Network Units from Kernel Command Line.
+[    8.249325] fedora systemd[1]: systemd-remount-fs.service: Main process exited, code=exited, status=1/FAILURE
+[    8.249354] fedora systemd[1]: systemd-remount-fs.service: Failed with result 'exit-code'.
+[    8.249387] fedora systemd[1]: Failed to start systemd-remount-fs.service - Remount Root and Kernel File Systems.
+[    8.249422] fedora systemd[1]: systemd-hwdb-update.service - Rebuild Hardware Database skipped, unmet condition check ConditionNeedsUpdate=/etc
+[    8.249460] fedora systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+[    8.249492] fedora systemd[1]: Finished systemd-modules-load.service - Load Kernel Modules.
+[    8.249520] fedora systemd[1]: Starting systemd-sysctl.service - Apply Kernel Variables...
+[    8.249600] fedora systemd-journald[601]: Collecting audit messages is enabled.
+[    8.249674] fedora systemd[1]: Finished lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+[    8.249701] fedora kernel: audit: type=1130 audit(1793528119.356:4): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=lvm2-monitor comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    8.249727] fedora systemd[1]: Finished systemd-udev-load-credentials.service - Load udev Rules from Credentials.
+[    8.249754] fedora kernel: audit: type=1130 audit(1793528119.360:5): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=systemd-udev-load-credentials comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    8.251271] fedora systemd[1]: Started systemd-journald.service - Journal Service.
+[    8.251593] fedora kernel: audit: type=1130 audit(1793528119.368:6): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=systemd-journald comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    8.267056] fedora kernel: audit: type=1130 audit(1793528119.384:7): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=systemd-sysctl comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    8.285017] fedora kernel: audit: type=1334 audit(1793528119.402:8): prog-id=48 op=LOAD
+[    8.285065] fedora kernel: audit: type=1334 audit(1793528119.402:9): prog-id=49 op=LOAD
+[    8.285109] fedora kernel: audit: type=1334 audit(1793528119.402:10): prog-id=50 op=LOAD
+[    8.304020] fedora kernel: tun: Universal TUN/TAP device driver, 1.6
+[    8.306041] fedora kernel: audit: type=1130 audit(1793528119.423:11): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=modprobe@tun comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    8.965025] fedora kernel: zram0: detected capacity change from 0 to 16777216
+[    9.064147] fedora kernel: brcmfmac 0000:02:00.0 wlp2s0: renamed from wlan0
+[    9.090015] fedora kernel: Adding 8388604k swap on /dev/zram0.  Priority:100 extents:1 across:8388604k SSDsc
+[    9.293021] fedora kernel: apple-touchbar 0003:1D6B:0301.0003: tb: Touchbar deactivated
+[    9.448529] fedora systemd-journald[601]: Received client request to flush runtime journal.
+[    9.516039] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0006: : USB HID v1.01 Keyboard [Apple Inc. iBridge] on usb-0000:00:14.0-3/input2
+[    9.517429] fedora kernel: input: iBridge Virtual HID 0003:05AC:8600.0006/1d6b:0301 as /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2/0003:05AC:8600.0006/0003:1D6B:0301.0007/input/input9
+[    9.529015] fedora kernel: apple-touchbar 0003:1D6B:0301.0007: input: USB HID v0.00 Keyboard [iBridge Virtual HID 0003:05AC:8600.0006/1d6b:0301] on 
+[    9.552020] fedora kernel: acpi ACPI0001:00: SBS HC: offset = 0x20, query_bit = 0x10
+[    9.669066] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0008: : USB HID v1.01 Device [Apple Inc. iBridge] on usb-0000:00:14.0-3/input3
+[    9.679021] fedora kernel: hid-sensor-hub 0003:1D6B:0302.0009: hidraw0: USB HID v0.00 Device [iBridge Virtual HID 0003:05AC:8600.0008/1d6b:0302] on 
+[    9.691868] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0008: Unknown collection encountered with usage 200316
+[    9.693269] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0008: Unknown collection encountered with usage 200309
+[    9.693825] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0008: Unknown collection encountered with usage 200319
+[    9.694370] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0008: Unknown collection encountered with usage 200201
+[    9.694835] fedora kernel: apple-ibridge-hid 0003:05AC:8600.0008: Unknown collection encountered with usage 200202
+[    9.696487] fedora kernel: Bluetooth: Core ver 2.22
+[    9.696547] fedora kernel: NET: Registered PF_BLUETOOTH protocol family
+[    9.696587] fedora kernel: Bluetooth: HCI device and connection manager initialized
+[    9.696639] fedora kernel: Bluetooth: HCI socket layer initialized
+[    9.696685] fedora kernel: Bluetooth: L2CAP socket layer initialized
+[    9.696731] fedora kernel: Bluetooth: SCO socket layer initialized
+[    9.714111] fedora kernel: apple-touchbar 0003:1D6B:0301.000A: : USB HID v0.00 Device [iBridge Virtual HID 0003:05AC:8600.0008/1d6b:0301] on 
+[    9.779036] fedora kernel: idma64 idma64.1: Found Intel integrated DMA 64-bit
+[    9.825028] fedora kernel: idma64 idma64.2: Found Intel integrated DMA 64-bit
+[    9.831988] fedora kernel: Bluetooth: HCI UART driver ver 2.3
+[    9.832155] fedora kernel: Bluetooth: HCI UART protocol H4 registered
+[    9.832276] fedora kernel: Bluetooth: HCI UART protocol BCSP registered
+[    9.843021] fedora kernel: Bluetooth: HCI UART protocol LL registered
+[    9.843148] fedora kernel: Bluetooth: HCI UART protocol ATH3K registered
+[    9.847055] fedora kernel: idma64 idma64.3: Found Intel integrated DMA 64-bit
+[    9.871017] fedora kernel: Bluetooth: HCI UART protocol Three-wire (H5) registered
+[    9.878025] fedora kernel: Bluetooth: HCI UART protocol Intel registered
+[    9.892021] fedora kernel: Bluetooth: HCI UART protocol Broadcom registered
+[    9.892125] fedora kernel: Bluetooth: HCI UART protocol QCA registered
+[    9.892167] fedora kernel: Bluetooth: HCI UART protocol AG6XX registered
+[    9.893023] fedora kernel: Bluetooth: HCI UART protocol Marvell registered
+[    9.898049] fedora kernel: usbcore: registered new device driver apple-mfi-fastcharge
+[    9.899046] fedora kernel: ACPI: Smart Battery System [SBS0]: Battery Slot [BAT0] (battery present)
+[    9.912017] fedora kernel: i801_smbus 0000:00:1f.4: SPD Write Disable is set
+[    9.920424] fedora kernel: i801_smbus 0000:00:1f.4: SMBus using PCI interrupt
+[    9.928599] fedora kernel: hci_uart_bcm serial1-0: Unexpected ACPI gpio_int_idx: -1
+[    9.929342] fedora kernel: hci_uart_bcm serial1-0: Unexpected number of ACPI GPIOs: 0
+[    9.935018] fedora kernel: hci_uart_bcm serial1-0: No reset resource, using default baud rate
+[    9.961021] fedora kernel: input: PC Speaker as /devices/platform/pcspkr/input/input10
+[   10.144037] fedora kernel: EXT4-fs (nvme0n1p2): Supports (experimental) DIO atomic writes awu_min: 4096, awu_max: 4096
+[   10.177536] fedora kernel: EXT4-fs (nvme0n1p2): mounted filesystem <uuid> r/w with ordered data mode. Quota mode: none.
+[   10.212017] fedora kernel: applesmc: key=873 fan=2 temp=41 index=40 acc=0 lux=0 kbd=0
+[   10.212107] fedora kernel: applesmc applesmc.768: hwmon_device_register() is deprecated. Please convert the driver to use hwmon_device_register_with_info().
+[   10.437151] fedora kernel: Bluetooth: hci0: BCM: failed to write update baudrate (-16)
+[   10.437354] fedora kernel: Bluetooth: hci0: Failed to set baudrate
+[   10.494055] fedora kernel: mc: Linux media interface: v0.10
+[   10.527037] fedora kernel: RAPL PMU: API unit is 2^-32 Joules, 4 fixed counters, 655360 ms ovfl timer
+[   10.527200] fedora kernel: RAPL PMU: hw unit of domain pp0-core 2^-14 Joules
+[   10.527300] fedora kernel: RAPL PMU: hw unit of domain package 2^-14 Joules
+[   10.527403] fedora kernel: RAPL PMU: hw unit of domain dram 2^-14 Joules
+[   10.527483] fedora kernel: RAPL PMU: hw unit of domain pp1-gpu 2^-14 Joules
+[   10.551029] fedora kernel: iTCO_wdt iTCO_wdt: unable to reset NO_REBOOT flag, device disabled by hardware/BIOS
+[   10.555063] fedora kernel: Bluetooth: hci0: BCM: chip id 126
+[   10.558035] fedora kernel: Bluetooth: hci0: BCM: features 0x2f
+[   10.561197] fedora kernel: Bluetooth: hci0: BCM20703A2 Generic UART UHE Apple 40MHz wlcsp_x100
+[   10.561337] fedora kernel: Bluetooth: hci0: BCM (001.002.109) build 0229
+[   10.569018] fedora kernel: Bluetooth: hci0: BCM: firmware Patch file not found, tried:
+[   10.569100] fedora kernel: Bluetooth: hci0: BCM: 'brcm/BCM.hcd'
+[   10.586050] fedora kernel: videodev: Linux video capture interface: v2.00
+[   10.666021] fedora kernel: uvcvideo 1-3:1.0: Found UVC 1.50 device iBridge (05ac:8600)
+[   10.670014] fedora kernel: usbcore: registered new interface driver uvcvideo
+[   10.892252] fedora kernel: intel_tcc_cooling: Programmable TCC Offset detected
+[   10.947185] fedora kernel: intel_pmc_core intel_pmc_core.0:  initialized
+[   10.956036] fedora kernel: intel_rapl_common: Found RAPL domain package
+[   10.956135] fedora kernel: intel_rapl_common: Found RAPL domain core
+[   10.956380] fedora kernel: intel_rapl_common: Found RAPL domain uncore
+[   10.956414] fedora kernel: intel_rapl_common: Found RAPL domain dram
+[   11.181013] fedora kernel: snd_hda_intel 0000:00:1f.3: bound 0000:00:02.0 (ops intel_audio_component_bind_ops [i915])
+[   11.248031] fedora kernel: RPC: Registered named UNIX socket transport module.
+[   11.248116] fedora kernel: RPC: Registered udp transport module.
+[   11.248154] fedora kernel: RPC: Registered tcp transport module.
+[   11.248200] fedora kernel: RPC: Registered tcp-with-tls transport module.
+[   11.248227] fedora kernel: RPC: Registered tcp NFSv4.1 backchannel transport module.
+[   11.259018] fedora kernel: snd_hda_intel: Primary cs8409
+[   11.259099] fedora kernel: snd_hda_intel: Primary patch_cs8409 NOT FOUND trying APPLE
+[   11.259143] fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0: autoconfig for CS8409: line_outs=2 (0x24/0x25/0x0/0x0/0x0) type:speaker
+[   11.259634] fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[   11.260027] fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:    hp_outs=1 (0x2c/0x0/0x0/0x0/0x0)
+[   11.260710] fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:    mono: mono_out=0x0
+[   11.261241] fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:    inputs:
+[   11.261719] fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:      Internal Mic=0x44
+[   11.262230] fedora kernel: snd_hda_codec_cs8409 hdaudioC0D0:      Mic=0x3c
+[   11.264021] fedora kernel: snd_hda_intel: hda_generic_check_dyn_adc_switch shrinking
+[   11.545038] fedora kernel: Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[   11.545154] fedora kernel: Bluetooth: BNEP filters: protocol multicast
+[   11.545195] fedora kernel: Bluetooth: BNEP socket layer initialized
+[   11.553088] fedora kernel: Bluetooth: MGMT ver 1.23
+[   11.754072] fedora kernel: input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1f.3/sound/card0/input11
+[   11.754193] fedora kernel: input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1f.3/sound/card0/input12
+[   11.754229] fedora kernel: input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input13
+[   11.754277] fedora kernel: input: HDA Intel PCH HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input14
+[   11.754302] fedora kernel: input: HDA Intel PCH HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:1f.3/sound/card0/input15
+[   12.272790] fedora kernel: NET: Registered PF_QIPCRTR protocol family
+[   15.248114] fedora kernel: Bluetooth: RFCOMM TTY layer initialized
+[   15.248339] fedora kernel: Bluetooth: RFCOMM socket layer initialized
+[   15.248438] fedora kernel: Bluetooth: RFCOMM ver 1.11
+[   16.270028] fedora kernel: ieee80211 phy0: brcmf_inetaddr_changed: fail to get arp ip table err:-52
+[   18.098041] fedora kernel: rfkill: input handler disabled
+[   27.422546] fedora kernel: rfkill: input handler enabled
+[   31.873232] fedora kernel: rfkill: input handler disabled
+[   39.615257] fedora kernel: evm: overlay not supported
+[  435.456161] fedora kernel: usb 6-2: new SuperSpeed USB device number 2 using xhci_hcd
+[  435.468066] fedora kernel: usb 6-2: New USB device found, idVendor=0bda, idProduct=8153, bcdDevice=31.00
+[  435.471222] fedora kernel: usb 6-2: Int endpoint with wBytesPerInterval of 8 in config 2 interface 0 altsetting 0 ep 0x83: setting to 16
+[  435.473842] fedora kernel: usb 6-2: New USB device strings: Mfr=1, Product=2, SerialNumber=6
+[  435.475699] fedora kernel: usb 6-2: Product: USB 10/100/1000 LAN
+[  435.477499] fedora kernel: usb 6-2: Manufacturer: Realtek
+[  435.479287] fedora kernel: usb 6-2: SerialNumber: 001000001
+[  435.665076] fedora kernel: usbcore: registered new device driver r8152-cfgselector
+[  435.781060] fedora kernel: r8152-cfgselector 6-2: reset SuperSpeed USB device number 2 using xhci_hcd
+[  435.859532] fedora kernel: usbcore: registered new interface driver r8152
+[  435.901040] fedora kernel: usbcore: registered new interface driver cdc_ether
+[  435.910048] fedora kernel: usbcore: registered new interface driver r8153_ecm
+[  436.177052] fedora kernel: r8152 6-2:1.0 enp124s0u2: renamed from eth0
+[  457.825121] fedora kernel: r8152-cfgselector 6-2: USB disconnect, device number 2
+[  457.827478] fedora kernel: xhci_hcd 0000:7c:00.0: WARN Set TR Deq Ptr cmd failed due to incorrect slot or ep state.
+[  457.830448] fedora kernel: r8152 6-2:1.0 enp124s0u2: Stop submitting intr, status -108
+[ 1226.865125] fedora kernel: usb 6-2: new SuperSpeed USB device number 3 using xhci_hcd
+[ 1226.876052] fedora kernel: usb 6-2: New USB device found, idVendor=0bda, idProduct=8153, bcdDevice=31.00
+[ 1226.878430] fedora kernel: usb 6-2: Int endpoint with wBytesPerInterval of 8 in config 2 interface 0 altsetting 0 ep 0x83: setting to 16
+[ 1226.879615] fedora kernel: usb 6-2: New USB device strings: Mfr=1, Product=2, SerialNumber=6
+[ 1226.880669] fedora kernel: usb 6-2: Product: USB 10/100/1000 LAN
+[ 1226.881793] fedora kernel: usb 6-2: Manufacturer: Realtek
+[ 1226.882941] fedora kernel: usb 6-2: SerialNumber: 001000001
+[ 1226.995050] fedora kernel: r8152-cfgselector 6-2: reset SuperSpeed USB device number 3 using xhci_hcd
+[ 1227.278082] fedora kernel: r8152 6-2:1.0 enp124s0u2: renamed from eth0
+[ 1342.968059] fedora kernel: WARNING! power/level is deprecated; use power/control instead
+[ 1675.074070] fedora kernel: r8152-cfgselector 6-2: USB disconnect, device number 3
+[ 1675.083440] fedora kernel: xhci_hcd 0000:7c:00.0: WARN Set TR Deq Ptr cmd failed due to incorrect slot or ep state.
+[ 1675.096497] fedora kernel: r8152 6-2:1.0 enp124s0u2: Stop submitting intr, status -108
+[ 1693.181058] fedora kernel: usb 6-2: new SuperSpeed USB device number 4 using xhci_hcd
+[ 1693.192060] fedora kernel: usb 6-2: New USB device found, idVendor=0bda, idProduct=8153, bcdDevice=31.00
+[ 1693.192823] fedora kernel: usb 6-2: Int endpoint with wBytesPerInterval of 8 in config 2 interface 0 altsetting 0 ep 0x83: setting to 16
+[ 1693.194061] fedora kernel: usb 6-2: New USB device strings: Mfr=1, Product=2, SerialNumber=6
+[ 1693.195853] fedora kernel: usb 6-2: Product: USB 10/100/1000 LAN
+[ 1693.197504] fedora kernel: usb 6-2: Manufacturer: Realtek
+[ 1693.198920] fedora kernel: usb 6-2: SerialNumber: 001000001
+[ 1693.312061] fedora kernel: r8152-cfgselector 6-2: reset SuperSpeed USB device number 4 using xhci_hcd
+[ 1693.590048] fedora kernel: r8152 6-2:1.0 enp124s0u2: renamed from eth0
+[ 2713.371146] fedora kernel: ieee80211 phy0: brcmf_inetaddr_changed: fail to get arp ip table err:-52
+[ 2714.045091] fedora kernel: PM: suspend entry (s2idle)

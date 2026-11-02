@@ -1,0 +1,87 @@
+Power: adapter online=0, usable charge=1443000/3185000.
+Deployment 0 is now pinned
+-rw-r--r--. 1 root root system_u:object_r:etc_t:s0              474 Nov  1 09:43 /etc/dracut.conf.d/99-macbook-wifi-nvram.conf
+-rw-r--r--. 1 root root system_u:object_r:cpucontrol_conf_t:s0 6051 Nov  1 09:43 /etc/firmware/macbook-wifi/brcm/brcmfmac43602-pcie.txt
+-rw-r--r--. 1 root root system_u:object_r:modules_conf_t:s0     238 Nov  1 09:43 /etc/modprobe.d/99-macbook-wifi-nvram.conf
+Installed only scoped trial files. Recovery receipt: /var/lib/macbook-wifi-recovery/trial-v2-GpvAhXy5
+Checking out tree f1365bc...done
+Enabled rpm-md repositories: fedora-cisco-openh264 updates fedora copr:copr.fedorainfracloud.org:phracek:PyCharm rpmfusion-nonfree-nvidia-driver rpmfusion-nonfree-steam updates-archive
+Importing rpm-md...done
+rpm-md repo 'fedora-cisco-openh264' (cached); generated: 2026-03-24T10:37:04Z solvables: 3
+rpm-md repo 'updates' (cached); generated: 2026-10-31T01:01:52Z solvables: 31325
+rpm-md repo 'fedora' (cached); generated: 2026-04-22T13:34:32Z solvables: 76354
+rpm-md repo 'copr:copr.fedorainfracloud.org:phracek:PyCharm' (cached); generated: 2026-10-30T03:34:11Z solvables: 5
+rpm-md repo 'rpmfusion-nonfree-nvidia-driver' (cached); generated: 2026-09-21T07:15:39Z solvables: 19
+rpm-md repo 'rpmfusion-nonfree-steam' (cached); generated: 2026-08-12T19:25:52Z solvables: 2
+rpm-md repo 'updates-archive' (cached); generated: 2026-10-31T02:21:19Z solvables: 50850
+Resolving dependencies...done
+Checking out packages...done
+Running systemd-sysusers...done
+Running pre scripts...done
+Running post scripts...done
+Running posttrans scripts...done
+Writing rpmdb...done
+Generating initramfs...done
+Writing OSTree commit...done
+Staging deployment...done
+Initramfs regeneration is now: enabled
+State: idle
+Deployments:
+  fedora:fedora/44/x86_64/silverblue
+                  Version: 44.20261031.0 (2026-10-31T00:37:58Z)
+               BaseCommit: f1365bcef08f98f305177529b4132dbef7c2a4d4ad1fc38de9b24fc85c306517
+             GPGSignature: Valid signature by 36F612DCF27F7D1A48A835E4DBFCF71C6D9F90A6
+          LayeredPackages: akmods btop htop kernel-devel-matched tmux vim
+            LocalPackages: akmod-macbook-cs8409-0.1.20261031-2.fc44.x86_64
+                           akmod-macbook-t1-touchbar-0.1.20261031-1.fc44.x86_64
+                           macbook-cs8409-kmod-common-0.1.20261031-2.fc44.x86_64
+                           macbook-t1-touchbar-kmod-common-0.1.20261031-1.fc44.x86_64
+                Initramfs: --force 
+
+● fedora:fedora/44/x86_64/silverblue
+                  Version: 44.20261031.0 (2026-10-31T00:37:58Z)
+               BaseCommit: f1365bcef08f98f305177529b4132dbef7c2a4d4ad1fc38de9b24fc85c306517
+             GPGSignature: Valid signature by 36F612DCF27F7D1A48A835E4DBFCF71C6D9F90A6
+          LayeredPackages: akmods btop htop kernel-devel-matched tmux vim
+            LocalPackages: akmod-macbook-cs8409-0.1.20261031-2.fc44.x86_64
+                           akmod-macbook-t1-touchbar-0.1.20261031-1.fc44.x86_64
+                           macbook-cs8409-kmod-common-0.1.20261031-2.fc44.x86_64
+                           macbook-t1-touchbar-kmod-common-0.1.20261031-1.fc44.x86_64
+                Initramfs: --force --remove '/etc/firmware/macbook-wifi /etc/modprobe.d/99-macbook-wifi-nvram.conf /etc/dracut.conf.d/99-macbook-wifi-nvram.conf /usr/lib/firmware/brcm/brcmfmac43602-pcie.txt /lib/firmware/brcm/brcmfmac43602-pcie.txt' 
+                   Pinned: yes
+
+  fedora:fedora/44/x86_64/silverblue
+                  Version: 44.20261031.0 (2026-10-31T00:37:58Z)
+               BaseCommit: f1365bcef08f98f305177529b4132dbef7c2a4d4ad1fc38de9b24fc85c306517
+             GPGSignature: Valid signature by 36F612DCF27F7D1A48A835E4DBFCF71C6D9F90A6
+          LayeredPackages: akmods btop htop kernel-devel-matched tmux vim
+            LocalPackages: akmod-macbook-cs8409-0.1.20261031-2.fc44.x86_64
+                           akmod-macbook-t1-touchbar-0.1.20261031-1.fc44.x86_64
+                           macbook-cs8409-kmod-common-0.1.20261031-2.fc44.x86_64
+                           macbook-t1-touchbar-kmod-common-0.1.20261031-1.fc44.x86_64
+                Initramfs: --force 
+
+  fedora:fedora/44/x86_64/silverblue
+                  Version: 44.20261031.0 (2026-10-31T00:37:58Z)
+               BaseCommit: f1365bcef08f98f305177529b4132dbef7c2a4d4ad1fc38de9b24fc85c306517
+             GPGSignature: Valid signature by 36F612DCF27F7D1A48A835E4DBFCF71C6D9F90A6
+          LayeredPackages: akmods btop htop kernel-devel-matched tmux vim
+            LocalPackages: akmod-macbook-cs8409-0.1.20261031-2.fc44.x86_64
+                           akmod-macbook-t1-touchbar-0.1.20261031-1.fc44.x86_64
+                           macbook-cs8409-kmod-common-0.1.20261031-2.fc44.x86_64
+                           macbook-t1-touchbar-kmod-common-0.1.20261031-1.fc44.x86_64
+                Initramfs: regenerate
+                   Pinned: yes
+
+  fedora:fedora/44/x86_64/silverblue
+                  Version: 44.20261031.0 (2026-10-31T00:37:58Z)
+                   Commit: f1365bcef08f98f305177529b4132dbef7c2a4d4ad1fc38de9b24fc85c306517
+             GPGSignature: Valid signature by 36F612DCF27F7D1A48A835E4DBFCF71C6D9F90A6
+                   Pinned: yes
+
+  fedora:fedora/44/x86_64/silverblue
+                  Version: 44.1.7 (2026-04-22T13:27:20Z)
+                   Commit: b8e75b708a972d784856f07d964202860088b1138ef9eadb01aa7d76c795104a
+             GPGSignature: Valid signature by 36F612DCF27F7D1A48A835E4DBFCF71C6D9F90A6
+                   Pinned: yes
+STAGED ONLY. Verify actual new image/helper and fallbacks before user reboot.

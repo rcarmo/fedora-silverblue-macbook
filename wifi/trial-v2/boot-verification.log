@@ -1,0 +1,48 @@
+STAGED IMAGE (not yet BLS-finalized): 39e497fbe6383c8b5c9dda53c1bdaab1e3e77291c81cef20ceace9017ab5c936 /sysroot/ostree/deploy/fedora/deploy/39e497fbe6383c8b5c9dda53c1bdaab1e3e77291c81cef20ceace9017ab5c936.0/usr/lib/modules/7.2.13-200.fc44.x86_64/initramfs.img
+Expected next menu after successful finalization: trial :0, recovery :1, old FAILED image :2; recheck if any deployment changes.
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Exact c97 personalized NVRAM verified.
+Verified module: usr/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-cs8409/snd-hda-codec-cs8409.ko.xz
+Verified module: usr/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/apple-ibridge.ko.xz
+Verified module: usr/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/apple-touchbar.ko.xz
+Verified module: usr/lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz
+Verified module: usr/lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/brcmfmac-wcc.ko.xz
+Verified module: usr/lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/input/keyboard/applespi.ko.xz
+Unchanged stock station binary verified.
+Offline staged WCC dependency index resolution PASS:
+insmod /tmp/macbook-wifi-verify-f0eb0aes/lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko.xz 
+insmod /tmp/macbook-wifi-verify-f0eb0aes/lib/modules/7.2.13-200.fc44.x86_64/kernel/net/rfkill/rfkill.ko.xz 
+insmod /tmp/macbook-wifi-verify-f0eb0aes/lib/modules/7.2.13-200.fc44.x86_64/kernel/net/wireless/cfg80211.ko.xz 
+insmod /tmp/macbook-wifi-verify-f0eb0aes/lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/mmc/core/mmc_core.ko.xz 
+insmod /tmp/macbook-wifi-verify-f0eb0aes/lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz 
+insmod /tmp/macbook-wifi-verify-f0eb0aes/lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/brcmfmac-wcc.ko.xz 
+
+Early-load instructions and skip_acpi_power=1 verified.
+BOOT MAPPING: c4ebdd857316f64e6b97b3c29f64993fef8ebe82824484091bc4d848b2ae39bc Fedora Linux 44.20261031.0 (Silverblue) (ostree:0) /boot/ostree/fedora-bfebcee6ccaa2e9fb682ec6aeb30d11709d6268a5f19c00c59baa4d57340b56f/initramfs-7.2.13-200.fc44.x86_64.img
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Fallback verified clean: c4ebdd857316 image SHA256 0c95c3e0eb0b16f3ad186a1f4ff6c517988f71f0563882df66adb737080085d7
+BOOT MAPPING: 43e45ec36e83466bf11fe72de61a2e844342182d820de150ddf99c880c38951f Fedora Linux 44.20261031.0 (Silverblue) (ostree:2) /boot/ostree/fedora-66919d634a47d21199e4fe697437da2a117812c49770727e610afae23e84564d/initramfs-7.2.13-200.fc44.x86_64.img
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Fallback verified clean: 43e45ec36e83 image SHA256 464ae65c801b1ae4e709388f304e67fdea3d2fc51d57aa6678afb2458862a8cc
+BOOT MAPPING: f1365bcef08f98f305177529b4132dbef7c2a4d4ad1fc38de9b24fc85c306517 Fedora Linux 44.20261031.0 (Silverblue) (ostree:3) /boot/ostree/fedora-49f4b4e2636850381b6c967c3439f88f42d6416d66ba148633c4abb9970a046b/initramfs-7.2.13-200.fc44.x86_64.img
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Fallback verified clean: f1365bcef08f image SHA256 0226d0935a539b03b881efbe7787d97dd500873650e0cff371878566ed2765f3
+BOOT MAPPING: b8e75b708a972d784856f07d964202860088b1138ef9eadb01aa7d76c795104a Fedora Linux 44.1.7 (Silverblue) (ostree:4) /boot/ostree/fedora-c4941fbacfc3518c3fe124d4b3e5ffa17d199ac5f8361e9223053b012bcbc0a9/initramfs-6.19.10-300.fc44.x86_64.img
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Fallback verified clean: b8e75b708a97 image SHA256 0aed07312fbf7a4f4b8607015087736c8439ebb39e0736165e413d6ab91ae824
+PASS: actual BLS boot image verification. No reboot or module load performed.

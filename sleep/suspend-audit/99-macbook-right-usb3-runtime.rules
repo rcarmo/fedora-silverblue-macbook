@@ -1,0 +1,5 @@
+# MacBookPro13,2: persistent workaround for tested USB3 hotplug wake failure.
+# Only USB3 ROOT hub on external PCI 0000:7c:00.0 (Intel 8086:15d4).
+# Keeps this hub/controller awake; may increase idle battery consumption.
+# No internal USB, USB2 root, other branch, PCI policy or system-sleep change.
+ACTION=="add|change", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", KERNEL=="usb*", ATTR{devpath}=="0", ATTR{idVendor}=="1d6b", ATTR{idProduct}=="0003", KERNELS=="0000:7c:00.0", SUBSYSTEMS=="pci", ATTRS{vendor}=="0x8086", ATTRS{device}=="0x15d4", TEST=="power/control", ATTR{power/control}="on"

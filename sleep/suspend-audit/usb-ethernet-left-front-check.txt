@@ -1,0 +1,50 @@
+2026-11-01T10:23:08+00:00
+
+USB devices
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05ac:8600 Apple, Inc. iBridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+USB topology
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/12p, 480M
+    |__ Port 003: Dev 002, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 003: Dev 002, If 1, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 003: Dev 002, If 2, Class=Human Interface Device, Driver=usbhid, 480M
+    |__ Port 003: Dev 002, If 3, Class=Human Interface Device, Driver=usbhid, 480M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/6p, 5000M
+/:  Bus 003.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 480M
+/:  Bus 004.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 10000M
+/:  Bus 005.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 480M
+/:  Bus 006.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 10000M
+
+Network devices
+DEVICE          TYPE      STATE                   CONNECTION 
+wlp2s0          wifi      connected               7          
+lo              loopback  connected (externally)  lo         
+p2p-dev-wlp2s0  wifi-p2p  disconnected            --         
+
+Links
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> 
+wlp2s0           UP             XX:XX:XX:XX:XX:XX <BROADCAST,MULTICAST,UP,LOWER_UP> 
+
+Recent kernel messages
+Nov 01 10:22:26 fedora kernel: usb 6-2: new SuperSpeed USB device number 2 using xhci_hcd
+Nov 01 10:22:26 fedora kernel: usb 6-2: New USB device found, idVendor=0bda, idProduct=8153, bcdDevice=31.00
+Nov 01 10:22:26 fedora kernel: usb 6-2: Int endpoint with wBytesPerInterval of 8 in config 2 interface 0 altsetting 0 ep 0x83: setting to 16
+Nov 01 10:22:26 fedora kernel: usb 6-2: New USB device strings: Mfr=1, Product=2, SerialNumber=6
+Nov 01 10:22:26 fedora kernel: usb 6-2: Product: USB 10/100/1000 LAN
+Nov 01 10:22:26 fedora kernel: usb 6-2: Manufacturer: Realtek
+Nov 01 10:22:26 fedora kernel: usb 6-2: SerialNumber: 001000001
+Nov 01 10:22:26 fedora kernel: usbcore: registered new device driver r8152-cfgselector
+Nov 01 10:22:26 fedora kernel: r8152-cfgselector 6-2: reset SuperSpeed USB device number 2 using xhci_hcd
+Nov 01 10:22:26 fedora kernel: usbcore: registered new interface driver r8152
+Nov 01 10:22:27 fedora kernel: usbcore: registered new interface driver cdc_ether
+Nov 01 10:22:27 fedora kernel: usbcore: registered new interface driver r8153_ecm
+Nov 01 10:22:27 fedora kernel: r8152 6-2:1.0 enp124s0u2: renamed from eth0
+Nov 01 10:22:48 fedora kernel: r8152-cfgselector 6-2: USB disconnect, device number 2
+Nov 01 10:22:48 fedora kernel: xhci_hcd 0000:7c:00.0: WARN Set TR Deq Ptr cmd failed due to incorrect slot or ep state.
+Nov 01 10:22:48 fedora kernel: r8152 6-2:1.0 enp124s0u2: Stop submitting intr, status -108

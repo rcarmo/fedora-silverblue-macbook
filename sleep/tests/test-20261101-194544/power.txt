@@ -1,0 +1,2 @@
+AC 45%
+options: nowake= nolid=0 nohda=0 allow-dead-tb=0 lid0=enabled hda=bound

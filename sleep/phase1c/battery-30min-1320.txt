@@ -1,0 +1,7 @@
+2026-11-01T13:20:49+00:00
+0
+status=Discharging
+capacity=75
+charge_now=3230000
+voltage_now=12435000
+charge_full=3230000

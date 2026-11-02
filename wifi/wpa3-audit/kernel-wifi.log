@@ -1,0 +1,16 @@
+Nov 01 09:59:07 fedora kernel: ACPI: [Firmware Bug]: BIOS _OSI(Linux) query ignored
+Nov 01 09:59:07 fedora kernel: cfg80211: Loading compiled-in X.509 certificates for regulatory database
+Nov 01 09:59:08 fedora kernel: usbcore: registered new interface driver brcmfmac
+Nov 01 09:59:08 fedora kernel: brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43602-pcie for chip BCM43602/2
+Nov 01 09:59:08 fedora kernel: brcmfmac: brcmf_c_process_clm_blob: no clm_blob available (err=-2), device may have limited channels available
+Nov 01 09:59:08 fedora kernel: brcmfmac: brcmf_c_process_txcap_blob: no txcap_blob available (err=-2)
+Nov 01 09:59:08 fedora kernel: brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43602/2 wl0: Nov 10 2015 06:38:10 version 7.35.177.61 (r598657) FWID 01-ea662a8c
+Nov 01 09:59:10 fedora kernel: i915 0000:00:02.0: [drm] Finished loading DMC firmware i915/skl_dmc_ver1_27.bin (v1.27)
+Nov 01 09:59:14 fedora kernel: SELinux:  Permission firmware_load in class system not defined in policy.
+Nov 01 09:59:14 fedora systemd[1]: systemd-boot-clear-sysfail.service - Clear SysFail Entry If The Boot Is Successful skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/LoaderEntrySysFail-<uuid>
+Nov 01 09:59:14 fedora systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-<uuid>
+Nov 01 09:59:15 fedora kernel: brcmfmac 0000:02:00.0 wlp2s0: renamed from wlan0
+Nov 01 09:59:17 fedora kernel: Bluetooth: hci0: BCM: firmware Patch file not found, tried:
+Nov 01 09:59:22 fedora kernel: ieee80211 phy0: brcmf_inetaddr_changed: fail to get arp ip table err:-52
+Nov 01 10:00:01 fedora kernel: ieee80211 phy0: brcmf_inetaddr_changed: fail to get arp ip table err:-52
+Nov 01 10:00:35 fedora kernel: ieee80211 phy0: brcmf_inetaddr_changed: fail to get arp ip table err:-52

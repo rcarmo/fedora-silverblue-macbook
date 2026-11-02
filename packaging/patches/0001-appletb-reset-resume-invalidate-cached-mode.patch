@@ -1,0 +1,22 @@
+--- macbook-t1-touchbar-0.1.20261031/apple-touchbar.c	2026-10-31 22:38:33.225215628 +0000
++++ macbook-t1-touchbar-0.1.20261101/apple-touchbar.c	2026-11-01 13:01:02.652993412 +0000
+@@ -1417,6 +1417,19 @@
+ 		tb_dev->restore_autopm = true;
+ 		tb_dev->last_event_time = ktime_get();
+ 
++		/*
++		 * Local fix (2026-11-01): the device was reset, so its real mode/disp
++		 * is unknown. If appletb_suspend() never ran (iBridge already
++		 * runtime-suspended at system suspend), the cached cur_tb_* still say
++		 * "on", nothing is marked pending and the forced update sends no
++		 * command - the bar stays dark. Invalidate the cache so the update
++		 * re-sends mode (and disp on non-T1).
++		 */
++		tb_dev->cur_tb_mode = APPLETB_CMD_MODE_OFF;
++		tb_dev->cur_tb_disp = APPLETB_CMD_DISP_OFF;
++		tb_dev->pnd_tb_mode = APPLETB_CMD_MODE_NONE;
++		tb_dev->pnd_tb_disp = APPLETB_CMD_DISP_NONE;
++
+ 		appletb_update_touchbar_no_lock(tb_dev, true);
+ 
+ 		dev_info(tb_dev->log_dev, "Touchbar resumed.\n");

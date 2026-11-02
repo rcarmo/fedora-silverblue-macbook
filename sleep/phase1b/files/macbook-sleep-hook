@@ -1,0 +1,75 @@
+#!/bin/bash
+# MacBookPro13,2 S3 (deep) helper. Run by systemd-suspend.service drop-in:
+#   ExecStartPre=... pre   /   ExecStopPost=... post
+# pre : force mem_sleep=deep; NVMe (Apple S3X 106b:2003) d3cold_allowed=0
+#       (ABORTS the suspend if that fails - known no-wake otherwise);
+#       unbind BCM43602 Wi-Fi from brcmfmac (firmware hangs across S3);
+#       Thunderbolt upstream-port removal (omarchy PR #11570 hook, unchanged);
+#       [1b] disable S3 wake from XHC1 (00:14.0, hosts the T1/iBridge on usb 1-3;
+#       suspected instant-wake source) - keyboard SPIT and LID0 stay enabled.
+# post: Thunderbolt rescan; rebind Wi-Fi (NVRAM via firmware_class.path karg);
+#       [1b] restore XHC1 wake to what it was.
+# Journal tag: macbook-sleep. Every path except the NVMe guard exits 0.
+set -u
+TAG=macbook-sleep
+TB=/usr/local/sbin/macbook-thunderbolt-remove-rescan
+STATE=/run/macbook-sleep
+DRV=/sys/bus/pci/drivers/brcmfmac
+XHC1=/sys/bus/pci/devices/0000:00:14.0
+log() { logger -t "$TAG" -- "$*"; }
+[[ $(cat /sys/class/dmi/id/product_name 2>/dev/null) == MacBookPro13,2 ]] || exit 0
+
+case "${1:-}" in
+pre)
+  mkdir -p "$STATE"; rm -f "$STATE/wifi"
+  grep -qw deep /sys/power/mem_sleep && echo deep > /sys/power/mem_sleep
+  log "pre: mem_sleep: $(cat /sys/power/mem_sleep)"
+  ok=0
+  for d in /sys/bus/pci/devices/*; do
+    [[ $(cat "$d/vendor") == 0x106b && $(cat "$d/device") == 0x2003 ]] || continue
+    echo 0 > "$d/d3cold_allowed" 2>/dev/null
+    [[ $(cat "$d/d3cold_allowed") == 0 ]] && ok=1
+    log "pre: NVMe ${d##*/} d3cold_allowed=$(cat "$d/d3cold_allowed")"
+  done
+  if (( ! ok )); then
+    log "pre: ERROR Apple NVMe d3cold_allowed not 0 - refusing to suspend (would not wake)"
+    exit 1
+  fi
+  for d in "$DRV"/0000:*; do
+    [[ -e $d ]] || continue
+    a=${d##*/}
+    [[ $(cat "$d/vendor") == 0x14e4 && $(cat "$d/device") == 0x43ba ]] || continue
+    echo "$a" >> "$STATE/wifi"   # record first, so post rebinds even on partial failure
+    if echo "$a" > "$DRV/unbind" 2>/dev/null; then log "pre: unbound Wi-Fi $a"
+    else log "pre: WARNING could not unbind Wi-Fi $a"; fi
+  done
+  "$TB" pre suspend
+  rm -f "$STATE/xhc1-wake"
+  if [[ $(cat "$XHC1/vendor" 2>/dev/null)/$(cat "$XHC1/class" 2>/dev/null) == 0x8086/0x0c0330 && -w $XHC1/power/wakeup ]]; then
+    cat "$XHC1/power/wakeup" > "$STATE/xhc1-wake"
+    echo disabled > "$XHC1/power/wakeup" 2>/dev/null
+  fi
+  log "pre: XHC1 wake was $(cat "$STATE/xhc1-wake" 2>/dev/null || echo n/a), now $(cat "$XHC1/power/wakeup" 2>/dev/null)"
+  log "pre: acpi wake enabled: $(awk '$3 ~ /enabled/ {printf "%s(%s) ", $1, $2}' /proc/acpi/wakeup)"
+  log "pre: done"
+  ;;
+post)
+  "$TB" post suspend
+  if [[ -f $STATE/wifi ]]; then
+    while read -r a; do
+      [[ -n $a && ! -e /sys/bus/pci/devices/$a/driver ]] || continue
+      if echo "$a" > "$DRV/bind" 2>/dev/null; then log "post: rebound Wi-Fi $a"
+      else log "post: WARNING could not rebind Wi-Fi $a"; fi
+    done < "$STATE/wifi"
+    rm -f "$STATE/wifi"
+  fi
+  if [[ -f $STATE/xhc1-wake ]]; then
+    echo "$(cat "$STATE/xhc1-wake")" > "$XHC1/power/wakeup" 2>/dev/null
+    rm -f "$STATE/xhc1-wake"
+  fi
+  log "post: XHC1 wake $(cat "$XHC1/power/wakeup" 2>/dev/null); pm_wakeup_irq=$(cat /sys/power/pm_wakeup_irq 2>/dev/null)"
+  log "post: done"
+  ;;
+*) echo "usage: $0 pre|post" >&2; exit 2 ;;
+esac
+exit 0

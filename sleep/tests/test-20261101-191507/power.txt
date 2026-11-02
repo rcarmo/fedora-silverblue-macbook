@@ -1,0 +1,2 @@
+AC 18%
+options: nolid=0 allow-dead-tb=0 lid0=enabled

@@ -1,0 +1,22 @@
+Checking out tree f1365bc...done
+Enabled rpm-md repositories: fedora-cisco-openh264 updates fedora copr:copr.fedorainfracloud.org:phracek:PyCharm rpmfusion-nonfree-steam rpmfusion-nonfree-nvidia-driver updates-archive
+Importing rpm-md...done
+rpm-md repo 'fedora-cisco-openh264' (cached); generated: 2026-03-24T10:37:04Z solvables: 3
+rpm-md repo 'updates' (cached); generated: 2026-10-31T01:01:52Z solvables: 31325
+rpm-md repo 'fedora' (cached); generated: 2026-04-22T13:34:32Z solvables: 76354
+rpm-md repo 'copr:copr.fedorainfracloud.org:phracek:PyCharm' (cached); generated: 2026-10-30T03:34:11Z solvables: 5
+rpm-md repo 'rpmfusion-nonfree-steam' (cached); generated: 2026-08-12T19:25:52Z solvables: 2
+rpm-md repo 'rpmfusion-nonfree-nvidia-driver' (cached); generated: 2026-09-21T07:15:39Z solvables: 19
+rpm-md repo 'updates-archive' (cached); generated: 2026-10-31T02:21:19Z solvables: 50850
+Resolving dependencies...done
+Checking out packages...done
+Running systemd-sysusers...done
+Running pre scripts...done
+Running post scripts...done
+Running posttrans scripts...done
+Writing rpmdb...done
+Generating initramfs...done
+Writing OSTree commit...done
+Staging deployment...done
+Freed: 92.5 MB (pkgcache branches: 0)
+Initramfs regeneration is now: enabled

@@ -1,0 +1,30 @@
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Staged image: /sysroot/ostree/deploy/fedora/deploy/b0a3115661b67f83769723b4fdea41d9cc6fc267cea0b363cf4b0298fb999505.0/usr/lib/modules/7.2.13-200.fc44.x86_64/initramfs.img
+Present: extra/macbook-cs8409/snd-hda-codec-cs8409.ko
+Present: extra/macbook-t1-touchbar/apple-ibridge.ko
+Present: extra/macbook-t1-touchbar/apple-touchbar.ko
+Present: brcmfmac/brcmfmac.ko
+Present: brcm/brcmfmac43602-pcie.bin
+Exact candidate NVRAM hash verified.
+Early brcmfmac/Touch Bar loading verified.
+Touch Bar skip_acpi_power=1 verified.
+Stock station firmware binary hash verified.
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Fallback has no trial NVRAM: /boot/ostree/fedora-66919d634a47d21199e4fe697437da2a117812c49770727e610afae23e84564d/initramfs-7.2.13-200.fc44.x86_64.img
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Fallback has no trial NVRAM: /boot/ostree/fedora-49f4b4e2636850381b6c967c3439f88f42d6416d66ba148633c4abb9970a046b/initramfs-7.2.13-200.fc44.x86_64.img
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format 
+zstd: /*stdin*\: unsupported format
+Fallback has no trial NVRAM: /boot/ostree/fedora-c4941fbacfc3518c3fe124d4b3e5ffa17d199ac5f8361e9223053b012bcbc0a9/initramfs-6.19.10-300.fc44.x86_64.img
+PASS: staged trial contents and all three pinned fallback images verified. No reboot performed.

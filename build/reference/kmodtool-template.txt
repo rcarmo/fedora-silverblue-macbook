@@ -1,0 +1,83 @@
+
+%{?rhel:%global with_rhel_kabi 1}
+
+%if 0%{?rhel} || 0%{?fedora}
+%global kmod_pkg_name kmod-macbook-t1-touchbar
+%global pkg_kmod_name macbook-t1-touchbar-kmod
+%{?obsolete_name:%global kmod_obsolete_name kmod-%{obsolete_name}}
+%endif
+
+%if 0%{?rhel} || 0%{?fedora}
+%global kmod_for_kernel %{?with_rhel_kabi:7.2.13-200.fc44}%{!?with_rhel_kabi:7.2.13-200.fc44.x86_64}
+%global package_kmod_name %{kmod_pkg_name}-%{kmod_for_kernel}
+%endif
+%global  _prefix_usr      /usr
+
+%package       -n %{package_kmod_name}
+Summary:          macbook-t1-touchbar kernel module(s) for %{kmod_for_kernel}
+Provides:         kernel-modules%{!?with_rhel_kabi:-for-kernel} = 7.2.13-200.fc44.x86_64
+%if %{with rhel_kabi}
+Provides:         installonlypkg(kernel-module)
+%endif
+Provides:         %{pkg_kmod_name} = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires:         %{pkg_kmod_name}-common >= %{?epoch:%{epoch}:}%{version}
+Requires(post):   %{?_prefix_usr}/sbin/depmod
+Requires(postun): %{?_prefix_usr}/sbin/depmod
+%if %{with rhel_kabi}
+Requires(post):   %{?_prefix_usr}/sbin/weak-modules
+Requires(postun): %{?_prefix_usr}/sbin/weak-modules
+%endif
+%global _kmodtool_depmod_post \if [ -f /boot/System.map-7.2.13-200.fc44.x86_64 ] ; then \  %{?_prefix_usr}/sbin/depmod -aeF /boot/System.map-7.2.13-200.fc44.x86_64 7.2.13-200.fc44.x86_64 >/dev/null ; \elif [ -f /lib/modules/7.2.13-200.fc44.x86_64/System.map ] ; then \  %{?_prefix_usr}/sbin/depmod -aeF /lib/modules/7.2.13-200.fc44.x86_64/System.map 7.2.13-200.fc44.x86_64 >/dev/null ; \else \  %{?_prefix_usr}/sbin/depmod -a >/dev/null ; \fi || :
+
+%if %{with rhel_kabi}
+Requires:           kernel-uname-r >= 7.2.13-200.fc44.x86_64
+%else
+Requires:           kernel-uname-r = 7.2.13-200.fc44.x86_64
+%endif
+BuildRequires:  kernel-devel-uname-r = 7.2.13-200.fc44.x86_64
+BuildRequires:  gcc
+BuildRequires:  redhat-rpm-config
+
+
+%post          -n %{package_kmod_name}
+%{_kmodtool_depmod_post}
+
+%if %{with rhel_kabi}
+modules=( $(find /lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/ -name "*.ko"  -o -name "*.ko.xz") )
+printf '%s\n' "${modules[@]}" | %{?_prefix_usr}/sbin/weak-modules --add-modules
+%endif
+
+%if %{with rhel_kabi}
+%preun         -n %{package_kmod_name}
+rpm -ql %{package_kmod_name}-%{version}-%{release}.x86_64 | grep -e '\.ko$' -e '\.ko.xz$' > /var/run/rpm-%{package_kmod_name}-modules
+%endif
+
+%postun        -n %{package_kmod_name}
+%{_kmodtool_depmod_post}
+
+%if %{with rhel_kabi}
+modules=( $(cat /var/run/rpm-%{package_kmod_name}-modules) )
+rm -f /var/run/rpm-%{package_kmod_name}-modules
+printf '%s\n' "${modules[@]}" | %{?_prefix_usr}/sbin/weak-modules --remove-modules
+%endif
+
+%description   -n %{package_kmod_name}
+This package provides the macbook-t1-touchbar kernel modules built for the Linux
+kernel %{kmod_for_kernel} for the %{_target_cpu} family of processors.
+%files         -n %{package_kmod_name}
+%defattr(644,root,root,755)
+%dir /lib/modules/7.2.13-200.fc44.x86_64/extra
+/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/
+
+%global __kmodtool_kernel_uname_r 7.2.13-200.fc44.x86_64
+%global __spec_install_post \
+  %{?__debug_package:%{__debug_install_post}}\
+  %{__arch_install_post}\
+  %{__os_install_post}\
+  %{?__kmodtool_signmodules:%{__kmodtool_modsign_install_post}}\
+  %{?__kmodtool_zipmodules:%{__kmodtool_modzip_install_post}}
+
+%global kmodinstdir_prefix  /lib/modules/
+%global kmodinstdir_postfix /extra/macbook-t1-touchbar/
+%global kernel_versions     7.2.13-200.fc44.x86_64___%{_usrsrc}/kernels/7.2.13-200.fc44.x86_64
+

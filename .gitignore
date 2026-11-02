@@ -1,0 +1,23 @@
+# Upstream clones (clean checkouts; see docs/FILE-MAP.md "Upstream sources" for URL + commit)
+/touchbar-src/
+/t1-touchbar-src/
+/audio-src/
+/audio-akmod-src/
+**/upstream/touchbar-src/
+**/upstream/t1-touchbar-src/
+**/upstream/audio-src/
+**/upstream/audio-akmod-src/
+# Large reproducible inputs
+linux-7.2.13.tar.xz
+linux-7.2.13-hda/
+# Build products
+*.o
+*.mod
+*.mod.c
+*.cmd
+.*.cmd
+*.order
+Module.symvers
+.module-common.o
+.tmp_versions/
+/packaging/test-*/x/

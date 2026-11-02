@@ -1,0 +1,27 @@
+2026-11-01T10:43:22+00:00
+
+USB
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05ac:8600 Apple, Inc. iBridge
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+Target PM
+/sys/bus/usb/devices/usb6/power/control:on
+/sys/bus/usb/devices/usb6/power/runtime_status:active
+/sys/bus/pci/devices/0000:7c:00.0/power/control:auto
+/sys/bus/pci/devices/0000:7c:00.0/power/runtime_status:active
+
+Network
+DEVICE          TYPE      STATE                   CONNECTION 
+wlp2s0          wifi      connected               7          
+lo              loopback  connected (externally)  lo         
+p2p-dev-wlp2s0  wifi-p2p  disconnected            --         
+
+Recent kernel
+Nov 01 10:43:06 fedora kernel: r8152-cfgselector 6-2: USB disconnect, device number 3
+Nov 01 10:43:06 fedora kernel: xhci_hcd 0000:7c:00.0: WARN Set TR Deq Ptr cmd failed due to incorrect slot or ep state.
+Nov 01 10:43:06 fedora kernel: r8152 6-2:1.0 enp124s0u2: Stop submitting intr, status -108

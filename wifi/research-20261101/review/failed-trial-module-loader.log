@@ -1,0 +1,68 @@
+Oct 31 23:53:40.664725 fedora dracut-cmdline[217]: Using kernel command line parameters:  rd.driver.pre=btrfs rd.driver.pre=apple_touchbar rd.driver.pre=apple_ibridge rd.driver.pre=brcmfmac   BOOT_IMAGE=(hd0,gpt2)/ostree/fedora-6c201f6853cac3680224bcb561f46744d1567e6e2fafb16c5ad4d063dc50373c/vmlinuz-7.2.13-200.fc44.x86_64 ostree=/ostree/boot.1/fedora/6c201f6853cac3680224bcb561f46744d1567e6e2fafb16c5ad4d063dc50373c/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw
+Oct 31 23:53:40.946353 fedora kernel: usbcore: registered new interface driver brcmfmac
+Oct 31 23:53:41.052374 fedora kernel: brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43602-pcie for chip BCM43602/2
+Oct 31 23:53:41.353388 fedora kernel: brcmfmac: brcmf_fwvid_request_module: mod=wcc: failed 256
+Oct 31 23:53:41.353450 fedora kernel: ieee80211 phy0: brcmf_attach: brcmf_fwvid_attach failed
+Oct 31 23:53:41.357351 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_setup: Dongle setup failed
+Oct 31 23:53:41.357858 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: hndarm_armr addr: 0x18002000, cr4_idx: 0
+Oct 31 23:53:41.358291 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: 000000.001 
+Oct 31 23:53:41.358732 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: RTE (PCIE-MSG_BUF) 7.35.177.61 (r598657) on BCM43602 r2 @ 40.0/160.0/160.0MHz
+Oct 31 23:53:41.359155 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: 000000.017 allocating a max of 511 rxcplid buffers
+Oct 31 23:53:41.359585 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: 000000.017 pciemsgbuf0: Broadcom PCIE MSGBUF driver
+Oct 31 23:53:41.360018 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: 000000.032 reclaim section 0: Returned 52812 bytes to the heap
+Oct 31 23:53:41.360463 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: 000000.115 wl0: Broadcom BCM43602 802.11 Wireless Controller 7.35.177.61 (r598657)
+Oct 31 23:53:41.360890 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: 000000.115 TCAM: 256 used: 241 exceed:0
+Oct 31 23:53:41.361319 fedora kernel: brcmfmac 0000:02:00.0: brcmf_pcie_bus_console_read: CONSOLE: 000000.116 reclaim section 1: Returned 156416 bytes to the heap
+Oct 31 23:53:41.361756 fedora kernel: ieee80211 phy0: brcmf_fw_crashed: Firmware has halted or crashed
+Oct 31 23:53:41.361977 fedora kernel: Modules linked in: hid_sensor_hub brcmfmac mmc_core cfg80211 rfkill brcmutil fuse apple_ibridge(OE) i2c_dev apple_touchbar(OE)
+Oct 31 23:53:41.362483 fedora kernel:  brcmf_bus_cancel_reset_work+0x33/0x40 [brcmfmac]
+Oct 31 23:53:41.362510 fedora kernel:  brcmf_pcie_remove+0x73/0x180 [brcmfmac]
+Oct 31 23:53:41.362586 fedora kernel:  brcmf_fw_request_done+0x1cb/0x250 [brcmfmac]
+Oct 31 23:53:41.605023 fedora systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+Oct 31 23:53:41.605084 fedora systemd[1]: modprobe@configfs.service - Load Kernel Module configfs skipped, unmet condition check ConditionKernelModuleLoaded=!configfs
+Oct 31 23:53:47.149441 fedora systemd[1]: modprobe@configfs.service - Load Kernel Module configfs skipped, unmet condition check ConditionKernelModuleLoaded=!configfs
+Oct 31 23:53:47.149479 fedora systemd[1]: modprobe@drm.service - Load Kernel Module drm skipped, unmet condition check ConditionKernelModuleLoaded=!drm
+Oct 31 23:53:47.149515 fedora systemd[1]: modprobe@efi_pstore.service - Load Kernel Module efi_pstore skipped, unmet condition check ConditionKernelModuleLoaded=!efi_pstore
+Oct 31 23:53:47.149551 fedora systemd[1]: modprobe@fuse.service - Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+Oct 31 23:53:47.182473 fedora systemd[1]: Starting modprobe@tun.service - Load Kernel Module tun...
+Oct 31 23:53:47.214568 fedora systemd[1]: modprobe@tun.service: Deactivated successfully.
+Oct 31 23:53:47.214000 fedora audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=modprobe@tun comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Oct 31 23:53:47.215189 fedora systemd[1]: Finished modprobe@tun.service - Load Kernel Module tun.
+Oct 31 23:53:47.214000 fedora audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=modprobe@tun comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Oct 31 23:53:47.218099 fedora kernel: audit: type=1130 audit(1793490827.214:11): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=modprobe@tun comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Oct 31 23:53:48.357070 fedora systemd[1]: modprobe@configfs.service - Load Kernel Module configfs skipped, unmet condition check ConditionKernelModuleLoaded=!configfs
+Oct 31 23:53:48.373269 fedora systemd[1]: modprobe@fuse.service - Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+Oct 31 23:53:49.391973 fedora systemd[1]: modprobe@efi_pstore.service - Load Kernel Module efi_pstore skipped, unmet condition check ConditionKernelModuleLoaded=!efi_pstore
+Oct 31 23:53:49.438827 fedora systemd[1]: modprobe@efi_pstore.service - Load Kernel Module efi_pstore skipped, unmet condition check ConditionKernelModuleLoaded=!efi_pstore
+Oct 31 23:53:49.477425 fedora systemd[1]: modprobe@efi_pstore.service - Load Kernel Module efi_pstore skipped, unmet condition check ConditionKernelModuleLoaded=!efi_pstore
+Oct 31 23:53:49.778510 fedora systemd[1]: modprobe@efi_pstore.service - Load Kernel Module efi_pstore skipped, unmet condition check ConditionKernelModuleLoaded=!efi_pstore
+Oct 31 23:54:18.085698 fedora systemd[1]: Starting modprobe@sd_mod.service - Load Kernel Module sd_mod...
+Oct 31 23:54:18.119560 fedora systemd[1]: modprobe@sd_mod.service: Deactivated successfully.
+Oct 31 23:54:18.120631 fedora systemd[1]: Finished modprobe@sd_mod.service - Load Kernel Module sd_mod.
+Oct 31 23:54:18.120000 fedora audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=modprobe@sd_mod comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Oct 31 23:54:18.120000 fedora audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=modprobe@sd_mod comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Oct 31 23:56:49.310927 fedora rpm-ostree(akmod-macbook-cs8409.post)[4677]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz needs "brcmu_pktq_mlen": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko.xz
+Oct 31 23:56:49.310927 fedora rpm-ostree(akmod-macbook-cs8409.post)[4677]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz needs "cfg80211_sched_scan_results": /lib/modules/7.2.13-200.fc44.x86_64/kernel/net/wireless/cfg80211.ko.xz
+Oct 31 23:56:49.310927 fedora rpm-ostree(akmod-macbook-cs8409.post)[4677]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz needs "sdio_retune_hold_now": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/mmc/core/mmc_core.ko.xz
+Oct 31 23:56:49.310927 fedora rpm-ostree(akmod-macbook-cs8409.post)[4677]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/brcmfmac-wcc.ko.xz needs "brcmf_set_wsec": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz
+Oct 31 23:56:49.310927 fedora rpm-ostree(akmod-macbook-cs8409.post)[4677]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/brcmfmac-cyw.ko.xz needs "cfg80211_mgmt_tx_status_ext": /lib/modules/7.2.13-200.fc44.x86_64/kernel/net/wireless/cfg80211.ko.xz
+Oct 31 23:56:49.310927 fedora rpm-ostree(akmod-macbook-cs8409.post)[4677]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/brcmfmac-cyw.ko.xz needs "brcmf_fil_bsscfg_data_set": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz
+Oct 31 23:56:49.311296 fedora rpm-ostree(akmod-macbook-cs8409.post)[4677]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/brcmfmac-bca.ko.xz needs "brcmf_fwvid_register_vendor": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz
+Oct 31 23:57:18.147808 fedora rpm-ostree(akmod-macbook-t1-touchbar.post)[5211]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz needs "brcmu_pktq_mlen": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko.xz
+Oct 31 23:57:18.147808 fedora rpm-ostree(akmod-macbook-t1-touchbar.post)[5211]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz needs "cfg80211_sched_scan_results": /lib/modules/7.2.13-200.fc44.x86_64/kernel/net/wireless/cfg80211.ko.xz
+Oct 31 23:57:18.147808 fedora rpm-ostree(akmod-macbook-t1-touchbar.post)[5211]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz needs "sdio_retune_hold_now": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/mmc/core/mmc_core.ko.xz
+Oct 31 23:57:18.147808 fedora rpm-ostree(akmod-macbook-t1-touchbar.post)[5211]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/brcmfmac-wcc.ko.xz needs "brcmf_set_wsec": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz
+Oct 31 23:57:18.147808 fedora rpm-ostree(akmod-macbook-t1-touchbar.post)[5211]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/brcmfmac-cyw.ko.xz needs "cfg80211_mgmt_tx_status_ext": /lib/modules/7.2.13-200.fc44.x86_64/kernel/net/wireless/cfg80211.ko.xz
+Oct 31 23:57:18.147808 fedora rpm-ostree(akmod-macbook-t1-touchbar.post)[5211]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/brcmfmac-cyw.ko.xz needs "brcmf_fil_bsscfg_data_set": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz
+Oct 31 23:57:18.147808 fedora rpm-ostree(akmod-macbook-t1-touchbar.post)[5211]: /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/brcmfmac-bca.ko.xz needs "brcmf_fwvid_register_vendor": /lib/modules/7.2.13-200.fc44.x86_64/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.xz
+Oct 31 23:58:27.988566 fedora rpm-ostree[5687]: dracut[I]: Executing: /usr/bin/dracut --reproducible -v --add ostree --tmpdir=/tmp/dracut -f /tmp/initramfs.img --rebuild usr/lib/modules/7.2.13-200.fc44.x86_64/initramfs.img --no-hostonly --force --remove "/etc/firmware/macbook-wifi /etc/modprobe.d/99-macbook-wifi-nvram.conf /etc/dracut.conf.d/99-macbook-wifi-nvram.conf /usr/lib/firmware/brcm/brcmfmac43602-pcie.txt /lib/firmware/brcm/brcmfmac43602-pcie.txt" --kver 7.2.13-200.fc44.x86_64
+Oct 31 23:59:38.806885 fedora rpm-ostree[11400]: dracut[D]: Arguments:  --reproducible -v --add 'ostree' --tmpdir '/tmp/dracut' -f --no-hostonly --kver '7.2.13-200.fc44.x86_64' --reproducible -v --add 'ostree' --tmpdir '/tmp/dracut' -f --no-hostonly --force --remove '/etc/firmware/macbook-wifi /etc/modprobe.d/99-macbook-wifi-nvram.conf /etc/dracut.conf.d/99-macbook-wifi-nvram.conf /usr/lib/firmware/brcm/brcmfmac43602-pcie.txt /lib/firmware/brcm/brcmfmac43602-pcie.txt' --kver '7.2.13-200.fc44.x86_64'
+Oct 31 23:59:43.639749 fedora rpm-ostree[11400]: dracut[D]: lrwxrwxrwx   1 root     root            4 Jan  1  1970 usr/bin/modprobe -> kmod
+Oct 31 23:59:54.740080 fedora rpm-ostree[11400]: dracut[D]: drwxr-xr-x   2 root     root            0 Jan  1  1970 usr/lib/modprobe.d
+Oct 31 23:59:54.744082 fedora rpm-ostree[11400]: dracut[D]: -rw-r--r--   1 root     root          382 Jan  1  1970 usr/lib/modprobe.d/dist-alsa.conf
+Oct 31 23:59:54.748049 fedora rpm-ostree[11400]: dracut[D]: -rw-r--r--   1 root     root          884 Jan  1  1970 usr/lib/modprobe.d/dist-blacklist.conf
+Oct 31 23:59:54.752013 fedora rpm-ostree[11400]: dracut[D]: -rw-r--r--   1 root     root           82 Jan  1  1970 usr/lib/modprobe.d/macbook-t1-touchbar.conf
+Oct 31 23:59:54.755983 fedora rpm-ostree[11400]: dracut[D]: -rw-r--r--   1 root     root           30 Jan  1  1970 usr/lib/modprobe.d/openfwwf.conf
+Oct 31 23:59:54.759962 fedora rpm-ostree[11400]: dracut[D]: -rw-r--r--   1 root     root          821 Jan  1  1970 usr/lib/modprobe.d/systemd.conf
+Oct 31 23:59:59.740118 fedora rpm-ostree[11400]: dracut[D]: -rw-r--r--   1 root     root         1308 Jan  1  1970 usr/lib/systemd/system/modprobe@.service
+Nov 01 00:01:31.003359 fedora systemd[1]: Removed slice system-modprobe.slice - Slice /system/modprobe.

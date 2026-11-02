@@ -1,0 +1,18 @@
+make: Entering directory '/usr/src/kernels/7.2.13-200.fc44.x86_64'
+make[1]: Entering directory '/root/audio/build/hda'
+warning: pahole version differs from the one used to build the kernel
+  The kernel was built with: 132
+  You are using:             0
+  CC [M]  codecs/cirrus/cs8409.o
+  CC [M]  codecs/cirrus/cs8409-tables.o
+  LD [M]  codecs/cirrus/snd-hda-codec-cs8409.o
+  MODPOST Module.symvers
+  CC [M]  codecs/cirrus/snd-hda-codec-cs8409.mod.o
+  CC [M]  .module-common.o
+  LD [M]  codecs/cirrus/snd-hda-codec-cs8409.ko
+  BTF [M] codecs/cirrus/snd-hda-codec-cs8409.ko
+Skipping BTF generation for codecs/cirrus/snd-hda-codec-cs8409.ko due to unavailability of vmlinux
+make[1]: Leaving directory '/root/audio/build/hda'
+make: Leaving directory '/usr/src/kernels/7.2.13-200.fc44.x86_64'
+
+BUILD_EXIT_STATUS=0

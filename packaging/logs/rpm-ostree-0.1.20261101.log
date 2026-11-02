@@ -1,0 +1,29 @@
+Receipt: /var/lib/macbook-sleep-phase1d-45SAYdLD
+-rwxr-xr-x. 1 root root system_u:object_r:bin_t:s0 5063 Nov  1 14:17 /usr/local/sbin/macbook-sleep-hook
+8c64221d42d19d66c71b20493b55a7db483ea5e37ef3a1664459ab48c44ac970  /usr/local/sbin/macbook-sleep-hook
+Checking out tree f1365bc...done
+Enabled rpm-md repositories: fedora-cisco-openh264 updates fedora copr:copr.fedorainfracloud.org:phracek:PyCharm rpmfusion-nonfree-nvidia-driver rpmfusion-nonfree-steam updates-archive
+Importing rpm-md...done
+rpm-md repo 'fedora-cisco-openh264' (cached); generated: 2026-03-24T10:37:04Z solvables: 3
+rpm-md repo 'updates' (cached); generated: 2026-10-31T01:01:52Z solvables: 31325
+rpm-md repo 'fedora' (cached); generated: 2026-04-22T13:34:32Z solvables: 76354
+rpm-md repo 'copr:copr.fedorainfracloud.org:phracek:PyCharm' (cached); generated: 2026-10-30T03:34:11Z solvables: 5
+rpm-md repo 'rpmfusion-nonfree-nvidia-driver' (cached); generated: 2026-09-21T07:15:39Z solvables: 19
+rpm-md repo 'rpmfusion-nonfree-steam' (cached); generated: 2026-08-12T19:25:52Z solvables: 2
+rpm-md repo 'updates-archive' (cached); generated: 2026-10-31T02:21:19Z solvables: 50850
+Resolving dependencies...done
+Checking out packages...done
+Running systemd-sysusers...done
+Running pre scripts...done
+Running post scripts...done
+Running posttrans scripts...done
+Writing rpmdb...done
+Generating initramfs...done
+Writing OSTree commit...done
+Staging deployment...done
+Upgraded:
+  akmod-macbook-cs8409 0.1.20261031-2.fc44 -> 0.1.20261101-1.fc44
+  akmod-macbook-t1-touchbar 0.1.20261031-1.fc44 -> 0.1.20261101-1.fc44
+  macbook-cs8409-kmod-common 0.1.20261031-2.fc44 -> 0.1.20261101-1.fc44
+  macbook-t1-touchbar-kmod-common 0.1.20261031-1.fc44 -> 0.1.20261101-1.fc44
+Changes queued for next boot. Run "systemctl reboot" to start a reboot

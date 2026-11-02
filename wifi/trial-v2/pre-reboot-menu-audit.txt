@@ -1,0 +1,12 @@
+boot_success=1
+GRUB ENV
+ONCE MENU SUPPORT
+/boot/grub2/grub.cfg
+### BEGIN 14_menu_show_once.cfg ###
+# Force the menu to be shown once, with a timeout of ${menu_show_once_timeout}
+# if requested by ${menu_show_once_timeout} being set in the env.
+if [ "${menu_show_once_timeout}" ]; then
+  set timeout="${menu_show_once_timeout}"
+  unset menu_show_once_timeout
+  save_env menu_show_once_timeout
+### END 14_menu_show_once.cfg ###

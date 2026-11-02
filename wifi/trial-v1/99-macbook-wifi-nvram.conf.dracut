@@ -1,0 +1,6 @@
+# macbook-wifi-trial: early-boot-only experimental NVRAM; generic /usr stays untouched.
+# Load brcmfmac while its configuration is available in the initramfs.
+force_drivers+=" brcmfmac "
+# dracut supports paired include_src/include_target arrays; source inspected locally.
+include_src+=("/etc/firmware/macbook-wifi/brcm/brcmfmac43602-pcie.txt")
+include_target+=("/usr/lib/firmware/brcm/brcmfmac43602-pcie.txt")

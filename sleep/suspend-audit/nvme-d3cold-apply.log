@@ -1,0 +1,7 @@
+2026-11-01T09:08:19.287490+00:00
+Verified MacBookPro13,2 / Apple 106b:2003 / nvme / current boot
+Target: /sys/bus/pci/devices/0000:01:00.0/d3cold_allowed before: 1
+after: 0
+Only NVMe D3cold policy written; transient until reboot. No sleep or driver changes.
+
+Exit status: 0

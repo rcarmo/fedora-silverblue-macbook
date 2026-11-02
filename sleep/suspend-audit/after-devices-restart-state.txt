@@ -1,0 +1,63 @@
+2026-11-01T10:17:18+00:00
+
+boot
+<uuid> 
+PM flags
+/sys/power/pm_test:[none] core processors platform devices freezer
+/sys/power/pm_print_times:0
+/sys/power/mem_sleep:s2idle [deep]
+/sys/module/apple_ibridge/parameters/skip_acpi_power:1
+
+Network
+DEVICE          TYPE      STATE                   CONNECTION 
+wlp2s0          wifi      connected               7          
+lo              loopback  connected (externally)  lo         
+p2p-dev-wlp2s0  wifi-p2p  disconnected            --         
+
+Battery
+  native-path:          BAT0
+  vendor:               SMP
+  model:                bq20z451
+  power supply:         yes
+  updated:              Sun 01 Nov 2026 10:17:09 AM WET (10 seconds ago)
+  has history:          yes
+  has statistics:       yes
+  battery
+    present:             yes
+    rechargeable:        yes
+    state:               charging
+    warning-level:       none
+    energy:              8.39696 Wh
+    energy-empty:        0 Wh
+    energy-full:         36.5737 Wh
+    energy-full-design:  49.3636 Wh
+    voltage-min-design:  11.44 V
+    energy-rate:         12.6412 W
+    voltage:             11.443 V
+    charge-cycles:       673
+    time to full:        2.2 hours
+    percentage:          22.959%
+    temperature:         36.3 degrees C
+    capacity:            74.0904%
+    technology:          lithium-ion
+    icon-name:          'battery-low-charging-symbolic'
+  History (charge):
+    1793528229	22.959	charging
+    1793528220	22.928	discharging
+    1793528218	22.521	discharging
+    1793528213	22.584	discharging
+    1793528183	22.459	discharging
+    1793528153	22.521	discharging
+  History (rate):
+    1793528229	12.641	charging
+    1793528218	0.000	discharging
+    1793528213	14.197	discharging
+    1793528183	14.140	discharging
+    1793528153	18.052	discharging
+  History (voltage):
+    1793528229	11.443	unknown
+    1793528222	11.175	charging
+    1793528217	10.752	discharging
+    1793528183	10.658	discharging
+    1793528153	10.534	discharging
+

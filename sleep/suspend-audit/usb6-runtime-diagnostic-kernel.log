@@ -1,0 +1,9 @@
+Nov 01 10:35:37 fedora kernel: usb 6-2: new SuperSpeed USB device number 3 using xhci_hcd
+Nov 01 10:35:37 fedora kernel: usb 6-2: New USB device found, idVendor=0bda, idProduct=8153, bcdDevice=31.00
+Nov 01 10:35:37 fedora kernel: usb 6-2: Int endpoint with wBytesPerInterval of 8 in config 2 interface 0 altsetting 0 ep 0x83: setting to 16
+Nov 01 10:35:37 fedora kernel: usb 6-2: New USB device strings: Mfr=1, Product=2, SerialNumber=6
+Nov 01 10:35:38 fedora kernel: usb 6-2: Product: USB 10/100/1000 LAN
+Nov 01 10:35:38 fedora kernel: usb 6-2: Manufacturer: Realtek
+Nov 01 10:35:38 fedora kernel: usb 6-2: SerialNumber: 001000001
+Nov 01 10:35:38 fedora kernel: r8152-cfgselector 6-2: reset SuperSpeed USB device number 3 using xhci_hcd
+Nov 01 10:35:38 fedora kernel: r8152 6-2:1.0 enp124s0u2: renamed from eth0

@@ -1,0 +1,19 @@
+12:40:37.547 device 0000:02:00.0 driver=brcmfmac
+12:40:41.199 before: yes:7:2437 MHz
+12:40:41.929 unbound 0000:02:00.0
+12:40:45.076 rebound 0000:02:00.0
+12:40:52.596 after 6s: nm=connected yes:7:2437 MHz
+12:40:52.616 iface=wlp2s0
+12:40:52.660 Band2 enabled 5GHz channels: 29
+12:40:52.669 kernel since unbind:
+Nov 01 12:40:41 fedora kernel: ieee80211 phy0: brcmf_fil_cmd_data: bus is down. we have nothing to do.
+Nov 01 12:40:41 fedora kernel: ieee80211 phy0: brcmf_cfg80211_get_tx_power: error (-5)
+Nov 01 12:40:45 fedora kernel: brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43602-pcie for chip BCM43602/2
+Nov 01 12:40:45 fedora kernel: brcmfmac: brcmf_c_process_clm_blob: no clm_blob available (err=-2), device may have limited channels available
+Nov 01 12:40:45 fedora kernel: brcmfmac: brcmf_c_process_txcap_blob: no txcap_blob available (err=-2)
+Nov 01 12:40:45 fedora kernel: brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43602/2 wl0: Nov 10 2015 06:38:10 version 7.35.177.61 (r598657) FWID 01-ea662a8c
+Nov 01 12:40:45 fedora kernel: brcmfmac 0000:02:00.0 wlp2s0: renamed from wlan0
+Nov 01 12:40:49 fedora kernel: ieee80211 phy1: brcmf_inetaddr_changed: fail to get arp ip table err:-52
+12:40:53.727 ping OK
+12:40:53.738 worker exit
+DONE

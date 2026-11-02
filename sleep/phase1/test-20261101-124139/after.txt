@@ -1,0 +1,24 @@
+2026-11-01T12:42:10,190132906+00:00
+s2idle [deep]
+BOOT_IMAGE=(hd0,gpt2)/ostree/fedora-c81699fef40752d96116d1958eb40c5462d8fe4851a2de5251dfe2d256b02247/vmlinuz-7.2.13-200.fc44.x86_64 ostree=/ostree/boot.0/fedora/c81699fef40752d96116d1958eb40c5462d8fe4851a2de5251dfe2d256b02247/0 rhgb quiet root=UUID=<redacted> vconsole.keymap=pt-mac rootflags=subvol=root rw firmware_class.path=/etc/firmware/macbook-wifi
+0000:00:14.0
+18
+usb1 0002 auto
+usb2 0003 auto
+wlp2s0:connected:<home>
+lo:connected (externally):lo
+p2p-dev-wlp2s0:disconnected:
+	Interface wlp2s0
+		ssid <home>
+		channel 6 (2437 MHz), width: 20 MHz, center1: 2437 MHz
+	Band 1:
+	Band 2:
+snd_hda_codec_cs8409   200704  1
+apple_mfi_fastcharge    16384  0
+applespi               65536  0
+brcmfmac_wcc           12288  0
+brcmfmac              561152  1 brcmfmac_wcc
+apple_ibridge          24576  0
+apple_touchbar         40960  0
+1
+0

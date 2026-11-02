@@ -1,0 +1,41 @@
+[   11.275930] fedora systemd[1]: Starting NetworkManager.service - Network Manager...
+[   11.412712] fedora NetworkManager[827]: <info>  [1793490830.5247] NetworkManager (version 1.56.1-2.fc44) is starting... (boot:<uuid>)
+[   11.412736] fedora NetworkManager[827]: <info>  [1793490830.5250] Read config: /etc/NetworkManager/NetworkManager.conf, /usr/lib/NetworkManager/conf.d/{20-connectivity-fedora.conf,22-wifi-mac-addr.conf,99-nvme-nbft-no-ignore-carrier.conf}
+[   11.434183] fedora NetworkManager[827]: <info>  [1793490830.5464] manager[0x565277c44330]: monitoring kernel firmware directory '/lib/firmware'.
+[   11.867064] fedora NetworkManager[827]: <info>  [1793490830.9791] hostname: hostname: using hostnamed
+[   11.876104] fedora NetworkManager[827]: <info>  [1793490830.9884] dns-mgr: init: dns=systemd-resolved rc-manager=unmanaged (auto), plugin=systemd-resolved
+[   11.895275] fedora NetworkManager[827]: <info>  [1793490831.0074] manager[0x565277c44330]: rfkill: Wi-Fi hardware radio set enabled
+[   11.895613] fedora NetworkManager[827]: <info>  [1793490831.0079] manager[0x565277c44330]: rfkill: WWAN hardware radio set enabled
+[   11.924280] fedora NetworkManager[827]: <info>  [1793490831.0364] Loaded device plugin: NMAtmManager (/usr/lib64/NetworkManager/1.56.1-2.fc44/libnm-device-plugin-adsl.so)
+[   11.947991] fedora NetworkManager[827]: <info>  [1793490831.0602] Loaded device plugin: NMBluezManager (/usr/lib64/NetworkManager/1.56.1-2.fc44/libnm-device-plugin-bluetooth.so)
+[   11.957106] fedora NetworkManager[827]: <info>  [1793490831.0694] Loaded device plugin: NMWifiFactory (/usr/lib64/NetworkManager/1.56.1-2.fc44/libnm-device-plugin-wifi.so)
+[   11.962548] fedora NetworkManager[827]: <info>  [1793490831.0748] Loaded device plugin: NMWwanFactory (/usr/lib64/NetworkManager/1.56.1-2.fc44/libnm-device-plugin-wwan.so)
+[   11.962930] fedora NetworkManager[827]: <info>  [1793490831.0752] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+[   11.963017] fedora NetworkManager[827]: <info>  [1793490831.0753] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+[   11.963068] fedora NetworkManager[827]: <info>  [1793490831.0753] manager: Networking is enabled by state file
+[   11.963441] fedora NetworkManager[827]: <info>  [1793490831.0757] settings: Loaded settings plugin: keyfile (internal)
+[   11.970590] fedora NetworkManager[827]: <info>  [1793490831.0828] dhcp: init: Using DHCP client 'internal'
+[   11.976297] fedora NetworkManager[827]: <info>  [1793490831.0885] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+[   11.980127] fedora NetworkManager[827]: <info>  [1793490831.0924] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+[   11.990102] fedora NetworkManager[827]: <info>  [1793490831.1024] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+[   11.990890] fedora NetworkManager[827]: <info>  [1793490831.1032] device (lo): Activation: starting connection 'lo' (<uuid>)
+[   12.012597] fedora systemd[1]: Started NetworkManager.service - Network Manager.
+[   12.016473] fedora NetworkManager[827]: <info>  [1793490831.1285] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+[   12.017545] fedora NetworkManager[827]: <info>  [1793490831.1298] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+[   12.017837] fedora NetworkManager[827]: <info>  [1793490831.1301] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+[   12.033177] fedora NetworkManager[827]: <info>  [1793490831.1454] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+[   12.041227] fedora NetworkManager[827]: <info>  [1793490831.1535] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+[   12.120569] fedora NetworkManager[827]: <info>  [1793490831.2328] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+[   12.120802] fedora NetworkManager[827]: <info>  [1793490831.2331] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+[   12.121403] fedora NetworkManager[827]: <info>  [1793490831.2337] device (lo): Activation: successful, device activated.
+[   12.121903] fedora NetworkManager[827]: <info>  [1793490831.2342] manager: startup complete
+[   12.296817] fedora NetworkManager[827]: <info>  [1793490831.4089] modem-manager: ModemManager not available
+[   12.529425] fedora NetworkManager[827]: <info>  [1793490831.6416] modem-manager: ModemManager now available
+[   18.964524] fedora NetworkManager[827]: <info>  [1793490838.0765] agent-manager: agent[ae68328fee8dd786,:1.42/org.gnome.Shell.NetworkAgent/60578]: agent registered
+[   35.278482] fedora NetworkManager[827]: <info>  [1793490854.3905] agent-manager: agent[903e3a74f21ddd5a,:1.97/org.gnome.Shell.NetworkAgent/1000]: agent registered
+[  472.039098] fedora NetworkManager[827]: <info>  [1793491291.1509] modem-manager: ModemManager no longer available
+[  473.783794] fedora systemd[1]: Stopping NetworkManager.service - Network Manager...
+[  473.783972] fedora NetworkManager[827]: <info>  [1793491292.8959] caught SIGTERM, shutting down normally.
+[  473.802622] fedora NetworkManager[827]: <info>  [1793491292.9149] exiting (success)
+[  473.815792] fedora systemd[1]: NetworkManager.service: Deactivated successfully.
+[  473.816640] fedora systemd[1]: Stopped NetworkManager.service - Network Manager.

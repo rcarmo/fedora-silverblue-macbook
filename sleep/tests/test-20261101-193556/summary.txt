@@ -1,0 +1,39 @@
+Nov 01 19:35:56.051334 fedora pkexec[5152]: me: Executing command [USER=root] [TTY=unknown] [CWD=/var/home/me/macbook-fedora-audit] [COMMAND=/usr/bin/bash /var/home/me/macbook-fedora-audit/tools/run-s3-test.sh 240 nowake=SPIT allow-dead-tb]
+Nov 01 19:35:58.666248 fedora macbook-sleep[5448]: pre: mem_sleep: s2idle [deep]
+Nov 01 19:35:58.739385 fedora macbook-sleep[5469]: pre: NVMe 0000:01:00.0 d3cold_allowed=0
+Nov 01 19:35:59.444179 fedora macbook-sleep[5481]: pre: unbound Wi-Fi 0000:02:00.0
+Nov 01 19:35:59.701690 fedora thunderbolt-remove-rescan[5512]: pre/suspend: removed 0 upstream port(s), skipped 0; xhci=1 pci=18 links:
+Nov 01 19:35:59.931904 fedora thunderbolt-remove-rescan[5557]: pre/suspend: S3 wake: 0000:00:1c.0=disabled 0000:00:1c.4=disabled 0000:00:1d.0=disabled 0000:00:1d.3=disabled
+Nov 01 19:35:59.990714 fedora macbook-sleep[5568]: pre: XHC1 wake was enabled, now disabled
+Nov 01 19:36:00.014998 fedora macbook-sleep[5570]: pre: acpi wake enabled: ARPT(S4) LID0(S4)
+Nov 01 19:36:00.026595 fedora kernel: macbook_t1_socw: evaluating SOCW(0)
+Nov 01 19:36:00.081440 fedora kernel: macbook_t1_socw: SOCW(0) sent T1 sleep, result 0
+Nov 01 19:36:00.099098 fedora macbook-sleep[5574]: pre: SOCW(0) ok (ok=3 failed=0)
+Nov 01 19:36:00.109146 fedora macbook-sleep[5575]: pre: done
+Nov 01 19:36:00.214672 fedora kernel: PM: suspend entry (deep)
+Nov 01 19:36:06.152140 fedora kernel: ACPI: PM: Low-level resume complete
+Nov 01 19:36:06.153727 fedora kernel: Timekeeping suspended for 3.795 seconds
+Nov 01 19:36:06.155601 fedora kernel: ACPI: PM: Waking up from system sleep state S3
+Nov 01 19:36:06.268852 fedora kernel: PM: noirq resume of devices complete after 12.195 msecs
+Nov 01 19:36:06.412184 fedora macbook-sleep[5610]: post: SOCW(1) ok (ok=4 failed=0)
+Nov 01 19:36:06.820638 fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+Nov 01 19:36:06.822807 fedora kernel: apple-touchbar 0003:1D6B:0301.0007: tb: Touchbar resumed.
+Nov 01 19:36:06.891438 fedora kernel: PM: suspend exit
+Nov 01 19:36:06.891531 fedora kernel: macbook_t1_socw: evaluating SOCW(1)
+Nov 01 19:36:06.891633 fedora kernel: macbook_t1_socw: SOCW(1) sent T1 wake, result 0
+Nov 01 19:36:08.562639 fedora thunderbolt-remove-rescan[5660]: post/suspend: attempt 1 short after 2 s: xhci=1 pci=18 links:  - retrying in a transient unit
+Nov 01 19:36:08.600650 fedora systemd[1]: Started thunderbolt-remove-rescan-retry-1793561768.service - [systemd-run] /usr/local/sbin/macbook-thunderbolt-remove-rescan retry suspend 3.
+Nov 01 19:36:08.599000 fedora audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=thunderbolt-remove-rescan-retry-1793561768 comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Nov 01 19:36:08.707225 fedora macbook-sleep[5667]: post: rebound Wi-Fi 0000:02:00.0
+Nov 01 19:36:08.735259 fedora macbook-sleep[5675]: post: XHC1 wake enabled; pm_wakeup_irq=
+Nov 01 19:36:09.060008 fedora kernel: brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43602/2 wl0: Nov 10 2015 06:38:10 version 7.35.177.61 (r598657) FWID 01-ea662a8c
+Nov 01 19:36:09.754577 fedora macbook-sleep[5696]: post: Touch Bar mode re-sent via /sys/bus/hid/drivers/apple-touchbar/0003:1D6B:0301.0007 (idle_timeout -2 -> 300)
+Nov 01 19:36:09.760514 fedora macbook-sleep[5697]: post: done
+Nov 01 19:36:11.181205 fedora thunderbolt-remove-rescan[5769]: post/suspend: attempt 2 short: xhci=1 pci=18 links:
+Nov 01 19:36:13.809627 fedora thunderbolt-remove-rescan[5803]: post/suspend: attempt 3 short: xhci=1 pci=18 links:
+Nov 01 19:36:16.454959 fedora thunderbolt-remove-rescan[5884]: post/suspend: attempt 4 short: xhci=1 pci=18 links:
+Nov 01 19:36:19.065338 fedora thunderbolt-remove-rescan[5923]: post/suspend: attempt 5 short: xhci=1 pci=18 links:
+Nov 01 19:36:21.648282 fedora thunderbolt-remove-rescan[5985]: post/suspend: attempt 6 short: xhci=1 pci=18 links:
+Nov 01 19:36:21.695113 fedora thunderbolt-remove-rescan[5997]: post/suspend: WARNING tree NOT back after 6 attempts: xhci=1 pci=18 links:  - it returns after the next sleep of a few minutes
+Nov 01 19:36:21.699293 fedora systemd[1]: thunderbolt-remove-rescan-retry-1793561768.service: Deactivated successfully.
+Nov 01 19:36:21.699000 fedora audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=thunderbolt-remove-rescan-retry-1793561768 comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
