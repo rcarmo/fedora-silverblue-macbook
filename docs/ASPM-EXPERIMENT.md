@@ -1,166 +1,140 @@
-# Attended Thunderbolt ASPM L1 experiment
+# Optional ASPM experiment
 
-**Status (2026-11-10): tooling and read-only inspection only. No PCI configuration
-writes performed, no boot service or resume automation installed.** Touch Bar
-0.1.20261110 is still staged, not booted. Reboot and complete its hardware checks
-in `T1-IDLE-AND-ASPM.md` before applying anything here.
+[Documentation index](README.md) · [Results and limitations](ASPM-RESULTS.md)
 
-## What the new inspection found
+**Not an installation step.** The short trial showed a preliminary awake-power
+saving, but original settings are restored. Direct PCI configuration writes
+bypass firmware/kernel decisions and can freeze the machine even when L1 is
+advertised. There is no persistent ASPM helper in the working setup.
 
-`tools/aspm-experiment.py inspect` follows the two integrated Thunderbolt root
-ports through sysfs, identifies physical root/downstream-to-partner links and
-checks PCIe type and L1 capability at **both** ends. It does not mistake an
-upstream-to-downstream internal switch edge for another physical link, nor
-program empty hotplug ports.
+## What the tool does
 
-On this boot there are **six physical internal links / twelve target functions**:
+`tools/aspm-experiment.py` provides four commands:
 
-| Parent | Partner | Device |
+| Command | Purpose | PCI writes? |
 |---|---|---|
-| 00:1c.4 | 03:00.0 | Left TB upstream |
-| 04:00.0 | 05:00.0 | Left NHI |
-| 04:02.0 | 2c:00.0 | Left xHCI |
-| 00:1d.0 | 79:00.0 | Right TB upstream |
-| 7a:00.0 | 7b:00.0 | Right NHI |
-| 7a:02.0 | a2:00.0 | Right xHCI |
+| `inspect` | Discover paired internal TB links and show kernel ASPM diagnostics | No |
+| `sample` | Record battery draw as CSV | No |
+| `trial` | Baseline → L1 → restored-baseline comparison | Yes, temporary masked L1 writes |
+| `restore` | Recover a saved receipt after an interrupted same-boot trial | Yes, only saved L1 bits |
 
-Every end advertises L1, and every end currently has L1 disabled. Bus addresses
-are examples, **not** a hardcoded write list: Thunderbolt rescans renumber them.
-The four empty hotplug ports are excluded. NVMe and Wi-Fi are outside the
-selected subtrees and are never targeted (both already have L1 enabled here).
+It validates both ends of each physical link, skips empty/unpaired ports and
+rejects unknown PCI functions in either TB subtree. NVMe and Wi-Fi are outside
+its write scope. Addresses are discovered through sysfs; no renumbered TB bus
+address is assumed to remain stable.
 
-Kernel evidence from the same read-only inspection:
+## 1. Prepare before any trial
 
-```text
-ACPI FADT declares the system doesn't support PCIe ASPM, so disable it
-_OSC: OS assumes control of [PCIeHotplug SHPCHotplug AER PCIeCapability LTR DPC]
-```
+- Save work; keep recovery available. This is an **attended hardware experiment**.
+- Boot/test Touch Bar 0.1.20261110, including blanking, input, keys and Fn, then
+  check normal S3. Those checks passed on the reference machine; they are still
+  prerequisites on another install.
+- Charge with generous headroom (50%+ recommended), then unplug AC. The sampler
+  requires discharging and stops below **20% of charge_full**. The kernel's
+  percentage display is not used; allow margin for gauge fluctuations.
+- Disconnect USB-C data devices, displays and docks. Do not hotplug, suspend or
+  reboot during the trial.
+- Fix screen/keyboard brightness and the workload. Disable auto-brightness and
+  idle dim/blank temporarily, remembering the previous preferences. Do not
+  disable critical-battery protection. Avoid downloads, updates and builds.
 
-Thus Linux reports disabling native ASPM because of firmware. Merely seeing a
-`powersave` option in `/sys/module/pcie_aspm/parameters/policy` is not evidence
-that changing it would work. No policy write was attempted. If a future firmware
-or kernel enables native control, prefer that and do not bypass it with this
-tool. Do not use blanket `pcie_aspm=force` as the first experiment.
+Do not infer native ASPM control from the presence of a `powersave` option. On
+this machine the kernel says firmware's FADT disables ASPM. Prefer native control
+if a future kernel/firmware makes it available; do not start with `pcie_aspm=force`.
 
-Raw local inspection: `tools/logs/aspm-inspect-20261110.log` (excluded from the
-public export; the relevant findings are reproduced above).
+## 2. Inspect without changing hardware
 
-## Preconditions
-
-- Save work; this is a PCI hardware experiment and **can still freeze a machine**.
-  L1 support bits do not prove the absence of firmware/kernel quirks.
-- Reboot into Touch Bar **0.1.20261110**, then verify blanking, input/Fn restore,
-  and the existing attended S3 behavior. Do not combine an untested driver boot
-  with ASPM changes. The trial requires the booted package version and explicit
-  confirmation that these hardware checks passed.
-- Charge well above 20% (preferably 50%+) before starting, then unplug AC.
-  The sampler refuses AC/charging and aborts below 20% of `charge_full`.
-- Unplug all USB-C data devices, displays and docks. The inventory also rejects
-  unknown PCI functions in either TB subtree. Do not hotplug during the trial.
-- Close heavy applications; fix display/keyboard brightness, disable automatic
-  brightness and idle dim/blank for the trial in GNOME, and remember to restore
-  those preferences afterward. Do not disable critical battery protection.
-- Keep the same screen state and workload throughout. No typing/mouse/trackpad
-  activity once warmup begins. Avoid downloads, updates and background builds.
-
-The trial automatically waits for the current Touch Bar idle timeout plus five
-seconds **before** its baseline; otherwise the first phase could include a lit
-bar and later phases an unlit one. With our 300-second timeout, this adds about
-five minutes. It also checks backlight sysfs values during sampling and aborts
-if they change. That check cannot detect every display/workload change; the
-operator still needs to control them.
-
-## Commands (from the repository root)
-
-Read-only diagnostics, safe before the driver reboot:
+Run from the repository root:
 
 ```bash
 pkexec /usr/bin/python3 "$PWD/tools/aspm-experiment.py" inspect
 ```
 
-Optional read-only battery CSV, no root required (discharging, charge >=20%):
+Review the paired links, capability/enable bits and kernel ownership messages.
+The [result page](ASPM-RESULTS.md) records the reference machine's findings.
+
+Optional battery baseline, no root required:
 
 ```bash
 python3 tools/aspm-experiment.py sample --seconds 300 > baseline.csv
 ```
 
-**After all preconditions**, run one automatic baseline -> L1 -> restored trial:
+## 3. Run a reversible comparison
+
+Only after the prerequisites and inspection:
 
 ```bash
 pkexec /usr/bin/python3 "$PWD/tools/aspm-experiment.py" trial \
   --touchbar-tested --unplugged --saved-work --native-control-unavailable
 ```
 
-The confirmations are assertions by the operator, not permission to skip the
-checks. `--native-control-unavailable` means the current inspection still shows
-native ASPM disabled by firmware and you have chosen this direct-write
-experiment instead. Do not pass it on a machine with working native control.
+These flags are **operator confirmations**, not ways to skip checks.
+`--native-control-unavailable` means you reviewed the current diagnostics and
+chose the direct-write experiment because native ASPM is disabled by firmware.
 
-Defaults: 300 seconds per phase, 30 seconds settling before each phase, plus
-initial Touch Bar warmup: about **22 minutes** total here. For a shorter first
-smoke test, use `--seconds 60`; do not infer a reliable power saving from a
-single short/noisy run. `--interval` controls sampling cadence (default 5 s).
+Default timing is 300 seconds per phase, 30 seconds settling before each phase,
+plus an initial Touch Bar idle warmup: about **22 minutes** with the 300-second
+Touch Bar timeout. `--seconds 60` shortens each measurement phase, but does not
+skip warmup. A short run is a smoke test, not a reliable power benchmark.
 
-The tool:
+Once warmup starts, leave keyboard/mouse/trackpad untouched. The initial wait
+avoids comparing a lit Touch Bar baseline with an unlit later phase. Sampling
+also aborts on detected backlight changes; this cannot detect every workload or
+display-state change, so the operator still needs to control them.
 
-1. Checks model, current driver version, confirmations, battery and PCI topology.
-2. Acquires a sleep inhibitor for the complete trial and an exclusive state lock.
-3. Measures baseline, saves and fsyncs the original settings **before** writes,
-   then enables only LnkCtl bit 1 with masked `setpci` writes and readback.
-4. Measures L1, restores the original L1 bits without overwriting unrelated
-   control bits, and measures the restored baseline.
-5. Restores on Python errors, Ctrl-C or SIGTERM, and releases the sleep inhibitor.
+The tool locks its state, inhibits sleep, durably saves original settings before
+writing, modifies only **LnkCtl bit 1**, and checks readback. It restores the
+original bit values on normal exit, Python errors, Ctrl-C or SIGTERM, preserving
+unrelated control bits. Hardware failure or forced termination can still defeat
+cleanup; see recovery below.
 
-Receipts, topology/lighting metadata, raw phase CSVs and a successful-run summary
-are stored root-only in `/var/lib/macbook-aspm-experiment/`. Compare both baseline
-means/medians against the L1 phase and inspect variability. Repeat if necessary;
-large baseline drift means the result is inconclusive, not a power saving.
+## 4. Review the result
 
-Check kernel errors from the receipt's `started_at` time onward:
+Root-only receipts, topology/lighting metadata, phase CSVs and a successful-run
+summary live under `/var/lib/macbook-aspm-experiment/`.
 
-```bash
-journalctl -b -k --since '<trial-start-time>' --grep='AER:|PCIe Bus Error|nvme|thunderbolt|xhci'
-```
+- Compare both baseline means/medians to the L1 phase and examine variability.
+  Large baseline drift makes the result inconclusive.
+- Check kernel errors from the receipt's `started_at` time onward:
 
-The trial deliberately blocks sleep and does **not** claim to validate enabled-L1
-USB-C hotplug or S3. Those need a separate attended validation phase after an
-actual measurable win; no persistent helper should be installed before then.
+  ```bash
+  journalctl -b -k --since '<trial-start-time>' --grep='AER:|PCIe Bus Error|nvme|thunderbolt|xhci'
+  ```
 
-## Recovery / limits
+- Run `inspect` again to verify restoration. Do not assume a successful power
+  comparison establishes USB-C or suspend stability.
 
-Normal completion restores the original L1 bits automatically. Ctrl-C is the
-preferred way to abort. If the process was killed without cleanup, recover on
-**the same boot, before a rescan/suspend**, using:
+The tool intentionally blocks sleep and restores settings before finishing.
+**Hotplug and S3 with L1 enabled need a separate validation phase** before
+persistent boot/resume integration is considered.
+
+## Recovery
+
+Ctrl-C is the preferred abort. If the process died without cleanup, recover on
+**the same boot, before a rescan or suspend**:
 
 ```bash
 pkexec /usr/bin/python3 "$PWD/tools/aspm-experiment.py" restore
 ```
 
-Recovery requires the saved boot ID, device IDs, paths and sysfs inodes to match.
-If a device was re-enumerated or a reboot occurred, it **refuses stale writes**.
-Do not edit the receipt to bypass that check. Inspect current state instead.
-A retained `active.json` blocks further trials until recovery is resolved; after
-a reboot, archive that stale receipt manually only after reviewing the state.
+The boot ID, device IDs, paths and sysfs inodes must match the receipt. After a
+reboot or re-enumeration, the tool refuses stale writes. Do not edit the receipt
+to bypass that check. Inspect current state instead; retain `active.json` until
+recovery is resolved. It deliberately blocks further trials. Archive a stale
+receipt manually only after reviewing the state.
 
-SIGKILL, power loss, a hardware lockup, a forced suspend, or PCI hotplug cannot be
-made safe by Python `finally`. Durable receipts enable recovery when the same
-hardware instance is still present; they are not a guarantee of it. Settings
-are not deliberately reapplied at boot/resume. Do not rely solely on a reboot
+SIGKILL, power loss, lockups, forced sleep and hotplug cannot be made safe by
+Python `finally`. Durable receipts enable recovery when the same hardware
+instances still exist; they do not guarantee it. Do not rely solely on a reboot
 as a substitute for verified restoration.
 
-## Tool tests
+## Tests
 
 ```bash
 python3 -m unittest discover -s tools/tests -v
 ```
 
-All **15 tests passed**. The real systemd sleep inhibitor was also acquired and
-released successfully in isolation, without PCI access. Read-only inspection
-was rerun afterward; all six links remain L1-disabled.
-
-Tests use fake sysfs and mocked PCI access; no root or hardware writes. Coverage
-includes link pairing/empty ports, unknown devices, both-end capability checks,
-masked writes, preservation of unrelated/original bits, readback failure,
-identity/boot mismatches, partial restoration, durable receipts before a partial
-apply failure, rollback after measurement failure, driver/confirmation gates,
-battery safety, lighting changes, and CSV sampling.
+The 15 ASPM tests use fake sysfs and mocked PCI access; no root or hardware writes.
+They cover pairing, scope, capability checks, masked writes/readback, durable
+receipts, stale identity/boot refusal, partial failures, restoration, battery and
+lighting checks, and sampling. The real sleep inhibitor was tested separately.

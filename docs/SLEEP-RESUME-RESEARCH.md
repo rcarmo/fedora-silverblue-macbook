@@ -1,4 +1,8 @@
-# Sleep/resume research — MacBookPro13,2 (2026-11-01)
+# Historical sleep/resume research — MacBookPro13,2 (2026-11-01)
+
+> Archived pre-fix research and proposals, not the current install procedure.
+> For the implemented setup, read the [sleep guide](SLEEP.md).
+> “Not applied” below describes the time this research was written.
 
 Goal: find **real, evidence-backed fixes** for this machine's broken suspend. Nothing in this document has been applied yet.
 Raw sources for this round: `sleep/research-20261101/raw/` (PR bodies, hook scripts, module sources). Earlier research: `sleep/suspend-audit/STOCK-FAILURE-RESEARCH.md`, `sleep/suspend-audit/research/`.

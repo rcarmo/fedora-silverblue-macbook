@@ -1,26 +1,48 @@
-# Timeline (condensed)
+# Milestones
 
-Full verbatim log: `docs/archive/PROGRESS-full-log-2026-11-01.md` (newest first).
+[Documentation index](README.md) · [Current status](../PROGRESS.md)
 
-## 2026-10-31
-- Audited stock Fedora 44.1.7 (kernel 6.19.10). Pinned original deployment. Upgraded to 44.20261031.0 / kernel 7.2.13 (`misc/post-reboot-audit.md`).
-- Caps Lock → Escape.
-- Speakers silent and Touch Bar dark on stock. Built Touch Bar (AJ-dev-i60/t1-touchbar 20d65c7) and audio (davidjo/snd_hda_macbookpro 89b22ff, ported to 7.2 headers) in a rootless Podman container (`build/driver-build-results.md`).
-- Packaged as local akmod RPMs (`packaging/`), layered via rpm-ostree, initramfs regeneration enabled. Audio release 2 fixed depmod override. → deployment 43e45ec. User confirmed Touch Bar, speakers, backlights work; mic works but quiet; camera works in browser.
+This is history, not an ordered installation procedure. Detailed hypotheses,
+failed tests and deployment hashes remain in the [archive](README.md).
 
-## 2026-11-01 (night/morning)
-- Wi-Fi 5 GHz investigation (`wifi/wifi-5ghz-investigation.md`, `wifi/wifi-exact-model-search.md`): missing board NVRAM. First NVRAM trial (b0a3115) → **no Wi-Fi at all**; recovered to c4ebdd8. Later found the cause: missing `brcmfmac-wcc` in initramfs (`wifi/research-20261101/BUG193121-REVIEW.md`).
-- Suspend failures: deep (00:05) → s2idle override (08:31, failed) → stock image deep (08:52, failed; custom drivers not the cause) → NVMe D3cold=0 trial (09:22; intended deep but SELinux made it s2idle; resumed after ~1 min, Wi-Fi dead) (`sleep/suspend-audit/*.md`).
-- Corrected Wi-Fi trial v2 39e497f (WCC included) → dual band works; WPA3 not supported (`wifi/trial-v2/`, `wifi/wpa3-audit/`).
-- `pm_test=devices` rehearsal (10:10) → callbacks completed but Wi-Fi died (`sleep/suspend-audit/DEVICES-REHEARSAL-OUTCOME.md`).
-- USB Ethernet (RTL8153) failed to enumerate; researched Dunedan issues; forcing USB6 root hub `power/control=on` fixed it → persistent udev workaround (`sleep/suspend-audit/USB-REPO-RESEARCH.md`, `RIGHT-USB3-PERSISTENT-WORKAROUND.md`). Persisted across reboot.
-- 11:00 unattended idle suspend (s2idle) → hung, Touch Bar lit. Disabled GNOME idle suspend; tap-to-click off for phantom clicks (`sleep/idle-trackpad-audit/`).
-- Notes reorganized (this `docs/` folder + `rebuild-kit/`).
+## 2026-10-31 — baseline drivers
 
-## 2026-11-01 (afternoon) — sleep fixed
-- Phase 1 (12:20): S3 recipe (deep, NVMe d3cold off, Thunderbolt remove/rescan, Wi-Fi unbind/rebind, `firmware_class.path` karg). First S3 entered and resumed; instant wake (XHC1), Touch Bar dark, USB-C lost.
-- Phase 1b (12:48): XHC1 S3 wake off → 117 s clean S3.
-- Touch Bar: T1 needs ACPI `SOCW(1)` after S3 (and `SOCW(0)` before); driver also cached a stale mode. Phase 1c (12:58) + SELinux label fix → 112 s S3 with Touch Bar (13:12). Lid close on AC and 24 min on battery OK.
-- Audio silent after S3: Apple CS8409 resume never re-ran its boot setup; live rebind exposed a missing `.probe` op and the S3 reset of the codec subsystem ID. Patched driver: audio survives S3 (14:02).
-- Packaged as akmods 0.1.20261101 (Touch Bar fix + `macbook_t1_socw`, audio fix); Phase 1d hook uses modprobe; staged deployment aea41722. Consistency audit 0 failures. Workspace tidied into topic dirs under git.
-- Open: instant wakes on some S3 entries on the charger (`docs/SLEEP.md`).
+Audited the stock system and moved to Silverblue 44.20261031.0 / kernel 7.2.13.
+Built and packaged the T1 Touch Bar and Apple CS8409 drivers from pinned sources.
+Touch Bar, speakers and backlights worked; the microphone was quiet and camera
+worked in a browser. Original recovery deployments were retained.
+
+## 2026-11-01 — Wi-Fi and suspend
+
+- Corrected BCM43602 board NVRAM restored 5 GHz. The first attempt lost Wi-Fi
+  because `brcmfmac-wcc` was missing from initramfs; the corrected build included it.
+- Stock-image tests also failed suspend, ruling out the custom drivers as the
+  sole cause. s2idle attempts hung or resumed with dead devices.
+- NVMe D3cold prevention, Thunderbolt remove/rescan and Wi-Fi unbind/rebind
+  established a working deep-S3 path.
+- T1 SOCW sleep/wake messaging and Touch Bar cache invalidation restored the bar.
+  CS8409 `.probe`/resume reinitialisation restored audio.
+- Disabling LID0 wake only on lid-open entry fixed the reproducible ~3-second
+  lid-open wake. The resulting configuration became the rebuild kit.
+
+## 2026-11-02 — overnight observation and publication
+
+An overnight record held roughly 17 h 49 min in S3, with estimated draw ~0.45 W
+conditional on unplug timing. A closed-lid early wake recovered by re-suspending;
+that minor issue remains unresolved. Idle suspend was restored to 15 minutes on
+AC and battery. A sanitised public repository was published.
+
+## 2026-11-10 — idle blanking and an ASPM trial
+
+- Ported the T1 MODE_OFF idle fix from mikeypdev's Arch follow-up, which itself
+  uses this project's earlier Fedora recipe.
+- Built Touch Bar 0.1.20261110-1; staged and post-boot audits passed with 0 failures.
+  User confirmed blanking/input/keys/Fn; attended normal deep S3 also passed.
+- Six internal TB links supported L1 but had it disabled. Linux logged the FADT
+  ASPM restriction; NVMe and Wi-Fi already had L1 enabled.
+- A short reversible trial measured **12.18 → 10.48 → 11.90 W**, suggesting
+  ~1.6 W less awake draw. Original settings were restored and verified.
+  Hotplug, longer stability and S3 with L1 enabled remain unvalidated.
+
+See the [Touch Bar note](T1-IDLE-AND-ASPM.md), [ASPM results](ASPM-RESULTS.md)
+and [archived progress snapshot](archive/PROGRESS-snapshot-2026-11-10.md).

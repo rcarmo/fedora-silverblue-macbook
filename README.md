@@ -1,85 +1,80 @@
 # Fedora Silverblue on a 2016 MacBook Pro with Touch Bar
 
-Everything needed to get a **MacBook Pro 13" 2016 with Touch Bar** (`MacBookPro13,2`, Apple T1 chip)
-fully working on **Fedora Silverblue 44** (kernel 7.2), including **suspend/resume**.
+Drivers, configuration and reproducible notes for **MacBookPro13,2**: the
+13-inch, four-port 2016 MacBook Pro with an **Apple T1**, not a T2.
 
-> ⚠️ Experimental and tested on one machine. Read [Known issues and safety rules](docs/KNOWN-ISSUES.md)
-> before installing anything. Some parts also apply to the 15" `MacBookPro13,3`.
+The reference machine runs Fedora Silverblue 44 with kernel **7.2.13**. Touch Bar,
+speakers, dual-band Wi-Fi and deep suspend work with the included setup.
 
-## What works
+> **Experimental; tested on one machine.** Read the [safety rules](docs/KNOWN-ISSUES.md)
+> and [kernel compatibility check](docs/CLEAN-INSTALL.md) before installing.
+> The audio package is restricted to **7.2.x**; this is not a recipe for arbitrary
+> current Fedora kernels. Other MacBook models are not validated by this project.
 
-| Hardware | Status | How |
-|---|---|---|
-| Keyboard, trackpad | ✅ | Stock Fedora (`applespi`) |
-| Touch Bar | ✅ | Local driver package (T1 driver, with resume fixes) |
-| Speakers, microphone | ✅ | Local driver package (Apple CS8409 audio, ported to kernel 7.2) |
-| Wi-Fi 2.4 + 5 GHz | ✅ | Board calibration file (NVRAM) for the BCM43602; no WPA3 |
-| USB-C / Thunderbolt | ✅ | Keeps the USB-C controllers awake so plugged-in devices are detected |
-| Sleep (S3) | ✅ | Suspend hook + driver fixes; everything comes back after resume |
-| Camera | ✅ | Works in Firefox (e.g. video calls); the GNOME Camera app crashes |
-| Headphone jack, Bluetooth pairing, docks | ❔ | Untested |
+## Start here
 
-## Install
-
-Everything you need is in [`rebuild-kit/`](rebuild-kit/README.md); the full walkthrough is
-[docs/CLEAN-INSTALL.md](docs/CLEAN-INSTALL.md). In short, on a fresh Fedora Silverblue 44:
-
-```sh
-git clone https://github.com/rcarmo/fedora-silverblue-macbook && cd fedora-silverblue-macbook/rebuild-kit
-pkexec bash "$PWD/install-files.sh"                       # config files and sleep hook (do this first)
-rpm-ostree install akmods kernel-devel-matched ./rpms/*.rpm
-rpm-ostree kargs --append=firmware_class.path=/etc/firmware/macbook-wifi
-rpm-ostree initramfs --enable --arg=--force
-systemctl reboot
-```
-
-Afterwards, `pkexec bash tools/audit.sh` checks that everything is installed and consistent.
-
-**Kernel versions:** the audio driver only builds for kernel **7.2.x** and must be ported before a 7.3
-upgrade (see [packaging/README.md](packaging/README.md)).
-
-## How sleep was fixed
-
-Getting reliable S3 sleep took most of the work. The causes, in short:
-
-- **Thunderbolt/USB-C** lost power in S3 and never came back → the controllers are removed before sleep
-  and rescanned after.
-- **Touch Bar** stayed dark after resume → the T1 chip must be told "host is going to sleep" / "host is
-  awake" through an ACPI call (`SOCW`); a small kernel module does this from the suspend hook.
-- **Speakers** were silent after resume → the audio driver never re-initialised the amplifiers; patched.
-- **Instant wake-ups** after 3 seconds → suspending with the lid open armed the lid's wake line, which fired
-  immediately; the hook now disables lid wake in that case (wake with a key or the power button).
-
-Measured standby drain: about 0.45 W, roughly 1.2 % of the battery per hour.
-Details, evidence and the test record: [docs/SLEEP.md](docs/SLEEP.md).
-
-## Repository layout
-
-| Path | Contents |
+| I want to… | Read |
 |---|---|
-| [`rebuild-kit/`](rebuild-kit/) | Exact copy of the working setup: config files, hooks, driver RPMs, installer |
-| [`docs/`](docs/) | Install guide, known issues, sleep design, timeline |
-| [`packaging/`](packaging/) | Driver sources, patches and RPM specs (to rebuild for a new kernel) |
-| [`tools/`](tools/) | `audit.sh` (consistency check), `run-s3-test.sh` (sleep test) |
-| `sleep/`, `wifi/`, `audio/`, `touchbar/` | Investigation notes, test results and earlier attempts |
-| [`PROGRESS.md`](PROGRESS.md), [`docs/TIMELINE.md`](docs/TIMELINE.md) | The original working log |
+| Install the working setup | [Installation guide](docs/CLEAN-INSTALL.md) |
+| Check support and limitations | [Known issues and safety](docs/KNOWN-ISSUES.md) |
+| Understand suspend/resume | [Sleep guide](docs/SLEEP.md) |
+| See the latest verified state | [Current status](PROGRESS.md) |
+| Investigate awake battery draw | [ASPM results](docs/ASPM-RESULTS.md), then the [experimental procedure](docs/ASPM-EXPERIMENT.md) |
+| Rebuild the drivers | [Packaging guide](packaging/README.md) |
+| Browse the evidence and history | [Documentation index](docs/README.md) |
 
-See [docs/FILE-MAP.md](docs/FILE-MAP.md) for the full map.
+## Hardware status
 
-## Notes
+Last verified **2026-11-10** on the reference machine:
 
-- **Never** set `apple_ibridge skip_acpi_power=0`. It can hard-freeze T1 Macs.
-- Scripts expect to be run from a checkout of this repository, via `pkexec`.
-- Logs were sanitised before publication: addresses, network and device names were redacted, and full
-  system journals, raw web downloads, ACPI table dumps and old binaries were removed
-  (list in [`.excluded-files.txt`](.excluded-files.txt)).
+| Area | Status | Notes |
+|---|---|---|
+| Keyboard / trackpad | Working | Stock `applespi`; intermittent phantom-click reports remain unresolved |
+| Touch Bar | Working | Local driver; idle blanking, input restore, keys, Fn and S3 checked |
+| Speakers / microphone | Working | Local CS8409 driver; microphone is quiet; headphone jack untested |
+| Wi-Fi | Working, 2.4 + 5 GHz | Board NVRAM required; no WPA3-Personal |
+| Deep suspend (S3) | Working | Devices restored after resume; occasional early wake remains possible |
+| USB-C / Thunderbolt | Partially validated | Right/front USB-C tested; left side, docks and general external-display support not established |
+| Camera | Working in Firefox | GNOME Camera crashes on this install |
+| Bluetooth | Pairing untested | Controller detected |
+| Touch ID | Unsupported | |
 
-## Credits and licence
+The [rebuild kit](rebuild-kit/README.md) contains the driver RPMs and the working
+configuration. Follow the [installation guide](docs/CLEAN-INSTALL.md) in order;
+its kernel check and recovery preparation are part of the procedure.
+
+## Power: working sleep, experimental awake savings
+
+- **S3 standby:** an overnight estimate was about **0.45 W** on this machine,
+  conditional on the charger being unplugged at lid close. It is not a guaranteed
+  standby figure. See the [sleep guide](docs/SLEEP.md).
+- **Awake ASPM:** a short reversible Thunderbolt L1 trial showed approximately
+  **1.6 W less draw**. Original settings were restored. Longer testing, hotplug
+  and S3 with L1 enabled are still pending. **ASPM is not enabled by the installer.**
+
+Do not confuse the awake-power experiment with the validated suspend recipe.
+
+## Repository contents
+
+- [`rebuild-kit/`](rebuild-kit/README.md) — installable configuration, local RPMs and checksums.
+- [`packaging/`](packaging/README.md) — driver sources, patches, specs and build instructions.
+- [`tools/`](docs/FILE-MAP.md) — consistency audit, attended S3 test and opt-in ASPM diagnostics.
+- [`docs/`](docs/README.md) — current guides, experiment results and historical references.
+- `sleep/`, `wifi/`, `audio/`, `touchbar/` — detailed investigations, not alternative install guides.
+
+The public export omits recordings, full journals, raw downloads and other
+machine-specific evidence. Some notes name local evidence that is not published;
+those paths are explicitly identified as local where relevant.
+
+## Credits and licensing
 
 Built on [AJ-dev-i60/t1-touchbar](https://github.com/AJ-dev-i60/t1-touchbar),
 [davidjo/snd_hda_macbookpro](https://github.com/davidjo/snd_hda_macbookpro),
-the Wi-Fi NVRAM from [kernel bug 193121](https://bugzilla.kernel.org/show_bug.cgi?id=193121),
-the Thunderbolt sleep logic from omarchy PR #11570, and the MacBookPro13,3 work in
-simbilim/omarchy-macbookpro13-3-t1.
+[BCM43602 NVRAM research](https://bugzilla.kernel.org/show_bug.cgi?id=193121),
+[omarchy's Thunderbolt suspend work](https://github.com/omacom/omarchy/pull/11570),
+[simbilim's T1 work](https://github.com/simbilim/omarchy-macbookpro13-3-t1), and
+[mikeypdev's T1 idle/power follow-up](https://github.com/mikeypdev/macbook-t1-suspend).
 
-Original scripts and docs: MIT. Driver sources and RPMs: GPL-2.0. See [LICENSE](LICENSE).
+Original scripts and documentation: MIT. Driver sources and RPMs: GPL-2.0;
+upstream notices are retained. See [LICENSE](LICENSE) for the licensing overview
+and the individual driver source trees for their licences.

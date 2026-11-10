@@ -1,64 +1,136 @@
-# Clean-install rebuild guide — MacBookPro13,2 on Fedora Silverblue 44
+# Installation guide
 
-Everything to install lives in **`rebuild-kit/`** (exact copies of the current install, `SHA256SUMS`,
-`install-files.sh`). Check `rebuild-kit/SHA256SUMS` first. Verification afterwards: `tools/audit.sh`.
+[Documentation index](README.md) · [Safety and known issues](KNOWN-ISSUES.md)
 
-## 0. Before wiping the disk
-1. Copy this whole directory (`/var/home/me/macbook-fedora-audit`, a git repo) to external storage.
-   Minimum: `rebuild-kit/`, `docs/`, `packaging/` (sources/specs/patches to rebuild drivers for a newer kernel), `tools/`.
-   Upstream clones are git-ignored; re-clone from the URLs in `docs/FILE-MAP.md` if needed.
-2. Alternate networking (USB tethering/Ethernet) — stock Wi-Fi is 2.4 GHz only until the NVRAM step.
-3. Charger connected. No external drives connected.
+Reproduce the working **MacBookPro13,2** setup on Fedora Silverblue 44.
+The included packages were tested with **kernel 7.2.13**. Read the whole guide
+before starting; the audio driver cannot be installed on arbitrary newer kernels.
 
-## 1. Install and update
-- Install Fedora Silverblue 44. Keyboard/trackpad (applespi), display, camera and 2.4 GHz Wi-Fi work out of the box; Touch Bar and speakers do not.
-- `sudo rpm-ostree upgrade`, reboot. Note `uname -r`.
-- **Kernel gate:** the audio akmod only builds for **7.2.\***. On 7.3+ port the audio source first (`packaging/README.md`, `build/driver-build-results.md`), otherwise the composition fails (by design). Touch Bar + `macbook_t1_socw` rebuild against any headers (tested on 7.2.13).
-- Optional: `ostree admin pin 0` on a known-good deployment before layering anything.
+## 1. Check compatibility and prepare recovery
 
-## 2. Files (before rpm-ostree — the Wi-Fi dracut config must exist when the initramfs is built)
-```sh
-pkexec /usr/bin/bash /path/to/macbook-fedora-audit/rebuild-kit/install-files.sh
+```bash
+cat /sys/class/dmi/id/product_name
+uname -r
+rpm-ostree status
 ```
-Installs Wi-Fi NVRAM + configs, USB-C runtime-PM pin (udev + service, enabled), S3 config, suspend hook
-drop-in + hooks, NVMe d3cold rule, UPower critical → PowerOff, and the SELinux fcontext rule. Receipt
-and backups in `/var/lib/macbook-rebuild-kit-*`. Table of what each file does: `rebuild-kit/README.md`.
 
-## 3. Drivers, karg, initramfs (one composition), reboot
-```sh
-cd /path/to/macbook-fedora-audit/rebuild-kit
-rpm-ostree install akmods kernel-devel-matched btop htop tmux vim ./rpms/*.rpm
+- **Model:** this recipe is validated on `MacBookPro13,2`, the four-port 2016
+  13-inch Touch Bar model. Do not treat T2 Macs or other models as equivalent.
+- **Kernel gate:** the audio source accepts **7.2.x only**. If the deployment you
+  will install into uses 7.3+, stop: port/test audio first or prepare a reduced
+  setup without that driver. See [packaging](../packaging/README.md).
+- Do not blindly run an OS upgrade before checking the target kernel. A fresh
+  Silverblue 44 install today may differ from the tested image. RPM composition
+  rebuilds the modules; prebuilt package names do not bypass the kernel gate.
+- Back up data and this repository before wiping an existing install. Keep a
+  known-good deployment available; inspect deployment order before pinning one.
+- Connect the charger. Disconnect external drives and USB-C data devices.
+  Have alternate networking available; stock Wi-Fi may be limited to 2.4 GHz.
+
+Install Silverblue itself using Fedora's normal procedure. The remaining steps
+assume a compatible installed deployment and a checkout of this repository.
+
+## 2. Get the repository and verify the kit
+
+```bash
+git clone https://github.com/rcarmo/fedora-silverblue-macbook.git
+cd fedora-silverblue-macbook
+REPO="$PWD"
+(cd "$REPO/rebuild-kit" && sha256sum -c SHA256SUMS)
+```
+
+Run the following commands from this shell. If you already have the checkout,
+set `REPO` to its absolute path instead. Contents: [rebuild-kit README](../rebuild-kit/README.md).
+
+## 3. Install configuration first
+
+```bash
+pkexec /usr/bin/bash "$REPO/rebuild-kit/install-files.sh"
+```
+
+This installs Wi-Fi NVRAM/firmware lookup configuration, the USB-C hotplug
+workaround, NVMe D3cold guard, deep-sleep configuration, suspend hooks and
+critical-battery power-off policy. It labels files for SELinux and enables the
+USB-C runtime service. Backups and a receipt go under
+`/var/lib/macbook-rebuild-kit-*`.
+
+**Order matters:** the Wi-Fi dracut configuration must exist before driver
+installation generates an initramfs. In particular it must include `brcmfmac-wcc`.
+
+## 4. Layer the drivers and configure boot
+
+```bash
+rpm-ostree install akmods kernel-devel-matched "$REPO"/rebuild-kit/rpms/*.rpm
 rpm-ostree kargs --append=firmware_class.path=/etc/firmware/macbook-wifi
 rpm-ostree initramfs --enable --arg=--force
+rpm-ostree status
+```
+
+These are separate transactions; let each finish. An operation that outlives a
+terminal/tool timeout may still be running—check status before retrying.
+The packages install the mandatory `apple_ibridge skip_acpi_power=1` guard and
+the early-load/module-selection configuration. **Never change that guard to 0.**
+
+Review the staged deployment, save work, then:
+
+```bash
 systemctl reboot
 ```
-(btop/htop/tmux/vim are conveniences.) The packages ship `options apple_ibridge skip_acpi_power=1`
-(**never set 0**), dracut configs (early Touch Bar modules, the codec), and a depmod override selecting
-`extra/macbook-cs8409` over Fedora's stock codec.
 
-## 4. Desktop preferences (user, no admin)
-```sh
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
-gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click false     # phantom-click isolation
-# idle auto-suspend: Fedora default (suspend after 15 min) works with S3 — leave it on
+## 5. Verify the boot before testing sleep
+
+From the repository root after reboot:
+
+```bash
+pkexec /usr/bin/bash "$PWD/tools/audit.sh"
+iw phy | grep -E 'Band [12]'
 ```
 
-## 5. Verify
-```sh
-pkexec /usr/bin/bash /path/to/macbook-fedora-audit/tools/audit.sh     # expect 0 failures (kit vs system vs packages)
-iw phy | grep -E 'Band [12]'                                           # both bands
-pkexec /usr/bin/bash /path/to/macbook-fedora-audit/tools/run-s3-test.sh 120   # attended; charger in, USB-C empty, lid open
+On the exact reference setup, the audit should report **0 failures**. It compares
+sources, package contents, modules, initramfs and configuration. It is also
+pinned to the reference kernel/package set: on a different deployment, investigate
+mismatches rather than treating every difference as a hardware failure.
+
+Check keyboard/trackpad, Touch Bar, both Wi-Fi bands and audio. Start audio muted
+or at low **PipeWire** volume; never use `hw:0,0` or `plughw:0,0`. After five
+minutes with no input, the Touch Bar should blank; input should restore it.
+Check its keys and Fn switching.
+
+## 6. Run one attended S3 test
+
+Save work, keep the charger connected and disconnect USB-C data devices.
+Stay at the machine; this is a real suspend, not a simulation.
+
+```bash
+pkexec /usr/bin/bash "$PWD/tools/run-s3-test.sh" 120
 ```
-Audio safety: start muted/low volume via PipeWire; **never** play to `hw:0,0`/`plughw:0,0`. GNOME Camera
-(Snapshot) segfaults — use the browser.
 
-## Wi-Fi notes (BCM43602, 106b:0157)
-- NVRAM = kernel bug 193121 attachment 290569 + comment 97 `swctrlmap_2g` fix, macaddr `XX:XX:XX:XX:XX:XX` (locally administered). SHA256 `90f3f159…`.
-- The dracut file MUST include `add_drivers+=" brcmfmac-wcc "`; without it Wi-Fi disappears completely.
-- WPA3-Personal does NOT work (firmware lacks SAE). Use WPA2-AES or WPA2/WPA3 transition networks.
-- Recovery if no Wi-Fi: pick the previous deployment in GRUB (read `rpm-ostree status` first). Emergency args: `rd.driver.blacklist=brcmfmac modprobe.blacklist=brcmfmac`. `wifi/Makefile` + `wifi/recover-wifi.sh` are host-specific reference tooling.
+Follow the [sleep guide](SLEEP.md) to check duration, wake behavior and restored
+devices. If it hangs or immediately wakes, review the logs before repeating.
 
-## Deliberately NOT reapplied
-- s2idle (`90-macbook-s2idle.conf`): hangs/draws 7–13 W on this model family; S3 is used.
-- Any Touch Bar `skip_acpi_power=0`, broadcom-wl, random firmware.
-- The per-kernel `/usr/local/lib/macbook-t1-socw/` fallback module (the akmod provides `macbook_t1_socw`).
+## Optional preferences and later experiments
+
+Caps→Escape and disabling tap-to-click were personal settings, not driver
+requirements. Automatic idle suspend is enabled on the reference installation
+(15 minutes on AC and battery).
+
+**Do not install ASPM changes as part of this procedure.** The short trial is
+promising but not yet validated for hotplug or S3. Read the
+[results](ASPM-RESULTS.md) and [opt-in procedure](ASPM-EXPERIMENT.md) separately.
+
+## Recovery and Wi-Fi notes
+
+- Select a known-good previous deployment in the bootloader if the new one
+  fails. Do not blindly use `rpm-ostree rollback` with pinned deployments around.
+- For a Touch Bar boot hang, append **both** kernel arguments temporarily:
+  `rd.driver.blacklist=apple_ibridge,apple_touchbar` and
+  `modprobe.blacklist=apple_ibridge,apple_touchbar`.
+- Wi-Fi NVRAM is based on kernel bug 193121 attachment 290569 plus the comment 97
+  `swctrlmap_2g` fix. The public installer replaces its placeholder MAC with a
+  locally administered address; another machine should not copy the reference
+  machine's address or expect its NVRAM checksum to match after that change.
+- The firmware-path kernel argument is needed for NVRAM reload **after resume**,
+  not just early boot. WPA3-Personal is unsupported; use WPA2-AES or a compatible
+  transition network.
+- Historical `wifi/recover-wifi.sh` tooling is host-specific, not a general
+  recovery installer. Do not copy random firmware or use broadcom-wl.

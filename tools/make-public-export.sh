@@ -53,8 +53,8 @@ NV=rebuild-kit/files/etc/firmware/macbook-wifi/brcm/brcmfmac43602-pcie.txt
 sed -i 's/^macaddr=.*/macaddr=00:90:4c:0d:f4:3e/' "$DEST/$NV"     # attachment 290569's public placeholder
 mkdir -p "$DEST/sleep/acpi-tables"
 cp "$SRC/tools/public/acpi-excerpt.md" "$DEST/sleep/acpi-tables/README.md"
-cp "$SRC/tools/public/README.public.md" "$DEST/README.md"
-cp "$SRC/tools/public/LICENSE" "$DEST/LICENSE"
+# README.md and LICENSE are canonical tracked files, copied in step 1.
+# Do not replace the front page with a separate template that can drift.
 rm -rf "$DEST/tools/public"
 python3 - "$DEST" <<'PY'
 import os, re, sys

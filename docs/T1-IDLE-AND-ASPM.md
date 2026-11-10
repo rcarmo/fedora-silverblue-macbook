@@ -1,98 +1,46 @@
-# T1 idle blanking and ASPM follow-up (2026-11-10)
+# Touch Bar idle-blanking update
 
-Reviewed mikeypdev/macbook-t1-suspend at
-`ef2148bcd94e1a5b82c86a1a7905f03b195b801b`:
-https://github.com/mikeypdev/macbook-t1-suspend/tree/ef2148bcd94e1a5b82c86a1a7905f03b195b801b
+[Documentation index](README.md) · [Current package set](../packaging/README.md)
 
-Their Arch MacBookPro13,2 setup is based on our public Fedora export. Their
-Thunderbolt helper and CS8409 resume-fix header match ours byte-for-byte.
+Touch Bar **0.1.20261110-1** fixes idle blanking on the T1. It does not change the
+working suspend hook or enable ASPM. For the separate power experiment, see
+[ASPM results](ASPM-RESULTS.md) and [procedure](ASPM-EXPERIMENT.md).
 
-## Adopted: T1 idle blanking (Touch Bar 0.1.20261110-1)
+## Problem and fix
 
-Our T1 display-control function deliberately returns success without sending a
-command, because T1 lacks that HID interface. Consequently the existing idle
-worker never actually blanked the strip. Patch
-`packaging/patches/0003-appletb-t1-idle-mode-off.patch` ports their MODE_OFF fix:
+T1 has no separate display-control interface. Our driver's display-control
+function deliberately returned success without sending a command, so the idle
+worker believed it had blanked the strip when it had not.
 
-- Only T1, and only on expiry of the off timeout, sends the mode-off command.
-- Cache the off mode only after a successful command. Normal input then
-  schedules the configured Fn mode through the existing input/worker path.
-- Non-T1 display commands, dim behavior, held-key checks and disabled-idle
-  settings retain their existing handling.
-- Keep the existing **300-second default** (live sysfs showed 300), rather than
-  importing their 30-second preference. No new modprobe setting is required.
-- ACPI guard, SOCW module and all suspend hooks remain unchanged.
+[Patch 0003](../packaging/patches/0003-appletb-t1-idle-mode-off.patch) sends
+**MODE_OFF** on the T1 off-timeout instead. After a successful command it updates
+the cached mode, allowing normal input to schedule the configured Fn mode again.
+Non-T1 display handling, held-key checks and disabled-idle settings retain their
+existing behavior. The default timeout remains **300 seconds**.
 
-Validation:
-- `python3 packaging/tests/test-touchbar-idle.py`: compiles and executes the
-  actual worker/update functions with mocked hardware/time. Checks blank and
-  input restore, non-T1 behavior, pre-timeout scheduling, held keys, failed
-  mode commands, disabled idle settings and dim-before-off.
-- rpmbuild and unprivileged akmodsbuild against kernel 7.2.13 passed.
-- The akmod embeds the correctly versioned SRPM. Full root audit of staged
-  deployment **1257270345a8** passed with **0 failures**, including source/spec
-  consistency, patch reproduction, module fingerprints, initramfs guard/NVRAM
-  and unchanged host sleep files. Log: `packaging/logs/audit-touchbar-0.1.20261110.log`.
-- Composition also refreshed ghostty, erlang-srpm-macros, redhat-rpm-config and
-  kernel-headers. The actual kernel/kernel-devel stay 7.2.13 and audio stays
-  0.1.20261101-1. See `packaging/logs/touchbar-0.1.20261110-package-diff.log`.
+## Validation
 
-Hardware acceptance is still required **after reboot**. No live module reload,
-USB rebind, SOCW experiment, unattended suspend, or reboot was performed.
+- Regression tests compile the actual worker/update functions with mocked
+  hardware and time: `python3 packaging/tests/test-touchbar-idle.py`.
+- rpmbuild and unprivileged akmodsbuild passed against kernel 7.2.13.
+- Staged and post-boot audits reported **0 failures**, including embedded source,
+  spec, module fingerprints, initramfs guard/NVRAM and unchanged sleep files.
+- The user confirmed idle blanking, input restore, keys and Fn switching.
+- Attended deep S3 passed at 18:40:53–18:42:34 on 2026-11-10; all devices worked
+  afterward, with TB restored on rescan attempt 1 and Wi-Fi/T1 recovery successful.
 
-### After reboot
+No live T1 module reload, USB rebind or SOCW experiment was used for acceptance.
+Published build audit: [staged audit](../packaging/logs/audit-touchbar-0.1.20261110.log).
+Post-boot/S3 raw logs are local-only under `tools/logs/`.
 
-1. Check `rpm -q akmod-macbook-t1-touchbar` reports 0.1.20261110-1; run
-   `pkexec /usr/bin/bash tools/audit.sh`.
-2. Leave keyboard, mouse, trackpad and Touch Bar untouched for five minutes.
-   The strip should blank. Any normal input should restore it. Check Fn and
-   Touch Bar keys still work; the first touch on an off strip is intentionally
-   consumed by the existing wake path.
-3. For a shorter attended test, temporarily set the Touch Bar HID device's
-   `idle_timeout` to 30 as root, then restore its saved value (normally 300).
-   This is the HID sysfs attribute, not the read-only module default parameter.
-4. Check an attended lid-close S3 cycle using the existing test protocol in
-   `docs/SLEEP.md`, then verify blanking and Fn behavior again. No sleep-hook
-   changes are needed.
-5. If the driver regresses, select the previous deployment in the bootloader.
-   Do not blindly run `rpm-ostree rollback` with pinned deployments present.
+## Provenance
 
-## Investigated only: PCIe ASPM L1
+Ported from [mikeypdev/macbook-t1-suspend](https://github.com/mikeypdev/macbook-t1-suspend/blob/ef2148bcd94e1a5b82c86a1a7905f03b195b801b/apple-ib-t1-idle-off.patch),
+reviewed at `ef2148b` (idle fix originally `4414905`). That Arch setup ports this
+project's earlier Fedora recipe to the same MacBook model. Its Thunderbolt
+helper and CS8409 resume-fix header matched ours; those were not new fixes.
 
-Read-only root inspection is recorded in
-`packaging/logs/aspm-readonly-20261110.log`.
-
-| Link | L1 capability | Current L1 setting, both ends |
-|---|---|---|
-| NVMe root 00:1c.0 / endpoint 01:00.0 | yes | enabled |
-| Left TB root 00:1c.4 / upstream 03:00.0 | yes | disabled |
-| Right TB root 00:1d.0 / upstream 79:00.0 | yes | disabled |
-| Wi-Fi root 00:1d.3 / endpoint 02:00.0 | yes | enabled |
-
-The native ASPM policy reads `[default] performance powersave powersupersave`.
-Follow-up read-only inspection found **six physical internal Thunderbolt links**,
-all L1-capable but disabled at both ends. The kernel explicitly logs that the
-**ACPI FADT declares ASPM unsupported, so Linux disables it**. No native policy
-write was attempted. Their claimed ~2.2 W reduction is a measurement on their
-machine, not ours; Wi-Fi already has L1 here, so the full saving cannot be assumed.
-
-**No setpci writes, boot service, or resume reapplication installed.** Prepared
-`tools/aspm-experiment.py` for read-only inspection/sampling and a gated,
-reversible baseline/L1/restored trial. Protocol, recovery and limitations:
-**`ASPM-EXPERIMENT.md`**. The trial is blocked until the new Touch Bar driver is
-booted and explicitly confirmed tested. Direct PCI config writes bypass
-Linux/firmware ownership and are not a routine power setting; persistent changes
-still require measured benefit plus separate hotplug and attended S3 validation.
-
-## Not imported
-
-- Full Wi-Fi PCI remove/rescan and recovery watchdog: our unbind/rebind works;
-  their watchdog has itself raced recovery and wedged a healthy chip.
-- ARPT/SPIT wake masking: SPIT masking did not solve our measured instant wake
-  and would remove working keyboard wake.
-- Codec profile switching or automatic re-suspend: no demonstrated need here.
-- TLP profile or idle-timeout preference changes: separate power/UX decisions.
-- Their NetworkManager configuration: it incorrectly labels power-save enum
-  values. NetworkManager defines 0=default, 1=ignore, **2=disable**, 3=enable;
-  their `wifi.powersave=1` does not enforce disable. Verified against
-  https://github.com/NetworkManager/NetworkManager/blob/main/src/libnm-core-public/nm-setting-wireless.h
+We did not import its Wi-Fi watchdog, extra wake masks, codec profile switching
+or TLP preferences. Its NetworkManager enum advice was also incorrect:
+`wifi.powersave` is **0=default, 1=ignore, 2=disable, 3=enable**. This follow-up
+keeps the existing working Wi-Fi and wake policy.

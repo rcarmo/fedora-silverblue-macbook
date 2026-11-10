@@ -1,42 +1,50 @@
-# PROGRESS — current state of this install
+# Current status
 
-Overview: `README.md`. Detailed logs: `docs/archive/` (latest: `PROGRESS-log-2026-11-01-sleep-work.md`).
+Last verified **2026-11-10**. This describes the reference machine, not a support
+guarantee for other MacBooks. Start with the [project overview](README.md) or
+[installation guide](docs/CLEAN-INSTALL.md).
 
-## Touch Bar idle-blanking update (2026-11-10)
-- Reviewed mikeypdev/macbook-t1-suspend at ef2148b (their Arch port is based on our public Fedora repo).
-- Touch Bar **0.1.20261110-1** ports the T1 MODE_OFF idle fix; audio stays **0.1.20261101-1**. Default idle timeout stays 300 s. No sleep-hook, Wi-Fi, TLP, or wake-mask changes.
-- Worker/input regression tests and an unprivileged akmods rebuild passed. Staged deployment **1257270345a8**; full root audit **0 failures**, including embedded SRPM/source/spec, module fingerprints, initramfs guard/NVRAM and unchanged sleep files. Rebuild kit and audit support separate Touch Bar/audio versions. Hardware blank/wake/Fn/S3 acceptance is pending reboot; no live module reload or reboot performed.
-- Composition also refreshed ghostty (1.4.0-2), erlang-srpm-macros, redhat-rpm-config and kernel-headers (7.3.3). The actual boot kernel/kernel-devel remain 7.2.13; audio is unchanged. Package delta: `packaging/logs/touchbar-0.1.20261110-package-diff.log`.
-- ASPM read-only audit: six physical internal TB links support L1 but have it disabled at both ends; NVMe and Wi-Fi already have L1 enabled. Kernel logs explicitly disable native ASPM because the ACPI FADT declares it unsupported. No PCI config writes or persistent ASPM service installed.
-- Prepared `tools/aspm-experiment.py`: read-only inspect/sample plus guarded baseline/L1/restored trial, masked writes/readback, durable undo receipt, identity/boot checks, sleep inhibitor and automatic restoration on normal/error/interrupted exit. Trial requires booted/tested new Touch Bar driver and healthy discharging battery; it was NOT run. Protocol: `docs/ASPM-EXPERIMENT.md`; mocked-hardware tests: `python3 -m unittest discover -s tools/tests -v`.
+## Installed and verified
 
-## Previous system baseline (2026-11-01 ~19:50)
-- Fedora Silverblue 44.20261031.0, kernel 7.2.13-200.fc44. Booted + default: **f6b13ed** = akmods 0.1.20261101-1 (Touch Bar fix + `macbook_t1_socw`; CS8409 `.probe` + resume re-init) + ghostty (user-installed 16:34). Order: f6b13ed, c4ebdd8 (pinned), aea41722 (same drivers, no ghostty), 43e45ec, f1365bc, b8e75b7 (pinned).
-- Karg `firmware_class.path=/etc/firmware/macbook-wifi`. Installed files = `rebuild-kit/files/` (hook = Phase 1e).
-- **Sleep works** (`docs/SLEEP.md`): lid close and lid-open suspend both hold; Touch Bar, audio, Wi-Fi 5 GHz, NVMe, USB-C restored. Lid-open suspend is woken by keyboard/power button.
-- GNOME: Caps→Escape; tap-to-click off; idle suspend restored 2026-11-02: suspend after 15 min on AC and battery.
-- Workspace = git repo, topic dirs (`docs/FILE-MAP.md`); `tools/audit.sh` (pkexec) checks everything.
+| Component | Reference state |
+|---|---|
+| OS / kernel | Fedora Silverblue 44.20261031.0 / 7.2.13-200.fc44 |
+| Booted deployment | `1257270345a8` |
+| Touch Bar packages | **0.1.20261110-1** |
+| Audio packages | **0.1.20261101-1**; build restricted to 7.2.x |
+| Configuration | [Rebuild kit](rebuild-kit/README.md); current working S3 hooks unchanged |
+| Wi-Fi firmware lookup | `firmware_class.path=/etc/firmware/macbook-wifi` |
+| ASPM experiment | **Original settings restored**; no boot/resume automation |
 
-## Next
-1. Watch real-life sleep (instant wakes: `journalctl -b -k | grep "Timekeeping suspended"`, ~3–5 s entries). Overnight drain ≈0.45 W (done).
-2. Still untested: headphone jack, Bluetooth pairing, left USB-C/Thunderbolt, docks. Phantom clicks with tap-to-click off: report.
-3. Before kernel 7.3+: port the audio akmod (`packaging/README.md`).
+- Post-boot consistency audit: **0 failures**, including loaded-module fingerprints.
+- User-confirmed Touch Bar idle blanking, input restore, keys and Fn switching.
+- Attended deep S3 passed at 18:40:53–18:42:34; all devices reported working
+  afterward. Thunderbolt returned on its first rescan; Wi-Fi and T1 recovery succeeded.
+- A short awake-power trial measured **12.18 → 10.48 → 11.90 W**
+  (baseline → L1 → restored). Preliminary saving: **~1.6 W / 13%**.
+  This did **not** test hotplug or S3 with L1 enabled. See [ASPM results](docs/ASPM-RESULTS.md).
 
-## Log
-- 2026-11-01 ~15:00: Audit script fixed (module fingerprints instead of absent srcversion) → 0 failures as root. Workspace tidy: git repo (snapshot a03952e, tidy 02ffe45), 123 moves (`.tidy/moves.txt`), references updated in docs/scripts (not in logs/raw/evidence), rebuild-kit rebuilt from the live system (17 files incl. 4 RPMs), `tools/` = audit + S3 test, docs rewritten (CLEAN-INSTALL, KNOWN-ISSUES, SLEEP, FILE-MAP, TIMELINE, packaging/README, sleep/README).
-- 2026-11-01 16:21: rebooted into aea41722 (akmods 0.1.20261101). All 4 modules from extra/, socw autoloaded via DMI alias (nothing evaluated), skip_acpi_power=1, resume_reinit=Y. audit.sh fixed (target = booted when nothing staged; objcopy temp-file fingerprints — /dev/stdout gave empty hashes) → 0 failures, live modules == audited builds. S3 test refused: not on charger.
-- 2026-11-01 16:28: battery S3 test (sleep/tests/test-20261101-162803): INSTANT WAKE on battery too (3.1 s), audio re-init ran, TB tree dead. gpe6F 0→1 again (also 14:02; not in good runs). ACPI tables dumped+decompiled (sleep/acpi-tables/): _PRW GPE 0x6F = LID0, EC, ADP1, BLTH (GPIO GPD2 'LAN_WAKE#'; _L6F only clears GPD GPE status). 0x6D = PWRB/XHC1/HDEF, 0x69 = PCIe RP PME incl. TB (TGPE).
-- 2026-11-01 16:31: nolid test (LID0 wake off, chime loop, battery): still instant (3.5 s), gpe6F unchanged → 0x6F NOT the trigger. User: 'came back on a chime'. All 3 recent instant wakes had the chime loop (pw-play every 3 s); clean RTC runs had no audio. Next: same test without audio.
-- 2026-11-01 16:32: "no-audio" test (sleep/tests/test-20261101-163235) also instant (3.6 s) — BUT started in the dead-TB state left by the 16:28 instant wake (chain effect, as at 14:05), so inconclusive; ("chime still running" check was a pgrep self-match — no chime was playing). Only first-from-clean sleeps count: clean RTC runs (no audio) held 117/112 s; unexplained first instant wakes 14:02 and 16:28 both had the chime loop (pw-play every 3 s). PLAN: reboot → 120 s no audio → 120 s with chime → if confirmed, hook closes CS8409 streams pre-suspend (card profile off/restore, as simbilim).
-- 2026-11-01 19:14: after the 16:32 test, lid-close S3 16:47→17:22 (35 min) HELD despite dead-TB start, no audio; TB back attempt 1. UPower charge 89.1%→~86% over 35 min (~4–5 %/h, rough ~1 W?) — needs overnight measurement. Awake 17:22–19:12 drained to 17% (kernel capacity). Rebooted 19:12 (clean TB). Next tests need charger (battery <30%).
-- 2026-11-01 19:15: clean-boot RTC test on AC, NO audio (sleep/tests/test-20261101-191507): INSTANT (3.4 s) → audio activity is not the trigger. Correlation: every RTC test since the patched cs8409 was loaded (14:02 live, 16:28, 19:15 akmod) instant; clean RTC tests before (12:48, 13:12, old cs8409) held. Old driver: codec skipped in system suspend (direct-complete, no PM callbacks logged); patched runs: hda_codec_pm_suspend called (11–512 ms). Next A/B: reboot → `tools/run-s3-test.sh 120 nohda` (HDA controller unbound before sleep). If still instant → boot previous deployment ea9c0ec (old packages) for A/B.
-- 2026-11-01 19:22: nohda test (HDA unbound before sleep, AC): INSTANT (3.6 s) → audio cleared. 19:2x: rpm-ostree rollback → default = ea9c0ec (old packages; clean 12:48/13:12 runs) for A/B; run rollback again to return to aea41722.
-- 2026-11-01 16:34 (user, not assistant): `rpm-ostree install ghostty` (copr scottames:ghostty) → deployment f6b13ed = aea41722 + ghostty/gtk4-layer-shell/zlib-ng; booted since 19:12. Pruned ea9c0ec/39e497f (old-package deployments are GONE; only booted+rollback+pinned kept).
-- 19:23–19:30 MISTAKE + FIX: `rpm-ostree rollback` (meant for A/B) made aea41722 default; a 2nd rollback made pinned c4ebdd8 default. Fixed with `ostree admin set-default 2` → default = booted f6b13ed. Order now: f6b13ed (booted, default), c4ebdd8 (pinned), aea41722, 43e45ec, f1365bc, b8e75b7. LESSON: never use `rpm-ostree rollback` with pinned deployments around; use `ostree admin set-default <index>` after reading the index list.
-- Re-analysis: 14:02 instant wake was on the OLD deployment (old touchbar, /usr/local socw, hook 1c) = same as the 13:12 112 s success, plus live patched cs8409 which `nohda` cleared. So neither packages nor audio explain it: something that SURVIVES warm reboots changed between 13:12 and 14:02 (T1 state after SOCW cycles? SMC/EC? charging). Next: cold power-off (≥30 s off) → immediate 120 s test.
-- 2026-11-01 19:34: after full power-off (~1 min off, AC): RTC test still instant (2.4 s). Pattern found: lid-CLOSED sleeps hold, lid-OPEN RTC tests instant since 14:02 (9×). Suspect SPIT (keyboard/trackpad, GPE 0x17, S3 wake enabled) phantom events. Test: nowake=SPIT.
-- 2026-11-01 19:36: nowake=SPIT (dead state) still instant → keyboard/trackpad cleared. KEY FINDING: every instant wake with LID0 wake enabled incremented gpe6F (GPD2 shared LID0/EC/ADP1/BLTH) — 14:02, 16:28, 16:32, 19:15, 19:22, 19:34, 19:36; clean runs 6F unchanged; lid-closed sleeps hold. Hypothesis: with lid OPEN at S3 entry, the lid/EC wake line (GPE 0x6F) asserts at once. Fix idea: hook disables LID0 wake only if lid is open at suspend; restore post. Validate: lid-closed sleep 3–4 min (restores TB) → RTC test nolid → hook fix → plain RTC test.
-- 2026-11-01 19:41: lid-closed sleep 3 min restored TB. 19:42 lid-open RTC test with `nolid`: **118 s**, 6F unchanged → confirmed. 19:45 Phase 1e hook installed (receipt /var/lib/macbook-sleep-phase1e-junYcbME, sha 215088e7…): LID0 wake disabled only when lid open at suspend, restored post. Plain lid-open RTC test: **117.8 s**, 6F unchanged, TB back attempt 1, LID0 restored. rebuild-kit + docs (SLEEP, KNOWN-ISSUES, sleep/README, kit README) updated.
-- 2026-11-02 16:12 OVERNIGHT: 21:20 fully charged on AC (UPower 99.7%). 22:20:47 lid closed → S3 22:20:50 woke after ~5 s with lid CLOSED (TB dead) → logind re-suspend 22:21:25 HELD 15 h 26 min → 13:47 lid open (TB back), lid closed 13:48 → S3 2 h 23 min → 16:11 open (TB back). Total S3 17 h 49 min, awake ~1.5 min. Now on battery 29.98/38.13 Wh (UPower 78.6%; kernel capacity 61% unreliable). If unplugged at 22:20 from ~100%: ~8 Wh / 17.8 h ≈ 0.45 W ≈ 1.2 %/h (~3.5 days standby) — awaiting user confirmation of unplug time. NEW minor issue: a lid-CLOSED suspend can also instant-wake once (likely lid-close event on GPE 0x6F a few s after S3 entry); self-heals via logind re-suspend.
-- 2026-11-02 16:2x: GNOME idle suspend restored (suspend after 900 s on AC and battery; was 'nothing' since the 11:00 containment). User: closed-lid single instant wake acceptable, not chasing.
-- 2026-11-02: Published sanitized export to https://github.com/rcarmo/fedora-silverblue-macbook (public, author Rui Carmo noreply). Update with `bash tools/publish-public.sh "message"` (export → rsync into ~/macbook-fedora-audit-public → review → normal commit + push). README rewritten for readability; camera works in Firefox.
+Local evidence: `tools/logs/audit-post-reboot-20261110.log`,
+`tools/logs/s3-post-update-20261110.log`, `tools/logs/aspm-short-trial-20261110/`.
+These raw logs are excluded from the public export; the guides reproduce the findings.
+
+## Next checks
+
+1. Repeat the ASPM comparison with more battery headroom, settling and longer
+   measurement phases. Validate hotplug and **S3 with L1 enabled** separately
+   before considering persistence. [Procedure](docs/ASPM-EXPERIMENT.md).
+2. Validate headphone output, Bluetooth pairing, left-side USB-C and docks.
+3. Monitor occasional early S3 wakes and trackpad phantom clicks.
+4. **Before a kernel 7.3+ update:** port/test the audio package or remove it;
+   do not assume the existing source will build.
+
+## Recent changes
+
+- Touch Bar 0.1.20261110 adds T1 idle blanking via MODE_OFF. The default timeout
+  remains **300 seconds**; sleep/wake policy and the ACPI freeze guard are unchanged.
+- Composition also refreshed Ghostty, erlang-srpm-macros, redhat-rpm-config and
+  kernel-headers. The running kernel and kernel-devel remain 7.2.13; audio was
+  unchanged. Published delta: [package diff](packaging/logs/touchbar-0.1.20261110-package-diff.log).
+
+History is in the [timeline](docs/TIMELINE.md) and
+[archived progress snapshot](docs/archive/PROGRESS-snapshot-2026-11-10.md).

@@ -1,3 +1,7 @@
+> Historical upstream model notes (Fedora 27 / kernel 4.14 era), preserved as
+> reference—not this project's current instructions. Start with the
+> [documentation index](README.md) for the Silverblue 44 setup.
+
 # Introduction
 
 This is about documenting getting Linux running on the late 2016 and mid 2017 MPB's; the focus is mostly on the MacBookPro13,3 and MacBookPro14,3 (15inch models), but I try to make it relevant and provide information for MacBookPro13,1, MacBookPro13,2, MacBookPro14,1, and MacBookPro14,2 (13inch models) too. I'm currently using Fedora 27, but most the things should be valid for other recent distros even if the details differ. The kernel version is 4.14.x (after latest update).

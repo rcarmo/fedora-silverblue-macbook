@@ -1,56 +1,84 @@
-# Known issues, lessons and safety rules
+# Known issues and safety
 
-Baseline status as of 2026-11-01. Evidence paths are relative to the project root.
-2026-11-10: Touch Bar idle-blanking update packaged; hardware acceptance after
-reboot is pending. See `T1-IDLE-AND-ASPM.md`. Working S3 hooks are unchanged.
+[Documentation index](README.md) · [Current status](../PROGRESS.md)
 
-## Working
-| Area | Status | Notes |
-|---|---|---|
-| Keyboard/trackpad | Works (stock applespi) | Phantom clicks + libinput "Touch jump" errors — see below |
-| Touch Bar | Works (local akmod), also after S3 | `skip_acpi_power=1` mandatory; SOCW only via sleep hook |
-| Speakers | Works (local cs8409 akmod), also after S3 | Headphone jack untested |
-| Sleep (S3) | Works — see `docs/SLEEP.md` | Lid-open suspend: wake with key/power button |
-| Internal mic | Works, very quiet | Upstream driver limitation |
-| Screen/keyboard backlight | Works | |
-| Camera | Works in browser | GNOME Camera segfaults — ignored |
-| Wi-Fi 2.4+5 GHz | Works with NVRAM | No WPA3 (firmware lacks SAE) |
-| USB-C right/front | Works with udev workaround | Left side not validated |
-| Caps→Escape | GNOME setting | |
+Last reviewed **2026-11-10**. These observations come from one MacBookPro13,2.
+The [front page](../README.md) summarises hardware coverage; this page explains
+its limits and the rules that prevent known failures.
 
-## Broken / unresolved
-### Suspend/resume — WORKS (2026-11-01), see `docs/SLEEP.md`
-- Suspending with the lid OPEN disables lid wake for that sleep (else it woke after 3 s): wake it with a key/trackpad or the power button.
-- Kernel updates: audio akmod builds only for 7.2.*; `macbook_t1_socw` comes from the Touch Bar akmod (rebuilt automatically). If it can't load, the hook logs a warning and the Touch Bar stays dark after resume.
-- S3 drain estimate ~4–5 %/h (35 min sample, coarse gauge) — measure overnight. GNOME idle-suspend restored (15 min, AC and battery).
-Pre-fix failure history (s2idle hangs, Thunderbolt xHCI "not ready 65535ms", brcmfmac timeouts): `sleep/suspend-audit/`, `docs/SLEEP-RESUME-RESEARCH.md`.
+## Read before installing or experimenting
 
-### Trackpad phantom clicks
-libinput logged "kernel bug: Touch jump detected and discarded" 5× (10:16–10:31 on 2026-11-01). Tap-to-click disabled as an isolation test; outcome pending. Evidence `sleep/idle-trackpad-audit/`.
+| Do not… | Why / safer approach |
+|---|---|
+| Set `apple_ibridge skip_acpi_power=0` or call `SOCW(1)` at probe | Can hard-freeze T1 Macs. Keep the guard; only the sleep hook sends SOCW messages. |
+| Live-unbind/rebind the iBridge/T1 | Can wedge the Touch Bar. Use its existing `idle_timeout` mode-refresh path, not a USB reset experiment. |
+| Rebind the HDA controller (`00:1f.3`) or reload `snd_hda_codec_cs8409` after sleep | S3 resets the codec subsystem ID; the Apple path can be lost until reboot. |
+| Play audio directly to `hw:0,0` / `plughw:0,0` | No hardware volume protection; potentially very loud. Use PipeWire at low software volume. |
+| Treat this audio package as kernel-independent | It only builds for **7.2.x**. Port/test or remove it before a 7.3+ deployment. |
+| Copy blanket PCI/D3cold hooks or force ASPM globally | Device capability alone does not establish safety. Keep experiments separate from installation. |
 
-### Others
-- WPA3: not possible with current Broadcom firmware; `wifi/wpa3-audit/README.md`.
-- Bluetooth: controller up, pairing untested; missing BCM.hcd is expected — don't copy random firmware.
-- Thunderbolt docks/external display/left USB ports: mostly untested (one LG UltraFine 1080p mode test restored fine: `misc/lg-display/lg-video-test.log`).
-- Battery: 673 cycles, ~74% of design. Kernel `capacity` disagrees with UPower; trust charge_now/charge_full.
-- `systemd-remount-fs` failure is normal on Silverblue composefs — don't "fix".
-- Touch ID: unsupported.
+## Working, with caveats
 
-## Hard rules learned the hard way
-1. **Never** set `apple_ibridge skip_acpi_power=0` (T1 ACPI call can freeze the machine).
-2. **Never** play audio to `hw:0,0`/`plughw:0,0`; use PipeWire, low volume.
-3. Wi-Fi NVRAM via initramfs must include `brcmfmac-wcc`, or Wi-Fi disappears completely.
-4. Wi-Fi rebind is safe only with the `firmware_class.path=/etc/firmware/macbook-wifi` karg (otherwise the NVRAM exists only in the initramfs and a reload falls back to 2.4 GHz).
-5. Don't blindly `rpm-ostree rollback`; read `rpm-ostree status`, deployment order changes.
-6. `/run` sleep.conf.d drop-ins are blocked by SELinux for systemd-sleep — a "deep" test silently ran as s2idle. Verify the actual `PM: suspend entry (...)` mode in the kernel log.
-7. A lit/responsive Touch Bar does NOT mean the host is awake; the T1 is a separate computer.
-8. Before bagging: S3 works, but a chain of instant wakes is possible on the charger — check it actually stays asleep (or shut down).
-9. Don't use broadcom-wl, don't force Wi-Fi capability bits, don't disable PMF for SAE.
-10. Don't paste community PCI remove/rescan or blanket D3cold hooks without targeted validation (the ones in use were validated: `docs/SLEEP.md`).
-11. Long rpm-ostree operations often outlive tool timeouts but complete — check status before retrying.
-12. `ASOC.SOCW` only after an S3 resume / before S3 (via `macbook_t1_socw`), never at driver probe.
-13. Never unbind/rebind the HDA controller (00:1f.3) or reload `snd_hda_codec_cs8409` after a sleep: S3 resets the codec subsystem ID, the Apple path isn't found and built-in audio is lost until reboot. `modprobe -r snd_hda_codec_cs8409` also unloads `snd_hda_codec_generic`/`snd_hda_scodec_component`.
-14. Don't live-unbind/rebind the iBridge/T1 (can wedge it); re-send the mode via the `idle_timeout` sysfs attribute instead.
-15. Module files in `/usr/local` need SELinux type `modules_object_t` (semanage rule), or insmod from systemd units is denied.
-16. Packaging: kmodtool's `%akmod_install` embeds the SRPM built from `%{name}.spec` — keep the current spec under the canonical name or the akmod ships the OLD source.
-17. Deployment order: never `rpm-ostree rollback` blindly with pinned deployments present — it can make an old pinned image default. Read `rpm-ostree status`, then `ostree admin set-default <index>`.
+### Sleep and battery
+
+Deep S3 works with the included hooks; the post-update attended test passed.
+See the [sleep guide](SLEEP.md) for normal behavior and testing.
+
+- Suspending with the **lid open** disables lid wake for that sleep. Wake with
+  keyboard/trackpad or the power button, not lid movement.
+- An occasional early wake with the **lid closed** remains possible. One
+  overnight case recovered through logind re-suspending. **Check that the machine
+  stays asleep before putting it in a bag**, or shut it down.
+- A lit Touch Bar does not prove the host is awake: the T1 is a separate computer.
+- Overnight standby was estimated at ~0.45 W, conditional on unplug timing.
+  This supersedes an earlier coarse 35-minute drain estimate; it is not a guarantee.
+- The worn reference battery's `capacity` percentage disagrees with other
+  readings. Use charge/energy telemetry and UPower; allow margin for gauge jumps.
+
+### Input, audio and camera
+
+- Trackpad phantom clicks / libinput “Touch jump” reports remain unresolved.
+  Tap-to-click was disabled for isolation, not established as a fix.
+- Internal microphone works but is quiet. Headphone output is untested.
+- Camera works in Firefox; GNOME Camera crashes on this installation.
+- Touch Bar idle blanking, input restore, keys, Fn switching and post-S3 operation
+  are verified with 0.1.20261110. [Patch details](T1-IDLE-AND-ASPM.md).
+
+### Networking and external devices
+
+- BCM43602 Wi-Fi works on both bands with NVRAM, but firmware lacks the SAE
+  support needed for WPA3-Personal. Do not force capabilities or disable PMF
+  as a supposed WPA3 fix.
+- Bluetooth controller is detected; pairing is untested. A missing BCM.hcd
+  message is not a reason to copy arbitrary firmware.
+- Right/front USB-C has been tested. Left-side ports, docks and general
+  Thunderbolt/external-display behavior are not validated; one limited display
+  test is not a support claim.
+- Touch ID is unsupported.
+
+## Installation and maintenance traps
+
+- Wi-Fi initramfs generation must include **`brcmfmac-wcc`**. Omitting it caused
+  Wi-Fi to disappear in the first trial.
+- Keep `firmware_class.path=/etc/firmware/macbook-wifi` so runtime firmware/NVRAM
+  requests after Wi-Fi rebind can find the same data used at boot.
+- Inspect `rpm-ostree status` and deployment order before changing defaults.
+  With pinned deployments, do not blindly toggle `rpm-ostree rollback`;
+  use an explicitly reviewed bootloader choice or deployment index.
+- Wait for long rpm-ostree transactions; a client timeout does not prove failure.
+- `/run` sleep overrides were blocked by SELinux in an earlier test, silently
+  leaving s2idle selected. Use the installed `/etc` configuration and verify
+  **`PM: suspend entry (deep)`** in the kernel journal.
+- Optional modules under `/usr/local` need SELinux `modules_object_t` labels.
+  The current SOCW module comes from the akmod instead.
+- Build with the **canonical spec filename**: kmodtool can otherwise embed an
+  older SRPM. See [packaging](../packaging/README.md).
+- A composefs `systemd-remount-fs` failure can be expected on this Silverblue
+  installation; do not make `/usr` writable to “fix” driver installation.
+
+## ASPM is still experimental
+
+The short trial reduced awake draw by ~1.6 W and restored the original settings.
+It did **not** validate hotplug or S3 with L1 enabled. No persistent ASPM helper
+is installed. Start with the [results and limitations](ASPM-RESULTS.md), not a
+community boot service or `pcie_aspm=force` command.

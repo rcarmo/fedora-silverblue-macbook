@@ -1,36 +1,50 @@
-# rebuild-kit — current package set and installed configuration (2026-11-10)
+# Rebuild kit
 
-`files/` = absolute paths (`files/etc/...` → `/etc/...`), unchanged working S3 configuration.
-`rpms/` = Touch Bar **0.1.20261110-1**, audio **0.1.20261101-1**.
-The Touch Bar update adds idle blanking; reboot/hardware acceptance remains
-required. Validation and test steps: `../docs/T1-IDLE-AND-ASPM.md`.
-`SHA256SUMS` covers everything. Full narrative: `../docs/CLEAN-INSTALL.md`.
+[Installation guide](../docs/CLEAN-INSTALL.md) · [Safety rules](../docs/KNOWN-ISSUES.md)
 
-## On a clean Fedora Silverblue 44 (kernel 7.2.x)
-1. Files FIRST (the Wi-Fi dracut config must exist before the initramfs is generated):
-   `pkexec /usr/bin/bash $PWD/install-files.sh`
-2. Layer drivers + build deps in one transaction (akmods builds during composition):
-   `rpm-ostree install akmods kernel-devel-matched ./rpms/*.rpm`
-3. Kernel argument (5 GHz NVRAM survives the Wi-Fi rebind across S3):
-   `rpm-ostree kargs --append=firmware_class.path=/etc/firmware/macbook-wifi`
-4. Local initramfs regeneration (early Touch Bar/audio modules + NVRAM): `rpm-ostree initramfs --enable`
-5. Reboot, then `pkexec /usr/bin/bash ../tools/audit.sh` and an attended `pkexec /usr/bin/bash ../tools/run-s3-test.sh 120`.
-6. Optional GNOME prefs used here: Caps→Escape; tap-to-click off (phantom-click test);
-   idle auto-suspend: leave the default (suspend after 15 min); S3 works.
+The installable package/configuration set for the reference **MacBookPro13,2**.
+Use the installation guide for ordering, compatibility checks, reboot and
+verification; this page is an inventory, not a second install procedure.
 
-## What each piece does
-| Path | Purpose |
+## Package set
+
+| Driver | Version | Verification |
+|---|---|---|
+| Touch Bar akmod + common | **0.1.20261110-1** | Idle blank/wake, keys, Fn and attended deep S3 passed |
+| Audio akmod + common | **0.1.20261101-1** | Speakers and resume checked; builds only for kernel 7.2.x |
+
+Reference kernel: **7.2.13-200.fc44**. Post-boot consistency audit: **0 failures**.
+Other deployments need their own compatibility and hardware checks.
+
+## Contents
+
+`files/etc/...` maps to `/etc/...`; `files/usr/local/...` maps to `/usr/local/...`.
+`SHA256SUMS` covers the kit contents, including this README and installer.
+
+| Item | Purpose |
 |---|---|
-| rpms/akmod-macbook-t1-touchbar + common | apple-ibridge/apple-touchbar (T1 Touch Bar; `skip_acpi_power=1` guard), reset-resume fix, T1 idle blanking, `macbook_t1_socw` (ASOC.SOCW on demand) |
-| rpms/akmod-macbook-cs8409 + common | Apple CS8409/CS42L83 audio (amps), re-probe fix, boot-setup re-run after system sleep |
-| etc/firmware/macbook-wifi, etc/modprobe.d + etc/dracut.conf.d/99-macbook-wifi-nvram.conf | BCM43602 NVRAM for 5 GHz |
-| etc/udev/rules.d/99-macbook-usbc-runtime.rules + etc/systemd/system/macbook-usbc-runtime.service | keep Alpine Ridge USB-C xHCIs awake (hot-plug), both sides, by PCI ID |
-| etc/systemd/sleep.conf.d/90-macbook-deep.conf | suspend = S3 (deep) |
-| etc/systemd/system/systemd-suspend.service.d/50-macbook-s3.conf | runs the hook pre/post suspend |
-| usr/local/sbin/macbook-sleep-hook | NVMe D3cold off (guard), Wi-Fi unbind/rebind, Thunderbolt remove/rescan, XHC1 wake off, LID0 wake off if lid open, T1 SOCW(0)/(1), Touch Bar mode re-send |
-| usr/local/sbin/macbook-thunderbolt-remove-rescan | Thunderbolt tree removal before S3 / rescan after (omarchy PR #11570 logic) |
-| etc/udev/rules.d/61-macbook-nvme-d3cold.rules | NVMe d3cold_allowed=0 at boot |
-| etc/UPower/UPower.conf.d/90-macbook-critical-poweroff.conf | critical battery → power off (not S3) |
+| `rpms/` | Both driver akmod/common pairs; embedded SRPMs provide rebuild inputs |
+| `files/etc/firmware/macbook-wifi/` | BCM43602 board NVRAM for dual-band Wi-Fi |
+| Wi-Fi modprobe/dracut configuration | Include NVRAM and `brcmfmac-wcc` at boot |
+| USB-C udev rule + runtime service | Keep Alpine Ridge USB-C hotplug detection working |
+| NVMe udev rule | Prevent Apple S3X D3cold no-wake failure |
+| Sleep configuration + suspend drop-in | Select deep S3 and run the installed helper |
+| `files/usr/local/sbin/macbook-sleep-hook` | Wi-Fi, Thunderbolt, wake masks and T1 sleep/wake coordination |
+| `files/usr/local/sbin/macbook-thunderbolt-remove-rescan` | Remove TB upstream ports before S3; rescan after resume |
+| UPower configuration | Critical battery action: power off, not suspend |
+| `install-files.sh` | Install/label configuration, keep backups and enable USB-C service |
 
-Known limits: a lid-open suspend is woken by keyboard/power button (lid wake disabled for it);
-audio akmod refuses kernels other than 7.2.* (port before 7.3). See `../docs/KNOWN-ISSUES.md`.
+Verify before installing:
+
+```bash
+# From this directory
+sha256sum -c SHA256SUMS
+```
+
+The installer checks hashes too. It does **not** layer packages, set kernel
+arguments or reboot: continue through the [installation guide](../docs/CLEAN-INSTALL.md).
+Backups/receipt are written to `/var/lib/macbook-rebuild-kit-*`.
+
+**Not included:** ASPM register changes, TLP tuning, a Wi-Fi watchdog or personal
+GNOME preferences. The [ASPM experiment](../docs/ASPM-EXPERIMENT.md) remains opt-in
+and nonpersistent. Historical sleep phase installers are not required.

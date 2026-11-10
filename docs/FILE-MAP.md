@@ -1,34 +1,81 @@
-# File map (layout since the 2026-11-01 tidy)
+# Repository and evidence map
 
-The workspace is a git repo (`git log` shows every move; `.tidy/moves.txt` = old → new paths,
-`.tidy/manifest-before-20261101.sha256` = hashes of every file before the tidy).
-Nothing installed on the system references this directory.
+[Documentation index](README.md) · [Project overview](../README.md)
 
-| Path | What |
+## Current entry points
+
+| Path | Contents |
 |---|---|
-| `README.md`, `PROGRESS.md` | Start here / current state + next steps |
-| `docs/` | `CLEAN-INSTALL.md`, `KNOWN-ISSUES.md`, `SLEEP.md` (current sleep design), `SLEEP-RESUME-RESEARCH.md`, `TIMELINE.md`, `model-notes.md`, `archive/` (verbatim old logs) |
-| `rebuild-kit/` | **Exact copy of the current install**: `files/` (absolute paths), `rpms/` (akmods 0.1.20261101), `install-files.sh`, `SHA256SUMS`, `README.md` |
-| `tools/` | `audit.sh` (consistency: sources ↔ patches ↔ tarballs ↔ SRPMs ↔ staged/booted modules ↔ kit ↔ system), `run-s3-test.sh` (attended S3 test → `sleep/tests/`), `logs/` |
-| `packaging/` | Driver packaging: canonical specs (`*-kmod.spec` = current), `sources/` (0.1.20261031 baseline + 0.1.20261101 current), `patches/`, `tarballs/`, `rpms/<version>/`, `akmods-tests/`, `logs/`, `superseded/` specs, `README.md` |
-| `touchbar/` | T1 Touch Bar research (`touchbar-driver.md`, `touchbar-upstream.md`, `model-touchbar-packaging.md`), `t1-socw/` (SOCW module dev copy), `raw/`, `logs/`, `upstream/` (git-ignored clones) |
-| `audio/` | CS8409 research (`audio-upstream.md`), `compile-audio-in-container.sh`, `port-audio-header-7.2.py`, `resume-fix-livetest/` (live-load test of the resume fix), `microphone-test/` (contains a voice recording — private), `logs/`, `raw/`, `upstream/` (git-ignored clones) |
-| `build/` | How modules were built (Podman container `macbook-driver-build`): `driver-build-results.md`, `inputs/` (Linux 7.2.13 HDA source; tarball git-ignored), `artifacts/`, `reference/` (akmods/kmodtool), `logs/` (install receipts, deployment JSON) |
-| `sleep/` | `phase1`, `phase1b`, `phase1c`, `phase1d` (README, installer, undo, files, test results), `tests/` (new tests), `research-20261101/` (raw hooks/modules from other owners), `suspend-audit/` (pre-fix failures, USB workaround research), `idle-trackpad-audit/`, `config-upower/` |
-| `wifi/` | 5 GHz investigation + NVRAM research (`*.md`), `comment97/` (NVRAM bundle), `trial-v1/` (failed: missing WCC), `trial-v2/` (working), `research-20261101/`, `wpa3-audit/`, `WIFI-RECOVERY.md` + `Makefile` + `recover-wifi.sh` (host-specific recovery), `raw/` |
-| `misc/` | Camera logs, LG UltraFine display test, `post-reboot-audit.md`, `kernel-current.log`, `session-reference.txt` |
+| [README](../README.md) | Public overview and reading path; also the source of the exported front page |
+| [Current status](../PROGRESS.md) | Reference versions, completed checks and next work |
+| [docs](README.md) | Current guides, optional experiment, timeline and historical index |
+| [rebuild kit](../rebuild-kit/README.md) | Current configuration/RPMs, installer and checksums |
+| [packaging](../packaging/README.md) | Canonical specs, prepared sources, patches, Source0 archives and build notes |
+| [sleep](../sleep/README.md) | Historical phase installers, tests and investigation records |
+| `wifi/`, `audio/`, `touchbar/` | Topic research and earlier tooling; not alternative installation paths |
+| `build/` | Recorded build procedure, prepared inputs and reference build tooling |
+| `misc/` | Miscellaneous hardware tests and earlier audit notes |
 
-## Upstream sources (git-ignored clones; re-clone at these commits)
-| Local path | URL | Commit |
+## Tools
+
+Run from the checkout; read each guide's prerequisites before privileged use.
+
+| Tool | Purpose |
+|---|---|
+| `tools/audit.sh` | Read-only reference-set consistency audit: source → package → deployment → live files/modules |
+| `tools/run-s3-test.sh` | Attended **real S3** test; writes a record under `sleep/tests/` |
+| `tools/aspm-experiment.py` | Inspect/sample read-only, or explicitly opted-in reversible L1 trial/recovery |
+| `packaging/tests/test-touchbar-idle.py` | Mocked worker/input regression test |
+| `tools/tests/` | Hardware-free ASPM and maintained-documentation tests |
+| `tools/make-public-export.sh` | Produce a sanitised publication snapshot; recreates its destination |
+| `tools/publish-public.sh` | Update the separate public checkout, review, commit and normal push |
+
+Nothing installed on the host needs this checkout to remain at its original path.
+The configured hooks run from `/usr/local/sbin`, not from the source directory.
+
+## Public vs local evidence
+
+The public export retains the current kit, prepared source, patches, specs,
+selected build/audit logs and historical notes. It excludes recordings, full
+journals, raw web/ACPI dumps, local build-test outputs and redundant RPM copies.
+The generated `.excluded-files.txt` lists omitted tracked paths.
+
+In particular, `tools/logs/` is **local-only**: result pages reproduce the useful
+measurements rather than linking to missing raw files. Upstream clones and the
+saved Podman container are also not shipped. Some older notes retain historical
+paths and hypotheses; their presence does not make them current instructions.
+
+## Reference hardware
+
+MacBookPro13,2; board `Mac-66E35819EE2D0D05`; firmware `529.120.1.0.0`;
+Intel Iris 550 graphics; BCM43602 Wi-Fi (subsystem `106b:0157`); Cirrus CS8409
+audio; Apple S3X NVMe (`106b:2003`); two Alpine Ridge Thunderbolt 3 controllers.
+These identify the tested configuration, not additional supported models.
+
+## Upstream inputs
+
+The prepared package trees record their own provenance. Local ignored clones
+were checked out at these commits:
+
+| Input | Upstream | Commit |
 |---|---|---|
-| `touchbar/upstream/t1-touchbar-src` | https://github.com/AJ-dev-i60/t1-touchbar.git | 20d65c7b0fe6d05ea9734f869b27384a62de5109 |
-| `touchbar/upstream/touchbar-src` | https://github.com/roadrunner2/macbook12-spi-driver.git | ddfbc7733542b8474a0e8f593aba91e06542be4f |
-| `audio/upstream/audio-src` | https://github.com/davidjo/snd_hda_macbookpro.git | 89b22ff90b86468b186706861dd18663562defa7 |
-| `audio/upstream/audio-akmod-src` | https://github.com/egorenar/snd-hda-codec-cs8409-akmod.git | 47cdd3011892baefd0a1cd544901264d36746a22 |
-| `build/inputs/linux-7.2.13.tar.xz` | kernel.org | SHA256 08e7b0c4f2dd1971f972da274b5e589a98989390ac56acd7a1a5af922363ea6c |
+| T1 Touch Bar | [AJ-dev-i60/t1-touchbar](https://github.com/AJ-dev-i60/t1-touchbar) | `20d65c7b0fe6d05ea9734f869b27384a62de5109` |
+| SPI/reference Touch Bar | [roadrunner2/macbook12-spi-driver](https://github.com/roadrunner2/macbook12-spi-driver) | `ddfbc7733542b8474a0e8f593aba91e06542be4f` |
+| Apple audio | [davidjo/snd_hda_macbookpro](https://github.com/davidjo/snd_hda_macbookpro) | `89b22ff90b86468b186706861dd18663562defa7` |
+| Audio packaging reference | [egorenar/snd-hda-codec-cs8409-akmod](https://github.com/egorenar/snd-hda-codec-cs8409-akmod) | `47cdd3011892baefd0a1cd544901264d36746a22` |
 
-## Root-owned state on the CURRENT install (receipts/backups; not needed on a clean install)
-- `/var/lib/macbook-sleep-phase1*-*` — sleep phase receipts (undo scripts take these).
-- `/var/lib/macbook-wifi-recovery/`, `/var/lib/macbook-usb-runtime-*` — older receipts.
-- `/usr/local/lib/macbook-t1-socw/7.2.13-200.fc44.x86_64/` — per-kernel SOCW fallback (superseded by the akmod).
-- SELinux local fcontext: `/usr/local/lib/macbook-t1-socw(/.*)?` → `modules_object_t`.
+Linux 7.2.13 source archive SHA256:
+`08e7b0c4f2dd1971f972da274b5e589a98989390ac56acd7a1a5af922363ea6c`.
+The [Touch Bar follow-up](T1-IDLE-AND-ASPM.md) identifies the later idle-fix source.
+
+## Host state, not installation inputs
+
+- `/var/lib/macbook-rebuild-kit-*`: current installer receipts and backups.
+- `/var/lib/macbook-sleep-phase1*-*`: historical phase receipts.
+- `/var/lib/macbook-wifi-recovery/`, `/var/lib/macbook-usb-runtime-*`: older receipts.
+- `/var/lib/macbook-aspm-experiment/`: root-only trial plans, CSVs and undo state.
+- `/usr/local/lib/macbook-t1-socw/<kernel>/`: optional old fallback module,
+  superseded by the akmod. Its SELinux label must be `modules_object_t` if used.
+
+Do not copy another machine's receipts as recovery state. They describe the
+hardware/files present when that particular operation ran.

@@ -1,73 +1,85 @@
-# Sleep (S3) — current design and status (2026-11-01)
+# Sleep and resume
 
-**Status: works.** Real S3 (`deep`), lid close or `systemctl suspend`, with NVMe, Wi-Fi (incl. 5 GHz),
-Thunderbolt/USB-C, Touch Bar and speakers restored after resume. The "instant wake" (3–4 s) was the
-lid wake line when suspending with the lid OPEN — fixed 2026-11-01 19:45 (Phase 1e, below).
+[Documentation index](README.md) · [Safety rules](KNOWN-ISSUES.md)
 
-## How it works
-`systemd-suspend.service` drop-in (`50-macbook-s3.conf`) runs `/usr/local/sbin/macbook-sleep-hook`:
+**Deep S3 works on the reference MacBookPro13,2.** Lid-close and menu/command
+suspend restore Wi-Fi, NVMe, Thunderbolt/USB-C, Touch Bar and speakers with the
+included hooks and drivers. Last attended check: **2026-11-10**, after the Touch
+Bar update; everything was reported working afterward.
 
-| pre (in order) | post (in order) |
+This describes the normal installed setup. **S3 with experimental ASPM L1 enabled
+has not been tested**; the short power trial restored the original PCI settings.
+
+## Everyday behavior
+
+- Use lid close or GNOME's normal suspend action.
+- If the lid is **open at entry**, the hook temporarily disables lid wake to
+  prevent an immediate wake. Use keyboard/trackpad or the power button to resume.
+- Leave USB-C data devices disconnected for the validated test configuration;
+  chargers are fine. Docks and general external-device suspend behavior remain
+  unvalidated.
+- An occasional closed-lid early wake can still happen. One overnight case
+  recovered through logind re-suspending. Check it stays asleep before bagging.
+- A lit Touch Bar alone is not evidence that the host is awake.
+
+## Run an attended check
+
+Save work, connect the charger and unplug USB-C data devices. From the repository
+root, stay at the machine and run:
+
+```bash
+pkexec /usr/bin/bash "$PWD/tools/run-s3-test.sh" 120
+```
+
+The helper records a test under `sleep/tests/`. Allow the RTC wake to occur;
+do not deliberately interrupt the first few seconds. Afterward:
+
+1. Confirm the kernel logged `PM: suspend entry (deep)` and `PM: suspend exit`.
+2. Check the duration: a 3–5-second return is an early wake, not a held 120-second sleep.
+3. Check keyboard/trackpad, Touch Bar keys/Fn, Wi-Fi (including 5 GHz), audio and
+   the previously working USB-C port.
+4. If it hangs or immediately wakes, review the logs before repeating. Avoid
+   live T1 or HDA rebind/reload recovery; see the [safety rules](KNOWN-ISSUES.md).
+
+Useful logs:
+
+```bash
+journalctl -b -k --grep='PM: suspend entry|PM: suspend exit|Timekeeping suspended'
+journalctl -b -t macbook-sleep -t thunderbolt-remove-rescan
+```
+
+## How the installed fix works
+
+The `systemd-suspend.service` drop-in calls `/usr/local/sbin/macbook-sleep-hook`.
+
+| Before sleep | After resume |
 |---|---|
-| force `mem_sleep=deep` | **T1 `SOCW(1)`** ("host awake") |
-| Apple NVMe `d3cold_allowed=0` — aborts the suspend if this fails | Thunderbolt rescan (retries in a transient unit) |
-| unbind BCM43602 from brcmfmac | rebind Wi-Fi (NVRAM via `firmware_class.path` karg) |
-| Thunderbolt upstream-port removal (`macbook-thunderbolt-remove-rescan`) | restore XHC1 S3 wake |
-| disable XHC1 (00:14.0, hosts the T1) S3 wake — fixed the first instant-wake cause | restore LID0 wake (if pre disabled it) |
-| **lid open only:** disable LID0 S3 wake (GPE 0x6F) — wake with keyboard/power button | re-send Touch Bar mode (`idle_timeout` -2 → saved) |
-| **T1 `SOCW(0)`** ("host sleeps"), last | |
+| Select `deep`; enforce Apple NVMe `d3cold_allowed=0` (abort if it fails) | Send T1 `SOCW(1)` first |
+| Unbind BCM43602 Wi-Fi | Rescan the removed Thunderbolt ports, retrying if necessary |
+| Remove the two Thunderbolt upstream ports | Rebind Wi-Fi; reload NVRAM through the firmware-path argument |
+| Disable XHC1 wake; disable LID0 wake only if the lid is open | Restore saved wake settings |
+| Send T1 `SOCW(0)` last | Re-send the Touch Bar mode using its saved idle timeout |
 
-Kernel side (akmods 0.1.20261101, `packaging/`):
-- `macbook_t1_socw` evaluates `\_SB.PCI0.XHC1.RHUB.ASOC.SOCW(0|1)` only when the hook writes its `socw`
-  parameter. Without `SOCW(1)` after S3 the T1 keeps the Touch Bar dark; without `SOCW(0)` before S3 it
-  can wake the host. `apple_ibridge` still never calls SOCW at probe (`skip_acpi_power=1`).
-- `apple-touchbar`: reset-resume invalidates its cached mode (it believed the bar was on and sent nothing).
-- `snd-hda-codec-cs8409` (Apple): re-runs the Apple boot setup (codec reset + CS42L83/amp setup) once on
-  the first codec resume after a system sleep; also gained the missing `.probe` op (re-probe used to
-  WARN and fail). S3 resets the codec subsystem ID to `0x10138409` (firmware sets `0x106b3600` only at
-  power-on), so **never rebind/reload the HDA controller after a sleep** — it can't find the Apple path.
+The Touch Bar driver invalidates stale mode state on reset-resume. Its newer
+idle-blanking fix does not change this suspend policy. The CS8409 driver re-runs
+Apple codec/amplifier setup on the first codec resume after system sleep.
+The iBridge guard remains **`skip_acpi_power=1`**: no SOCW call at driver probe.
 
-Other pieces: `61-macbook-nvme-d3cold.rules`, `90-macbook-deep.conf`, UPower critical action PowerOff,
-USB-C xHCI runtime-PM pin. All in `rebuild-kit/`.
+The kit also includes the NVMe rule, USB-C runtime hotplug workaround and
+critical-battery power-off policy. See [kit contents](../rebuild-kit/README.md).
 
-## Test record
-| When | Test | Result |
-|---|---|---|
-| 12:41 | Phase 1, RTC 120 s | woke in 4 s (XHC1 wake), TB tree dead, Touch Bar dark |
-| 12:48 | 1b (XHC1 wake off) | **117 s ok**; Touch Bar dark |
-| 12:58 | 1c, SELinux blocked socw load | 3.7 s instant wake, Touch Bar dark |
-| 13:12 | 1c (SOCW 0/1 working) | **112 s ok**, Touch Bar on |
-| 13:20 | lid close on AC | ok (audio silent → fixed later) |
-| 13:21 | lid close 24 min on battery | **ok**, drain ≈ 0 (gauge too coarse) |
-| 14:02 | patched cs8409, chime playing | audio OK after resume; 3.3 s instant wake |
-| 14:05 | lid close on AC | 2 instant wakes, logind re-suspended, 3rd held 3.5 min; TB back |
-| 16:28–19:36 | lid-open RTC tests (battery/AC, chime, nohda, cold boot, nolid, nowake=SPIT) | all instant; 0x6F +1 whenever LID0 armed |
-| 16:47, 19:37 | lid close (35 min, 3 min) | held; TB back |
-| 19:42 | lid open, `nolid` | **118 s**, 0x6F silent |
-| 19:45 | lid open, Phase 1e hook, no options | **118 s**, 0x6F silent, LID0 wake restored |
+## Evidence and remaining limits
 
-Tests: `sleep/phase*/test-*/`, new ones in `sleep/tests/` via `tools/run-s3-test.sh`.
+- **2026-11-10:** deep-S3 entry 18:40:53, exit 18:42:34 (~101 seconds between
+  logged entry/exit). Thunderbolt returned on attempt 1; Wi-Fi rebound; both
+  SOCW calls succeeded; user confirmed all devices working. Local raw record:
+  `tools/logs/s3-post-update-20261110.log` (not published).
+- **2026-11-01→02:** about 17 h 49 min in S3, with estimated draw **~0.45 W**
+  (~1.2%/h on that worn battery), **assuming** unplugging at lid close. The estimate
+  is conditional; an earlier short sample was too coarse to use as a standby figure.
+- Lid-open instant wakes were traced to the shared lid/EC GPE 0x6F and fixed by
+  masking LID0 only for lid-open entry. Closed-lid early wakes are not fully resolved.
 
-## Instant wakes — cause and fix (resolved 19:45)
-- Symptom: suspend with the lid OPEN (menu / `systemctl suspend` / RTC test) woke after ~3 s; afterwards the
-  Alpine Ridge controllers stayed unpowered (USB-C dead) and further short sleeps also woke, until one
-  sleep held for minutes. Lid-closed sleeps held. On AC and battery alike.
-- Evidence: every such wake incremented GPE 0x6F; clean runs didn't. ACPI tables (`sleep/acpi-tables/`):
-  0x6F (GPIO GPD2) is the `_PRW` wake GPE of LID0, EC, ADP1 and BLTH; only LID0 is wake-enabled, so it
-  arms the line. With the lid already open the line asserts right after S3 entry.
-- Ruled out on the way: audio activity, the audio controller (`nohda`), keyboard/trackpad (`nowake=SPIT`),
-  charger, cold boot, the new packages (the 14:02 failure ran the old ones).
-- Confirmation: lid open + LID0 wake off → 118 s twice (19:42 option `nolid`, 19:45 hook fix), 0x6F silent.
-- Fix (Phase 1e hook): if the lid is open at suspend, disable LID0 wake; restore on resume. A lid-open
-  suspend is then woken by keyboard/trackpad or power button, not by lid movement.
-
-## Measurements / remaining minor issue
-- Overnight 2026-11-01→02: 17 h 49 min in S3, ≈0.45 W (≈1.2 %/h, ≈3.5 days standby from full) assuming
-  the charger was unplugged at lid close (worst case).
-- A lid-CLOSED suspend woke once after ~5 s (22:20); logind re-suspended after 30 s and that sleep held
-  15 h. Suspected: the lid-close event reaching GPE 0x6F shortly after S3 entry. Self-healing; not fixed.
-
-## History
-Phase directories `sleep/phase1`, `phase1b`, `phase1c`, `phase1d`, `phase1e` (each with README, installer, undo,
-receipts under `/var/lib/macbook-sleep-phase1*`). Earlier failures and research: `sleep/suspend-audit/`,
-`docs/SLEEP-RESUME-RESEARCH.md`.
+For the detailed test sequence, see the [original test record](archive/SLEEP-test-record-2026-11-01.md),
+[historical research](SLEEP-RESUME-RESEARCH.md) and [phase-directory guide](../sleep/README.md).
+Use the rebuild kit for installation, not the historical phase installers.

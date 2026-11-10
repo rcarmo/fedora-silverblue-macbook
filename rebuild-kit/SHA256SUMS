@@ -10,7 +10,7 @@ bd6cb188b763fb3ac21af3c1e4f43bd8f519fb195c5784ee1dbf4b7c13bb7e8c  ./files/etc/sy
 215088e7e547ad2e325bf4f804c822a47d2b78435f04767a1fe51a1dc3d00775  ./files/usr/local/sbin/macbook-sleep-hook
 3e361ee287215451274d25cd03a1c97afb8634c5f1aa3bd9f1e2cbb1773744b1  ./files/usr/local/sbin/macbook-thunderbolt-remove-rescan
 7097fcb40253c467eb0de36f7e17812daec127b2de3d622fba257e43870ebe9c  ./install-files.sh
-a64dfcdbe8dfdbdacb04d2725aadcca0f563efe10d3765d38dd4b764b0284b19  ./README.md
+bc350ec57511e3c9b4fdd0f8accf747c61a885967b0065cd36ce0cd9c371253a  ./README.md
 2501d10874b71e92825c0bd7296fb75d2368193f5cbd011d69d1b74cea7f1132  ./rpms/akmod-macbook-cs8409-0.1.20261101-1.fc44.x86_64.rpm
 b6385dd0d2a82202bb51bb555171594ed204c5f7a170d3da2108e506c2c4dcac  ./rpms/akmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64.rpm
 a0b8154a152ce7a91d205336a9520c93e992ff32b782ae74f4d79d4e0a00b21c  ./rpms/macbook-cs8409-kmod-common-0.1.20261101-1.fc44.x86_64.rpm
