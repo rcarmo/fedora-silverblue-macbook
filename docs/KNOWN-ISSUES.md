@@ -1,6 +1,8 @@
 # Known issues, lessons and safety rules
 
-Status as of 2026-11-01. Evidence paths are relative to the project root.
+Baseline status as of 2026-11-01. Evidence paths are relative to the project root.
+2026-11-10: Touch Bar idle-blanking update packaged; hardware acceptance after
+reboot is pending. See `T1-IDLE-AND-ASPM.md`. Working S3 hooks are unchanged.
 
 ## Working
 | Area | Status | Notes |

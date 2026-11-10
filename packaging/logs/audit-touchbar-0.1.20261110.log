@@ -1,0 +1,82 @@
+Auditing staged deployment 1257270345a8
+== A. sources / patches / tarballs / specs / SRPMs
+  OK   macbook-t1-touchbar: local tarball == source dir
+       changed files vs 0.1.20261031: macbook-t1-touchbar-0.1.20261031/Makefile macbook-t1-touchbar-0.1.20261031/PROVENANCE.md macbook-t1-touchbar-0.1.20261031/apple-touchbar.c +macbook-t1-touchbar-0.1.20261110/macbook_t1_socw.c 
+  OK   macbook-t1-touchbar: akmod embeds SRPM macbook-t1-touchbar-kmod-0.1.20261110-1.fc44.src.rpm
+  OK   macbook-t1-touchbar: SRPM tarball == local tarball
+  OK   macbook-t1-touchbar: SRPM spec == packaging/macbook-t1-touchbar-kmod.spec
+  OK   macbook-cs8409: local tarball == source dir
+       changed files vs 0.1.20261031: macbook-cs8409-0.1.20261031/PROVENANCE.md macbook-cs8409-0.1.20261031/hda/codecs/cirrus/cirrus_apple.h 
+  OK   macbook-cs8409: akmod embeds SRPM macbook-cs8409-kmod-0.1.20261101-1.fc44.src.rpm
+  OK   macbook-cs8409: SRPM tarball == local tarball
+  OK   macbook-cs8409: SRPM spec == packaging/macbook-cs8409-kmod.spec
+  OK   patch 0001 reproduces apple-touchbar.c
+  OK   patch 0002 reproduces cirrus_apple.h
+  OK   touchbar/t1-socw/macbook_t1_socw.c == packaged copy
+  OK   patch 0003 reproduces T1 idle fix
+  OK   packaging/rpms/0.1.20261110 SHA256SUMS
+  OK   packaging/rpms/0.1.20261101 SHA256SUMS
+== B. module code fingerprints (.text-.modinfo-.rodata): staged / akmods test / live-loaded / fallback
+  OK   apple-touchbar deployment == akmods test (446f86c2-e7f07312-03490806)
+  OK   apple-ibridge deployment == akmods test (2f02c24d-8ebefd62-674c7632)
+  OK   macbook_t1_socw deployment == akmods test (38de94fa-52a13688-41d1dfc2)
+  OK   snd-hda-codec-cs8409 deployment == akmods test (96c1acf0-6ef95e91-c884d3b0)
+  OK   socw == staged: /usr/local/lib/macbook-t1-socw/7.2.13-200.fc44.x86_64/macbook_t1_socw.ko
+  OK   socw == staged: /var/home/me/macbook-fedora-audit/touchbar/t1-socw/macbook_t1_socw.ko
+  OK   socw == staged: /var/home/me/macbook-fedora-audit/sleep/phase1c/files/macbook_t1_socw.ko
+  OK   audio/resume-fix-livetest (live-loaded) cs8409 code == staged (.text/.modinfo; rodata c884d3b0 vs c884d3b0)
+  info live modules: apple_touchbar:loaded apple_ibridge:loaded macbook_t1_socw:loaded snd_hda_codec_cs8409:loaded 
+  info live cs8409 has resume_reinit: yes
+== C. target deployment (staged, else booted)
+       target 1257270345a8 local: akmod-macbook-cs8409-0.1.20261101-1.fc44.x86_64 akmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64 code-1.145.2-1793945328.el8.x86_64 macbook-cs8409-kmod-common-0.1.20261101-1.fc44.x86_64 macbook-t1-touchbar-kmod-common-0.1.20261110-1.fc44.x86_64 microsoft-edge-stable-157.0.4341.42-1.x86_64
+  OK   initramfs has extra/macbook-cs8409/snd-hda-codec-cs8409.ko.xz
+  OK   initramfs has extra/macbook-t1-touchbar/apple-touchbar.ko.xz
+  OK   initramfs has extra/macbook-t1-touchbar/apple-ibridge.ko.xz
+  OK   initramfs has usr/lib/modprobe.d/macbook-t1-touchbar.conf
+  OK   initramfs has usr/lib/firmware/brcm/brcmfmac43602-pcie.txt
+  OK   initramfs skip_acpi_power=1
+  OK   initramfs NVRAM == /etc copy
+  OK   initramfs snd-hda-codec-cs8409 == staged tree
+  OK   initramfs apple-touchbar == staged tree
+  OK   staged depmod override
+  OK   staged modules.dep uses extra/ cs8409
+  OK   staged modules.dep knows macbook_t1_socw
+  OK   karg firmware_class.path (booted+staged inherit)
+== D. installed host files vs manifests
+  OK   rebuild-kit SHA256SUMS
+  OK   kit rpm == packaging: akmod-macbook-cs8409-0.1.20261101-1.fc44.x86_64.rpm
+  OK   kit rpm == packaging: akmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64.rpm
+  OK   kit rpm == packaging: macbook-cs8409-kmod-common-0.1.20261101-1.fc44.x86_64.rpm
+  OK   kit rpm == packaging: macbook-t1-touchbar-kmod-common-0.1.20261110-1.fc44.x86_64.rpm
+  OK   optional /usr/local socw fallback == akmod build
+  OK   /etc/UPower/UPower.conf.d/90-macbook-critical-poweroff.conf
+  OK   /etc/dracut.conf.d/99-macbook-wifi-nvram.conf
+  OK   /etc/firmware/macbook-wifi/brcm/brcmfmac43602-pcie.txt
+  OK   /etc/modprobe.d/99-macbook-wifi-nvram.conf
+  OK   /etc/systemd/sleep.conf.d/90-macbook-deep.conf
+  OK   /etc/systemd/system/macbook-usbc-runtime.service
+  OK   /etc/systemd/system/systemd-suspend.service.d/50-macbook-s3.conf
+  OK   /etc/udev/rules.d/61-macbook-nvme-d3cold.rules
+  OK   /etc/udev/rules.d/99-macbook-usbc-runtime.rules
+  OK   /usr/local/sbin/macbook-sleep-hook
+  OK   /usr/local/sbin/macbook-thunderbolt-remove-rescan
+  OK   fallback ko labelled modules_object_t
+  OK   semanage local fcontext rule present
+  OK   macbook-usbc-runtime.service enabled
+  OK   suspend drop-in active
+  OK   live skip_acpi_power=1
+  info unmanaged: /etc/modprobe.d/batman-adv-blacklist.conf
+  info unmanaged: /etc/modprobe.d/firewalld-sysctls.conf
+  info unmanaged: /etc/modprobe.d/floppy-blacklist.conf
+  info unmanaged: /etc/modprobe.d/l2tp_eth-blacklist.conf
+  info unmanaged: /etc/modprobe.d/l2tp_netlink-blacklist.conf
+  info unmanaged: /etc/modprobe.d/l2tp_ppp-blacklist.conf
+  info unmanaged: /etc/modprobe.d/lockd.conf
+  info unmanaged: /etc/modprobe.d/rds-blacklist.conf
+  info unmanaged: /etc/modprobe.d/tuned.conf
+  info receipt /var/lib/macbook-sleep-phase1-csZYkCwn
+  info receipt /var/lib/macbook-sleep-phase1b-AdZWV5ky
+  info receipt /var/lib/macbook-sleep-phase1c-YllmQR8Y
+  info receipt /var/lib/macbook-sleep-phase1d-45SAYdLD
+  info receipt /var/lib/macbook-sleep-phase1e-junYcbME
+== RESULT: 0 failure(s)

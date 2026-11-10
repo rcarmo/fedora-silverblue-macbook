@@ -2,7 +2,7 @@
 %global modname macbook-t1-touchbar
 %global AkmodsBuildRequires gcc make
 Name: %{modname}-kmod
-Version: 0.1.20261101
+Version: 0.1.20261110
 Release: 1%{?dist}
 Summary: Experimental T1 MacBook Touch Bar driver with ACPI freeze guard
 License: GPL-2.0-only
@@ -14,7 +14,8 @@ BuildRequires: kmodtool, gcc, make, kernel-devel, redhat-rpm-config
 
 %description
 Pinned T1 driver source at 20d65c7 with local command-result and resume fixes,
-reset-resume cache invalidation, and the opt-in macbook_t1_socw T1 sleep/wake module.
+reset-resume cache invalidation, T1 idle blanking via MODE_OFF, and the
+opt-in macbook_t1_socw T1 sleep/wake module.
 Experimental hardware enablement; native applespi is not replaced.
 
 %package common
@@ -56,6 +57,10 @@ printf 'force_drivers+=" apple_touchbar apple_ibridge "\n' > %{buildroot}%{_pref
 %{_prefix}/lib/dracut/dracut.conf.d/91-macbook-t1-touchbar.conf
 
 %changelog
+* Tue Nov 10 2026 Local hardware audit <nobody@localhost> - 0.1.20261110-1
+- Blank the T1 strip on idle timeout via MODE_OFF; restore on normal input.
+- Keep existing ACPI guard, suspend handling, and 300-second idle default.
+
 * Sun Nov 01 2026 Local hardware audit <nobody@localhost> - 0.1.20261101-1
 - Invalidate cached Touch Bar mode on reset-resume; add macbook_t1_socw (SOCW on demand only).
 

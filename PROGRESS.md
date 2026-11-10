@@ -2,7 +2,14 @@
 
 Overview: `README.md`. Detailed logs: `docs/archive/` (latest: `PROGRESS-log-2026-11-01-sleep-work.md`).
 
-## Current system (2026-11-01 ~19:50)
+## Touch Bar idle-blanking update (2026-11-10)
+- Reviewed mikeypdev/macbook-t1-suspend at ef2148b (their Arch port is based on our public Fedora repo).
+- Touch Bar **0.1.20261110-1** ports the T1 MODE_OFF idle fix; audio stays **0.1.20261101-1**. Default idle timeout stays 300 s. No sleep-hook, Wi-Fi, TLP, or wake-mask changes.
+- Worker/input regression tests and an unprivileged akmods rebuild passed. Staged deployment **1257270345a8**; full root audit **0 failures**, including embedded SRPM/source/spec, module fingerprints, initramfs guard/NVRAM and unchanged sleep files. Rebuild kit and audit support separate Touch Bar/audio versions. Hardware blank/wake/Fn/S3 acceptance is pending reboot; no live module reload or reboot performed.
+- Composition also refreshed ghostty (1.4.0-2), erlang-srpm-macros, redhat-rpm-config and kernel-headers (7.3.3). The actual boot kernel/kernel-devel remain 7.2.13; audio is unchanged. Package delta: `packaging/logs/touchbar-0.1.20261110-package-diff.log`.
+- ASPM read-only audit: both TB root/upstream pairs support L1 but have it disabled. NVMe and Wi-Fi already have L1 enabled. No PCI config writes or persistent ASPM service installed. Details/tests: `docs/T1-IDLE-AND-ASPM.md`.
+
+## Previous system baseline (2026-11-01 ~19:50)
 - Fedora Silverblue 44.20261031.0, kernel 7.2.13-200.fc44. Booted + default: **f6b13ed** = akmods 0.1.20261101-1 (Touch Bar fix + `macbook_t1_socw`; CS8409 `.probe` + resume re-init) + ghostty (user-installed 16:34). Order: f6b13ed, c4ebdd8 (pinned), aea41722 (same drivers, no ghostty), 43e45ec, f1365bc, b8e75b7 (pinned).
 - Karg `firmware_class.path=/etc/firmware/macbook-wifi`. Installed files = `rebuild-kit/files/` (hook = Phase 1e).
 - **Sleep works** (`docs/SLEEP.md`): lid close and lid-open suspend both hold; Touch Bar, audio, Wi-Fi 5 GHz, NVMe, USB-C restored. Lid-open suspend is woken by keyboard/power button.
@@ -31,4 +38,4 @@ Overview: `README.md`. Detailed logs: `docs/archive/` (latest: `PROGRESS-log-202
 - 2026-11-01 19:41: lid-closed sleep 3 min restored TB. 19:42 lid-open RTC test with `nolid`: **118 s**, 6F unchanged → confirmed. 19:45 Phase 1e hook installed (receipt /var/lib/macbook-sleep-phase1e-junYcbME, sha 215088e7…): LID0 wake disabled only when lid open at suspend, restored post. Plain lid-open RTC test: **117.8 s**, 6F unchanged, TB back attempt 1, LID0 restored. rebuild-kit + docs (SLEEP, KNOWN-ISSUES, sleep/README, kit README) updated.
 - 2026-11-02 16:12 OVERNIGHT: 21:20 fully charged on AC (UPower 99.7%). 22:20:47 lid closed → S3 22:20:50 woke after ~5 s with lid CLOSED (TB dead) → logind re-suspend 22:21:25 HELD 15 h 26 min → 13:47 lid open (TB back), lid closed 13:48 → S3 2 h 23 min → 16:11 open (TB back). Total S3 17 h 49 min, awake ~1.5 min. Now on battery 29.98/38.13 Wh (UPower 78.6%; kernel capacity 61% unreliable). If unplugged at 22:20 from ~100%: ~8 Wh / 17.8 h ≈ 0.45 W ≈ 1.2 %/h (~3.5 days standby) — awaiting user confirmation of unplug time. NEW minor issue: a lid-CLOSED suspend can also instant-wake once (likely lid-close event on GPE 0x6F a few s after S3 entry); self-heals via logind re-suspend.
 - 2026-11-02 16:2x: GNOME idle suspend restored (suspend after 900 s on AC and battery; was 'nothing' since the 11:00 containment). User: closed-lid single instant wake acceptable, not chasing.
-- 2026-11-02: Published sanitized export to https://github.com/rcarmo/fedora-silverblue-macbook (public, fresh history, author Rui Carmo noreply). Re-publish: GIT_AUTHOR_NAME="Rui Carmo" GIT_AUTHOR_EMAIL=392683+rcarmo@users.noreply.github.com bash tools/make-public-export.sh, then in ~/macbook-fedora-audit-public: git remote add origin https://github.com/rcarmo/fedora-silverblue-macbook.git; git push -f origin main (export recreates history) — or switch the script to incremental commits.
+- 2026-11-02: Published sanitized export to https://github.com/rcarmo/fedora-silverblue-macbook (public, author Rui Carmo noreply). Update with `bash tools/publish-public.sh "message"` (export → rsync into ~/macbook-fedora-audit-public → review → normal commit + push). README rewritten for readability; camera works in Firefox.

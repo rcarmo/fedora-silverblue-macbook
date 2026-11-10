@@ -1,0 +1,9 @@
+ostree diff commit from: 276d25471c33 (276d25471c33cfa900b6cbf852b07dd1e26f92ad7a2eb087413e0854a22e8e03)
+ostree diff commit to:   1257270345a8 (1257270345a8f674ba388ac52d37a43c118deaca8b9752e362eba9082ed09af5)
+Upgraded:
+  akmod-macbook-t1-touchbar 0.1.20261101-1.fc44 -> 0.1.20261110-1.fc44
+  erlang-srpm-macros 0.4.0-1.fc44 -> 0.4.1-1.fc44
+  ghostty 1.4.0-1.fc44 -> 1.4.0-2.fc44
+  kernel-headers 7.2.4-200.fc44 -> 7.3.3-200.fc44
+  macbook-t1-touchbar-kmod-common 0.1.20261101-1.fc44 -> 0.1.20261110-1.fc44
+  redhat-rpm-config 344-2.fc44 -> 344-3.fc44

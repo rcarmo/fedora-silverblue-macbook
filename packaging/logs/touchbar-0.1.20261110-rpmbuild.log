@@ -1,0 +1,154 @@
+setting SOURCE_DATE_EPOCH=1794268800
+Executing(%mkbuilddir): /bin/sh -e /var/tmp/rpm-tmp.XOWi5N
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.eHaPwU
++ umask 022
++ cd /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ cd /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ rm -rf macbook-t1-touchbar-0.1.20261110
++ /usr/lib/rpm/rpmuncompress -x /root/rpmbuild/SOURCES/macbook-t1-touchbar-0.1.20261110.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd macbook-t1-touchbar-0.1.20261110
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.uh4OzW
++ umask 022
++ cd /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd macbook-t1-touchbar-0.1.20261110
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.3YpPov
++ umask 022
++ cd /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ '[' /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT '!=' / ']'
++ rm -rf /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT
+++ dirname /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT
++ mkdir -p /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ mkdir /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd macbook-t1-touchbar-0.1.20261110
++ install -d /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/lib/modprobe.d /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/lib/modules-load.d /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/lib/dracut/dracut.conf.d
++ printf 'options apple_ibridge skip_acpi_power=1\nsoftdep apple_ibridge pre: apple_touchbar\n'
++ printf 'apple_touchbar\napple_ibridge\n'
++ printf 'force_drivers+=" apple_touchbar apple_ibridge "\n'
++ mkdir -p /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT//usr/src/akmods/
++ rpmbuild --define '_sourcedir /root/rpmbuild/SOURCES' --define '_srcrpmdir /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT//usr/src/akmods/' --define 'dist .fc44' -bs --nodeps /root/rpmbuild/SPECS/macbook-t1-touchbar-kmod.spec
+Wrote: /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/src/akmods/macbook-t1-touchbar-kmod-0.1.20261110-1.fc44.src.rpm
+++ ls /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT//usr/src/akmods/
++ ln -s macbook-t1-touchbar-kmod-0.1.20261110-1.fc44.src.rpm /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT//usr/src/akmods/macbook-t1-touchbar-kmod.latest
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ COMPRESS='gzip -9 -n'
++ COMPRESS_EXT=.gz
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/brp-remove-la-files
++ /usr/lib/rpm/redhat/brp-python-rpm-in-distinfo
++ env /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0 -j4
++ /usr/lib/rpm/redhat/brp-python-hardlink
++ /usr/bin/add-det --brp -j4 /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT
+Scanned 9 directories and 5 files,
+    processed 0 inodes,
+    0 modified (0 replaced + 0 rewritten),
+    0 unsupported format, 0 errors
++ /usr/bin/linkdupes --brp /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr
+Scanned 8 directories and 5 files,
+    considered 4 files, read 0 files, linked 0 files, 0 errors
+    sum of sizes of linked files: 0 bytes
+Reading /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/SPECPARTS/rpm-debuginfo.specpart
+Processing files: akmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64
+Provides: akmod-macbook-t1-touchbar = 0.1.20261110-1.fc44 akmod-macbook-t1-touchbar(x86-64) = 0.1.20261110-1.fc44 macbook-t1-touchbar-kmod = 0.1.20261110-1.fc44
+Requires(interp): /bin/sh /bin/sh
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires(post): /bin/sh
+Requires(posttrans): /bin/sh
+Processing files: kmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64
+Processing files: macbook-t1-touchbar-kmod-common-0.1.20261110-1.fc44.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.rzXUQF
++ umask 022
++ cd /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ cd macbook-t1-touchbar-0.1.20261110
++ DOCDIR=/root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/share/doc/macbook-t1-touchbar-kmod-common
++ export LC_ALL=C.UTF-8
++ LC_ALL=C.UTF-8
++ export DOCDIR
++ /usr/bin/mkdir -p /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/share/doc/macbook-t1-touchbar-kmod-common
++ cp -pr /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/macbook-t1-touchbar-0.1.20261110/PROVENANCE.md /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/share/doc/macbook-t1-touchbar-kmod-common
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.1ygBEe
++ umask 022
++ cd /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ cd macbook-t1-touchbar-0.1.20261110
++ LICENSEDIR=/root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/share/licenses/macbook-t1-touchbar-kmod-common
++ export LC_ALL=C.UTF-8
++ LC_ALL=C.UTF-8
++ export LICENSEDIR
++ /usr/bin/mkdir -p /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/share/licenses/macbook-t1-touchbar-kmod-common
++ cp -pr /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/macbook-t1-touchbar-0.1.20261110/LICENSE /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT/usr/share/licenses/macbook-t1-touchbar-kmod-common
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: macbook-t1-touchbar-kmod-common = 0.1.20261110-1.fc44 macbook-t1-touchbar-kmod-common(x86-64) = 0.1.20261110-1.fc44
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build/BUILDROOT
+Wrote: /root/rpmbuild/SRPMS/macbook-t1-touchbar-kmod-0.1.20261110-1.fc44.src.rpm
+Wrote: /root/rpmbuild/RPMS/x86_64/macbook-t1-touchbar-kmod-common-0.1.20261110-1.fc44.x86_64.rpm
+Wrote: /root/rpmbuild/RPMS/x86_64/kmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64.rpm
+Wrote: /root/rpmbuild/RPMS/x86_64/akmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64.rpm
+Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.5hBJUq
++ umask 022
++ cd /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ test -d /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ rm -rf /root/rpmbuild/BUILD/macbook-t1-touchbar-kmod-0.1.20261110-build
++ RPM_EC=0
+++ jobs -p
++ exit 0

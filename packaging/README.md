@@ -1,7 +1,9 @@
 # Local MacBook T1 driver packages
 
-**Current: 0.1.20261101-1** (both packages; `rpms/0.1.20261101/`, staged/booted via rpm-ostree).
-Previous: touchbar 0.1.20261031-1, cs8409 0.1.20261031-2 (`rpms/0.1.20261031/`, `superseded/` specs).
+**Current package set:** Touch Bar **0.1.20261110-1** (`rpms/0.1.20261110/`),
+audio **0.1.20261101-1** (`rpms/0.1.20261101/`). Touch Bar idle-blanking update
+requires reboot and hardware acceptance; see `../docs/T1-IDLE-AND-ASPM.md`.
+Previous Touch Bar: 0.1.20261101-1 (working reference); older sets remain archived.
 
 ## Layout
 | Path | |
@@ -10,7 +12,9 @@ Previous: touchbar 0.1.20261031-1, cs8409 0.1.20261031-2 (`rpms/0.1.20261031/`, 
 | `sources/<pkg>-<ver>/` | Unpacked source trees; `tarballs/` holds the exact Source0 archives (`tar --sort=name --owner=0 --group=0 --mtime='2026-11-01 00:00Z'`). |
 | `patches/0001-appletb-reset-resume-invalidate-cached-mode.patch` | Touch Bar: reset-resume re-sends mode (0.1.20261031 → 0.1.20261101) |
 | `patches/0002-cs8409-apple-probe-op-and-resume-reinit.patch` | Audio: `.probe` op + boot-setup re-run after system sleep (`resume_reinit` param) |
-| `sources/macbook-t1-touchbar-0.1.20261101/macbook_t1_socw.c` | New module (dev copy `../touchbar/t1-socw/`): ASOC.SOCW on demand via `socw` param |
+| `patches/0003-appletb-t1-idle-mode-off.patch` | T1 idle timeout blanks via MODE_OFF; normal input restores Fn mode (0.1.20261110) |
+| `sources/macbook-t1-touchbar-0.1.20261110/macbook_t1_socw.c` | Module (dev copy `../touchbar/t1-socw/`): ASOC.SOCW on demand via `socw` param |
+| `tests/test-touchbar-idle.py` | Compiles actual worker/update functions with mock hardware/time; `python3 tests/test-touchbar-idle.py` |
 | `akmods-tests/<ver>/` | `akmodsbuild` outputs as container user `akmods` (PASS) |
 | `logs/` | rpmbuild/akmods/rpm-ostree logs |
 
@@ -19,7 +23,7 @@ Previous: touchbar 0.1.20261031-1, cs8409 0.1.20261031-2 (`rpms/0.1.20261031/`, 
 2. Tarball into `tarballs/` (command above); bump Version/Release + changelog in the canonical spec.
 3. `podman start macbook-driver-build`; `podman cp` tarball → `/root/rpmbuild/SOURCES/`, spec → `/root/rpmbuild/SPECS/<name>.spec`; `rpmbuild -ba`.
 4. Check `rpm -qlp akmod-*.rpm` shows the NEW `.src.rpm`; run `akmodsbuild` as user `akmods`.
-5. Copy RPMs to `rpms/<ver>/` + `SHA256SUMS`; swap with `rpm-ostree uninstall <4 old names> --install <4 new rpms>`.
+5. Copy RPMs to `rpms/<ver>/` + `SHA256SUMS`; swap with `rpm-ostree uninstall <old package names> --install <new rpm> ...`. Upgrade the changed driver's akmod + common together; leave the other driver alone.
 6. Update `rebuild-kit/rpms/` + its `SHA256SUMS`; run `tools/audit.sh` (update its version strings).
 
 ---

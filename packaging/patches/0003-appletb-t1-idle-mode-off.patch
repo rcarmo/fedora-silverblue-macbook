@@ -1,0 +1,23 @@
+--- a/apple-touchbar.c
++++ b/apple-touchbar.c
+@@ -459,7 +459,19 @@
+ 		/* dim or idle timeout reached */
+ 		int next_disp = (time_to_off == 0) ? APPLETB_CMD_DISP_OFF :
+ 						     APPLETB_CMD_DISP_DIM;
+-		if (next_disp != current_disp &&
++		if (tb_dev->is_t1 && time_to_off == 0) {
++			/*
++			 * T1 has no display-control interface: set_tb_disp() is
++			 * a no-op. Blank via the same mode command as suspend.
++			 * Updating the mode cache lets the next input event
++			 * restore the normal Fn mode through the worker.
++			 */
++			if (appletb_set_tb_mode(tb_dev, APPLETB_CMD_MODE_OFF) == 0) {
++				spin_lock_irqsave(&tb_dev->tb_lock, flags);
++				tb_dev->cur_tb_mode = APPLETB_CMD_MODE_OFF;
++				spin_unlock_irqrestore(&tb_dev->tb_lock, flags);
++			}
++		} else if (next_disp != current_disp &&
+ 		    appletb_set_tb_disp(tb_dev, next_disp) == 0) {
+ 			spin_lock_irqsave(&tb_dev->tb_lock, flags);
+ 			tb_dev->cur_tb_disp = next_disp;

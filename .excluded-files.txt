@@ -110,6 +110,11 @@ packaging/akmods-tests/0.1.20261101/x/lib/modules/7.2.13-200.fc44.x86_64/extra/m
 packaging/akmods-tests/0.1.20261101/x/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/apple-ibridge.ko.xz
 packaging/akmods-tests/0.1.20261101/x/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/apple-touchbar.ko.xz
 packaging/akmods-tests/0.1.20261101/x/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/macbook_t1_socw.ko.xz
+packaging/akmods-tests/0.1.20261110/kmod-macbook-t1-touchbar-7.2.13-200.fc44.x86_64-0.1.20261110-1.fc44.x86_64.rpm
+packaging/akmods-tests/0.1.20261110/macbook-t1-touchbar-kmod-common-0.1.20261110-1.fc44.x86_64.rpm
+packaging/akmods-tests/0.1.20261110/x/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/apple-ibridge.ko.xz
+packaging/akmods-tests/0.1.20261110/x/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/apple-touchbar.ko.xz
+packaging/akmods-tests/0.1.20261110/x/lib/modules/7.2.13-200.fc44.x86_64/extra/macbook-t1-touchbar/macbook_t1_socw.ko.xz
 packaging/rpms/0.1.20261031/INSTALL-SHA256SUMS
 packaging/rpms/0.1.20261031/akmod-macbook-cs8409-0.1.20261031-1.fc44.x86_64.rpm
 packaging/rpms/0.1.20261031/akmod-macbook-cs8409-0.1.20261031-2.fc44.x86_64.rpm
@@ -124,6 +129,9 @@ packaging/rpms/0.1.20261101/akmod-macbook-cs8409-0.1.20261101-1.fc44.x86_64.rpm
 packaging/rpms/0.1.20261101/akmod-macbook-t1-touchbar-0.1.20261101-1.fc44.x86_64.rpm
 packaging/rpms/0.1.20261101/macbook-cs8409-kmod-common-0.1.20261101-1.fc44.x86_64.rpm
 packaging/rpms/0.1.20261101/macbook-t1-touchbar-kmod-common-0.1.20261101-1.fc44.x86_64.rpm
+packaging/rpms/0.1.20261110/SHA256SUMS
+packaging/rpms/0.1.20261110/akmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64.rpm
+packaging/rpms/0.1.20261110/macbook-t1-touchbar-kmod-common-0.1.20261110-1.fc44.x86_64.rpm
 sleep/acpi-tables/DSDT.dat
 sleep/acpi-tables/DSDT.dsl
 sleep/acpi-tables/SSDT1.dat

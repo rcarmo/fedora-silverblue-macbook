@@ -1,7 +1,9 @@
-# rebuild-kit — everything needed to reproduce the CURRENT install (2026-11-01)
+# rebuild-kit — current package set and installed configuration (2026-11-10)
 
-Mirror of the installed state, verified by `../tools/audit.sh` (0 failures) before it was copied.
-`files/` = absolute paths (`files/etc/...` → `/etc/...`). `rpms/` = local driver akmods 0.1.20261101-1.
+`files/` = absolute paths (`files/etc/...` → `/etc/...`), unchanged working S3 configuration.
+`rpms/` = Touch Bar **0.1.20261110-1**, audio **0.1.20261101-1**.
+The Touch Bar update adds idle blanking; reboot/hardware acceptance remains
+required. Validation and test steps: `../docs/T1-IDLE-AND-ASPM.md`.
 `SHA256SUMS` covers everything. Full narrative: `../docs/CLEAN-INSTALL.md`.
 
 ## On a clean Fedora Silverblue 44 (kernel 7.2.x)
@@ -19,7 +21,7 @@ Mirror of the installed state, verified by `../tools/audit.sh` (0 failures) befo
 ## What each piece does
 | Path | Purpose |
 |---|---|
-| rpms/akmod-macbook-t1-touchbar + common | apple-ibridge/apple-touchbar (T1 Touch Bar; `skip_acpi_power=1` guard), reset-resume fix, `macbook_t1_socw` (ASOC.SOCW on demand) |
+| rpms/akmod-macbook-t1-touchbar + common | apple-ibridge/apple-touchbar (T1 Touch Bar; `skip_acpi_power=1` guard), reset-resume fix, T1 idle blanking, `macbook_t1_socw` (ASOC.SOCW on demand) |
 | rpms/akmod-macbook-cs8409 + common | Apple CS8409/CS42L83 audio (amps), re-probe fix, boot-setup re-run after system sleep |
 | etc/firmware/macbook-wifi, etc/modprobe.d + etc/dracut.conf.d/99-macbook-wifi-nvram.conf | BCM43602 NVRAM for 5 GHz |
 | etc/udev/rules.d/99-macbook-usbc-runtime.rules + etc/systemd/system/macbook-usbc-runtime.service | keep Alpine Ridge USB-C xHCIs awake (hot-plug), both sides, by PCI ID |
