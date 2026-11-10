@@ -70,17 +70,19 @@ Read-only root inspection is recorded in
 | Wi-Fi root 00:1d.3 / endpoint 02:00.0 | yes | enabled |
 
 The native ASPM policy reads `[default] performance powersave powersupersave`.
-This audit did not attempt a policy write or prove whether firmware grants ASPM
-control. Their claim of a ~2.2 W reduction is a measurement on their machine,
-not ours; Wi-Fi already has L1 here, so their full saving cannot be assumed.
+Follow-up read-only inspection found **six physical internal Thunderbolt links**,
+all L1-capable but disabled at both ends. The kernel explicitly logs that the
+**ACPI FADT declares ASPM unsupported, so Linux disables it**. No native policy
+write was attempted. Their claimed ~2.2 W reduction is a measurement on their
+machine, not ours; Wi-Fi already has L1 here, so the full saving cannot be assumed.
 
-**No setpci writes, boot service, or resume reapplication installed.** For a
-future experiment: save work, disconnect USB-C data devices, inventory both
-ends of all affected links, save original link-control bits, measure a quiet
-battery baseline, apply only the L1 bit with masked writes and a rollback plan,
-then measure at identical brightness/load. Check PCIe AER, Wi-Fi, NVMe, USB-C
-hotplug and attended S3 before making anything persistent. Direct PCI config
-writes bypass Linux/firmware ownership and are not a routine power setting.
+**No setpci writes, boot service, or resume reapplication installed.** Prepared
+`tools/aspm-experiment.py` for read-only inspection/sampling and a gated,
+reversible baseline/L1/restored trial. Protocol, recovery and limitations:
+**`ASPM-EXPERIMENT.md`**. The trial is blocked until the new Touch Bar driver is
+booted and explicitly confirmed tested. Direct PCI config writes bypass
+Linux/firmware ownership and are not a routine power setting; persistent changes
+still require measured benefit plus separate hotplug and attended S3 validation.
 
 ## Not imported
 

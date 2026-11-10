@@ -490,6 +490,8 @@ sleep/tests/test-20261101-193426/journal.log
 sleep/tests/test-20261101-193556/journal.log
 sleep/tests/test-20261101-194213/journal.log
 sleep/tests/test-20261101-194544/journal.log
+tools/logs/aspm-inspect-20261110.log
+tools/logs/aspm-tests-20261110.log
 tools/logs/audit-1432.log
 tools/logs/audit-1433.log
 tools/logs/audit-20261101-1625-after-reboot.log

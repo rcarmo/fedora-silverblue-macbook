@@ -21,3 +21,6 @@ Module.symvers
 .module-common.o
 .tmp_versions/
 /packaging/test-*/x/
+# Python test/tool caches
+__pycache__/
+*.pyc
