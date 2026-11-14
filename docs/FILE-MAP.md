@@ -28,7 +28,9 @@ Run from the checkout; read each guide's prerequisites before privileged use.
 | `packaging/tests/test-touchbar-idle.py` | Mocked worker/input regression test |
 | `tools/tests/` | Hardware-free ASPM, LG brightness and maintained-documentation tests |
 | `tools/install-lg-brightness.sh` | Install only the LG command, launcher and seat-access rule |
-| `rebuild-kit/files/usr/local/bin/lg-brightness` | Canonical LG brightness CLI/GTK4 slider; [guide](LG-BRIGHTNESS.md) |
+| `rebuild-kit/files/usr/local/bin/lg-brightness` | Canonical LG brightness CLI/GTK4 fallback; [guide](LG-BRIGHTNESS.md) |
+| `extensions/lg-brightness@macbook-fedora-audit/` | GNOME Shell 50 Quick Settings slider and asynchronous controller |
+| `tools/install-lg-brightness-extension.sh` | Per-user extension install/enable queue; no root or session restart |
 | `tools/make-public-export.sh` | Produce a sanitised publication snapshot; recreates its destination |
 | `tools/publish-public.sh` | Update the separate public checkout, review, commit and normal push |
 

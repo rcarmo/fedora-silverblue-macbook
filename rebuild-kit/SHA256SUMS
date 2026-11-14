@@ -13,7 +13,7 @@ f04f277e55d2df2c17eddd1f1a43a1fb6790241a7b9aefd8ebbab47d99278601  ./files/usr/lo
 3e361ee287215451274d25cd03a1c97afb8634c5f1aa3bd9f1e2cbb1773744b1  ./files/usr/local/sbin/macbook-thunderbolt-remove-rescan
 456c33849716fa80a166a3bad82b3cc4b14f4fa043215e6b9292890a3113e401  ./files/usr/local/share/applications/lg-brightness.desktop
 7097fcb40253c467eb0de36f7e17812daec127b2de3d622fba257e43870ebe9c  ./install-files.sh
-ad1c4476ae86ad8df6bdc3f7bc73c8e9794fc9eead7aa85040d37d5f0a554fb8  ./README.md
+fe47f7f07b57f7fb5190df00db0f174d14db269ea83dfab95c6a65e00a996af1  ./README.md
 2501d10874b71e92825c0bd7296fb75d2368193f5cbd011d69d1b74cea7f1132  ./rpms/akmod-macbook-cs8409-0.1.20261101-1.fc44.x86_64.rpm
 b6385dd0d2a82202bb51bb555171594ed204c5f7a170d3da2108e506c2c4dcac  ./rpms/akmod-macbook-t1-touchbar-0.1.20261110-1.fc44.x86_64.rpm
 a0b8154a152ce7a91d205336a9520c93e992ff32b782ae74f4d79d4e0a00b21c  ./rpms/macbook-cs8409-kmod-common-0.1.20261101-1.fc44.x86_64.rpm

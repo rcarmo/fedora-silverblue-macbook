@@ -23,7 +23,64 @@ failure on another device behind the LG's USB hub; it is not proven causal.
 The earlier P20 connection supplied laptop charging but did not yield display
 detection in the captured checks. Its failure remains unresolved.
 
-## Install on an existing system
+## GNOME Quick Settings extension (Shell 50)
+
+The main desktop interface is a separate **LG Brightness** slider in Quick
+Settings. It does not replace GNOME's laptop brightness control. The optional
+standalone GTK4 slider and CLI remain available as fallbacks.
+
+Install the backend/permission rule first if not already present, then install
+this extension **as your desktop user**, without sudo:
+
+```bash
+# First installation only; omit if the backend is already installed:
+pkexec /usr/bin/bash "$PWD/tools/install-lg-brightness.sh"
+# Per-user extension installation:
+bash tools/install-lg-brightness-extension.sh
+```
+
+The extension source is
+[`extensions/lg-brightness@macbook-fedora-audit/`](../extensions/lg-brightness@macbook-fedora-audit/).
+The user installer packages all runtime modules and installs them under
+`${XDG_DATA_HOME:-~/.local/share}/gnome-shell/extensions/`. It appends only this
+extension's UUID to enabled extensions and removes only that UUID from the
+disabled list; it preserves other extensions and does not globally enable user
+extensions if you have switched them off. Prior installations are backed up
+under `${XDG_STATE_HOME:-~/.local/state}/lg-brightness/`.
+
+**On Wayland, log out and back in after first installation or JavaScript
+updates.** The installer does not restart Shell or end your session. Shell can
+cache extension modules until the next session. Once loaded, open Quick Settings
+at the top right: the full-width LG row shows its percentage. It is hidden when
+no supported monitor is accessible. Multiple matching LGs are intentionally not
+chosen implicitly; use the CLI's explicit device selection instead.
+
+The extension uses asynchronous, time-limited subprocess calls to the existing
+backend. It coalesces slider writes with a 200 ms debounce and serializes backend
+operations. Loading, opening the menu and updating the slider from readback do
+not write brightness. Display reconfiguration drops queued writes and retries
+read-only discovery after HID/ACL setup. Opening Quick Settings refreshes the
+value, and polling runs every five seconds **only while that menu is open**.
+Disabling the extension removes its UI/signals/timers and terminates any active
+command. No brightness reset, extra root access, daemon, laptop-slider override
+or keyboard shortcut is installed.
+
+Errors reading the monitor hide the row and are logged once per distinct state
+(except expected absence). Failed writes also show a GNOME notification. Check:
+
+```bash
+gnome-extensions info lg-brightness@macbook-fedora-audit
+journalctl --user -b --no-pager | grep -F 'LG Brightness'
+lg-brightness get
+```
+
+This targets **GNOME Shell 50 only**; private Shell APIs can change between
+releases. The controller/async backend and package contents are tested with GJS;
+live panel rendering, drag/keyboard input, disable/re-enable and reconnect still
+need attended acceptance after login. Do not equate packaging tests with a
+completed desktop UI acceptance test.
+
+## Install the backend on an existing system
 
 From the repository root:
 
@@ -73,7 +130,9 @@ HID device numbers are **not stable** across reconnect/reboot. Normally omit
 With multiple matching monitors it refuses to choose implicitly. Reopen the
 slider after unplug/replug rather than assuming an old device number is valid.
 Zero brightness may make the panel appear off; use `set 50` to recover.
-No hotplug or suspend/resume persistence has been validated for this tool.
+Hardware hotplug and suspend/resume behavior still need attended validation.
+The extension rediscovers on display changes/menu open; the standalone GTK app
+should be reopened after reconnect.
 
 For optional GNOME custom shortcuts, assign `/usr/local/bin/lg-brightness up`
 and `/usr/local/bin/lg-brightness down` in Settings → Keyboard → Custom Shortcuts.
@@ -104,7 +163,9 @@ changes brightness. It is not a setuid helper and should not be made one.
 ## Tests and removal
 
 ```bash
-/usr/bin/python3 -m unittest discover -s tools/tests -p 'test_lg_brightness.py' -v
+/usr/bin/python3 -m unittest discover -s tools/tests -v
+# Optional standalone JavaScript tests (requires GJS):
+gjs -m tools/tests/lg_brightness_extension_test.js
 ```
 
 Hardware-free tests cover exact discovery, multi-monitor selection, scaling,
@@ -115,7 +176,19 @@ brightness HID interface; unprivileged `get` and `set 50` both passed, and the
 GTK4 slider launched without errors. Live acceptance additionally needs
 an image check by the user; successful readback alone is not proof of an image.
 
-To remove, first close the slider. Remove the three installed files listed above
+To remove only the GNOME extension:
+
+```bash
+gnome-extensions disable lg-brightness@macbook-fedora-audit
+gnome-extensions uninstall lg-brightness@macbook-fedora-audit
+```
+
+If it has not yet been discovered by the running Shell, log out/in first so the
+extension tools recognize it. Removing the extension leaves the backend and
+monitor brightness unchanged.
+
+To remove the backend, first close the GTK slider and disable/uninstall the
+extension. Remove the three installed backend files listed above
 (or restore their backups), reload udev rules, and reconnect the monitor so the
 old seat ACL is removed. This does not reset the monitor's stored brightness.
 The source files remain in the rebuild kit and will be reinstalled if the full

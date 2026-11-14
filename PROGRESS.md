@@ -39,6 +39,11 @@ These raw logs are excluded from the public export; the guides reproduce the fin
   Unprivileged get/set-50 readback and slider startup passed; only the brightness
   interface received the active-seat ACL.
   [Installation, protocol and limitations](docs/LG-BRIGHTNESS.md).
+- Added a GNOME Shell 50 Quick Settings LG slider using the same backend. Installed
+  and queued for the desktop user without changing other enabled extensions;
+  first load needs logout/login on Wayland. GJS controller/process and packaging
+  tests pass; live panel/gesture, disable/re-enable and hotplug acceptance remain
+  pending. The LG was no longer connected at the final backend check.
 - Kuycon P20 charged the laptop but was not detected during the captured checks;
   its failure remains unresolved. This does not validate general display support.
 

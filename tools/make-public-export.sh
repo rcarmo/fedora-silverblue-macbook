@@ -40,8 +40,9 @@ journal.*\.log$
 \.ko$
 ^tools/logs/
 EOF
-# keep-list overrides (GPL sources from other owners that the docs discuss)
-KEEP='^sleep/research-20261101/raw/simbilim/.*\.c$'
+# Keep GPL sources discussed by the docs and the extension's required manifest.
+# Other JSON remains excluded; do not broaden this to arbitrary metadata files.
+KEEP='^sleep/research-20261101/raw/simbilim/.*\.c$|^extensions/lg-brightness@macbook-fedora-audit/metadata\.json$'
 cd "$SRC"
 git ls-files | grep -vEf "$EXCL" > /tmp/export-files.txt || true
 git ls-files | grep -E "$KEEP" >> /tmp/export-files.txt || true

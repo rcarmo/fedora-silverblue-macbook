@@ -1,0 +1,8 @@
+{
+  "uuid": "lg-brightness@macbook-fedora-audit",
+  "name": "LG Brightness",
+  "description": "A Quick Settings brightness slider for the tested LG UltraFine USB brightness interface. Requires /usr/local/bin/lg-brightness and its active-seat udev rule.",
+  "shell-version": ["50"],
+  "version": 1,
+  "url": "https://github.com/rcarmo/fedora-silverblue-macbook"
+}

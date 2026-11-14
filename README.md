@@ -18,7 +18,7 @@ speakers, dual-band Wi-Fi and deep suspend work with the included setup.
 | Install the working setup | [Installation guide](docs/CLEAN-INSTALL.md) |
 | Check support and limitations | [Known issues and safety](docs/KNOWN-ISSUES.md) |
 | Understand suspend/resume | [Sleep guide](docs/SLEEP.md) |
-| Control LG UltraFine brightness | [LG brightness guide](docs/LG-BRIGHTNESS.md) |
+| Control LG UltraFine brightness in GNOME | [Quick Settings extension + CLI](docs/LG-BRIGHTNESS.md) |
 | See the latest verified state | [Current status](PROGRESS.md) |
 | Investigate awake battery draw | [ASPM results](docs/ASPM-RESULTS.md), then the [experimental procedure](docs/ASPM-EXPERIMENT.md) |
 | Rebuild the drivers | [Packaging guide](packaging/README.md) |
@@ -60,6 +60,7 @@ Do not confuse the awake-power experiment with the validated suspend recipe.
 - [`rebuild-kit/`](rebuild-kit/README.md) — installable configuration, local RPMs and checksums.
 - [`packaging/`](packaging/README.md) — driver sources, patches, specs and build instructions.
 - [`tools/`](docs/FILE-MAP.md) — consistency audit, attended S3 test and opt-in ASPM diagnostics.
+- [`extensions/`](extensions/) — optional GNOME Shell 50 LG brightness slider; [installation](docs/LG-BRIGHTNESS.md).
 - [`docs/`](docs/README.md) — current guides, experiment results and historical references.
 - `sleep/`, `wifi/`, `audio/`, `touchbar/` — detailed investigations, not alternative install guides.
 

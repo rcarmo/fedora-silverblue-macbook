@@ -44,6 +44,9 @@ sha256sum -c SHA256SUMS
 
 The installer checks hashes too. It does **not** layer packages, set kernel
 arguments or reboot: continue through the [installation guide](../docs/CLEAN-INSTALL.md).
+The optional GNOME LG brightness extension is installed separately per user via
+`tools/install-lg-brightness-extension.sh`; root installation of this kit only
+installs its backend, permission rule and GTK fallback. See the [LG guide](../docs/LG-BRIGHTNESS.md).
 Backups/receipt are written to `/var/lib/macbook-rebuild-kit-*`.
 
 **Not included:** ASPM register changes, TLP tuning, a Wi-Fi watchdog or personal
