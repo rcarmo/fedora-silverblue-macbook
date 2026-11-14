@@ -28,6 +28,7 @@ Other deployments need their own compatibility and hardware checks.
 | Wi-Fi modprobe/dracut configuration | Include NVRAM and `brcmfmac-wcc` at boot |
 | USB-C udev rule + runtime service | Keep Alpine Ridge USB-C hotplug detection working |
 | NVMe udev rule | Prevent Apple S3X D3cold no-wake failure |
+| LG brightness command, desktop launcher + udev rule | User-controlled UltraFine USB brightness; [scope, optional standalone install](../docs/LG-BRIGHTNESS.md) |
 | Sleep configuration + suspend drop-in | Select deep S3 and run the installed helper |
 | `files/usr/local/sbin/macbook-sleep-hook` | Wi-Fi, Thunderbolt, wake masks and T1 sleep/wake coordination |
 | `files/usr/local/sbin/macbook-thunderbolt-remove-rescan` | Remove TB upstream ports before S3; rescan after resume |

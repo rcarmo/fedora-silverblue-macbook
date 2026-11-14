@@ -10,6 +10,7 @@ installation. Start with the current guides below, not the investigation scripts
 3. [Rebuild kit](../rebuild-kit/README.md) — what the installer and packages contain.
 4. [Sleep guide](SLEEP.md) — everyday behavior, attended testing and caveats.
 5. [Current status](../PROGRESS.md) — installed versions and the next checks.
+6. [LG UltraFine brightness](LG-BRIGHTNESS.md) — optional CLI/slider, narrow device access and tested display scope.
 
 ## Optional power experiment
 

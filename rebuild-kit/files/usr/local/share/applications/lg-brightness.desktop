@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=LG Brightness
+Comment=Adjust the connected LG UltraFine monitor brightness
+Exec=/usr/local/bin/lg-brightness gui
+Icon=display-brightness-symbolic
+Terminal=false
+Categories=Settings;HardwareSettings;
+Keywords=LG;UltraFine;Monitor;Brightness;
+StartupNotify=true

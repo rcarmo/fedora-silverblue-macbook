@@ -26,7 +26,9 @@ Run from the checkout; read each guide's prerequisites before privileged use.
 | `tools/run-s3-test.sh` | Attended **real S3** test; writes a record under `sleep/tests/` |
 | `tools/aspm-experiment.py` | Inspect/sample read-only, or explicitly opted-in reversible L1 trial/recovery |
 | `packaging/tests/test-touchbar-idle.py` | Mocked worker/input regression test |
-| `tools/tests/` | Hardware-free ASPM and maintained-documentation tests |
+| `tools/tests/` | Hardware-free ASPM, LG brightness and maintained-documentation tests |
+| `tools/install-lg-brightness.sh` | Install only the LG command, launcher and seat-access rule |
+| `rebuild-kit/files/usr/local/bin/lg-brightness` | Canonical LG brightness CLI/GTK4 slider; [guide](LG-BRIGHTNESS.md) |
 | `tools/make-public-export.sh` | Produce a sanitised publication snapshot; recreates its destination |
 | `tools/publish-public.sh` | Update the separate public checkout, review, commit and normal push |
 

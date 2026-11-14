@@ -1,0 +1,204 @@
+#!/usr/bin/python3
+"""LG UltraFine 043e:9a40 USB brightness control (MIT; no daemon)."""
+import argparse
+import fcntl
+import math
+import os
+from pathlib import Path
+import struct
+import sys
+
+SYSFS = Path('/sys/class/hidraw')
+DEV = Path('/dev')
+# Only the brightness interface observed on the tested LG UltraFine 22-inch.
+# The vendor, ALS and brightness interfaces share a USB product ID.
+DESCRIPTOR = bytes.fromhex(
+    '05 80 09 01 a1 01 06 82 00 09 10 15 04 26 1c 02 '
+    '67 e1 00 00 01 55 0e 75 20 95 01 b1 42 06 82 00 '
+    '09 10 67 e1 00 00 01 55 0e 75 20 95 01 81 02 05 '
+    '0f 09 50 66 10 01 55 0d 75 10 b1 42 c0')
+# Actual wire scale is 0..54000, NOT the descriptor's logical maximum 540.
+# See docs/LG-BRIGHTNESS.md for protocol evidence and limitations.
+MAXIMUM = 54000
+REPORT_SIZE = 7  # report ID 0 + six-byte payload
+GET_REPORT = (3 << 30) | (REPORT_SIZE << 16) | (ord('H') << 8) | 0x07
+SET_REPORT = (3 << 30) | (REPORT_SIZE << 16) | (ord('H') << 8) | 0x06
+
+
+def discover():
+    devices = []
+    for node in sorted(SYSFS.glob('hidraw*')):
+        try:
+            info = (node / 'device/uevent').read_text()
+            descriptor = (node / 'device/report_descriptor').read_bytes()
+        except FileNotFoundError:  # unplug during discovery
+            continue
+        if ('HID_ID=0003:0000043E:00009A40' in info
+                and descriptor == DESCRIPTOR):
+            devices.append(DEV / node.name)
+    return devices
+
+
+def select_device(requested=None):
+    devices = discover()
+    if requested:
+        candidate = Path(requested)
+        if candidate not in devices:
+            raise ValueError('Selected device is not a supported LG brightness interface')
+        return candidate
+    if not devices:
+        raise ValueError('No supported LG UltraFine brightness interface found')
+    if len(devices) != 1:
+        raise ValueError('Multiple monitors found; use list, then --device /dev/hidrawN')
+    return devices[0]
+
+
+def percent(value):
+    number = float(value)
+    if not math.isfinite(number) or not 0 <= number <= 100:
+        raise ValueError('Percentage must be a finite number from 0 to 100')
+    return number
+
+
+class Monitor:
+    def __init__(self, path):
+        self.path = path
+        self.fd = None
+
+    def __enter__(self):
+        # Recheck on every GUI operation: hidraw numbers can be reused on hotplug.
+        select_device(str(self.path))
+        self.fd = os.open(self.path, os.O_RDWR | os.O_CLOEXEC)
+        return self
+
+    def __exit__(self, *exc):
+        os.close(self.fd)
+
+    def read_report(self):
+        report = bytearray(REPORT_SIZE)
+        count = fcntl.ioctl(self.fd, GET_REPORT, report, True)
+        if count != REPORT_SIZE or report[0] != 0:
+            raise ValueError('Unexpected LG feature report; refusing to write')
+        raw = struct.unpack_from('<I', report, 1)[0]
+        if raw > MAXIMUM:
+            raise ValueError('Brightness outside the known wire range; refusing to write')
+        return report, raw
+
+    def get(self):
+        return self.read_report()[1] * 100 / MAXIMUM
+
+    def set(self, value):
+        target = round(percent(value) * MAXIMUM / 100)
+        report, _ = self.read_report()
+        struct.pack_into('<I', report, 1, target)
+        # Preserve the separate 16-bit field at the end of the feature report.
+        count = fcntl.ioctl(self.fd, SET_REPORT, report, True)
+        if count != REPORT_SIZE:
+            raise ValueError('Incomplete LG brightness write')
+        actual = self.read_report()[1]
+        if actual != target:
+            raise ValueError(f'Monitor did not confirm brightness (raw readback {actual})')
+        return actual * 100 / MAXIMUM
+
+
+def gui(path):
+    # Optional dependency: CLI only needs the Python standard library.
+    import gi
+    gi.require_version('Gtk', '4.0')
+    from gi.repository import GLib, Gtk
+
+    class BrightnessApp(Gtk.Application):
+        def __init__(self):
+            super().__init__(application_id='org.macbookaudit.LGBrightness')
+            self.pending = None
+
+        def do_activate(self):
+            if self.get_active_window():
+                self.get_active_window().present()
+                return
+            try:
+                with Monitor(path) as monitor:
+                    initial = monitor.get()
+            except (OSError, ValueError) as error:
+                print(f'lg-brightness: {error}', file=sys.stderr)
+                self.quit()
+                return
+            window = Gtk.ApplicationWindow(application=self, title='LG Brightness')
+            window.set_default_size(380, 140)
+            box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+            for edge in ('top', 'bottom', 'start', 'end'):
+                getattr(box, 'set_margin_' + edge)(18)
+            box.append(Gtk.Label(label=f'LG UltraFine · {path.name}'))
+            slider = Gtk.Scale.new_with_range(Gtk.Orientation.HORIZONTAL, 0, 100, 1)
+            slider.set_digits(0)
+            slider.set_value(initial)  # Opening the app must not change brightness.
+            self.status = Gtk.Label(label=f'{initial:.0f}%')
+            box.append(slider)
+            box.append(self.status)
+            slider.connect('value-changed', self.changed)
+            window.set_child(box)
+            window.present()
+
+        def changed(self, slider):
+            if self.pending is not None:
+                GLib.source_remove(self.pending)
+            self.pending = GLib.timeout_add(200, self.apply, slider.get_value())
+
+        def apply(self, value):
+            self.pending = None
+            try:
+                with Monitor(path) as monitor:
+                    actual = monitor.set(value)
+                self.status.set_text(f'{actual:.0f}%')
+            except (OSError, ValueError) as error:
+                self.status.set_text(f'Unable to set brightness: {error}')
+            return GLib.SOURCE_REMOVE
+
+        def do_shutdown(self):
+            if self.pending is not None:
+                GLib.source_remove(self.pending)
+            Gtk.Application.do_shutdown(self)
+
+    return BrightnessApp().run([])
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--device', help='Select a supported /dev/hidrawN (see list)')
+    parser.add_argument('command', choices=('list', 'get', 'set', 'up', 'down', 'gui'),
+                        nargs='?', default='get')
+    parser.add_argument('value', nargs='?', help='Percentage for set; step for up/down (default 5)')
+    args = parser.parse_args(argv)
+    try:
+        if args.command == 'set' and args.value is None:
+            raise ValueError('set requires a percentage')
+        if args.command in ('get', 'list', 'gui') and args.value is not None:
+            raise ValueError(f'{args.command} takes no percentage')
+        value = percent(args.value) if args.value is not None else 5
+        if args.command == 'list':
+            for path in discover():
+                print(path)
+            return 0
+        path = select_device(args.device)
+        if args.command == 'gui':
+            return gui(path)
+        with Monitor(path) as monitor:
+            if args.command == 'set':
+                result = monitor.set(value)
+            elif args.command in ('up', 'down'):
+                delta = value if args.command == 'up' else -value
+                result = monitor.set(max(0, min(100, monitor.get() + delta)))
+            else:
+                result = monitor.get()
+        print(f'{result:.1f}%')
+        return 0
+    except PermissionError:
+        print('Permission denied: install the LG udev rule, then reconnect the monitor. '
+              'Access is limited to the active local desktop user.', file=sys.stderr)
+    except (OSError, ValueError, ImportError) as error:
+        print(f'lg-brightness: {error}', file=sys.stderr)
+    return 1
+
+
+if __name__ == '__main__':
+    sys.exit(main())

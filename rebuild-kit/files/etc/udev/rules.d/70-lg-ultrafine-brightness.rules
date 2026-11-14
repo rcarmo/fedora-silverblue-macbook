@@ -1,0 +1,5 @@
+# LG UltraFine USB Controls, tested 043e:9a40 interface 01 only.
+# Separate rules because USB device and interface attributes have different parents.
+# uaccess grants access only to the active local seat user, not every user/group.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="043e", ATTRS{idProduct}=="9a40", ENV{.LG_ULTRAFINE_BRIGHTNESS}="1"
+SUBSYSTEM=="hidraw", ENV{.LG_ULTRAFINE_BRIGHTNESS}=="1", ATTRS{bInterfaceNumber}=="01", TAG+="uaccess"

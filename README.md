@@ -18,6 +18,7 @@ speakers, dual-band Wi-Fi and deep suspend work with the included setup.
 | Install the working setup | [Installation guide](docs/CLEAN-INSTALL.md) |
 | Check support and limitations | [Known issues and safety](docs/KNOWN-ISSUES.md) |
 | Understand suspend/resume | [Sleep guide](docs/SLEEP.md) |
+| Control LG UltraFine brightness | [LG brightness guide](docs/LG-BRIGHTNESS.md) |
 | See the latest verified state | [Current status](PROGRESS.md) |
 | Investigate awake battery draw | [ASPM results](docs/ASPM-RESULTS.md), then the [experimental procedure](docs/ASPM-EXPERIMENT.md) |
 | Rebuild the drivers | [Packaging guide](packaging/README.md) |
@@ -34,7 +35,7 @@ Last verified **2026-11-10** on the reference machine:
 | Speakers / microphone | Working | Local CS8409 driver; microphone is quiet; headphone jack untested |
 | Wi-Fi | Working, 2.4 + 5 GHz | Board NVRAM required; no WPA3-Personal |
 | Deep suspend (S3) | Working | Devices restored after resume; occasional early wake remains possible |
-| USB-C / Thunderbolt | Partially validated | Right/front USB-C tested; left side, docks and general external-display support not established |
+| USB-C / Thunderbolt | Partially validated | Right/front USB-C tested; LG UltraFine image + USB brightness checked Nov 14; P20 unresolved, docks/general display support not established |
 | Camera | Working in Firefox | GNOME Camera crashes on this install |
 | Bluetooth | Pairing untested | Controller detected |
 | Touch ID | Unsupported | |

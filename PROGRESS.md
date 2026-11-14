@@ -28,6 +28,20 @@ Local evidence: `tools/logs/audit-post-reboot-20261110.log`,
 `tools/logs/s3-post-update-20261110.log`, `tools/logs/aspm-short-trial-20261110/`.
 These raw logs are excluded from the public export; the guides reproduce the findings.
 
+## Display follow-up — 2026-11-14
+
+- LG UltraFine 22-inch (4096×2304; USB Controls `043e:9a40`) was detected and
+  enabled but blank. Writing 50% brightness over USB HID, with confirmed readback,
+  was followed by user-confirmed working image. Previous readback was ~78%, not
+  zero; the precise blank-panel cause is not established.
+- Added a narrowly scoped, user-accessible brightness CLI/GTK4 slider and launcher
+  to the rebuild kit; no automatic brightness reset, sleep changes or keybindings.
+  Unprivileged get/set-50 readback and slider startup passed; only the brightness
+  interface received the active-seat ACL.
+  [Installation, protocol and limitations](docs/LG-BRIGHTNESS.md).
+- Kuycon P20 charged the laptop but was not detected during the captured checks;
+  its failure remains unresolved. This does not validate general display support.
+
 ## Next checks
 
 1. Repeat the ASPM comparison with more battery headroom, settling and longer

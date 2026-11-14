@@ -52,8 +52,10 @@ See the [sleep guide](SLEEP.md) for normal behavior and testing.
 - Bluetooth controller is detected; pairing is untested. A missing BCM.hcd
   message is not a reason to copy arbitrary firmware.
 - Right/front USB-C has been tested. Left-side ports, docks and general
-  Thunderbolt/external-display behavior are not validated; one limited display
-  test is not a support claim.
+  Thunderbolt/external-display behavior are not generally validated. A Nov 14
+  LG UltraFine image/USB-brightness check succeeded after writing brightness;
+  the Kuycon P20 remains unresolved. See [LG brightness](LG-BRIGHTNESS.md) for
+  exact scope; this is not a general display support claim.
 - Touch ID is unsupported.
 
 ## Installation and maintenance traps

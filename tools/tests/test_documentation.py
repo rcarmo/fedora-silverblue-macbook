@@ -16,7 +16,7 @@ GUIDES = [
     'sleep/README.md', 'docs/README.md', 'docs/CLEAN-INSTALL.md',
     'docs/KNOWN-ISSUES.md', 'docs/SLEEP.md', 'docs/ASPM-RESULTS.md',
     'docs/ASPM-EXPERIMENT.md', 'docs/T1-IDLE-AND-ASPM.md', 'docs/TIMELINE.md',
-    'docs/FILE-MAP.md',
+    'docs/FILE-MAP.md', 'docs/LG-BRIGHTNESS.md',
 ]
 LINK = re.compile(r'(?<!!)\[[^\]\n]*\]\(([^)\n]+)\)')
 
